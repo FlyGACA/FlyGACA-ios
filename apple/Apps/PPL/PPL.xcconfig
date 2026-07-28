@@ -1,0 +1,6 @@
+#include "../Shared/App-Shared.xcconfig"
+
+// Fly GACA PPL — the flagship: complete Saudi PPL written prep (pack ppl-exam).
+FG_MODULE_ID = ppl-exam
+PRODUCT_BUNDLE_IDENTIFIER = com.flygaca.ppl
+INFOPLIST_KEY_CFBundleDisplayName = Fly GACA PPL

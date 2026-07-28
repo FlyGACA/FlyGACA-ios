@@ -1,0 +1,41 @@
+{
+ "contentVersion": "2026-07-24",
+ "module": {
+  "id": "ppl-exam",
+  "kind": "certificate",
+  "status": "live",
+  "access": "paid",
+  "bankIds": [
+   "vfr-flight-rules",
+   "airspace",
+   "aip-ais",
+   "radio-elpt",
+   "air-law",
+   "pilot-licensing",
+   "medical",
+   "aircraft-equipment",
+   "weather",
+   "aerodynamics",
+   "human-factors",
+   "navigation",
+   "flight-planning"
+  ],
+  "moduleIds": [
+   "air-law",
+   "meteorology",
+   "navigation",
+   "aircraft",
+   "principles",
+   "performance",
+   "human",
+   "operations",
+   "communications"
+  ],
+  "pathIds": [
+   "private-pilot"
+  ],
+  "sheetSlugs": [
+   "saudi-ppl-study-sheet"
+  ]
+ }
+}

@@ -1,0 +1,6 @@
+#include "../Shared/App-Shared.xcconfig"
+
+// Fly GACA ATPL — Airline Transport Pilot Licence theory prep (pack atpl).
+FG_MODULE_ID = atpl
+PRODUCT_BUNDLE_IDENTIFIER = com.flygaca.atpl
+INFOPLIST_KEY_CFBundleDisplayName = Fly GACA ATPL

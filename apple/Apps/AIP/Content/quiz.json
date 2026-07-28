@@ -1,0 +1,694 @@
+{
+ "generated": "2026-07-24",
+ "note": "Practice questions authored by Fly GACA from the GACAR library for study. Not actual GACA exam questions. Every answer cites its source — verify against the official GACAR.",
+ "exam": {
+  "title": "GACAR Knowledge — Mock Exam",
+  "questions": 25,
+  "minutes": 30,
+  "passMark": 75
+ },
+ "banks": [
+  {
+   "id": "aip-ais",
+   "title": "AIP & Aeronautical Information",
+   "desc": "The AIP structure, the AIRAC cycle, NOTAMs and how aeronautical information is managed.",
+   "source": "ICAO Annex 15 · AIP-KSA",
+   "questions": [
+    {
+     "q": "How long is one AIRAC cycle?",
+     "options": [
+      "7 days",
+      "28 days",
+      "30 days",
+      "56 days"
+     ],
+     "answer": 1,
+     "explain": "An AIRAC cycle is 28 days. Significant aeronautical changes are grouped onto common, pre-notified AIRAC effective dates.",
+     "cite": "ICAO Annex 15"
+    },
+    {
+     "q": "The AIP is divided into which three parts?",
+     "options": [
+      "GEN, ENR and AD",
+      "VFR, IFR and MIL",
+      "Part 1, Part 2 and Part 3",
+      "NOTAM, AIC and SUP"
+     ],
+     "answer": 0,
+     "explain": "An AIP has three parts: GEN (General), ENR (En-route) and AD (Aerodromes).",
+     "cite": "ICAO Annex 15"
+    },
+    {
+     "q": "AIRAC effective dates always fall on a —",
+     "options": [
+      "Monday",
+      "Thursday",
+      "Saturday",
+      "Sunday"
+     ],
+     "answer": 1,
+     "explain": "AIRAC effective dates are 28 days apart and always fall on a Thursday.",
+     "cite": "ICAO Annex 15"
+    },
+    {
+     "q": "Where in the AIP would you find the entry for a specific aerodrome?",
+     "options": [
+      "The GEN part",
+      "The ENR part",
+      "The AD part",
+      "The AIC"
+     ],
+     "answer": 2,
+     "explain": "Aerodrome data is published in the AD (Aerodromes) part of the AIP — e.g. AD 2 for individual aerodromes.",
+     "cite": "ICAO Annex 15"
+    },
+    {
+     "q": "A NOTAM is —",
+     "options": [
+      "A permanent change to the AIP",
+      "A notice of the establishment, condition or change of any aeronautical facility, service or hazard",
+      "A weather forecast",
+      "A type of flight plan"
+     ],
+     "answer": 1,
+     "explain": "A NOTAM gives time-critical notice of the establishment, condition or change of any aeronautical facility, service, procedure or hazard.",
+     "cite": "ICAO Annex 15"
+    },
+    {
+     "q": "\"AIRAC\" stands for —",
+     "options": [
+      "Aeronautical Information Regulation And Control",
+      "Air Route And Information Code",
+      "Aircraft Registration And Airworthiness Certificate",
+      "Aerodrome Information, Routes And Charts"
+     ],
+     "answer": 0,
+     "explain": "AIRAC — Aeronautical Information Regulation And Control — is the system of common effective dates for aeronautical information change.",
+     "cite": "ICAO Annex 15"
+    },
+    {
+     "q": "The AIP-KSA is published by —",
+     "options": [
+      "ICAO",
+      "The General Authority of Civil Aviation (GACA)",
+      "Each individual aerodrome operator",
+      "The airlines"
+     ],
+     "answer": 1,
+     "explain": "The Aeronautical Information Publication for the Kingdom (AIP-KSA) is published by GACA.",
+     "cite": "AIP-KSA"
+    },
+    {
+     "q": "En-route information — airways, significant points and en-route airspace — is found in which AIP part?",
+     "options": [
+      "GEN",
+      "ENR",
+      "AD",
+      "SUP"
+     ],
+     "answer": 1,
+     "explain": "The ENR (En-route) part of the AIP carries airways, significant points, ATS airspace and en-route procedures.",
+     "cite": "ICAO Annex 15"
+    },
+    {
+     "q": "An AIC is an —",
+     "options": [
+      "Aeronautical Information Circular",
+      "Aircraft Identification Code",
+      "Airspace Infringement Caution",
+      "Aerodrome Inspection Certificate"
+     ],
+     "answer": 0,
+     "explain": "An Aeronautical Information Circular (AIC) carries information that does not qualify for the AIP or a NOTAM but is important for safety, navigation or administration.",
+     "cite": "ICAO Annex 15"
+    },
+    {
+     "q": "Aeronautical charts and navigation databases are updated on —",
+     "options": [
+      "No fixed schedule",
+      "The 28-day AIRAC cycle",
+      "The first of every month",
+      "Each calendar quarter"
+     ],
+     "answer": 1,
+     "explain": "Charts and navigation databases update on the AIRAC cycle so that operators and data providers change in step worldwide.",
+     "cite": "ICAO Annex 15"
+    },
+    {
+     "q": "Before a flight, perishable safety information such as runway closures is found in —",
+     "options": [
+      "The AIP GEN part",
+      "Current NOTAMs",
+      "The aircraft AFM",
+      "GACAR Part 91"
+     ],
+     "answer": 1,
+     "explain": "Time-critical, perishable information — closures, unserviceabilities, hazards — is issued by NOTAM and must be checked before flight.",
+     "cite": "ICAO Annex 15"
+    },
+    {
+     "q": "An AIRAC cycle identified as 2605 means —",
+     "options": [
+      "The 26th cycle of 2005",
+      "The 5th cycle whose effective date falls in 2026",
+      "5 cycles before 2026",
+      "Cycle 2605 of the AIP"
+     ],
+     "answer": 1,
+     "explain": "AIRAC cycles are labelled YYNN — the two-digit year and the ordinal cycle within it. 2605 is the fifth cycle of 2026.",
+     "cite": "ICAO Annex 15"
+    },
+    {
+     "q": "The Aeronautical Information Publication (AIP) is organised into which three main parts?",
+     "options": [
+      "GEN, ENR, AD",
+      "VFR, IFR, SVFR",
+      "A, B, C",
+      "NOTAM, AIC, AIP"
+     ],
+     "answer": 0,
+     "explain": "An AIP is divided into GEN (general), ENR (en-route) and AD (aerodromes), per ICAO Annex 15.",
+     "cite": "Aeronautical Information Manual",
+     "citeRef": {
+      "kind": "reference",
+      "id": "aeronautical-information-manual-aim"
+     }
+    },
+    {
+     "q": "A NOTAM is:",
+     "options": [
+      "A permanent chart amendment",
+      "A notice of information essential to operations, distributed by telecommunication",
+      "A weather forecast",
+      "A type of flight plan"
+     ],
+     "answer": 1,
+     "explain": "A NOTAM is a notice distributed by telecommunication containing time-critical aeronautical information.",
+     "cite": "Aeronautical Information Manual",
+     "citeRef": {
+      "kind": "reference",
+      "id": "aeronautical-information-manual-aim"
+     }
+    },
+    {
+     "q": "Where would you find runway and aerodrome frequency data in the AIP?",
+     "options": [
+      "GEN section",
+      "ENR section",
+      "AD section",
+      "The NOTAM list"
+     ],
+     "answer": 2,
+     "explain": "Aerodrome data, including runways and frequencies, is in the AD (Aerodromes) section.",
+     "cite": "Aeronautical Information Manual",
+     "citeRef": {
+      "kind": "reference",
+      "id": "aeronautical-information-manual-aim"
+     }
+    },
+    {
+     "q": "The ENR section of the AIP contains:",
+     "options": [
+      "Aerodrome charts",
+      "En-route information such as airways and airspace",
+      "Medical standards",
+      "Customs rules only"
+     ],
+     "answer": 1,
+     "explain": "ENR (en-route) holds airway, airspace and en-route navigation information.",
+     "cite": "Aeronautical Information Manual",
+     "citeRef": {
+      "kind": "reference",
+      "id": "aeronautical-information-manual-aim"
+     }
+    },
+    {
+     "q": "In the Kingdom of Saudi Arabia, the AIP is published by:",
+     "options": [
+      "ICAO directly",
+      "Each airline",
+      "The State Aeronautical Information Service (GACA AIS)",
+      "The aircraft manufacturer"
+     ],
+     "answer": 2,
+     "explain": "Each State publishes its AIP through its Aeronautical Information Service; in KSA this is GACA AIS, per ICAO Annex 15.",
+     "cite": "Aeronautical Information Manual",
+     "citeRef": {
+      "kind": "reference",
+      "id": "aeronautical-information-manual-aim"
+     }
+    },
+    {
+     "q": "In the Kingdom of Saudi Arabia, the transition level is —",
+     "options": [
+      "Fixed by GACA at FL 150",
+      "Always 3,000 FT above the aerodrome",
+      "Set by each pilot before departure",
+      "Equal to the transition altitude"
+     ],
+     "answer": 0,
+     "explain": "The Saudi AIP states the transition level (TL) has been determined by GACA as fixed at FL 150, with a minimum of 1,000 FT vertical separation above the transition altitude.",
+     "cite": "AIP-KSA ENR 1.1"
+    },
+    {
+     "q": "Unless authorised otherwise, an aircraft operated below 10,000 FT within the Jeddah FIR must not exceed —",
+     "options": [
+      "200 KT",
+      "230 KT",
+      "250 KT",
+      "300 KT"
+     ],
+     "answer": 2,
+     "explain": "The Saudi AIP sets a speed limit of 250 KT (about 288 MPH / 460 KPH) for aircraft operated below ALT 10,000 FT anywhere in the Jeddah FIR, unless authorised to the contrary by the President or ATC.",
+     "cite": "AIP-KSA ENR 1.1"
+    },
+    {
+     "q": "In the Saudi AIP, horizontal distances used for navigation are expressed in —",
+     "options": [
+      "Kilometres",
+      "Statute miles",
+      "Nautical miles",
+      "Metres"
+     ],
+     "answer": 2,
+     "explain": "AIP GEN 2.1 lists the units of measurement: navigation distances are given in nautical miles and tenths, altitudes and elevations in feet, and speeds in knots.",
+     "cite": "AIP-KSA GEN 2.1"
+    },
+    {
+     "q": "According to AIP GEN 2.1, vertical speed (rate of climb or descent) is expressed in —",
+     "options": [
+      "Metres per second",
+      "Feet per minute",
+      "Knots",
+      "Feet per second"
+     ],
+     "answer": 1,
+     "explain": "The AIP units-of-measurement table gives vertical speed in feet per minute, altitudes in feet, and horizontal speed in knots.",
+     "cite": "AIP-KSA GEN 2.1"
+    },
+    {
+     "q": "Within Saudi controlled airspace, a serviceable SSR transponder should have —",
+     "options": [
+      "Mode C selected at all times unless otherwise instructed",
+      "The transponder off until requested by ATC",
+      "Only Mode A selected below FL 100",
+      "Code 7000 selected at all times"
+     ],
+     "answer": 0,
+     "explain": "AIP ENR 1.6 requires Mode C to be selected at all times unless ATC instructs otherwise, so controllers receive pressure-altitude data.",
+     "cite": "AIP-KSA ENR 1.6"
+    },
+    {
+     "q": "The abbreviation \"AFIS\" refers to —",
+     "options": [
+      "Automatic Flight Information Service",
+      "Aerodrome Flight Information Service",
+      "Airways Flight Inspection System",
+      "Aeronautical Fixed Information Service"
+     ],
+     "answer": 1,
+     "explain": "AIP GEN 3.3 lists Aerodrome Flight Information Service (AFIS) among the ATS units, providing information and alerting service to aerodrome traffic where no control service is given.",
+     "cite": "AIP-KSA GEN 3.3"
+    },
+    {
+     "q": "Which ICAO document sets the standards for the aeronautical information services that the AIP implements?",
+     "options": [
+      "Annex 11",
+      "Annex 14",
+      "Annex 15",
+      "Annex 4"
+     ],
+     "answer": 2,
+     "explain": "ICAO Annex 15 — Aeronautical Information Services — defines how States collect, publish and update aeronautical information, including the AIP, AIRAC and NOTAM systems.",
+     "cite": "ICAO Annex 15"
+    },
+    {
+     "q": "An AIP Supplement is used to publish —",
+     "options": [
+      "Permanent changes incorporated into the AIP pages",
+      "Temporary changes of long duration (usually three months or more) or extensive text",
+      "Short-notice perishable information for immediate action",
+      "The list of valid NOTAMs"
+     ],
+     "answer": 1,
+     "explain": "An AIP Supplement carries temporary changes of long duration (typically three months or more) or information with extensive text/graphics; short-notice perishable items go out by NOTAM, and permanent changes go in an AIP Amendment.",
+     "cite": "ICAO Annex 15"
+    },
+    {
+     "q": "The GEN part of the AIP primarily contains —",
+     "options": [
+      "Aerodrome charts and approach plates",
+      "General information: authorities, units of measurement, abbreviations and regulations",
+      "Airways and en-route significant points",
+      "Only the AIRAC schedule"
+     ],
+     "answer": 1,
+     "explain": "GEN (General) holds administrative and general information — responsible authorities, units of measurement, abbreviations, and applicable regulations — while ENR covers en-route and AD covers aerodromes.",
+     "cite": "ICAO Annex 15"
+    },
+    {
+     "q": "A \"Trigger NOTAM\" is issued to —",
+     "options": [
+      "Announce and give brief details of a forthcoming AIP Amendment or Supplement",
+      "Close a runway at short notice",
+      "Cancel all outstanding NOTAMs at a location",
+      "Report unserviceable navigation aids only"
+     ],
+     "answer": 0,
+     "explain": "A Trigger NOTAM draws attention to, and gives a short reference for, an AIRAC AIP Amendment or Supplement, so operators know a permanent change is about to take effect.",
+     "cite": "ICAO Annex 15"
+    }
+   ]
+  },
+  {
+   "id": "airspace",
+   "title": "Airspace & Air Traffic",
+   "desc": "ICAO classes A–G, the Jeddah FIR, control areas, speed limits and cruising levels.",
+   "source": "GACAR Part 71 · ICAO Annex 11",
+   "questions": [
+    {
+     "q": "Which airspace class is the most controlled?",
+     "options": [
+      "Class A",
+      "Class C",
+      "Class E",
+      "Class G"
+     ],
+     "answer": 0,
+     "explain": "Class A is the most controlled — IFR only, all aircraft separated, continuous ATC service. Class G is the least controlled.",
+     "cite": "GACAR Part 71 · ICAO Annex 11"
+    },
+    {
+     "q": "A 250 kt IAS speed limit applies below 10,000 ft AMSL in which airspace?",
+     "options": [
+      "Class A only",
+      "Classes C, D, E, F and G",
+      "Controlled airspace only",
+      "Class G only"
+     ],
+     "answer": 1,
+     "explain": "The 250 kt IAS limit below 10,000 ft AMSL applies in Classes C–G.",
+     "cite": "ICAO Annex 11 / Annex 2"
+    },
+    {
+     "q": "A Control Zone (CTR) is controlled airspace that —",
+     "options": [
+      "Extends upward from a base above the surface",
+      "Extends upward from the surface around an aerodrome",
+      "Has no defined upper limit",
+      "Is reserved for military use"
+     ],
+     "answer": 1,
+     "explain": "A CTR extends from the surface upward to a specified upper limit, protecting traffic arriving at and departing an aerodrome.",
+     "cite": "ICAO Annex 11"
+    },
+    {
+     "q": "The airspace of the Kingdom of Saudi Arabia is contained within which Flight Information Region?",
+     "options": [
+      "Riyadh FIR",
+      "Jeddah FIR",
+      "Dhahran FIR",
+      "Arabian FIR"
+     ],
+     "answer": 1,
+     "explain": "Saudi airspace is the Jeddah FIR, ICAO indicator OEJD.",
+     "cite": "AIP-KSA"
+    },
+    {
+     "q": "In Class G airspace, ATC provides —",
+     "options": [
+      "Radar separation to all flights",
+      "Control service to IFR only",
+      "A flight information service",
+      "No service at all"
+     ],
+     "answer": 2,
+     "explain": "Class G is uncontrolled — a flight information service (and alerting service) is provided; no separation is given.",
+     "cite": "ICAO Annex 11"
+    },
+    {
+     "q": "A Terminal Control Area (TMA) is normally established —",
+     "options": [
+      "Around a single small aerodrome",
+      "At the confluence of ATS routes near one or more major aerodromes",
+      "Only over the sea",
+      "From the surface upward"
+     ],
+     "answer": 1,
+     "explain": "A TMA is a control area at the confluence of ATS routes around one or more major aerodromes, usually based above the surface.",
+     "cite": "ICAO Annex 11"
+    },
+    {
+     "q": "Above the transition level, an aircraft's vertical position is expressed as —",
+     "options": [
+      "An altitude on the local QNH",
+      "A height above the aerodrome",
+      "A flight level on the standard pressure setting (1013.2 hPa)",
+      "A height above the transition layer"
+     ],
+     "answer": 2,
+     "explain": "Above the transition level, levels are flown as flight levels referenced to the standard setting of 1013.2 hPa.",
+     "cite": "ICAO Annex 2"
+    },
+    {
+     "q": "In Class C airspace, ATC separates —",
+     "options": [
+      "Nothing — it is uncontrolled",
+      "IFR from IFR only",
+      "IFR from IFR and from VFR; VFR receives traffic information on other VFR",
+      "All aircraft from all aircraft"
+     ],
+     "answer": 2,
+     "explain": "Class C: IFR is separated from IFR and from VFR; VFR is separated from IFR and given traffic information on other VFR traffic.",
+     "cite": "ICAO Annex 11"
+    },
+    {
+     "q": "Designation and classification of airspace in KSA is dealt with in which GACAR Part?",
+     "options": [
+      "Part 61",
+      "Part 71",
+      "Part 91",
+      "Part 121"
+     ],
+     "answer": 1,
+     "explain": "GACAR Part 71 — Designated Airspace, Routes, Points and Minimum Altitudes — covers the designation and classification of airspace.",
+     "cite": "GACAR Part 71, §71.11",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-71"
+     }
+    },
+    {
+     "q": "Does a VFR flight need an ATC clearance to operate in Class E airspace?",
+     "options": [
+      "Yes, always",
+      "No — clearance is required only for IFR in Class E",
+      "Only above 10,000 ft",
+      "Only at night"
+     ],
+     "answer": 1,
+     "explain": "In Class E, an ATC clearance and continuous two-way radio are required for IFR; VFR may operate without a clearance.",
+     "cite": "ICAO Annex 11"
+    },
+    {
+     "q": "Prohibited, restricted and danger areas are collectively known as —",
+     "options": [
+      "Controlled airspace",
+      "Special-use airspace",
+      "Terminal airspace",
+      "Advisory airspace"
+     ],
+     "answer": 1,
+     "explain": "Prohibited, restricted and danger areas are special-use airspace, depicted on charts and designated under the regulations.",
+     "cite": "GACAR Part 73 · AIP-KSA ENR 5"
+    },
+    {
+     "q": "The semicircular rule for IFR cruising levels assigns, on a magnetic track of 180°–359° —",
+     "options": [
+      "Odd flight levels",
+      "Even flight levels",
+      "Any level cleared by ATC only",
+      "Odd thousands + 500 ft"
+     ],
+     "answer": 1,
+     "explain": "Under the semicircular rule, magnetic tracks 180°–359° take even flight levels; 0°–179° take odd flight levels. All cruising levels remain subject to ATC clearance.",
+     "cite": "ICAO Annex 2"
+    },
+    {
+     "q": "When overlapping airspace designations apply to the same airspace, which operating rules apply?",
+     "options": [
+      "The least restrictive designation",
+      "The more restrictive airspace designation",
+      "The designation chosen by the pilot",
+      "Whichever was designated first"
+     ],
+     "answer": 1,
+     "explain": "GACAR §71.13 provides that where airspace designations overlap, the operating rules of the more restrictive designation apply.",
+     "cite": "GACAR Part 71, §71.13",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-71",
+      "anchor": "sec-mathbfhat-igma-71-13-overlapping-airspace-de"
+     }
+    },
+    {
+     "q": "Before operating an aircraft in Class B airspace, the PIC must —",
+     "options": [
+      "Simply monitor the frequency",
+      "Receive an ATC clearance from the facility having jurisdiction",
+      "File an IFR flight plan in all cases",
+      "Hold an ATP certificate"
+     ],
+     "answer": 1,
+     "explain": "GACAR §91.131 requires the PIC to receive an ATC clearance from the ATC facility having jurisdiction before operating in Class B airspace.",
+     "cite": "GACAR Part 91, §91.131",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91",
+      "anchor": "sec-91-131"
+     }
+    },
+    {
+     "q": "To take off or land at an aerodrome within Class B airspace, the PIC must hold at least —",
+     "options": [
+      "A student pilot certificate",
+      "A private pilot certificate",
+      "A commercial pilot certificate",
+      "An ATP certificate"
+     ],
+     "answer": 1,
+     "explain": "GACAR §91.131 requires the PIC to hold at least a private pilot certificate to take off or land at an aerodrome within a Class B airspace area.",
+     "cite": "GACAR Part 91, §91.131",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91",
+      "anchor": "sec-91-131"
+     }
+    },
+    {
+     "q": "Each PIC operating in Class D airspace on an arrival or through flight must establish two-way radio communications with the ATC facility —",
+     "options": [
+      "After entering the airspace",
+      "Prior to entering that airspace, and maintain it while within",
+      "Only if requested by ATC",
+      "Within 10 minutes of landing"
+     ],
+     "answer": 1,
+     "explain": "GACAR §91.127 requires the PIC to establish two-way radio communications with ATC prior to entering Class D airspace and maintain them while within it.",
+     "cite": "GACAR Part 91, §91.127",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91",
+      "anchor": "sec-91-127"
+     }
+    },
+    {
+     "q": "No person may operate an aircraft within a restricted area —",
+     "options": [
+      "Under any circumstances",
+      "Contrary to the restrictions imposed",
+      "Without an IFR flight plan",
+      "Above 10,000 ft MSL"
+     ],
+     "answer": 1,
+     "explain": "GACAR §91.133 prohibits operating an aircraft within a restricted area contrary to the restrictions imposed; entry to a prohibited area requires the administering authority's permission.",
+     "cite": "GACAR Part 91, §91.133",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91",
+      "anchor": "sec-91-133"
+     }
+    },
+    {
+     "q": "Each person operating an aircraft in Class A airspace must operate —",
+     "options": [
+      "Under VFR only",
+      "Under IFR, with an ATC clearance received prior to entering",
+      "Under special VFR",
+      "Without a flight plan"
+     ],
+     "answer": 1,
+     "explain": "GACAR §91.135 requires operations in Class A airspace to be conducted under IFR with an ATC clearance received prior to entering the airspace.",
+     "cite": "GACAR Part 91, §91.135",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91",
+      "anchor": "sec-mathbf-91-135-operations-in-class-a-airspace"
+     }
+    },
+    {
+     "q": "A Special VFR (SVFR) clearance permits —",
+     "options": [
+      "VFR flight within a control zone when weather is below normal VMC minima, subject to an ATC clearance",
+      "IFR flight without a clearance",
+      "VFR flight above FL200",
+      "Flight without a flight plan"
+     ],
+     "answer": 0,
+     "explain": "Special VFR lets a flight operate within a control zone in weather below the normal VMC minima, only with an ATC clearance.",
+     "cite": "ICAO Annex 11"
+    },
+    {
+     "q": "A Flight Information Region (FIR) is airspace within which —",
+     "options": [
+      "Flight information service and alerting service are provided",
+      "Only military flights operate",
+      "Radar coverage is guaranteed",
+      "All flights must be IFR"
+     ],
+     "answer": 0,
+     "explain": "An FIR is airspace of defined dimensions within which flight information service and alerting service are provided.",
+     "cite": "ICAO Annex 11"
+    },
+    {
+     "q": "ICAO airspace classes are lettered from Class A through —",
+     "options": [
+      "Class G",
+      "Class F",
+      "Class E",
+      "Class H"
+     ],
+     "answer": 0,
+     "explain": "ICAO defines seven airspace classes, A through G, each with its own rules and services.",
+     "cite": "ICAO Annex 11"
+    },
+    {
+     "q": "In Class E airspace, a VFR flight receives —",
+     "options": [
+      "Traffic information as far as practicable, but no separation service",
+      "Full separation from all other traffic",
+      "No ATC service of any kind",
+      "Mandatory radar vectoring"
+     ],
+     "answer": 0,
+     "explain": "In Class E airspace, VFR flights are given traffic information when practicable, but ATC does not separate them from other traffic.",
+     "cite": "ICAO Annex 11"
+    },
+    {
+     "q": "How does a Danger Area differ from a Restricted Area?",
+     "options": [
+      "A Danger Area warns of activities hazardous to flight without legally restricting entry, while a Restricted Area imposes flight restrictions",
+      "A Danger Area always prohibits all flight",
+      "They mean the same thing",
+      "A Danger Area only exists over water"
+     ],
+     "answer": 0,
+     "explain": "A Danger Area indicates airspace where activities dangerous to flight may exist, whereas a Restricted Area actually restricts flight under specified conditions.",
+     "cite": "GACAR Part 73 · AIP-KSA ENR 5"
+    },
+    {
+     "q": "Uncontrolled airspace, where ATC provides no separation service, is designated —",
+     "options": [
+      "Class G",
+      "Class A",
+      "Class C",
+      "Class E"
+     ],
+     "answer": 0,
+     "explain": "Class G is uncontrolled airspace; ATC provides no separation service, though flight information may be available on request.",
+     "cite": "GACAR Part 71 · ICAO Annex 11"
+    }
+   ]
+  }
+ ]
+}
