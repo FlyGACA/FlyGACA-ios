@@ -24,6 +24,8 @@
     "ios:build:release:all": "bash scripts/native/xcodebuild-wrapper.sh all release",
     "ios:clean": "rm -rf apple/FlyGACAKit/.build ~/Library/Developer/Xcode/DerivedData/*FlyGACA*",
     "ios:info": "bash scripts/native/xcodebuild-wrapper.sh info",
+    "ios:screenshots": "node apple/Scripts/html-render/render.js",
+    "firebase:register": "bash scripts/native/firebase-register-apps.sh",
     "sync:content": "bash scripts/sync-content.sh"
   }
 }

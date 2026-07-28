@@ -1,15 +1,19 @@
-// Faithful HTML recreations of FlyGACA iOS screens using the exact Falcon
-// palette (Theme.swift) and real bundled GACAR content. Rendered to PNG at
-// native device resolutions via Playwright + the pre-installed Chromium.
+// Faithful HTML recreations of the FlyGACA iOS screens using the exact Falcon
+// palette (FlyGACAKit/Sources/FeatureUI/Theme.swift) and each app's real bundled
+// GACAR content. Rendered to PNG at App Store device resolutions via Playwright +
+// the pre-installed Chromium (see render.js).
+//
+// The chrome is identical across every app in the family (they share FeatureUI),
+// so per-app screenshots differ only by the module's own banks/questions/lessons
+// and its display name — an honest mirror of the shipping app. `buildScreens(app)`
+// loads `apple/Apps/<app.dir>/Content` and returns the screen set for that module;
+// ground-school screens are included only when the module ships groundschool.json
+// (today just PPL).
 
 const fs = require('fs');
 const path = require('path');
 
-const CONTENT = '/workspace/flygaca-app/apple/Apps/PPL/Content';
-const quiz = JSON.parse(fs.readFileSync(path.join(CONTENT, 'quiz.json'), 'utf8'));
-const gs = JSON.parse(fs.readFileSync(path.join(CONTENT, 'groundschool.json'), 'utf8'));
-
-// Falcon palette — verbatim from Theme.swift
+// Falcon palette — verbatim from FeatureUI/Theme.swift (shared by every app).
 const C = {
   night: '#0A0E12',
   deep: '#0F1A24',
@@ -65,7 +69,7 @@ const BASE = `
   }
 `;
 
-function statusbar(dark = true) {
+function statusbar() {
   const col = '#fff';
   return `<div class="statusbar" style="color:${col}">
     <span>9:41</span>
@@ -82,178 +86,12 @@ function statusbar(dark = true) {
 
 function chevron() { return `<span class="chev">›</span>`; }
 
-// ---- Screen 1: Home ----
-function home() {
-  const gsRows = gs.modules.slice(0, 3).map(m =>
-    `<div class="row"><div class="lead"><span class="t">${m.title}</span></div>${chevron()}</div>`).join('');
-  const quizRows = quiz.banks.slice(0, 4).map(b =>
-    `<div class="row"><div class="lead"><span class="t">${b.title}</span><span class="s">${b.questions.length} questions</span></div>${chevron()}</div>`).join('');
-  return page(`
-    ${statusbar()}
-    <div class="navbar large"><div class="title">Fly GACA PPL</div></div>
-    <div class="body">
-      <div class="section-hdr">Study</div>
-      <div class="card">${gsRows}</div>
-      <div class="section-hdr">Quiz by topic</div>
-      <div class="card">${quizRows}</div>
-      <div class="section-hdr">Exam</div>
-      <div class="card">
-        <div class="row"><span class="t" style="font-size:17px">Mock exam (untimed)</span>${chevron()}</div>
-        <div class="row"><span class="t" style="font-size:17px">Timed exam — 30 min, pass 75%</span>${chevron()}</div>
-      </div>
-    </div>
-  `);
-}
-
-// ---- Screen 2: Quiz bank list ----
-function quizBanks() {
-  const rows = quiz.banks.slice(0, 8).map(b =>
-    `<div class="row"><div class="lead"><span class="t">${b.title}</span><span class="s">${b.questions.length} questions</span></div>${chevron()}</div>`).join('');
-  return page(`
-    ${statusbar()}
-    <div class="navbar"><div class="back">‹ Fly GACA PPL</div><div class="mid">Quiz by topic</div></div>
-    <div class="body"><div class="card">${rows}</div></div>
-  `);
-}
-
-// ---- Screen 3: Quiz question (unanswered) ----
-function quizQuestion() {
-  const q = quiz.banks[0].questions[0];
-  const choices = q.options.map((o, i) =>
-    `<div class="choice"><span>${o}</span><span class="ic" style="color:${C.ter}">○</span></div>`).join('');
-  return page(`
-    ${statusbar()}
-    <div class="navbar"><div class="back">‹ Quiz by topic</div><div class="mid">${quiz.banks[0].title}</div></div>
-    <div class="body" style="overflow:hidden">
-      <div style="padding:8px 6px">
-        <div style="font-size:13px;color:${C.sec};margin-bottom:14px">Question 1 of ${quiz.banks[0].questions.length}</div>
-        <div style="font-size:17px;font-weight:600;line-height:1.35;margin-bottom:20px">${q.q}</div>
-        ${choicesBlock(choices)}
-        <button class="tealbtn" style="margin-top:22px;opacity:0.5">Next</button>
-      </div>
-    </div>
-  `);
-}
-
-// ---- Screen 4: Quiz question answered (correct reveal) ----
-function quizAnswered() {
-  const q = quiz.banks[0].questions[0];
-  const choices = q.options.map((o, i) => {
-    if (i === q.answer) return `<div class="choice" style="border-color:${C.sage}"><span>${o}</span><span class="ic" style="color:${C.sage}">✓</span></div>`;
-    return `<div class="choice"><span>${o}</span><span class="ic" style="color:${C.ter}">○</span></div>`;
-  }).join('');
-  return page(`
-    ${statusbar()}
-    <div class="navbar"><div class="back">‹ Quiz by topic</div><div class="mid">${quiz.banks[0].title}</div></div>
-    <div class="body" style="overflow:hidden">
-      <div style="padding:8px 6px">
-        <div style="font-size:13px;color:${C.sec};margin-bottom:14px">Question 1 of ${quiz.banks[0].questions.length}</div>
-        <div style="font-size:17px;font-weight:600;line-height:1.35;margin-bottom:20px">${q.q}</div>
-        ${choicesBlock(choices)}
-        <div style="border:1px solid ${C.mist};border-radius:10px;padding:14px;margin-top:18px">
-          <div style="color:${C.sage};font-weight:600;font-size:15px;margin-bottom:6px">Correct</div>
-          <div style="font-size:15px;line-height:1.4;margin-bottom:8px">${q.explain}</div>
-          <div style="font-size:13px;color:${C.sec}">${q.cite}</div>
-        </div>
-        <button class="tealbtn" style="margin-top:18px">Next</button>
-      </div>
-    </div>
-  `);
-}
-
 function choicesBlock(choices) {
   return `<style>
     .choice{display:flex;align-items:center;justify-content:space-between;
       border:1px solid ${C.mist};border-radius:10px;padding:14px 14px;margin-bottom:10px;font-size:16px;line-height:1.3}
     .choice .ic{font-size:19px;margin-left:12px}
   </style>${choices}`;
-}
-
-// ---- Screen 5/6: Flashcard front & back ----
-function flashcard(revealed) {
-  const q = quiz.banks[0].questions[1];
-  const front = q.q;
-  const back = `${q.options[q.answer]}\n\n${q.explain}`;
-  const cardInner = revealed
-    ? `<div style="font-size:16px;line-height:1.5;white-space:pre-line">${back}</div>`
-    : `<div style="font-size:19px;font-weight:600;line-height:1.4">${front}</div>`;
-  const controls = revealed
-    ? `<div style="display:flex;gap:12px;margin-top:16px">
-         <button style="flex:1;background:transparent;border:1px solid ${C.clay};color:${C.clay};border-radius:12px;padding:14px;font-size:16px;font-weight:600">Again</button>
-         <button style="flex:1;background:${C.teal};border:none;color:#fff;border-radius:12px;padding:14px;font-size:16px;font-weight:600">Got it</button>
-       </div>`
-    : `<div style="text-align:center;font-size:13px;color:${C.sec};margin-top:16px">Tap the card to reveal</div>`;
-  return page(`
-    ${statusbar()}
-    <div class="navbar"><div class="back">‹ Flashcards</div><div class="mid">${quiz.banks[0].title}</div></div>
-    <div class="body" style="display:flex;flex-direction:column;padding:20px 22px">
-      <div style="text-align:center;font-size:13px;color:${C.sec};margin-bottom:18px">2 of ${quiz.banks[0].questions.length}</div>
-      <div style="background:${C.deep};border-radius:16px;min-height:300px;display:flex;align-items:center;justify-content:center;text-align:center;padding:28px">
-        ${cardInner}
-      </div>
-      ${controls}
-    </div>
-  `);
-}
-
-// ---- Screen 7: Timed exam start ----
-function timedStart() {
-  const q = quiz.banks[2].questions[0];
-  const choices = q.options.map(o => `<div class="choice"><span>${o}</span><span class="ic" style="color:${C.ter}">○</span></div>`).join('');
-  return page(`
-    ${statusbar()}
-    <div class="navbar"><div class="back" style="justify-content:space-between;display:flex;width:100%">‹ Fly GACA PPL <span style="color:${C.sec};font-weight:600;font-variant-numeric:tabular-nums">30:00</span></div><div class="mid">GACAR Knowledge — Mock Exam</div></div>
-    <div class="body" style="overflow:hidden">
-      <div style="padding:8px 6px">
-        <div style="font-size:13px;color:${C.sec};margin-bottom:14px">Question 1 of 25</div>
-        <div style="font-size:17px;font-weight:600;line-height:1.35;margin-bottom:20px">${q.q}</div>
-        ${choicesBlock(choices)}
-      </div>
-    </div>
-  `);
-}
-
-// ---- Screen 8: Timed exam active (timer running low) ----
-function timedActive() {
-  const q = quiz.banks[2].questions[1] || quiz.banks[2].questions[0];
-  const choices = q.options.map((o, i) => i === 1
-    ? `<div class="choice" style="border-color:${C.teal}"><span>${o}</span><span class="ic" style="color:${C.teal}">◉</span></div>`
-    : `<div class="choice"><span>${o}</span><span class="ic" style="color:${C.ter}">○</span></div>`).join('');
-  return page(`
-    ${statusbar()}
-    <div class="navbar"><div class="back" style="justify-content:space-between;display:flex;width:100%">‹ Exam <span style="color:${C.clay};font-weight:700;font-variant-numeric:tabular-nums">0:48</span></div><div class="mid">GACAR Knowledge — Mock Exam</div></div>
-    <div class="body" style="overflow:hidden">
-      <div style="padding:8px 6px">
-        <div style="font-size:13px;color:${C.sec};margin-bottom:14px">Question 12 of 25</div>
-        <div style="font-size:17px;font-weight:600;line-height:1.35;margin-bottom:20px">${q.q}</div>
-        ${choicesBlock(choices)}
-        <button class="tealbtn" style="margin-top:20px">Next</button>
-      </div>
-    </div>
-  `);
-}
-
-// ---- Screen 9: Mock exam results ----
-function results() {
-  const banks = quiz.banks.slice(0, 6);
-  const rows = banks.map((b, i) => {
-    const tot = [4, 5, 3, 4, 5, 4][i];
-    const cor = [4, 4, 3, 3, 5, 3][i];
-    return `<div class="row"><span style="font-size:16px">${b.title}</span><span style="color:${C.sec};font-variant-numeric:tabular-nums">${cor}/${tot}</span></div>`;
-  }).join('');
-  return page(`
-    ${statusbar()}
-    <div class="navbar"><div class="back">‹ Fly GACA PPL</div><div class="mid">Results</div></div>
-    <div class="body">
-      <div class="card" style="margin-top:6px">
-        <div style="display:flex;padding:22px 8px">
-          ${stat('82%', 'Score')}${stat('22/25', 'Correct')}${stat('Pass', 'Result', C.sage)}
-        </div>
-      </div>
-      <div class="section-hdr">By topic</div>
-      <div class="card">${rows}</div>
-    </div>
-  `);
 }
 
 function stat(value, label, color) {
@@ -263,28 +101,200 @@ function stat(value, label, color) {
   </div>`;
 }
 
-// ---- Screen 10: Lessons list ----
-function lessons() {
-  const m = gs.modules[0];
-  const rows = m.lessons.slice(0, 6).map(l =>
-    `<div class="row" style="align-items:flex-start"><div class="lead"><span class="t" style="font-weight:600">${l.title}</span><span class="s" style="line-height:1.4">${l.objective}</span></div></div>`).join('');
-  return page(`
-    ${statusbar()}
-    <div class="navbar"><div class="back">‹ Fly GACA PPL</div><div class="mid">${m.title}</div></div>
-    <div class="body">
-      <div class="card" style="margin-top:6px"><div style="padding:14px 16px;font-size:15px;color:${C.sec};line-height:1.45">${m.summary}</div></div>
-      <div class="card" style="margin-top:14px">${rows}</div>
-    </div>
-  `);
-}
-
 function page(inner) {
   return `<!doctype html><html><head><meta charset="utf-8"><style>${BASE}</style></head>
     <body><div class="screen">${inner}</div></body></html>`;
 }
 
-module.exports = {
-  screens: {
+// Build the screen set for one app. `app` = { dir, name }.
+function buildScreens(app) {
+  const CONTENT = path.resolve(__dirname, '../../Apps', app.dir, 'Content');
+  const quiz = JSON.parse(fs.readFileSync(path.join(CONTENT, 'quiz.json'), 'utf8'));
+  const gsPath = path.join(CONTENT, 'groundschool.json');
+  const hasGS = fs.existsSync(gsPath);
+  const gs = hasGS ? JSON.parse(fs.readFileSync(gsPath, 'utf8')) : null;
+  const name = app.name;
+
+  // A bank that's safe to reference on every module (ELPT ships a single bank).
+  const examBank = quiz.banks[Math.min(2, quiz.banks.length - 1)];
+
+  function home() {
+    const quizRows = quiz.banks.slice(0, 4).map(b =>
+      `<div class="row"><div class="lead"><span class="t">${b.title}</span><span class="s">${b.questions.length} questions</span></div>${chevron()}</div>`).join('');
+    const studySection = hasGS
+      ? `<div class="section-hdr">Study</div>
+         <div class="card">${gs.modules.slice(0, 3).map(m =>
+            `<div class="row"><div class="lead"><span class="t">${m.title}</span></div>${chevron()}</div>`).join('')}</div>`
+      : `<div class="section-hdr">Practice</div>
+         <div class="card">
+           <div class="row"><span class="t" style="font-size:17px">Flashcards — spaced repetition</span>${chevron()}</div>
+           <div class="row"><span class="t" style="font-size:17px">Quiz — all questions</span>${chevron()}</div>
+         </div>`;
+    return page(`
+      ${statusbar()}
+      <div class="navbar large"><div class="title">${name}</div></div>
+      <div class="body">
+        ${studySection}
+        <div class="section-hdr">Quiz by topic</div>
+        <div class="card">${quizRows}</div>
+        <div class="section-hdr">Exam</div>
+        <div class="card">
+          <div class="row"><span class="t" style="font-size:17px">Mock exam (untimed)</span>${chevron()}</div>
+          <div class="row"><span class="t" style="font-size:17px">Timed exam — 30 min, pass 75%</span>${chevron()}</div>
+        </div>
+      </div>
+    `);
+  }
+
+  function quizBanks() {
+    const rows = quiz.banks.slice(0, 8).map(b =>
+      `<div class="row"><div class="lead"><span class="t">${b.title}</span><span class="s">${b.questions.length} questions</span></div>${chevron()}</div>`).join('');
+    return page(`
+      ${statusbar()}
+      <div class="navbar"><div class="back">‹ ${name}</div><div class="mid">Quiz by topic</div></div>
+      <div class="body"><div class="card">${rows}</div></div>
+    `);
+  }
+
+  function quizQuestion() {
+    const q = quiz.banks[0].questions[0];
+    const choices = q.options.map(o =>
+      `<div class="choice"><span>${o}</span><span class="ic" style="color:${C.ter}">○</span></div>`).join('');
+    return page(`
+      ${statusbar()}
+      <div class="navbar"><div class="back">‹ Quiz by topic</div><div class="mid">${quiz.banks[0].title}</div></div>
+      <div class="body" style="overflow:hidden">
+        <div style="padding:8px 6px">
+          <div style="font-size:13px;color:${C.sec};margin-bottom:14px">Question 1 of ${quiz.banks[0].questions.length}</div>
+          <div style="font-size:17px;font-weight:600;line-height:1.35;margin-bottom:20px">${q.q}</div>
+          ${choicesBlock(choices)}
+          <button class="tealbtn" style="margin-top:22px;opacity:0.5">Next</button>
+        </div>
+      </div>
+    `);
+  }
+
+  function quizAnswered() {
+    const q = quiz.banks[0].questions[0];
+    const choices = q.options.map((o, i) => {
+      if (i === q.answer) return `<div class="choice" style="border-color:${C.sage}"><span>${o}</span><span class="ic" style="color:${C.sage}">✓</span></div>`;
+      return `<div class="choice"><span>${o}</span><span class="ic" style="color:${C.ter}">○</span></div>`;
+    }).join('');
+    return page(`
+      ${statusbar()}
+      <div class="navbar"><div class="back">‹ Quiz by topic</div><div class="mid">${quiz.banks[0].title}</div></div>
+      <div class="body" style="overflow:hidden">
+        <div style="padding:8px 6px">
+          <div style="font-size:13px;color:${C.sec};margin-bottom:14px">Question 1 of ${quiz.banks[0].questions.length}</div>
+          <div style="font-size:17px;font-weight:600;line-height:1.35;margin-bottom:20px">${q.q}</div>
+          ${choicesBlock(choices)}
+          <div style="border:1px solid ${C.mist};border-radius:10px;padding:14px;margin-top:18px">
+            <div style="color:${C.sage};font-weight:600;font-size:15px;margin-bottom:6px">Correct</div>
+            <div style="font-size:15px;line-height:1.4;margin-bottom:8px">${q.explain}</div>
+            <div style="font-size:13px;color:${C.sec}">${q.cite}</div>
+          </div>
+          <button class="tealbtn" style="margin-top:18px">Next</button>
+        </div>
+      </div>
+    `);
+  }
+
+  function flashcard(revealed) {
+    const q = quiz.banks[0].questions[1];
+    const front = q.q;
+    const back = `${q.options[q.answer]}\n\n${q.explain}`;
+    const cardInner = revealed
+      ? `<div style="font-size:16px;line-height:1.5;white-space:pre-line">${back}</div>`
+      : `<div style="font-size:19px;font-weight:600;line-height:1.4">${front}</div>`;
+    const controls = revealed
+      ? `<div style="display:flex;gap:12px;margin-top:16px">
+           <button style="flex:1;background:transparent;border:1px solid ${C.clay};color:${C.clay};border-radius:12px;padding:14px;font-size:16px;font-weight:600">Again</button>
+           <button style="flex:1;background:${C.teal};border:none;color:#fff;border-radius:12px;padding:14px;font-size:16px;font-weight:600">Got it</button>
+         </div>`
+      : `<div style="text-align:center;font-size:13px;color:${C.sec};margin-top:16px">Tap the card to reveal</div>`;
+    return page(`
+      ${statusbar()}
+      <div class="navbar"><div class="back">‹ Flashcards</div><div class="mid">${quiz.banks[0].title}</div></div>
+      <div class="body" style="display:flex;flex-direction:column;padding:20px 22px">
+        <div style="text-align:center;font-size:13px;color:${C.sec};margin-bottom:18px">2 of ${quiz.banks[0].questions.length}</div>
+        <div style="background:${C.deep};border-radius:16px;min-height:300px;display:flex;align-items:center;justify-content:center;text-align:center;padding:28px">
+          ${cardInner}
+        </div>
+        ${controls}
+      </div>
+    `);
+  }
+
+  function timedStart() {
+    const q = examBank.questions[0];
+    const choices = q.options.map(o => `<div class="choice"><span>${o}</span><span class="ic" style="color:${C.ter}">○</span></div>`).join('');
+    return page(`
+      ${statusbar()}
+      <div class="navbar"><div class="back" style="justify-content:space-between;display:flex;width:100%">‹ ${name} <span style="color:${C.sec};font-weight:600;font-variant-numeric:tabular-nums">30:00</span></div><div class="mid">GACAR Knowledge — Mock Exam</div></div>
+      <div class="body" style="overflow:hidden">
+        <div style="padding:8px 6px">
+          <div style="font-size:13px;color:${C.sec};margin-bottom:14px">Question 1 of 25</div>
+          <div style="font-size:17px;font-weight:600;line-height:1.35;margin-bottom:20px">${q.q}</div>
+          ${choicesBlock(choices)}
+        </div>
+      </div>
+    `);
+  }
+
+  function timedActive() {
+    const q = examBank.questions[1] || examBank.questions[0];
+    const choices = q.options.map((o, i) => i === 1
+      ? `<div class="choice" style="border-color:${C.teal}"><span>${o}</span><span class="ic" style="color:${C.teal}">◉</span></div>`
+      : `<div class="choice"><span>${o}</span><span class="ic" style="color:${C.ter}">○</span></div>`).join('');
+    return page(`
+      ${statusbar()}
+      <div class="navbar"><div class="back" style="justify-content:space-between;display:flex;width:100%">‹ Exam <span style="color:${C.clay};font-weight:700;font-variant-numeric:tabular-nums">0:48</span></div><div class="mid">GACAR Knowledge — Mock Exam</div></div>
+      <div class="body" style="overflow:hidden">
+        <div style="padding:8px 6px">
+          <div style="font-size:13px;color:${C.sec};margin-bottom:14px">Question 12 of 25</div>
+          <div style="font-size:17px;font-weight:600;line-height:1.35;margin-bottom:20px">${q.q}</div>
+          ${choicesBlock(choices)}
+          <button class="tealbtn" style="margin-top:20px">Next</button>
+        </div>
+      </div>
+    `);
+  }
+
+  function results() {
+    const banks = quiz.banks.slice(0, 6);
+    const tots = [4, 5, 3, 4, 5, 4], cors = [4, 4, 3, 3, 5, 3];
+    const rows = banks.map((b, i) =>
+      `<div class="row"><span style="font-size:16px">${b.title}</span><span style="color:${C.sec};font-variant-numeric:tabular-nums">${cors[i]}/${tots[i]}</span></div>`).join('');
+    return page(`
+      ${statusbar()}
+      <div class="navbar"><div class="back">‹ ${name}</div><div class="mid">Results</div></div>
+      <div class="body">
+        <div class="card" style="margin-top:6px">
+          <div style="display:flex;padding:22px 8px">
+            ${stat('82%', 'Score')}${stat('22/25', 'Correct')}${stat('Pass', 'Result', C.sage)}
+          </div>
+        </div>
+        <div class="section-hdr">By topic</div>
+        <div class="card">${rows}</div>
+      </div>
+    `);
+  }
+
+  function lessons() {
+    const m = gs.modules[0];
+    const rows = m.lessons.slice(0, 6).map(l =>
+      `<div class="row" style="align-items:flex-start"><div class="lead"><span class="t" style="font-weight:600">${l.title}</span><span class="s" style="line-height:1.4">${l.objective}</span></div></div>`).join('');
+    return page(`
+      ${statusbar()}
+      <div class="navbar"><div class="back">‹ ${name}</div><div class="mid">${m.title}</div></div>
+      <div class="body">
+        <div class="card" style="margin-top:6px"><div style="padding:14px 16px;font-size:15px;color:${C.sec};line-height:1.45">${m.summary}</div></div>
+        <div class="card" style="margin-top:14px">${rows}</div>
+      </div>
+    `);
+  }
+
+  const set = {
     '01-home': home,
     '02-quiz-banks': quizBanks,
     '03-quiz-question': quizQuestion,
@@ -294,6 +304,9 @@ module.exports = {
     '07-timed-exam-start': timedStart,
     '08-timed-exam-timer': timedActive,
     '09-mock-results': results,
-    '10-lessons-list': lessons,
-  },
-};
+  };
+  if (hasGS) set['10-lessons-list'] = lessons;
+  return set;
+}
+
+module.exports = { buildScreens };
