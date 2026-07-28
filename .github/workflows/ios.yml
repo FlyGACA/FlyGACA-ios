@@ -86,6 +86,9 @@ jobs:
       - name: Install XcodeGen
         run: brew install xcodegen
 
+      - name: Create placeholder Firebase config (inert; real plists are secrets)
+        run: bash scripts/native/ci-firebase-placeholder.sh
+
       - name: Build ${{ matrix.app }} (Debug)
         run: npm run ios:build:${{ matrix.app }}
 
@@ -115,6 +118,9 @@ jobs:
 
       - name: Install XcodeGen
         run: brew install xcodegen
+
+      - name: Create placeholder Firebase config (inert; real plists are secrets)
+        run: bash scripts/native/ci-firebase-placeholder.sh
 
       - name: Build ${{ matrix.app }} (Release, unsigned)
         run: npm run ios:build:release:${{ matrix.app }}
@@ -168,6 +174,12 @@ jobs:
 
       - name: Install XcodeGen
         run: brew install xcodegen
+
+      # Inert fallback only — a real signed/TestFlight build wants the real
+      # per-app GoogleService-Info.plist; the script never overwrites one that
+      # already exists (e.g. synced in alongside the signing secrets).
+      - name: Create placeholder Firebase config (if absent)
+        run: bash scripts/native/ci-firebase-placeholder.sh
 
       # Standard Apple/GitHub temp-keychain signing pattern:
       # https://docs.github.com/en/actions/deployment/deploying-xcode-applications
