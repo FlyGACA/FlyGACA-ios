@@ -12,6 +12,12 @@ iOS app registrations** — one per bundle id — and Sign in with Apple needs c
 in two places that are easy to confuse. This is the console/portal half; it is manual by
 nature (no API covers the Apple provider or the Apple Developer portal).
 
+> **Shortcut for the six registrations:** the app-registration + plist-download step can be
+> scripted. After `npm i -g firebase-tools && firebase login`, run
+> `npm run firebase:register` (`scripts/native/firebase-register-apps.sh`) — it creates the six
+> iOS apps for the bundle ids below and writes each `apple/Apps/<APP>/GoogleService-Info.plist`
+> (git-ignored). The Sign in with Apple provider + APNs auth key below stay manual.
+
 The app side is already wired: `apple/project.yml` copies each app's
 `GoogleService-Info.plist` into its bundle, and `Apps/Shared/App.entitlements` carries
 `com.apple.developer.applesignin`. Nothing here needs code changes.

@@ -1,36 +1,49 @@
 const { chromium } = require('playwright-core');
 const fs = require('fs');
 const path = require('path');
-const { screens } = require('./screens');
+const { buildScreens } = require('./screens');
 
 const OUT = process.env.SCREENSHOT_OUT
   || path.resolve(__dirname, '../../../screenshots/raw');
 const CHROME = process.env.CHROME_PATH || undefined;
 
+const APPS = [
+  { dir: 'PPL', name: 'Fly GACA PPL' },
+  { dir: 'ELPT', name: 'Fly GACA ELPT' },
+  { dir: 'AIP', name: 'Fly GACA AIP' },
+  { dir: 'CPL', name: 'Fly GACA CPL' },
+  { dir: 'IR', name: 'Fly GACA IR' },
+  { dir: 'ATPL', name: 'Fly GACA ATPL' },
+];
+
 // Landscape viewports (swapped W/H). Screens that read well wide: quiz, exam.
-const DEVICES = {
-  iPhone15Pro: { width: 852, height: 393, scale: 3 },
-  iPadPro:     { width: 1366, height: 1024, scale: 2 },
+const SLOTS = {
+  'iphone-6.9': { width: 932, height: 430, scale: 3 },
+  'ipad-13': { width: 1366, height: 1024, scale: 2 },
 };
 const LANDSCAPE_SCREENS = ['03-quiz-question', '04-quiz-answered', '08-timed-exam-timer'];
 
 (async () => {
   const browser = await chromium.launch(CHROME ? { executablePath: CHROME } : {});
-  for (const [device, spec] of Object.entries(DEVICES)) {
-    const dir = path.join(OUT, device, 'landscape');
-    fs.mkdirSync(dir, { recursive: true });
-    const ctx = await browser.newContext({
-      viewport: { width: spec.width, height: spec.height },
-      deviceScaleFactor: spec.scale,
-    });
-    const page = await ctx.newPage();
-    for (const name of LANDSCAPE_SCREENS) {
-      await page.setContent(screens[name](), { waitUntil: 'networkidle' });
-      const file = path.join(dir, `${name}-landscape.png`);
-      await page.screenshot({ path: file });
-      console.log(`  ✓ ${device}/landscape/${name}-landscape.png`);
+  for (const app of APPS) {
+    const screens = buildScreens(app);
+    for (const [slot, spec] of Object.entries(SLOTS)) {
+      const dir = path.join(OUT, app.dir, `${slot}-landscape`);
+      fs.mkdirSync(dir, { recursive: true });
+      const ctx = await browser.newContext({
+        viewport: { width: spec.width, height: spec.height },
+        deviceScaleFactor: spec.scale,
+      });
+      const pg = await ctx.newPage();
+      for (const name of LANDSCAPE_SCREENS) {
+        if (!screens[name]) continue;
+        await pg.setContent(screens[name](), { waitUntil: 'networkidle' });
+        const file = path.join(dir, `${name}-landscape.png`);
+        await pg.screenshot({ path: file });
+        console.log(`  ✓ ${app.dir}/${slot}-landscape/${name}-landscape.png`);
+      }
+      await ctx.close();
     }
-    await ctx.close();
   }
   await browser.close();
   console.log('\nDone.');
