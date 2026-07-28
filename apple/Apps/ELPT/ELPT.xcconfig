@@ -1,0 +1,6 @@
+#include "../Shared/App-Shared.xcconfig"
+
+// Fly GACA ELPT — English Language Proficiency prep (pack elp).
+FG_MODULE_ID = elp
+PRODUCT_BUNDLE_IDENTIFIER = com.flygaca.elpt
+INFOPLIST_KEY_CFBundleDisplayName = Fly GACA ELPT

@@ -1,0 +1,308 @@
+{
+ "generated": "2026-07-24",
+ "note": "Practice questions authored by Fly GACA from the GACAR library for study. Not actual GACA exam questions. Every answer cites its source — verify against the official GACAR.",
+ "exam": {
+  "title": "GACAR Knowledge — Mock Exam",
+  "questions": 25,
+  "minutes": 30,
+  "passMark": 75
+ },
+ "banks": [
+  {
+   "id": "radio-elpt",
+   "title": "Radiotelephony & English Proficiency",
+   "desc": "The ICAO phonetic alphabet, standard phraseology and the language-proficiency requirement.",
+   "source": "ICAO Annex 10 · Annex 1",
+   "questions": [
+    {
+     "q": "In the ICAO phonetic alphabet, the letter 'R' is —",
+     "options": [
+      "Roger",
+      "Romeo",
+      "Radio",
+      "Rescue"
+     ],
+     "answer": 1,
+     "explain": "'R' is Romeo. 'Roger' is a separate procedure word meaning the transmission was received.",
+     "cite": "ICAO Annex 10"
+    },
+    {
+     "q": "The minimum ICAO language proficiency level for international operations is —",
+     "options": [
+      "Level 3 (Pre-operational)",
+      "Level 4 (Operational)",
+      "Level 5 (Extended)",
+      "Level 6 (Expert)"
+     ],
+     "answer": 1,
+     "explain": "ICAO Level 4 — Operational — is the minimum to exercise the privileges of a licence on international operations.",
+     "cite": "ICAO Annex 1"
+    },
+    {
+     "q": "How many skills are assessed in the ICAO language proficiency rating scale?",
+     "options": [
+      "Three",
+      "Four",
+      "Six",
+      "Nine"
+     ],
+     "answer": 2,
+     "explain": "Six skills: pronunciation, structure, vocabulary, fluency, comprehension and interactions.",
+     "cite": "ICAO Annex 1 / Doc 9835"
+    },
+    {
+     "q": "The spoken word used to declare a distress condition is —",
+     "options": [
+      "PAN-PAN",
+      "SECURITE",
+      "MAYDAY",
+      "EMERGENCY"
+     ],
+     "answer": 2,
+     "explain": "MAYDAY, spoken three times, declares distress — grave and imminent danger requiring immediate assistance.",
+     "cite": "ICAO Annex 10"
+    },
+    {
+     "q": "An urgency condition — a concern for safety but no immediate danger — is signalled by —",
+     "options": [
+      "MAYDAY",
+      "PAN-PAN",
+      "SECURITE",
+      "STANDBY"
+     ],
+     "answer": 1,
+     "explain": "PAN-PAN, spoken three times, signals urgency: a condition concerning safety that does not require immediate assistance.",
+     "cite": "ICAO Annex 10"
+    },
+    {
+     "q": "The procedure word 'WILCO' means —",
+     "options": [
+      "Repeat your message",
+      "Will comply",
+      "Wait — I will call you",
+      "Message received"
+     ],
+     "answer": 1,
+     "explain": "'WILCO' — short for 'will comply' — means the message has been understood and will be complied with.",
+     "cite": "ICAO Annex 10"
+    },
+    {
+     "q": "On the radio, the number 9 is spoken as —",
+     "options": [
+      "Nine",
+      "Niner",
+      "Nina",
+      "Niao"
+     ],
+     "answer": 1,
+     "explain": "To avoid confusion with 'nein' and other words, 9 is spoken 'niner' in aviation radiotelephony.",
+     "cite": "ICAO Annex 10"
+    },
+    {
+     "q": "'SAY AGAIN' is a request to —",
+     "options": [
+      "Repeat all, or the specified part, of the last transmission",
+      "Confirm you received the message",
+      "Speak more slowly",
+      "Change frequency"
+     ],
+     "answer": 0,
+     "explain": "'SAY AGAIN' asks the station to repeat all, or a specified part, of its last transmission.",
+     "cite": "ICAO Annex 10"
+    },
+    {
+     "q": "A read-back is specifically required for —",
+     "options": [
+      "Every transmission received",
+      "ATC route clearances and runway/level instructions",
+      "Weather information only",
+      "Position reports only"
+     ],
+     "answer": 1,
+     "explain": "Safety-critical instructions — route clearances, runway and level instructions, headings and frequency changes — must be read back so ATC can confirm correct receipt.",
+     "cite": "ICAO Annex 10 / Doc 4444"
+    },
+    {
+     "q": "In the ICAO phonetic alphabet, the letter 'A' is —",
+     "options": [
+      "Able",
+      "Alpha",
+      "Alfa",
+      "Apple"
+     ],
+     "answer": 2,
+     "explain": "ICAO spells the letter 'A' as 'Alfa' — deliberately with an 'f' so non-English speakers pronounce it correctly.",
+     "cite": "ICAO Annex 10"
+    },
+    {
+     "q": "An ICAO language proficiency assessment at Level 4 is valid for —",
+     "options": [
+      "12 months",
+      "3 years",
+      "6 years",
+      "It never expires"
+     ],
+     "answer": 1,
+     "explain": "Level 4 is re-assessed every 3 years; Level 5 every 6 years; Level 6 (Expert) does not require re-assessment.",
+     "cite": "ICAO Annex 1"
+    },
+    {
+     "q": "The procedure word 'ROGER' means —",
+     "options": [
+      "Yes / affirmative",
+      "I have received all of your last transmission",
+      "I will comply",
+      "Correct"
+     ],
+     "answer": 1,
+     "explain": "'ROGER' means 'I have received all of your last transmission'. It is not a substitute for 'AFFIRM' (yes) or a read-back.",
+     "cite": "ICAO Annex 10"
+    },
+    {
+     "q": "What is the minimum ICAO language proficiency rating for international operations?",
+     "options": [
+      "Level 3",
+      "Level 4 (Operational)",
+      "Level 5",
+      "Level 6"
+     ],
+     "answer": 1,
+     "explain": "ICAO sets Level 4 (Operational) as the minimum language proficiency for flight crew, per ICAO Annex 1.",
+     "cite": "ICAO Annex 1 — Personnel Licensing"
+    },
+    {
+     "q": "In the ICAO phonetic alphabet, the letter \"R\" is spoken as:",
+     "options": [
+      "Romeo",
+      "Roger",
+      "Rascal",
+      "Radio"
+     ],
+     "answer": 0,
+     "explain": "\"R\" is \"Romeo\" in the ICAO spelling alphabet (ICAO Annex 10).",
+     "cite": "ICAO Annex 10 — Aeronautical Telecommunications"
+    },
+    {
+     "q": "Which transponder code indicates a radio-communication failure?",
+     "options": [
+      "7500",
+      "7600",
+      "7700",
+      "7000"
+     ],
+     "answer": 1,
+     "explain": "Squawk 7600 indicates a radio (communication) failure.",
+     "cite": "ICAO Annex 10 — Aeronautical Telecommunications"
+    },
+    {
+     "q": "Which transponder code indicates an emergency?",
+     "options": [
+      "7500",
+      "7600",
+      "7700",
+      "2000"
+     ],
+     "answer": 2,
+     "explain": "Squawk 7700 indicates a general emergency.",
+     "cite": "ICAO Annex 10 — Aeronautical Telecommunications"
+    },
+    {
+     "q": "On the radio, the word \"ROGER\" means:",
+     "options": [
+      "I will comply",
+      "I have received all of your last transmission",
+      "Affirmative / yes",
+      "Say again"
+     ],
+     "answer": 1,
+     "explain": "\"ROGER\" means the transmission was received in full — it does not mean yes or that you will comply.",
+     "cite": "ICAO Annex 10 — Aeronautical Telecommunications"
+    },
+    {
+     "q": "On the radio, the word \"WILCO\" means:",
+     "options": [
+      "Wait",
+      "I do not understand",
+      "I understand your message and will comply",
+      "Stand by"
+     ],
+     "answer": 2,
+     "explain": "\"WILCO\" means \"will comply\" — message understood and will be acted on.",
+     "cite": "ICAO Annex 10 — Aeronautical Telecommunications"
+    },
+    {
+     "q": "In radiotelephony, the word \"AFFIRM\" means —",
+     "options": [
+      "Yes / that is correct",
+      "No",
+      "Please confirm",
+      "Standby"
+     ],
+     "answer": 0,
+     "explain": "AFFIRM is the standard ICAO procedure word for \"yes\" or \"permission granted / that is correct.\"",
+     "cite": "ICAO Annex 10"
+    },
+    {
+     "q": "In radiotelephony, the word \"NEGATIVE\" means —",
+     "options": [
+      "No / permission not granted / that is not correct",
+      "Wait",
+      "Say again",
+      "Received"
+     ],
+     "answer": 0,
+     "explain": "NEGATIVE means \"no\", \"permission not granted\", or \"that is not correct.\"",
+     "cite": "ICAO Annex 10"
+    },
+    {
+     "q": "The procedure word \"STANDBY\" means —",
+     "options": [
+      "Wait and I will call you",
+      "I have finished my message",
+      "Repeat your message",
+      "I acknowledge"
+     ],
+     "answer": 0,
+     "explain": "STANDBY tells the receiving station to wait; the calling station will call again.",
+     "cite": "ICAO Annex 10"
+    },
+    {
+     "q": "To avoid confusion with similar-sounding words, the number \"3\" is pronounced in radiotelephony as —",
+     "options": [
+      "TREE",
+      "THREE",
+      "THUREE",
+      "TRI"
+     ],
+     "answer": 0,
+     "explain": "ICAO radiotelephony spelling pronounces \"3\" as \"TREE\" to reduce ambiguity for non-native speakers.",
+     "cite": "ICAO Annex 10"
+    },
+    {
+     "q": "The number \"5\" is pronounced in radiotelephony as —",
+     "options": [
+      "FIFE",
+      "FIVE",
+      "FYVE",
+      "CINCO"
+     ],
+     "answer": 0,
+     "explain": "ICAO radiotelephony pronounces \"5\" as \"FIFE.\"",
+     "cite": "ICAO Annex 10"
+    },
+    {
+     "q": "The ICAO document that expands on the Annex 1 language proficiency requirements, including the rating scale descriptors, is —",
+     "options": [
+      "Doc 9835",
+      "Doc 4444",
+      "Doc 8168",
+      "Doc 7030"
+     ],
+     "answer": 0,
+     "explain": "ICAO Doc 9835, the Manual on the Implementation of ICAO Language Proficiency Requirements, expands on Annex 1's rating scale.",
+     "cite": "ICAO Annex 1 / Doc 9835"
+    }
+   ]
+  }
+ ]
+}

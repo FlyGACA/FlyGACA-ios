@@ -1,0 +1,58 @@
+{
+ "generated": "2026-05-24",
+ "note": "Curated reading paths — guided routes through the Fly GACA library.",
+ "paths": [
+  {
+   "id": "private-pilot",
+   "title": "Becoming a Private Pilot",
+   "desc": "From the regulations to the airmanship — the route to the PPL written exam.",
+   "steps": [
+    {
+     "label": "Pilot certification — GACAR Part 61",
+     "note": "Who may hold a licence, the ratings, and the requirements.",
+     "kind": "regulations",
+     "id": "part-61"
+    },
+    {
+     "label": "The medical certificate — GACAR Part 67",
+     "note": "Medical standards and how to qualify.",
+     "kind": "regulations",
+     "id": "part-67"
+    },
+    {
+     "label": "General operating & flight rules — GACAR Part 91",
+     "note": "The rules every flight is flown by.",
+     "kind": "regulations",
+     "id": "part-91"
+    },
+    {
+     "label": "Airmanship — FAA Pilot's Handbook of Aeronautical Knowledge",
+     "note": "The core knowledge a pilot is built on.",
+     "kind": "reference",
+     "id": "pilots-handbook-of-aeronautical-knowledge-faa-h-8083-25c"
+    },
+    {
+     "label": "Flying technique — FAA Airplane Flying Handbook",
+     "note": "How the aircraft is actually flown.",
+     "kind": "reference",
+     "id": "airplane-flying-handbook-faa-h-8083-3c"
+    },
+    {
+     "label": "Guide — Saudi PPL requirements",
+     "note": "The plain-language walkthrough of the path.",
+     "route": "/guides/saudi-ppl-requirements"
+    },
+    {
+     "label": "Work the Ground School",
+     "note": "Nine subjects, taught lesson by lesson.",
+     "route": "/study/groundschool"
+    },
+    {
+     "label": "Test yourself — Pilot Licensing quiz",
+     "note": "Check what's stuck.",
+     "route": "/study/quiz?bank=pilot-licensing"
+    }
+   ]
+  }
+ ]
+}

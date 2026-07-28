@@ -1,0 +1,26 @@
+{
+ "contentVersion": "2026-07-24",
+ "module": {
+  "id": "cpl",
+  "kind": "certificate",
+  "status": "live",
+  "access": "paid",
+  "bankIds": [
+   "cpl-licensing",
+   "commercial-ops",
+   "commercial-performance",
+   "air-law",
+   "pilot-licensing",
+   "medical",
+   "aircraft-equipment",
+   "weather",
+   "aerodynamics",
+   "human-factors",
+   "navigation",
+   "flight-planning"
+  ],
+  "sheetSlugs": [
+   "saudi-cpl-study-sheet"
+  ]
+ }
+}

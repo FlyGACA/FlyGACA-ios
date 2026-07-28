@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Shared by every app target (set INFOPLIST_FILE to this path; keep
+     GENERATE_INFOPLIST_FILE = YES so Xcode merges the rest). The only custom
+     key is the module pin, injected per-target from the xcconfig. -->
+<plist version="1.0">
+<dict>
+	<key>FGModuleID</key>
+	<string>$(FG_MODULE_ID)</string>
+</dict>
+</plist>

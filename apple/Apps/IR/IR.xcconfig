@@ -1,0 +1,6 @@
+#include "../Shared/App-Shared.xcconfig"
+
+// Fly GACA IR — Instrument Rating written prep (pack ir).
+FG_MODULE_ID = ir
+PRODUCT_BUNDLE_IDENTIFIER = com.flygaca.ir
+INFOPLIST_KEY_CFBundleDisplayName = Fly GACA IR

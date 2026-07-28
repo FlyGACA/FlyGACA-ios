@@ -1,0 +1,24 @@
+{
+ "contentVersion": "2026-07-24",
+ "module": {
+  "id": "ir",
+  "kind": "certificate",
+  "status": "live",
+  "access": "paid",
+  "bankIds": [
+   "ir-rating",
+   "ifr-rules",
+   "instrument-procedures",
+   "airspace",
+   "aip-ais",
+   "aircraft-equipment",
+   "navigation",
+   "weather",
+   "flight-planning",
+   "radio-elpt"
+  ],
+  "sheetSlugs": [
+   "saudi-ir-study-sheet"
+  ]
+ }
+}

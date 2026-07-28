@@ -1,0 +1,28 @@
+{
+ "contentVersion": "2026-07-24",
+ "module": {
+  "id": "aip",
+  "kind": "subject",
+  "status": "live",
+  "access": "paid",
+  "bankIds": [
+   "aip-ais",
+   "airspace"
+  ],
+  "sheetSlugs": [
+   "saudi-aip-study-sheet-en",
+   "saudi-aip-study-sheet-ar",
+   "aeronautical-information-manual-aim"
+  ],
+  "librarySlugs": [
+   "saudi-aip-gen-2-1",
+   "saudi-aip-gen-2-2",
+   "saudi-aip-gen-3-3",
+   "saudi-aip-gen-3-4",
+   "saudi-aip-enr-1-1",
+   "saudi-aip-enr-1-2",
+   "saudi-aip-enr-1-4",
+   "saudi-aip-enr-1-6"
+  ]
+ }
+}

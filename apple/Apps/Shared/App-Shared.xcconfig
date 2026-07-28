@@ -1,0 +1,26 @@
+// Base build settings for every Fly GACA app target. Per-app xcconfigs
+// #include this and add only their identity (module id, bundle id, name).
+IPHONEOS_DEPLOYMENT_TARGET = 17.0
+TARGETED_DEVICE_FAMILY = 1,2
+// Swift language mode (valid values: 4.0, 4.2, 5.0, 6.0) — not the toolchain version.
+SWIFT_VERSION = 5.0
+
+// Version + build number. GENERATE_INFOPLIST_FILE derives CFBundleShortVersionString /
+// CFBundleVersion from these; CI overrides CURRENT_PROJECT_VERSION per run.
+MARKETING_VERSION = 1.0.0
+CURRENT_PROJECT_VERSION = 1
+
+CODE_SIGN_ENTITLEMENTS = Apps/Shared/App.entitlements
+ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon
+
+GENERATE_INFOPLIST_FILE = YES
+INFOPLIST_FILE = Apps/Shared/Info.plist
+INFOPLIST_KEY_UILaunchScreen_Generation = YES
+// Only HTTPS-exempt crypto — answers the export-compliance question once, forever.
+INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO
+INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait
+INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
+
+// One store + keychain for the whole family — cross-app streaks/SRS/sign-in.
+// Declare the same group in each target's App Groups + Keychain capabilities.
+FG_APP_GROUP = group.com.flygaca.study

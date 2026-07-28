@@ -1,0 +1,6 @@
+#include "../Shared/App-Shared.xcconfig"
+
+// Fly GACA AIP — Aeronautical Information Publication study (pack aip).
+FG_MODULE_ID = aip
+PRODUCT_BUNDLE_IDENTIFIER = com.flygaca.aip
+INFOPLIST_KEY_CFBundleDisplayName = Fly GACA AIP

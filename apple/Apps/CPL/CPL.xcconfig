@@ -1,0 +1,6 @@
+#include "../Shared/App-Shared.xcconfig"
+
+// Fly GACA CPL — Commercial Pilot Licence written prep (pack cpl).
+FG_MODULE_ID = cpl
+PRODUCT_BUNDLE_IDENTIFIER = com.flygaca.cpl
+INFOPLIST_KEY_CFBundleDisplayName = Fly GACA CPL

@@ -1,0 +1,70 @@
+# XcodeGen spec — the source of truth for apple/FlyGACA.xcodeproj.
+# The project is generated (never committed): `brew install xcodegen && npm run ios:generate`.
+# All build settings live in the committed xcconfigs (Apps/Shared/App-Shared.xcconfig +
+# per-app includes); CI-only settings (signing, build number) are passed on the
+# xcodebuild command line, which outranks everything written into the project.
+name: FlyGACA
+options:
+  createIntermediateGroups: true
+  groupSortPosition: top
+  # Current XcodeGen emits the Xcode 16 project format (objectVersion 77), which
+  # Xcode 15 refuses with "future Xcode project file format" — open the generated
+  # project with Xcode 16+ (CI uses macos-15 runners for this reason).
+  xcodeVersion: "16.0"
+
+packages:
+  FlyGACAKit:
+    path: FlyGACAKit
+
+targetTemplates:
+  FlyGACAApp:
+    type: application
+    platform: iOS
+    configFiles:
+      Debug: Apps/${target_name}/${target_name}.xcconfig
+      Release: Apps/${target_name}/${target_name}.xcconfig
+    sources:
+      - path: Apps/Shared/FlyGACAApp.swift
+      - path: Apps/${target_name}/Assets.xcassets
+      # Blue folder reference: ContentLoader.bundledContentDirectory expects a real
+      # Content/ directory in the bundle root (bundle.url(forResource: "Content")).
+      - path: Apps/${target_name}/Content
+        type: folder
+        buildPhase: resources
+      # Firebase config, one per bundle id — download per app from the Firebase
+      # console and drop it here (docs/RUNBOOK-ios-firebase.md). `optional` keeps
+      # generation working before the plists land: the apps run fully offline
+      # until then, so a missing file must not break `npm run ios:generate`.
+      # Only the target's own INFOPLIST_FILE is barred from build phases, so this
+      # one is copied into the bundle root where FirebaseApp.configure() finds it.
+      - path: Apps/${target_name}/GoogleService-Info.plist
+        optional: true
+        buildPhase: resources
+    dependencies:
+      - package: FlyGACAKit
+        product: FeatureUI
+      # The app shell (FlyGACAApp.swift) opens the SwiftData store and constructs
+      # StudyStore directly, so it imports PersistenceKit explicitly rather than
+      # relying on it being a transitive dependency of FeatureUI.
+      - package: FlyGACAKit
+        product: PersistenceKit
+    scheme:
+      testTargets: []
+      gatherCoverageData: false
+
+targets:
+  # Wave 1 — live on the App Store roadmap first (content shipped longest).
+  PPL:
+    templates: [FlyGACAApp]
+  ELPT:
+    templates: [FlyGACAApp]
+  AIP:
+    templates: [FlyGACAApp]
+  # Wave 2 — GACAR-cited draft banks live in prepCatalog.ts; debug-buildable now,
+  # TestFlight signing still pending Apple App IDs/profiles (RUNBOOK-ios-signing.md).
+  CPL:
+    templates: [FlyGACAApp]
+  IR:
+    templates: [FlyGACAApp]
+  ATPL:
+    templates: [FlyGACAApp]
