@@ -1,11 +1,26 @@
 # Fly GACA — iOS App Family
 
+<p>
+  <a href="https://github.com/ay2m/FlyGACA/actions/workflows/ios.yml"><img src="https://img.shields.io/github/actions/workflow/status/ay2m/FlyGACA/ios.yml?style=for-the-badge&label=CI&labelColor=0a0e12&color=2d6e8a" alt="CI Status" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-8fc9a8?style=for-the-badge&labelColor=0a0e12" alt="License" /></a>
+</p>
+
 The native SwiftUI home of the Fly GACA study apps: **one shared Swift package
 (`FlyGACAKit`), one App Store app per study module** — PPL, ELPT, AIP, CPL, IR
 and ATPL — sold together via an App Store app bundle. Every app carries the same
 offline feature set (study mode, quizzing, flashcards with spaced repetition,
 mock tests and timed scored exam prep with analytics); a module is **data, not
 code**.
+
+<p align="center">
+  <img src="apple/Apps/PPL/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png" alt="PPL" width="64" />
+  <img src="apple/Apps/ELPT/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png" alt="ELPT" width="64" />
+  <img src="apple/Apps/AIP/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png" alt="AIP" width="64" />
+  <img src="apple/Apps/CPL/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png" alt="CPL" width="64" />
+  <img src="apple/Apps/IR/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png" alt="IR" width="64" />
+  <img src="apple/Apps/ATPL/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png" alt="ATPL" width="64" />
+  <br /><sub>PPL · ELPT · AIP · CPL · IR · ATPL</sub>
+</p>
 
 This repo is the dedicated iOS workspace. The blueprint is
 [`apple/ARCHITECTURE.md`](apple/ARCHITECTURE.md); the 10-minute Mac setup is
