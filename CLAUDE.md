@@ -30,6 +30,17 @@ changes; both are denser and more authoritative than this file for anything Swif
 says it is being retired in favor of this repo. Until then, content flows **monorepo → here**
 one-way (`scripts/sync-content.sh`), never the reverse.
 
+### The repo docs
+
+Repo-native docs live at the root and in `docs/` — the two places `sync-content.sh` never
+touches: `CAUSE.md` (mission + the seven principles), `ROADMAP.md` (open work in this repo —
+single source of truth), `MIGRATION.md` (the extraction history), `SEO-PLAN.md` (App Store
+search / ASO for the six apps), `THE-BOOK-OF-FLY-GACA.md` (the whole-family reference — all
+ten repos; descriptive, dated, each repo's own docs govern), `CONTRIBUTING.md`,
+`docs/RUNBOOK-ios-release.md` (the end-to-end release path from this repo's POV, incl. the
+reconciliation map over the monorepo-authored runbooks), and `docs/README.md` (the index of
+which doc is repo-native vs monorepo-authored vs sync-overwritten).
+
 ## Architecture (see `apple/ARCHITECTURE.md` for full detail)
 
 **Stack:** Swift 5.9+ tools (the xcconfig's `SWIFT_VERSION = 5.0` is the *language mode*, not the
@@ -245,7 +256,9 @@ These are one-time human/console setup, not something to script from first princ
   runbooks carry a "Note (this repo)" banner; `RUNBOOK-ios-signing-CHECKLIST.md` and
   `apple/README.md` don't — treat them as monorepo-authored anyway) and describe tools this
   repo doesn't ship (`build-ios-content.mjs`, `npm run ios:icons`). When they conflict with
-  what's actually runnable here, trust `scripts/sync-content.sh` and this file. The fourth
+  what's actually runnable here, trust `scripts/sync-content.sh`, this file, and the
+  repo-native `docs/RUNBOOK-ios-release.md` (its reconciliation map lists every known
+  conflict; `docs/README.md` indexes which doc is which). The fourth
   runbook, `docs/RUNBOOK-ios-xcodebuild.md`, is the build/CI/troubleshooting reference (incl.
   "Adding a New iOS App") — but its Phase Roadmap numbers phases differently from
   `ARCHITECTURE.md` §5: its "Phase 4 ✅" is the signing/TestFlight slice, **not** PlatformLive.
