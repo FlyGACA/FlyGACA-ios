@@ -1,5 +1,7 @@
 # Fly GACA — iOS App Family
 
+*find it · study it · always verify against GACA*
+
 <p>
   <a href="https://github.com/ay2m/FlyGACA/actions/workflows/ios.yml"><img src="https://img.shields.io/github/actions/workflow/status/ay2m/FlyGACA/ios.yml?style=for-the-badge&label=CI&labelColor=0a0e12&color=2d6e8a" alt="CI Status" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-8fc9a8?style=for-the-badge&labelColor=0a0e12" alt="License" /></a>
@@ -27,6 +29,20 @@ This repo is the dedicated iOS workspace. The blueprint is
 [`apple/README.md`](apple/README.md) (written from the monorepo's point of view —
 see [Content](#content-committed-snapshots) below for how content works *here*).
 
+## The docs
+
+| Doc | What it is |
+| --- | --- |
+| [`CAUSE.md`](CAUSE.md) | Why Fly GACA exists — the mission and the seven principles |
+| [`ROADMAP.md`](ROADMAP.md) | Open work in this repo — the single source of truth for what's next |
+| [`MIGRATION.md`](MIGRATION.md) | How the iOS family moved out of the web monorepo (history only) |
+| [`SEO-PLAN.md`](SEO-PLAN.md) | App Store search (ASO) strategy for the six apps |
+| [`THE-BOOK-OF-FLY-GACA.md`](THE-BOOK-OF-FLY-GACA.md) | The whole-family reference — all ten repos, one book |
+| [`CONTRIBUTING.md`](CONTRIBUTING.md) | Setup, testing, the sync boundary, PR expectations |
+| [`docs/`](docs/README.md) | Runbooks — the repo-native release path + the monorepo-authored set, and which is which |
+| [`apple/ARCHITECTURE.md`](apple/ARCHITECTURE.md) | The engineering blueprint (monorepo-synced — edit it there, not here) |
+| [`CLAUDE.md`](CLAUDE.md) | Conventions & gotchas for AI-assisted work |
+
 ## Quickstart (Mac, Xcode 16+)
 
 ```bash
@@ -41,6 +57,26 @@ npm run ios:build:ppl       # headless debug build (also: elpt aip cpl ir atpl /
 The Xcode project is **generated, never committed** — `apple/project.yml` is the
 source of truth. The package has zero external dependencies, so `swift build` /
 `swift test` need no simulator and no SDK downloads.
+
+> [!IMPORTANT]
+> When you need a real verdict, run `cd apple/FlyGACAKit && swift test` directly —
+> the `npm run ios:test` alias prints "Swift not available; skipping iOS tests"
+> and **exits 0 even when tests fail**.
+
+## The six apps
+
+| App | Bundle id | Module id | Banks · questions (bundled, 2026-08) | Wave |
+| --- | --- | --- | --- | --- |
+| PPL | `com.flygaca.ppl` | `ppl-exam` | 13 · 295 | 1 |
+| ELPT | `com.flygaca.elpt` | `elp` | 1 · 24 | 1 |
+| AIP | `com.flygaca.aip` | `aip` | 2 · 51 | 1 |
+| CPL | `com.flygaca.cpl` | `cpl` | 12 · 259 | 2 |
+| IR | `com.flygaca.ir` | `ir` | 10 · 228 | 2 |
+| ATPL | `com.flygaca.atpl` | `atpl` | 9 · 197 | 2 |
+
+Wave 1 (PPL · ELPT · AIP) is the TestFlight-first cohort; Wave 2 banks are
+GACAR-cited drafts pending review. ELPT and AIP currently bundle fewer banks than
+their web packs — closed by the next content sync ([`ROADMAP.md`](ROADMAP.md)).
 
 ## Layout
 
@@ -61,7 +97,8 @@ apple/
 scripts/
   native/              ios-generate.sh · xcodebuild-wrapper.sh (build/archive/TestFlight)
   sync-content.sh      refresh content + icons from a FlyGACA-app clone (see below)
-docs/                  RUNBOOK-ios-xcodebuild · RUNBOOK-ios-signing · RUNBOOK-ios-firebase
+docs/                  RUNBOOK-ios-release (repo-native) + the monorepo-authored
+                       RUNBOOK-ios-* set — docs/README.md indexes which is which
 ```
 
 ## Content: committed snapshots
@@ -88,12 +125,16 @@ monorepo copy can be retired.
 ## CI
 
 `.github/workflows/ios.yml` (ported from the monorepo's iOS workflow) runs on
-every push/PR: `swift test` for FlyGACAKit — including the cross-platform parity
-vectors for spaced repetition and exam scoring; keep them green — an
-`xcodegen generate` validation of `apple/project.yml`, and unsigned debug builds
-of all six apps on macOS runners. Pushes to `main` additionally produce unsigned
-release archives; the TestFlight upload job stays skipped until the signing
-secrets exist (`docs/RUNBOOK-ios-signing.md`).
+pushes to `main`, PRs targeting `main`, and manual dispatch — a push to a feature
+branch runs nothing. The jobs: `swift test` for FlyGACAKit — including the
+cross-platform parity vectors for spaced repetition and exam scoring; keep them
+green — an `xcodegen generate` validation of `apple/project.yml`, and unsigned
+debug builds of all six apps on macOS runners. Pushes to `main` additionally
+produce unsigned release archives; the TestFlight upload job stays skipped until
+the signing secrets exist (`docs/RUNBOOK-ios-signing.md`). A green
+`build-summary` covers tests and debug builds only — release/TestFlight failures
+don't turn it red. The end-to-end path:
+[`docs/RUNBOOK-ios-release.md`](docs/RUNBOOK-ios-release.md).
 
 ## The Fly GACA repos
 
@@ -108,6 +149,13 @@ secrets exist (`docs/RUNBOOK-ios-signing.md`).
 The app lineup and wave plan live in the monorepo's
 `docs/APPS-FAMILY-ROADMAP.md`; per-app store listings live in each app's repo.
 
+## Contribute
+
+[`CONTRIBUTING.md`](CONTRIBUTING.md) has the short version — setup, the direct
+`swift test` rule, and where each kind of change belongs (monorepo vs metadata
+repos vs here). The whole-family picture is
+[`THE-BOOK-OF-FLY-GACA.md`](THE-BOOK-OF-FLY-GACA.md).
+
 ## Disclaimer
 
 **Fly GACA is an independent educational platform.** It is not affiliated with, endorsed by, or operated by the General Authority of Civil Aviation (GACA) or the Government of the Kingdom of Saudi Arabia. The official and authoritative source for all civil aviation regulations, publications, and aeronautical information is always GACA. Always verify against the latest official GACA publication at gaca.gov.sa.
@@ -121,3 +169,5 @@ The app lineup and wave plan live in the monorepo's
 ## License
 
 [MIT](LICENSE) © BDA Company International (شركة بدع الدولية), operating as Fly GACA.
+
+<p align="center"><sub>صُنع في السعودية 🇸🇦 · Made in Saudi Arabia</sub></p>
