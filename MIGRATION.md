@@ -85,5 +85,7 @@ monorepo checkout present. What remains is **relationship**, not migration, and 
 - The content bundler (`scripts/build-ios-content.mjs`) and `npm run ios:icons` deliberately do
   **not** exist here. That is the design, not a leftover: the corpus and the pack catalog are the
   monorepo's to own, and this repo commits snapshots.
-- The committed snapshots lag the web packs — ELPT bundles 1 of the web's 4 banks, AIP 2 of 3
-  (per the monorepo catalog as of 2026-08). A reviewed `sync-content.sh` run closes the gap.
+- The committed snapshots lagged the web packs for a stretch (ELPT bundled 1 of the web's 4
+  banks, AIP 2 of 3, as of early 2026-08); a reviewed `sync-content.sh` run closed the gap on
+  2026-08-05. Snapshots are point-in-time by design — expect them to trail the corpus between
+  syncs.
