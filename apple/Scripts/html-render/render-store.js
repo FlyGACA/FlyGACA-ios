@@ -3,16 +3,22 @@
 // (captions.js) and emits the store sequence. The raw renderer (render.js) is
 // unchanged; this is the set that ships to the per-app metadata repos.
 //
-//   node apple/Scripts/html-render/render-store.js
+//   node apple/Scripts/html-render/render-store.js                 # en captions
+//   CAPTION_LANG=ar node apple/Scripts/html-render/render-store.js # ar/RTL captions
 //   CHROME_PATH=/path/to/chrome  SCREENSHOT_OUT=/tmp/out  node …/render-store.js
+//
+// CAPTION_LANG only changes the caption band; the embedded app screens are the
+// same English UI in every locale (the shipping app is English-only).
 const { chromium } = require('playwright-core');
 const fs = require('fs');
 const path = require('path');
 const { buildScreens } = require('./screens');
-const { compose, captionsFor } = require('./captions');
+const { compose, captionsFor, rtlFor } = require('./captions');
 
 const OUT = process.env.SCREENSHOT_OUT || path.resolve(__dirname, '../../../screenshots/store');
 const CHROME = process.env.CHROME_PATH || undefined;
+const LANG = process.env.CAPTION_LANG || 'en';
+const RTL = rtlFor(LANG);
 
 const APPS = [
   { dir: 'PPL', name: 'Fly GACA PPL' },
@@ -32,7 +38,7 @@ const SLOTS = {
   const browser = await chromium.launch(CHROME ? { executablePath: CHROME } : {});
   for (const app of APPS) {
     const raw = buildScreens(app);
-    const plan = captionsFor(app.dir).filter((s) => !s.optional || raw[s.screen]);
+    const plan = captionsFor(app.dir, LANG).filter((s) => !s.optional || raw[s.screen]);
     for (const [slot, spec] of Object.entries(SLOTS)) {
       const dir = path.join(OUT, app.dir, slot);
       fs.mkdirSync(dir, { recursive: true });
@@ -42,7 +48,7 @@ const SLOTS = {
       });
       const pg = await ctx.newPage();
       for (const s of plan) {
-        const html = compose(raw[s.screen](), s.head, s.sub, spec.width, spec.height);
+        const html = compose(raw[s.screen](), s.head, s.sub, spec.width, spec.height, { rtl: RTL });
         await pg.setContent(html, { waitUntil: 'load' });
         const file = path.join(dir, `${s.name}.png`);
         await pg.screenshot({ path: file });

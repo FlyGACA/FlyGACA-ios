@@ -117,10 +117,16 @@ minimize sibling collision:
   `captions.js` — a captioned store renderer that wraps the faithful base screens with
   value-prop caption bands (Falcon palette) and emits the reordered set (hero → timed exam →
   results → study loop). Rendered all six apps × three device slots and pushed the new sets +
-  refreshed README galleries to the metadata repos (fresh PRs). EN captions only; the ar-SA
-  caption pass is the open follow-up (base screens are identical — only `head`/`sub` localize),
-  and the change lives in this repo's `apple/Scripts/` (sync-owned) so the monorepo copy needs
-  the same to stay in sync. Original audit, retained as the spec:
+  refreshed README galleries to the metadata repos. *ar-SA pass shipped 2026-08-05:* the
+  renderer now localizes captions (`CAPTION_LANG=ar`, RTL) and the metadata repos moved to a
+  per-locale layout — `appstore/screenshots/{en-US,ar-SA}/<device>/`. **Load-bearing honesty
+  note:** the shipping iOS UI is English-only (FlyGACAKit has no Arabic localization —
+  `defaultLocalization: "en"`, hardcoded English `Text(...)`, English content), so the ar-SA
+  set is Arabic/RTL **captions over the real English screens**, never a fabricated Arabic UI.
+  Still open: re-syncing the monorepo's `apple/Scripts/` copy (this change is in the sync-owned
+  tree); a *fully* localized Arabic set (Arabic phone UI) would first require localizing
+  FlyGACAKit — an app-engineering project, not a screenshot task. Original audit, retained as
+  the spec:
   by the Mac-free `apple/Scripts/html-render/` pipeline from real bundled content — portrait
   via `npm run ios:screenshots`). *Gap:* audit each set so the first three shots carry the
   value proposition unaided — offline everything, bilingual, real exam sim with analytics —
@@ -197,6 +203,11 @@ the **monorepo's** backlog (pointer items here — do not duplicate them into wo
 
 ## Session log
 
+- **2026-08-05** — Shipped the ar-SA screenshot pass. Verified first that the iOS app is
+  English-only (no FlyGACAKit localization), so rendered Arabic/RTL **captions over the real
+  English screens** (not a fabricated Arabic UI); taught the renderer `CAPTION_LANG=ar` + RTL,
+  and moved the metadata repos to a per-locale layout `screenshots/{en-US,ar-SA}/<device>/`.
+  Open: monorepo `apple/Scripts` re-sync; true Arabic UI would need FlyGACAKit localized first.
 - **2026-08-05** — Built + shipped the captioned screenshots (2.1 → done). Added the
   `render-store.js` + `captions.js` store renderer (caption bands + value-prop-first order),
   rendered all six apps × three device slots, and opened fresh PRs replacing each metadata
