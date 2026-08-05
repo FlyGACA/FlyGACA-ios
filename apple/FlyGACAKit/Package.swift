@@ -33,7 +33,12 @@ let package = Package(
         .target(name: "AppServices", dependencies: ["CoreModels"]),
         .target(
             name: "FeatureUI",
-            dependencies: ["CoreModels", "StudyEngines", "ContentKit", "PersistenceKit", "AppServices"]
+            dependencies: ["CoreModels", "StudyEngines", "ContentKit", "PersistenceKit", "AppServices"],
+            // Bilingual UI chrome (en + ar). The localized .strings live in
+            // Resources/{en,ar}.lproj and resolve through `Bundle.module` — see
+            // Localization.swift. Content (questions, banks) stays English; it is
+            // generated in the monorepo, not translated here.
+            resources: [.process("Resources")]
         ),
         .testTarget(name: "CoreModelsTests", dependencies: ["CoreModels"]),
         .testTarget(name: "StudyEnginesTests", dependencies: ["StudyEngines"]),

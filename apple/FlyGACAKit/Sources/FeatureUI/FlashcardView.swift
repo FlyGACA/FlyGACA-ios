@@ -35,15 +35,15 @@ public struct FlashcardView: View {
 
             if revealed {
                 HStack(spacing: 12) {
-                    Button("Again") { grade(false) }
+                    Button(Loc.t("flashcard.again")) { grade(false) }
                         .buttonStyle(.bordered)
                         .tint(FGTheme.clay)
-                    Button("Got it") { grade(true) }
+                    Button(Loc.t("flashcard.gotIt")) { grade(true) }
                         .buttonStyle(.borderedProminent)
                         .tint(FGTheme.teal)
                 }
             } else {
-                Text("Tap the card to reveal")
+                Text(Loc.t("flashcard.tapToReveal"))
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }

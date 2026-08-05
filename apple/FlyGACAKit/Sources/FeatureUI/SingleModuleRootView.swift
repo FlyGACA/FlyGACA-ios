@@ -32,11 +32,11 @@ public struct SingleModuleRootView: View {
             case .loading:
                 ProgressView()
             case .failed(let message):
-                ContentUnavailableView(
-                    "Content unavailable",
-                    systemImage: "exclamationmark.triangle",
-                    description: Text(message)
-                )
+                ContentUnavailableView {
+                    Label(Loc.t("content.unavailable.title"), systemImage: "exclamationmark.triangle")
+                } description: {
+                    Text(message)
+                }
             case .loaded(let content):
                 ModuleHomeView(content: content, store: store)
                     .navigationTitle(Self.displayName(for: content.manifest.id))

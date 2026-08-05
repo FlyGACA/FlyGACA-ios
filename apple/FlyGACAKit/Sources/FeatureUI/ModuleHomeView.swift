@@ -23,15 +23,17 @@ struct ModuleHomeView: View {
     var body: some View {
         List {
             if let groundSchool = content.groundSchool {
-                Section("Study") {
+                Section {
                     ForEach(groundSchool.modules) { module in
                         NavigationLink(module.title) {
                             LessonListScreen(module: module, store: store, moduleID: moduleID)
                         }
                     }
+                } header: {
+                    Text(Loc.t("home.section.study"))
                 }
             }
-            Section("Quiz by topic") {
+            Section {
                 ForEach(content.quiz.banks) { bank in
                     NavigationLink {
                         QuizScreen(
@@ -45,24 +47,28 @@ struct ModuleHomeView: View {
                     } label: {
                         VStack(alignment: .leading, spacing: 2) {
                             Text(bank.title)
-                            Text("\(bank.questions.count) questions")
+                            Text(Loc.t("home.questionCount", bank.questions.count))
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                         }
                     }
                 }
+            } header: {
+                Text(Loc.t("home.section.quizByTopic"))
             }
-            Section("Flashcards") {
+            Section {
                 ForEach(content.quiz.banks) { bank in
                     NavigationLink(bank.title) {
                         FlashcardsScreen(bank: bank, store: store)
                     }
                 }
+            } header: {
+                Text(Loc.t("home.section.flashcards"))
             }
-            Section("Exam") {
-                NavigationLink("Mock exam (untimed)") {
+            Section {
+                NavigationLink {
                     QuizScreen(
-                        title: "Mock exam",
+                        title: Loc.t("home.mockExam.title"),
                         session: StudySession(
                             questions: QuestionSampler.draw(
                                 from: content.quiz.banks, count: content.exam.questionCount),
@@ -72,10 +78,16 @@ struct ModuleHomeView: View {
                         store: store,
                         bankID: nil
                     )
+                } label: {
+                    Text(Loc.t("home.mockExam.untimed"))
                 }
-                NavigationLink("Timed exam — \(content.exam.minutes) min, pass \(content.exam.passMark)%") {
+                NavigationLink {
                     ExamScreen(content: content, bankTitles: bankTitles, moduleID: moduleID, store: store)
+                } label: {
+                    Text(Loc.t("home.exam.timed", content.exam.minutes, content.exam.passMark))
                 }
+            } header: {
+                Text(Loc.t("home.section.exam"))
             }
             Section {
                 Disclaimer()
@@ -117,7 +129,7 @@ struct LessonListScreen: View {
                             .foregroundStyle(doneIDs.contains(lesson.id) ? FGTheme.sage : Color.secondary)
                     }
                     .buttonStyle(.plain)
-                    .accessibilityLabel(doneIDs.contains(lesson.id) ? "Completed" : "Mark complete")
+                    .accessibilityLabel(Loc.t(doneIDs.contains(lesson.id) ? "a11y.completed" : "a11y.markComplete"))
                 }
                 .padding(.vertical, 2)
             }
@@ -203,7 +215,7 @@ struct ExamScreen: View {
 
     var body: some View {
         QuizView(session: session, bankTitles: bankTitles, onFinished: persist, onFlag: flag)
-            .navigationTitle(content.exam.title ?? "Timed exam")
+            .navigationTitle(content.exam.title ?? Loc.t("exam.timed.fallbackTitle"))
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     ExamTimerView(session: session)
@@ -243,7 +255,7 @@ struct FlashcardsScreen: View {
     var body: some View {
         VStack {
             if let question = card {
-                Text("\(index + 1) of \(deck.count)")
+                Text(Loc.t("flashcards.cardProgress", index + 1, deck.count))
                     .font(.caption)
                     .foregroundStyle(.secondary)
                 FlashcardView(
@@ -253,11 +265,11 @@ struct FlashcardsScreen: View {
                     grade(question: question, correct: correct)
                 }
             } else {
-                ContentUnavailableView(
-                    "Deck complete",
-                    systemImage: "checkmark.seal",
-                    description: Text("\(Leitner.masteredCount(in: srs)) cards on track")
-                )
+                ContentUnavailableView {
+                    Label(Loc.t("flashcards.deckComplete"), systemImage: "checkmark.seal")
+                } description: {
+                    Text(Loc.t("flashcards.cardsOnTrack", Leitner.masteredCount(in: srs)))
+                }
             }
         }
         .navigationTitle(bank.title)

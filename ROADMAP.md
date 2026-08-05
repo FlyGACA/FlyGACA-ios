@@ -65,6 +65,12 @@ items are tracked there).
   in the six metadata repos and ship from there (fastlane `deliver` layout); tracked here only
   as the family gate — an app without its listing can't leave TestFlight. Strategy:
   [`SEO-PLAN.md`](./SEO-PLAN.md).
+- **[platform] ~~Localize the app (EN + AR).~~ Done 2026-08-05.** FeatureUI's UI chrome now
+  ships bilingual — a `Loc` bundle resolver over `Resources/{en,ar}.lproj` (34 keys) — and every
+  app advertises `CFBundleLocalizations = [en, ar]`, so iOS serves Arabic (and SwiftUI mirrors
+  RTL) on an Arabic device: first-class for the `ar-SA` storefront. Content stays English
+  (monorepo-generated). Details + the monorepo mirror are in [`SEO-PLAN.md`](./SEO-PLAN.md)'s
+  session log. Remaining follow-up: re-render the Arabic screenshots over the real Arabic UI.
 - **[platform] Keep the parity vectors tracking the web.** If the web's SRS / exam-scoring /
   streak contracts move (`src/calc/study/srs.ts` and friends in the monorepo), extend
   `apple/FlyGACAKit/Tests/StudyEnginesTests/` in the same change that syncs the port — the

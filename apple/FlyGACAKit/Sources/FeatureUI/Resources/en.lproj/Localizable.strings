@@ -1,0 +1,55 @@
+/* FeatureUI UI chrome — English (development language).
+   Content (question prompts, answer choices, bank titles, citations) is NOT here:
+   it is authored in English in the monorepo and shown verbatim in every locale.
+   Keep this file in sync, key-for-key, with ar.lproj/Localizable.strings. */
+
+/* Module home — section headers and rows */
+"home.section.study" = "Study";
+"home.section.quizByTopic" = "Quiz by topic";
+"home.section.flashcards" = "Flashcards";
+"home.section.exam" = "Exam";
+"home.questionCount" = "%lld questions";
+"home.mockExam.untimed" = "Mock exam (untimed)";
+"home.mockExam.title" = "Mock exam";
+"home.exam.timed" = "Timed exam — %1$lld min, pass %2$lld%%";
+
+/* Quiz / exam runner */
+"quiz.questionProgress" = "Question %1$lld of %2$lld";
+"quiz.correct" = "Correct";
+"quiz.notQuite" = "Not quite";
+"common.next" = "Next";
+"common.finish" = "Finish";
+
+/* Flashcards */
+"flashcard.again" = "Again";
+"flashcard.gotIt" = "Got it";
+"flashcard.tapToReveal" = "Tap the card to reveal";
+"flashcards.cardProgress" = "%1$lld of %2$lld";
+"flashcards.deckComplete" = "Deck complete";
+"flashcards.cardsOnTrack" = "%lld cards on track";
+
+/* End-of-session results */
+"result.score" = "Score";
+"result.correct" = "Correct";
+"result.result" = "Result";
+"result.pass" = "Pass";
+"result.fail" = "Fail";
+"result.byTopic" = "By topic";
+
+/* Timed exam */
+"exam.timed.fallbackTitle" = "Timed exam";
+
+/* Content load failure (title only; the diagnostic detail stays English) */
+"content.unavailable.title" = "Content unavailable";
+
+/* Accessibility labels */
+"a11y.completed" = "Completed";
+"a11y.markComplete" = "Mark complete";
+"a11y.flagQuestion" = "Flag question";
+"a11y.unflagQuestion" = "Unflag question";
+"a11y.timeRemaining" = "Time remaining %@";
+
+/* Disclaimer — byte-identical to the web's disclaimer.strong / disclaimer.body
+   (src/i18n/en.json in the FlyGACA-app monorepo). Never reword. */
+"disclaimer.strong" = "Fly GACA is an independent educational platform.";
+"disclaimer.body" = "It is not affiliated with, endorsed by, or operated by the General Authority of Civil Aviation (GACA) or the Government of the Kingdom of Saudi Arabia. The official and authoritative source for all civil aviation regulations, publications, and aeronautical information is always GACA. Always verify against the latest official GACA publication at gaca.gov.sa.";
