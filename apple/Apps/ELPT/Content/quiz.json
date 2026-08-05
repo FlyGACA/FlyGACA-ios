@@ -301,6 +301,1554 @@
      "answer": 0,
      "explain": "ICAO Doc 9835, the Manual on the Implementation of ICAO Language Proficiency Requirements, expands on Annex 1's rating scale.",
      "cite": "ICAO Annex 1 / Doc 9835"
+    },
+    {
+     "q": "The readability scale used to answer 'HOW DO YOU READ' runs from —",
+     "options": [
+      "1 (unreadable) to 5 (perfectly readable)",
+      "1 (best) to 9 (worst)",
+      "A to E",
+      "0 to 10"
+     ],
+     "answer": 0,
+     "explain": "Readability is reported on a 1-to-5 scale: 1 unreadable, 2 readable now and then, 3 readable but with difficulty, 4 readable, 5 perfectly readable.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "The word used to indicate 'yes' or 'that is correct' in radiotelephony is —",
+     "options": [
+      "ROGER",
+      "AFFIRM",
+      "WILCO",
+      "CORRECT"
+     ],
+     "answer": 1,
+     "explain": "'AFFIRM' means yes; 'ROGER' only means the transmission was received, not agreement.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "A distress message (MAYDAY) has priority over —",
+     "options": [
+      "Only routine messages",
+      "All other transmissions",
+      "Only urgency messages",
+      "Nothing — it has no special priority"
+     ],
+     "answer": 1,
+     "explain": "A distress (MAYDAY) message has absolute priority over all other transmissions.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "The distress and urgency signals are, respectively —",
+     "options": [
+      "SECURITE and PAN PAN",
+      "MAYDAY and PAN PAN",
+      "PAN PAN and MAYDAY",
+      "MAYDAY and SECURITE"
+     ],
+     "answer": 1,
+     "explain": "Distress is 'MAYDAY' (grave and imminent danger); urgency is 'PAN PAN' (a condition concerning safety but not requiring immediate assistance).",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "The phonetic word for the letter 'J' is —",
+     "options": [
+      "Juliett",
+      "Jupiter",
+      "Jack",
+      "Jumbo"
+     ],
+     "answer": 0,
+     "explain": "In the ICAO spelling alphabet, J = Juliett.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "The phonetic word for the letter 'Q' is —",
+     "options": [
+      "Queen",
+      "Quebec",
+      "Quick",
+      "Quiet"
+     ],
+     "answer": 1,
+     "explain": "In the ICAO spelling alphabet, Q = Quebec.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "The phonetic word for the letter 'W' is —",
+     "options": [
+      "Whiskey",
+      "Water",
+      "William",
+      "Wing"
+     ],
+     "answer": 0,
+     "explain": "In the ICAO spelling alphabet, W = Whiskey.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "The number '4' is spoken in radiotelephony as —",
+     "options": [
+      "Four",
+      "Fower",
+      "Quad",
+      "Fort"
+     ],
+     "answer": 1,
+     "explain": "To reduce ambiguity, 4 is pronounced 'FOWER' in ICAO radiotelephony.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "The number '1000' is transmitted as —",
+     "options": [
+      "One zero zero zero",
+      "One thousand",
+      "Ten hundred",
+      "Thousand"
+     ],
+     "answer": 1,
+     "explain": "Whole thousands are spoken as the digit(s) plus 'THOUSAND' — 1000 is 'one thousand'.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "A frequency of 118.1 MHz is normally read as —",
+     "options": [
+      "One one eight decimal one",
+      "One eighteen point one",
+      "One hundred eighteen one",
+      "Eleven eight one"
+     ],
+     "answer": 0,
+     "explain": "VHF frequencies are read digit-by-digit with 'DECIMAL' for the point — 'one one eight decimal one'.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "The word 'CORRECTION' in a transmission indicates —",
+     "options": [
+      "An error has been made; the correct version follows",
+      "The message is cancelled",
+      "Repeat everything",
+      "Change frequency"
+     ],
+     "answer": 0,
+     "explain": "'CORRECTION' signals an error in the transmission; the corrected portion follows.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "'ACKNOWLEDGE' is a request to —",
+     "options": [
+      "Let me know you received and understood this message",
+      "Take off immediately",
+      "Change squawk",
+      "Read back verbatim"
+     ],
+     "answer": 0,
+     "explain": "'ACKNOWLEDGE' asks the recipient to confirm the message was received and understood.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "'APPROVED' from ATC means —",
+     "options": [
+      "Permission for the proposed action is granted",
+      "Hold position",
+      "Unable",
+      "Say again"
+     ],
+     "answer": 0,
+     "explain": "'APPROVED' grants permission for the action or clearance the pilot requested.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "'HOLD SHORT' instructs the pilot to —",
+     "options": [
+      "Stop before the specified point (e.g. a runway)",
+      "Enter the runway",
+      "Expedite crossing",
+      "Backtrack"
+     ],
+     "answer": 0,
+     "explain": "'HOLD SHORT' requires stopping before the designated holding point or runway and requires a read-back.",
+     "cite": "ICAO Doc 4444 (PANS-ATM)"
+    },
+    {
+     "q": "When two stations transmit simultaneously and block each other, the effect is called a —",
+     "options": [
+      "Blocked transmission (a 'step-on')",
+      "Read-back",
+      "Relay",
+      "Squelch"
+     ],
+     "answer": 0,
+     "explain": "Simultaneous transmissions garble each other ('stepping on'); ATC may ask a station to 'say again' after a blocked call.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "The urgency prefix spoken three times to introduce an urgency message is —",
+     "options": [
+      "PAN PAN, PAN PAN, PAN PAN",
+      "MAYDAY x3",
+      "SECURITE x3",
+      "URGENCY x3"
+     ],
+     "answer": 0,
+     "explain": "An urgency message is prefixed 'PAN PAN' spoken three times; distress uses 'MAYDAY' three times.",
+     "cite": "ICAO Annex 10 Vol II"
+    }
+   ]
+  },
+  {
+   "id": "elpt-phraseology",
+   "title": "Standard Radio Phraseology",
+   "desc": "ICAO standard words and phrases, read-back, callsigns and the numeric conventions used in radiotelephony.",
+   "source": "ICAO Annex 10 Vol II · Doc 4444",
+   "questions": [
+    {
+     "q": "When ATC issues a clearance limit, altitude, heading or speed, the pilot must —",
+     "options": [
+      "Acknowledge with ROGER only",
+      "Read back the clearance",
+      "Reply WILCO without repeating it",
+      "Remain silent unless unable"
+     ],
+     "answer": 1,
+     "explain": "Clearances and instructions such as level, heading, speed and route assignments must be read back so the controller can confirm they were correctly received (hear-back/read-back).",
+     "cite": "ICAO Annex 10 Vol II / PANS-ATM (Doc 4444)"
+    },
+    {
+     "q": "The altitude 10,000 ft is spoken in standard radiotelephony as —",
+     "options": [
+      "Ten thousand",
+      "One zero thousand",
+      "Ten thousand feet",
+      "One zero zero zero zero"
+     ],
+     "answer": 0,
+     "explain": "Whole thousands of feet are spoken as the number of thousands plus the word THOUSAND — 10,000 ft is 'ten thousand'.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "A flight level of FL180 is transmitted as —",
+     "options": [
+      "Flight level one hundred eighty",
+      "Flight level one eight zero",
+      "One eight zero flight level",
+      "Level eighteen"
+     ],
+     "answer": 1,
+     "explain": "Flight levels are spoken by pronouncing each digit — FL180 is 'flight level one eight zero'.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "An aircraft callsign may be abbreviated by ATC only —",
+     "options": [
+      "At any time to save time",
+      "After the controller has first used the abbreviated form",
+      "Never — full callsigns are always required",
+      "Only for VFR flights"
+     ],
+     "answer": 1,
+     "explain": "A pilot may abbreviate a callsign only after the ground station has done so; until then the full callsign is used to avoid confusion.",
+     "cite": "ICAO Annex 10 Vol II / Doc 4444"
+    },
+    {
+     "q": "The phrase 'CLEARED TO LAND' may be issued by —",
+     "options": [
+      "Any station on frequency",
+      "Only the aerodrome control tower",
+      "Approach control",
+      "The pilot to himself"
+     ],
+     "answer": 1,
+     "explain": "A landing clearance is issued by aerodrome (tower) control, which is responsible for the runway and its immediate vicinity.",
+     "cite": "ICAO Annex 10 Vol II / Doc 4444"
+    },
+    {
+     "q": "The correct read-back of the QNH 1013 is —",
+     "options": [
+      "QNH one thousand thirteen",
+      "QNH one zero one three",
+      "Altimeter ten thirteen",
+      "Standard"
+     ],
+     "answer": 1,
+     "explain": "Altimeter settings are read digit by digit — QNH 1013 is 'QNH one zero one three'.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "The instruction 'LINE UP AND WAIT' means —",
+     "options": [
+      "Enter the runway and hold ready for take-off",
+      "Take off immediately",
+      "Hold short of the runway",
+      "Backtrack the runway"
+     ],
+     "answer": 0,
+     "explain": "'LINE UP AND WAIT' authorises the aircraft to enter the runway and hold in the take-off position, awaiting a subsequent take-off clearance.",
+     "cite": "ICAO Annex 10 Vol II / Doc 4444"
+    },
+    {
+     "q": "A time of 0930 is normally transmitted, when no confusion is likely, as —",
+     "options": [
+      "Zero nine three zero",
+      "Three zero (the minutes only)",
+      "Nine thirty",
+      "Half past nine"
+     ],
+     "answer": 1,
+     "explain": "When no confusion is likely, time may be transmitted using the minutes of the hour only — 0930 becomes 'three zero'.",
+     "cite": "ICAO Annex 10 Vol II / Doc 4444"
+    },
+    {
+     "q": "If a controller cannot approve a requested clearance, the correct word is —",
+     "options": [
+      "NEGATIVE",
+      "UNABLE",
+      "DISREGARD",
+      "STANDBY"
+     ],
+     "answer": 1,
+     "explain": "'UNABLE' indicates that a clearance, instruction or request cannot be complied with, usually followed by a reason.",
+     "cite": "ICAO Annex 10 Vol II / Doc 4444"
+    },
+    {
+     "q": "'DISREGARD' transmitted by ATC means —",
+     "options": [
+      "Consider that transmission as not sent",
+      "Repeat the message",
+      "Comply when able",
+      "Continue as cleared"
+     ],
+     "answer": 0,
+     "explain": "'DISREGARD' tells the recipient to ignore a previous transmission as though it had not been sent.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "A heading of 270 degrees is transmitted as —",
+     "options": [
+      "Heading two seventy",
+      "Heading two seven zero",
+      "Turn west",
+      "Heading twenty-seven"
+     ],
+     "answer": 1,
+     "explain": "Headings are spoken as three digits pronounced individually — 270 is 'heading two seven zero'.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "'READ BACK' is a request for the pilot to —",
+     "options": [
+      "Repeat all, or a specified part, of the message back",
+      "Confirm receipt with ROGER",
+      "Comply with the instruction",
+      "Change frequency"
+     ],
+     "answer": 0,
+     "explain": "'READ BACK' asks the recipient to repeat all, or a specified part, of a message back exactly as received.",
+     "cite": "ICAO Annex 10 Vol II / Doc 4444"
+    },
+    {
+     "q": "When establishing initial contact, the aircraft should transmit —",
+     "options": [
+      "Its message first, then its callsign",
+      "The station being called, then its own callsign",
+      "Only its own callsign",
+      "ROGER"
+     ],
+     "answer": 1,
+     "explain": "Initial calls are made by stating the station addressed followed by the callsign of the aircraft calling.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "'CONFIRM' in ATC phraseology is used to —",
+     "options": [
+      "Request verification of a clearance or information",
+      "Grant permission",
+      "Cancel a clearance",
+      "Report an emergency"
+     ],
+     "answer": 0,
+     "explain": "'CONFIRM' requests verification that a clearance, instruction, action or information has been correctly received or understood.",
+     "cite": "ICAO Annex 10 Vol II / Doc 4444"
+    },
+    {
+     "q": "The word 'BREAK' in a transmission indicates —",
+     "options": [
+      "The separation between two messages",
+      "End of the transmission",
+      "An emergency",
+      "A frequency change"
+     ],
+     "answer": 0,
+     "explain": "'BREAK' indicates the separation between portions of a message; 'BREAK BREAK' separates messages to different aircraft in a busy environment.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "A read-back requiring correction by ATC is answered by the controller with —",
+     "options": [
+      "'NEGATIVE' followed by the correct version",
+      "'ROGER'",
+      "'CORRECT'",
+      "'STANDBY'"
+     ],
+     "answer": 0,
+     "explain": "If a read-back is incorrect the controller transmits 'NEGATIVE' (or 'NEGATIVE I SAY AGAIN') and passes the correct clearance.",
+     "cite": "ICAO Annex 10 Vol II / Doc 4444"
+    },
+    {
+     "q": "The transmission of a clearance void time is an example of information that must be —",
+     "options": [
+      "Read back",
+      "Acknowledged with ROGER only",
+      "Ignored if VFR",
+      "Confirmed by the flight service station"
+     ],
+     "answer": 0,
+     "explain": "Safety-critical clearance elements such as a clearance void time require a read-back to ensure correct receipt.",
+     "cite": "ICAO Annex 10 Vol II / Doc 4444"
+    },
+    {
+     "q": "'MONITOR (frequency)' instructs the pilot to —",
+     "options": [
+      "Listen out on the stated frequency without calling",
+      "Call immediately on the frequency",
+      "Squawk the frequency",
+      "Change to standby"
+     ],
+     "answer": 0,
+     "explain": "'MONITOR' means listen out on the specified frequency; the pilot does not make an initial call unless required.",
+     "cite": "ICAO Annex 10 Vol II / Doc 4444"
+    },
+    {
+     "q": "Speed 250 knots is transmitted as —",
+     "options": [
+      "Speed two hundred fifty knots",
+      "Speed two five zero knots",
+      "Speed twenty-five zero",
+      "Fast cruise"
+     ],
+     "answer": 1,
+     "explain": "Speeds are spoken by pronouncing each digit followed by the unit — 250 kt is 'speed two five zero knots'.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "The correct response to acknowledge and comply with an ATC instruction is —",
+     "options": [
+      "ROGER",
+      "WILCO",
+      "AFFIRM",
+      "COPY"
+     ],
+     "answer": 1,
+     "explain": "'WILCO' (will comply) both acknowledges the message and states the pilot will carry out the instruction.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "When a message must be recorded verbatim, ATC precedes it with —",
+     "options": [
+      "'I SAY AGAIN'",
+      "'WRITE DOWN' / 'WORD FOR WORD'",
+      "'HOW DO YOU READ'",
+      "'STANDBY'"
+     ],
+     "answer": 1,
+     "explain": "When a message is to be written down exactly, the phrase 'WORD FOR WORD' (or in some texts 'WRITE DOWN') alerts the recipient before it is passed.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "'HOW DO YOU READ' is a request for —",
+     "options": [
+      "A readability report of the transmission",
+      "The aircraft's heading",
+      "A repeat of the last message",
+      "The pilot's intentions"
+     ],
+     "answer": 0,
+     "explain": "'HOW DO YOU READ' asks for a report of transmission readability, answered on the 1-to-5 readability scale.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "'CLIMB FL250' with no restriction means climb —",
+     "options": [
+      "At the pilot's discretion to FL250",
+      "Immediately at maximum rate",
+      "Only when requested again",
+      "To FL250 then descend"
+     ],
+     "answer": 0,
+     "explain": "An unrestricted level instruction is complied with at a normal rate at the pilot's discretion, reaching and maintaining the assigned level.",
+     "cite": "ICAO Doc 4444 (PANS-ATM)"
+    },
+    {
+     "q": "'REPORT PASSING FL180' asks the pilot to —",
+     "options": [
+      "Advise ATC when the aircraft passes FL180",
+      "Level off at FL180",
+      "Descend to FL180",
+      "Expedite through FL180"
+     ],
+     "answer": 0,
+     "explain": "A 'report passing' instruction requires the pilot to notify ATC at the moment the specified level is passed.",
+     "cite": "ICAO Doc 4444 (PANS-ATM)"
+    },
+    {
+     "q": "'SQUAWK 4321' instructs the pilot to —",
+     "options": [
+      "Set transponder code 4321",
+      "Change to frequency 4321",
+      "Climb to 4321 ft",
+      "Report at 43.21 DME"
+     ],
+     "answer": 0,
+     "explain": "'SQUAWK' followed by four digits sets the assigned SSR transponder code.",
+     "cite": "ICAO Doc 4444 (PANS-ATM)"
+    },
+    {
+     "q": "'SQUAWK IDENT' asks the pilot to —",
+     "options": [
+      "Activate the transponder's IDENT feature",
+      "Turn the transponder off",
+      "Change to standby",
+      "Set 7700"
+     ],
+     "answer": 0,
+     "explain": "'IDENT' momentarily highlights the aircraft's return on the controller's display for identification.",
+     "cite": "ICAO Doc 4444 (PANS-ATM)"
+    },
+    {
+     "q": "'MAINTAIN 3000 UNTIL ESTABLISHED, CLEARED ILS RUNWAY 34' means —",
+     "options": [
+      "Hold 3000 ft until on the localizer, then follow the ILS",
+      "Descend on the glideslope immediately",
+      "Maintain 3400 ft",
+      "Climb to 3000 after landing"
+     ],
+     "answer": 0,
+     "explain": "The pilot keeps the last assigned altitude until established on the approach course, then descends per the ILS.",
+     "cite": "ICAO Doc 4444 (PANS-ATM)"
+    },
+    {
+     "q": "'GO AROUND' instructs the pilot to —",
+     "options": [
+      "Discontinue the approach and execute the missed-approach procedure",
+      "Taxi around the apron",
+      "Orbit overhead",
+      "Land immediately"
+     ],
+     "answer": 0,
+     "explain": "'GO AROUND' is a command to abandon the approach/landing and fly the missed approach.",
+     "cite": "ICAO Doc 4444 (PANS-ATM)"
+    },
+    {
+     "q": "'TRAFFIC IN SIGHT' reported by a pilot means —",
+     "options": [
+      "The pilot has visually acquired the traffic ATC called",
+      "The pilot wants a traffic advisory",
+      "Traffic has landed",
+      "Radar contact lost"
+     ],
+     "answer": 0,
+     "explain": "'Traffic in sight' tells ATC the pilot sees the called traffic, enabling visual separation where applicable.",
+     "cite": "ICAO Doc 4444 (PANS-ATM)"
+    },
+    {
+     "q": "'RESUME OWN NAVIGATION' means —",
+     "options": [
+      "Resume navigating along the cleared route after vectors",
+      "Return to the departure airport",
+      "Squawk standby",
+      "Contact the next sector"
+     ],
+     "answer": 0,
+     "explain": "After radar vectors, 'resume own navigation' returns navigation responsibility to the pilot along the cleared route.",
+     "cite": "ICAO Doc 4444 (PANS-ATM)"
+    },
+    {
+     "q": "'CLEARED FOR THE OPTION' (where used) permits —",
+     "options": [
+      "A touch-and-go, low approach, stop-and-go, or full-stop landing",
+      "Only a full stop",
+      "Only a low approach",
+      "A missed approach only"
+     ],
+     "answer": 0,
+     "explain": "'Cleared for the option' gives the pilot the choice among touch-and-go, low approach, stop-and-go or full-stop — common in training.",
+     "cite": "ICAO Doc 4444 (PANS-ATM)"
+    },
+    {
+     "q": "'TAXI TO HOLDING POINT RUNWAY 16L VIA A, B' — the pilot must —",
+     "options": [
+      "Taxi via A and B and hold short of 16L",
+      "Enter and backtrack 16L",
+      "Line up on 16L",
+      "Cross 16L without stopping"
+     ],
+     "answer": 0,
+     "explain": "A taxi clearance to a holding point means proceed via the named taxiways and stop at the holding point; it is not clearance to enter the runway.",
+     "cite": "ICAO Doc 4444 (PANS-ATM)"
+    },
+    {
+     "q": "A read-back is mandatory for all of the following EXCEPT —",
+     "options": [
+      "Runway-in-use and clearances to enter/land/take off/hold short",
+      "SSR codes and altimeter settings",
+      "A general traffic-information broadcast to no specific aircraft",
+      "Level, heading and speed instructions"
+     ],
+     "answer": 2,
+     "explain": "Safety-critical clearances (runway, SSR, QNH, level/heading/speed) require read-back; a general broadcast information does not.",
+     "cite": "ICAO Doc 4444 (PANS-ATM)"
+    },
+    {
+     "q": "'STOP IMMEDIATELY' issued during the take-off roll requires the pilot to —",
+     "options": [
+      "Abandon the take-off and stop",
+      "Continue and lift off",
+      "Reduce to taxi speed only",
+      "Turn off the runway at speed"
+     ],
+     "answer": 0,
+     "explain": "An emergency stop instruction ('[callsign] STOP IMMEDIATELY') requires the take-off to be abandoned.",
+     "cite": "ICAO Doc 4444 (PANS-ATM)"
+    },
+    {
+     "q": "'CANCEL TAKE-OFF CLEARANCE, I SAY AGAIN CANCEL TAKE-OFF' before the roll means —",
+     "options": [
+      "Do not take off; the clearance is withdrawn",
+      "Take off at once",
+      "Line up and wait",
+      "Continue holding then depart"
+     ],
+     "answer": 0,
+     "explain": "The take-off clearance has been rescinded; the aircraft must not commence or continue the take-off.",
+     "cite": "ICAO Doc 4444 (PANS-ATM)"
+    },
+    {
+     "q": "'CONTACT TOWER 118.7' instructs the pilot to —",
+     "options": [
+      "Change to 118.7 and make an initial call to Tower",
+      "Monitor 118.7 silently",
+      "Squawk 1187",
+      "Report at 118.7 DME"
+     ],
+     "answer": 0,
+     "explain": "'CONTACT [unit] [freq]' means change to that frequency and establish communication with the named unit.",
+     "cite": "ICAO Doc 4444 (PANS-ATM)"
+    },
+    {
+     "q": "The phrase 'PASS YOUR MESSAGE' invites the caller to —",
+     "options": [
+      "Transmit the details of their request/report",
+      "Change frequency",
+      "Read back the clearance",
+      "Hold position"
+     ],
+     "answer": 0,
+     "explain": "'PASS YOUR MESSAGE' tells the station to go ahead with the content of their call.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "'RECLEARED ...' means —",
+     "options": [
+      "A change to the previous clearance now applies",
+      "The previous clearance is void with nothing replacing it",
+      "Read back twice",
+      "Contact ground"
+     ],
+     "answer": 0,
+     "explain": "'RECLEARED' introduces an amendment that supersedes the relevant part of the previous clearance.",
+     "cite": "ICAO Doc 4444 (PANS-ATM)"
+    }
+   ]
+  },
+  {
+   "id": "elpt-comprehension",
+   "title": "Plain Language & Comprehension",
+   "desc": "Handling unexpected situations, plain-language exchanges and understanding ATC intent — the operational core of Level 4 English.",
+   "source": "ICAO Doc 9835 · Annex 10 Vol II",
+   "questions": [
+    {
+     "q": "The phrase 'we are running low on fuel and request priority' is best classified as —",
+     "options": [
+      "Routine information",
+      "An urgency (PAN PAN) situation",
+      "A distress (MAYDAY) situation unless fuel is critical",
+      "A read-back request"
+     ],
+     "answer": 2,
+     "explain": "A fuel concern is normally an urgency (PAN PAN); it becomes distress (MAYDAY) — 'MAYDAY FUEL' — only when the remaining fuel means a safe landing is no longer assured.",
+     "cite": "ICAO Annex 10 Vol II / Doc 9432"
+    },
+    {
+     "q": "A controller says 'expect further clearance at four zero'. This means the pilot should expect a new clearance —",
+     "options": [
+      "At 40 nautical miles",
+      "At time 40 minutes past the hour",
+      "In 40 seconds",
+      "At flight level 40"
+     ],
+     "answer": 1,
+     "explain": "'Expect further clearance at four zero' refers to the time — 40 minutes past the hour — by which a new clearance should be received.",
+     "cite": "ICAO Annex 10 Vol II / Doc 4444"
+    },
+    {
+     "q": "If a pilot does not fully understand a rapid ATC instruction, the safest action is to —",
+     "options": [
+      "Comply with the part heard and hope for the best",
+      "Request 'SAY AGAIN' or ask ATC to speak slower",
+      "Change frequency",
+      "Squawk 7600"
+     ],
+     "answer": 1,
+     "explain": "When comprehension is incomplete, the pilot should ask ATC to 'SAY AGAIN' or to 'SPEAK SLOWER' rather than act on a partly-understood instruction.",
+     "cite": "ICAO Doc 9835 (Language Proficiency Manual)"
+    },
+    {
+     "q": "Plain language, as distinct from standard phraseology, is used on the radio —",
+     "options": [
+      "Never — only phraseology is permitted",
+      "When standard phraseology does not cover the situation",
+      "Only by native English speakers",
+      "Only in emergencies declared as MAYDAY"
+     ],
+     "answer": 1,
+     "explain": "ICAO standard phraseology is used wherever it exists; plain (natural) language is used when phraseology cannot cover the situation — which is why plain-language proficiency is required.",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "The instruction 'give way to the company Airbus on your left and follow it' primarily tests a pilot's —",
+     "options": [
+      "Pronunciation",
+      "Comprehension and interaction skills",
+      "Vocabulary size only",
+      "Fluency only"
+     ],
+     "answer": 1,
+     "explain": "Acting correctly on a conditional, situation-specific instruction like this depends on comprehension and interactions — two of the ICAO rating-scale skills.",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "A read-back that omits a runway assignment is dangerous mainly because it can lead to —",
+     "options": [
+      "A frequency congestion penalty",
+      "A runway incursion or wrong-runway event",
+      "A language proficiency downgrade",
+      "A loss of separation only en route"
+     ],
+     "answer": 1,
+     "explain": "Runway assignments are safety-critical; an incomplete read-back can allow a runway incursion or a departure/landing on the wrong runway.",
+     "cite": "ICAO Doc 9835 / Annex 10 Vol II"
+    },
+    {
+     "q": "When weather deteriorates unexpectedly and a diversion is needed, a pilot with only Level-3 English would most likely struggle to —",
+     "options": [
+      "Read the aircraft instruments",
+      "Negotiate an unplanned re-route in plain language with ATC",
+      "Fly the aircraft manually",
+      "Set the transponder"
+     ],
+     "answer": 1,
+     "explain": "Unexpected, non-routine situations require plain-language negotiation; a below-operational (Level 3) speaker cannot reliably manage this, which is why Level 4 is the minimum.",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "The ATC phrase 'traffic is a B738, twelve o'clock, five miles, opposite direction' is intended to help the pilot —",
+     "options": [
+      "Copy a clearance",
+      "Acquire and avoid conflicting traffic visually",
+      "Change squawk",
+      "Read back the QNH"
+     ],
+     "answer": 1,
+     "explain": "A traffic information call gives relative position, distance and direction so the pilot can visually acquire and avoid the other aircraft.",
+     "cite": "ICAO Annex 10 Vol II / Doc 4444"
+    },
+    {
+     "q": "A pilot hears 'say intentions'. The controller is asking the pilot to —",
+     "options": [
+      "Report the aircraft type",
+      "State what the pilot plans to do next",
+      "Read back the last clearance",
+      "Confirm the QNH"
+     ],
+     "answer": 1,
+     "explain": "'Say intentions' requests that the pilot state the planned course of action, common after an emergency or an unexpected situation.",
+     "cite": "ICAO Annex 10 Vol II / Doc 4444"
+    },
+    {
+     "q": "Using non-standard words such as 'okay' or 'yeah' instead of AFFIRM/ROGER is discouraged because it —",
+     "options": [
+      "Wastes battery power",
+      "Can be ambiguous across languages and cultures",
+      "Is illegal in all countries",
+      "Slows the aircraft"
+     ],
+     "answer": 1,
+     "explain": "Standard words are unambiguous internationally; casual substitutes can be misheard or misunderstood between speakers of different first languages.",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "If a controller's accent is unfamiliar, an operationally proficient pilot should be able to —",
+     "options": [
+      "Understand a sufficiently wide range of accents used internationally",
+      "Only understand native speakers",
+      "Refuse the clearance",
+      "Demand a different controller"
+     ],
+     "answer": 0,
+     "explain": "The ICAO comprehension descriptor requires understanding of a range of accents (including non-native and regional) sufficient for the international aviation community.",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "The best response to a partially blocked or garbled transmission is to —",
+     "options": [
+      "Assume the most convenient meaning",
+      "Transmit 'SAY AGAIN' and, if needed, request a relay",
+      "Continue without acknowledging",
+      "Squawk 7700 immediately"
+     ],
+     "answer": 1,
+     "explain": "A garbled transmission should be clarified with 'SAY AGAIN'; if still unreadable, a relay via another station may be requested.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "An instruction to 'expedite climb' asks the pilot to —",
+     "options": [
+      "Climb at the best rate practicable",
+      "Climb only when convenient",
+      "Stop the climb",
+      "Reduce speed in the climb"
+     ],
+     "answer": 0,
+     "explain": "'Expedite' asks the pilot to comply as quickly as safely possible — here, to climb at the best practicable rate, often for separation.",
+     "cite": "ICAO Annex 10 Vol II / Doc 4444"
+    },
+    {
+     "q": "A pilot who can handle routine calls but 'freezes' during an unexpected engine problem demonstrates a weakness in the ICAO skill of —",
+     "options": [
+      "Pronunciation",
+      "Interactions",
+      "Structure",
+      "Vocabulary"
+     ],
+     "answer": 1,
+     "explain": "Managing an unexpected, non-routine exchange — responding appropriately and promptly — is the 'interactions' skill on the ICAO rating scale.",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "The word 'immediately' in 'turn right heading three six zero immediately' signals —",
+     "options": [
+      "A routine turn at pilot's discretion",
+      "An urgent action required for safety/separation",
+      "A frequency change",
+      "A speed reduction"
+     ],
+     "answer": 1,
+     "explain": "'Immediately' is used when prompt compliance is required for safety, typically to resolve a developing conflict.",
+     "cite": "ICAO Annex 10 Vol II / Doc 4444"
+    },
+    {
+     "q": "When a passenger medical emergency requires priority handling, the pilot would typically prefix the call with —",
+     "options": [
+      "MAYDAY only",
+      "PAN PAN (urgency) or, if life-threatening and requiring priority, MAYDAY",
+      "SECURITE",
+      "No prefix — a normal request suffices"
+     ],
+     "answer": 1,
+     "explain": "A medical situation needing priority is at least an urgency (PAN PAN); a MAYDAY is used when it is grave and imminent and demands immediate assistance.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "The purpose of confirming numbers such as headings and levels by read-back is chiefly to —",
+     "options": [
+      "Fill radio silence",
+      "Detect and correct hear-back errors before they cause a hazard",
+      "Demonstrate fluency",
+      "Satisfy recording requirements only"
+     ],
+     "answer": 1,
+     "explain": "Read-back allows the controller to catch a mis-received number (hear-back), correcting it before it results in a level bust or track deviation.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "A pilot unintelligibly rushing a long transmission most directly needs to improve —",
+     "options": [
+      "Vocabulary",
+      "Fluency and pronunciation (rate/clarity of delivery)",
+      "Comprehension",
+      "Interactions"
+     ],
+     "answer": 1,
+     "explain": "Rate and clarity of delivery are aspects of fluency and pronunciation on the ICAO scale; rushing degrades intelligibility.",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "'SAY AGAIN ALL BEFORE [word]' asks ATC or the pilot to repeat —",
+     "options": [
+      "The whole message",
+      "The part of the message before the specified word",
+      "Only the callsign",
+      "Nothing — it cancels the message"
+     ],
+     "answer": 1,
+     "explain": "'SAY AGAIN ALL BEFORE …' requests a repeat of only the portion of the message preceding the specified word.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "Level-4 English is considered adequate for —",
+     "options": [
+      "All aviation communication in every conceivable situation with no limitation",
+      "Effective communication in routine and many non-routine situations, though it may occasionally be strained",
+      "Native-like mastery",
+      "Written communication only"
+     ],
+     "answer": 1,
+     "explain": "Operational (Level 4) proficiency supports effective communication in routine and unexpected situations, though comprehension may slow or strain when events are complex.",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "A conditional clearance such as 'behind the landing Boeing, line up behind' requires the pilot to —",
+     "options": [
+      "Line up immediately",
+      "Read back the conditional clearance including the word 'behind' twice",
+      "Ignore the traffic reference",
+      "Request a new clearance"
+     ],
+     "answer": 1,
+     "explain": "Conditional clearances must be read back with the condition and the word 'behind' repeated so the controller confirms the pilot has identified the correct reference traffic.",
+     "cite": "ICAO Doc 4444 (PANS-ATM)"
+    },
+    {
+     "q": "A controller says 'due to traffic, expect delay, hold at WHISKEY, EFC time three five'. The pilot should —",
+     "options": [
+      "Hold at WHISKEY and expect onward clearance by 35 past the hour",
+      "Land immediately",
+      "Continue past WHISKEY",
+      "Squawk 7700"
+     ],
+     "answer": 0,
+     "explain": "The pilot holds at the named fix and expects further clearance (EFC) by time 35 — comprehension of a compound instruction.",
+     "cite": "ICAO Doc 4444 (PANS-ATM)"
+    },
+    {
+     "q": "'Say fuel remaining in time' asks the pilot to report fuel as —",
+     "options": [
+      "Endurance in hours and minutes",
+      "Litres only",
+      "Percentage of tanks",
+      "Weight in kg only"
+     ],
+     "answer": 0,
+     "explain": "'Fuel remaining in time' requests endurance — how long the aircraft can remain airborne — expressed in hours and minutes.",
+     "cite": "ICAO Doc 4444 (PANS-ATM)"
+    },
+    {
+     "q": "If a pilot mishears a similar-sounding callsign and reads back a clearance not meant for them, the safeguard is —",
+     "options": [
+      "The controller's hear-back check catching the wrong callsign",
+      "Nothing — read-back is optional",
+      "Turning off the radio",
+      "Squawking standby"
+     ],
+     "answer": 0,
+     "explain": "Read-back lets the controller detect that the wrong aircraft took the clearance (callsign confusion) before it causes a conflict.",
+     "cite": "ICAO Doc 9835 (Language Proficiency Manual)"
+    },
+    {
+     "q": "A pilot who understands routine calls but cannot rephrase a request when misunderstood is weak in —",
+     "options": [
+      "Interactions and vocabulary",
+      "Pronunciation only",
+      "Reading",
+      "Numbers"
+     ],
+     "answer": 0,
+     "explain": "Rephrasing/clarifying when a message isn't understood draws on interactions and vocabulary (paraphrase) skills.",
+     "cite": "ICAO Doc 9835 (Language Proficiency Manual)"
+    },
+    {
+     "q": "The instruction 'expedite vacating the runway, traffic on short final' requires the pilot to —",
+     "options": [
+      "Clear the runway quickly",
+      "Stop on the runway",
+      "Backtrack",
+      "Hold position on the runway"
+     ],
+     "answer": 0,
+     "explain": "'Expedite vacating' asks the pilot to leave the runway promptly to allow the landing traffic behind — comprehension under time pressure.",
+     "cite": "ICAO Doc 4444 (PANS-ATM)"
+    },
+    {
+     "q": "A controller transmits a long clearance quickly; the professional response if unsure of one item is to —",
+     "options": [
+      "Read back what was understood and query the specific item",
+      "Read back a guess",
+      "Say nothing and act",
+      "Change frequency"
+     ],
+     "answer": 0,
+     "explain": "Reading back the understood parts and querying the doubtful item resolves ambiguity safely — an interactions skill.",
+     "cite": "ICAO Doc 9835 (Language Proficiency Manual)"
+    },
+    {
+     "q": "'Confirm you have information BRAVO' asks whether the pilot has —",
+     "options": [
+      "Received the current ATIS broadcast coded BRAVO",
+      "Reached FL200",
+      "A passenger named Bravo",
+      "Squawked 2000"
+     ],
+     "answer": 0,
+     "explain": "ATIS broadcasts are coded by letter; 'information BRAVO' refers to the current ATIS, which the pilot confirms having.",
+     "cite": "ICAO Doc 4444 (PANS-ATM)"
+    },
+    {
+     "q": "A plain-language exchange is most likely required during —",
+     "options": [
+      "A routine level-off",
+      "An unexpected technical problem needing description",
+      "Setting the transponder",
+      "A frequency change"
+     ],
+     "answer": 1,
+     "explain": "Non-routine, unforeseen situations (a technical fault, an unusual request) exceed standard phraseology and demand plain language.",
+     "cite": "ICAO Doc 9835 (Language Proficiency Manual)"
+    },
+    {
+     "q": "If ATC says 'break break' before a second callsign, it means —",
+     "options": [
+      "A separate message to a different aircraft follows",
+      "Emergency in progress",
+      "End of all transmissions",
+      "Repeat the message"
+     ],
+     "answer": 0,
+     "explain": "'BREAK BREAK' separates messages to different aircraft during busy exchanges.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "The best reaction to 'traffic alert, turn left immediately heading two seven zero' is to —",
+     "options": [
+      "Comply promptly and read back the heading",
+      "Query the reason first",
+      "Continue and observe",
+      "Reduce speed only"
+     ],
+     "answer": 0,
+     "explain": "A safety-critical avoidance instruction ('immediately') is complied with without delay, with a brief read-back.",
+     "cite": "ICAO Doc 4444 (PANS-ATM)"
+    },
+    {
+     "q": "Understanding a controller with a strong regional accent is part of the ICAO skill of —",
+     "options": [
+      "Comprehension",
+      "Structure",
+      "Vocabulary",
+      "Fluency"
+     ],
+     "answer": 0,
+     "explain": "The comprehension descriptor requires understanding of a range of accents used in the international community.",
+     "cite": "ICAO Doc 9835 (Language Proficiency Manual)"
+    },
+    {
+     "q": "A pilot asked to 'standby' should —",
+     "options": [
+      "Wait; the controller will call back shortly",
+      "Change frequency",
+      "Repeat the request continuously",
+      "Descend"
+     ],
+     "answer": 0,
+     "explain": "'STANDBY' means wait and I will call you — the pilot should not transmit again until called or a reasonable time passes.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "A conditional line-up clearance is only issued when —",
+     "options": [
+      "The subject traffic is in sight of the controller and, where required, the pilot",
+      "The runway is closed",
+      "There is no other traffic ever",
+      "It is night only"
+     ],
+     "answer": 0,
+     "explain": "Conditional clearances (e.g. 'behind the landing traffic, line up behind') require the relevant traffic to be identifiable, and the pilot reads back the condition.",
+     "cite": "ICAO Doc 4444 (PANS-ATM)"
+    },
+    {
+     "q": "The safest interpretation of a partly unreadable altitude clearance is to —",
+     "options": [
+      "Query it before changing level",
+      "Climb to the higher likely value",
+      "Descend to the lower likely value",
+      "Maintain and say nothing"
+     ],
+     "answer": 0,
+     "explain": "An ambiguous level instruction must be clarified before acting — never guess a level.",
+     "cite": "ICAO Doc 9835 (Language Proficiency Manual)"
+    },
+    {
+     "q": "'Advise able to accept a short approach' asks the pilot whether they can —",
+     "options": [
+      "Fly a tighter/quicker approach path",
+      "Divert",
+      "Hold for 30 minutes",
+      "Accept a lower cruise level"
+     ],
+     "answer": 0,
+     "explain": "A short approach shortens the traffic pattern/final; the controller is checking the pilot's ability to accept it.",
+     "cite": "ICAO Doc 4444 (PANS-ATM)"
+    },
+    {
+     "q": "When a transmission ends with the pilot's callsign only after a clearance, it serves to —",
+     "options": [
+      "Acknowledge/read back and identify the aircraft",
+      "Request a new frequency",
+      "Declare an emergency",
+      "Cancel the clearance"
+     ],
+     "answer": 0,
+     "explain": "Ending a read-back with the callsign confirms which aircraft received and accepted the clearance.",
+     "cite": "ICAO Doc 4444 (PANS-ATM)"
+    }
+   ]
+  },
+  {
+   "id": "elpt-rating-scale",
+   "title": "ICAO Language Proficiency Scale",
+   "desc": "The six rating-scale skills, the six proficiency levels, Level-4 requirements and re-evaluation intervals.",
+   "source": "ICAO Annex 1 · Doc 9835",
+   "questions": [
+    {
+     "q": "How many holistic descriptors/skills does the ICAO language proficiency rating scale assess?",
+     "options": [
+      "Four",
+      "Five",
+      "Six",
+      "Nine"
+     ],
+     "answer": 2,
+     "explain": "The scale rates six skills: pronunciation, structure, vocabulary, fluency, comprehension and interactions.",
+     "cite": "ICAO Annex 1 / Doc 9835"
+    },
+    {
+     "q": "Which of the following is NOT one of the six ICAO rating-scale skills?",
+     "options": [
+      "Pronunciation",
+      "Interactions",
+      "Spelling",
+      "Fluency"
+     ],
+     "answer": 2,
+     "explain": "The six skills are pronunciation, structure, vocabulary, fluency, comprehension and interactions — spelling is not among them.",
+     "cite": "ICAO Annex 1 / Doc 9835"
+    },
+    {
+     "q": "The ICAO language proficiency rating scale runs from —",
+     "options": [
+      "Level 1 (Pre-elementary) to Level 6 (Expert)",
+      "Level A to Level F",
+      "Level 0 to Level 5",
+      "Level 1 to Level 4 only"
+     ],
+     "answer": 0,
+     "explain": "The scale has six levels, from Level 1 (Pre-elementary) through to Level 6 (Expert).",
+     "cite": "ICAO Annex 1 / Doc 9835"
+    },
+    {
+     "q": "The minimum ICAO level to exercise licence privileges in international operations is —",
+     "options": [
+      "Level 3 (Pre-operational)",
+      "Level 4 (Operational)",
+      "Level 5 (Extended)",
+      "Level 6 (Expert)"
+     ],
+     "answer": 1,
+     "explain": "Level 4 (Operational) is the minimum standard required to exercise the privileges of a licence or rating for international flight.",
+     "cite": "ICAO Annex 1, §1.2.9"
+    },
+    {
+     "q": "A pilot assessed at ICAO Level 4 must normally be re-evaluated at intervals not exceeding —",
+     "options": [
+      "Six months",
+      "Three years",
+      "Five years",
+      "Never — Level 4 is permanent"
+     ],
+     "answer": 1,
+     "explain": "Level 4 holders are re-evaluated at least every three years; Level 5 holders at least every six years; Level 6 holders need no further formal evaluation.",
+     "cite": "ICAO Annex 1 / Doc 9835"
+    },
+    {
+     "q": "A pilot assessed at ICAO Level 5 (Extended) is normally re-evaluated at intervals not exceeding —",
+     "options": [
+      "Three years",
+      "Six years",
+      "Nine years",
+      "Never"
+     ],
+     "answer": 1,
+     "explain": "Level 5 (Extended) proficiency is re-evaluated at least every six years under the recommended ICAO scheme.",
+     "cite": "ICAO Annex 1 / Doc 9835"
+    },
+    {
+     "q": "A pilot assessed at ICAO Level 6 (Expert) —",
+     "options": [
+      "Must re-test every three years",
+      "Is not required to be formally re-evaluated",
+      "May not fly internationally",
+      "Must re-test every year"
+     ],
+     "answer": 1,
+     "explain": "Level 6 (Expert) proficiency is considered stable and does not require formal periodic re-evaluation.",
+     "cite": "ICAO Annex 1 / Doc 9835"
+    },
+    {
+     "q": "When a pilot's six skills are rated at different levels, the overall ICAO rating awarded is —",
+     "options": [
+      "The average of the six",
+      "The highest of the six",
+      "The lowest of the six",
+      "The most common of the six"
+     ],
+     "answer": 2,
+     "explain": "The final proficiency level is the lowest of the six individual skill ratings — a single weak skill caps the overall level.",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "The ICAO rating-scale skill of 'structure' refers to —",
+     "options": [
+      "Aircraft airframe knowledge",
+      "Command of relevant grammatical structures and sentence patterns",
+      "The physical test structure",
+      "Airspace structure vocabulary"
+     ],
+     "answer": 1,
+     "explain": "'Structure' assesses control of the grammatical structures and sentence patterns needed for the task.",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "The 'comprehension' descriptor primarily assesses a pilot's ability to —",
+     "options": [
+      "Speak quickly",
+      "Understand spoken English on common and work-related topics, including a range of accents",
+      "Read charts",
+      "Spell aviation terms"
+     ],
+     "answer": 1,
+     "explain": "'Comprehension' measures understanding of spoken English across common, concrete and work-related topics, including varied accents and dialects.",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "The 'interactions' descriptor is concerned with a speaker's ability to —",
+     "options": [
+      "Respond appropriately and promptly, checking and clarifying in exchanges",
+      "Pronounce vowels correctly",
+      "Use a wide vocabulary in isolation",
+      "Read written NOTAMs"
+     ],
+     "answer": 0,
+     "explain": "'Interactions' assesses responding immediately, appropriately and informatively, and managing the give-and-take of a conversation (checking, confirming, clarifying).",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "At Level 4, pronunciation, stress, rhythm and intonation —",
+     "options": [
+      "Must be native-like",
+      "May be influenced by the first language but only sometimes interfere with understanding",
+      "Are not assessed",
+      "Must match a British accent"
+     ],
+     "answer": 1,
+     "explain": "At Operational Level 4, first-language influence is permitted provided it only sometimes interferes with ease of understanding.",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "The ICAO language proficiency requirements apply to —",
+     "options": [
+      "Only airline pilots",
+      "Pilots, flight navigators and air traffic controllers who use radiotelephony in international operations",
+      "Only air traffic controllers",
+      "Cabin crew"
+     ],
+     "answer": 1,
+     "explain": "The requirements apply to flight crew and air traffic controllers (and flight navigators where required) using RTF for international flight.",
+     "cite": "ICAO Annex 1, §1.2.9"
+    },
+    {
+     "q": "The primary ICAO document providing guidance on implementing the language proficiency requirements is —",
+     "options": [
+      "Doc 4444 (PANS-ATM)",
+      "Doc 9835 (Manual on the Implementation of ICAO Language Proficiency Requirements)",
+      "Annex 6",
+      "Doc 8168 (PANS-OPS)"
+     ],
+     "answer": 1,
+     "explain": "Doc 9835 is the manual that expands on the Annex 1 requirements and the rating-scale descriptors.",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "Language proficiency at Level 4 is intended to be tested in a context that is —",
+     "options": [
+      "Purely academic/literary",
+      "Work-related and operational (aviation) in nature",
+      "Only written",
+      "Based on general tourism English"
+     ],
+     "answer": 1,
+     "explain": "ICAO language testing must be aviation/work-related and communicative, not a general academic English exam.",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "A speaker who can paraphrase successfully when they lack a specific word is demonstrating strength in —",
+     "options": [
+      "Vocabulary (and fluency)",
+      "Pronunciation only",
+      "Structure only",
+      "Reading"
+     ],
+     "answer": 0,
+     "explain": "Paraphrasing around an unknown word is an aspect of vocabulary range and fluency on the ICAO scale.",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "The requirement to demonstrate language proficiency is recorded —",
+     "options": [
+      "Only in the operator's files",
+      "As an endorsement on the pilot's licence",
+      "On the aircraft airworthiness certificate",
+      "In the AIP"
+     ],
+     "answer": 1,
+     "explain": "The proficiency level and re-evaluation date are endorsed on the licence.",
+     "cite": "ICAO Annex 1"
+    },
+    {
+     "q": "Level 3 (Pre-operational) proficiency is —",
+     "options": [
+      "Sufficient for international flight",
+      "Below the operational standard and therefore not sufficient",
+      "Higher than Level 4",
+      "Only about pronunciation"
+     ],
+     "answer": 1,
+     "explain": "Level 3 is below the operational Level 4 minimum and does not meet the requirement for international operations.",
+     "cite": "ICAO Annex 1 / Doc 9835"
+    },
+    {
+     "q": "The rating-scale skill of 'fluency' relates to —",
+     "options": [
+      "The number of words known",
+      "The naturalness, flow and tempo of speech",
+      "Grammar accuracy",
+      "Accent only"
+     ],
+     "answer": 1,
+     "explain": "'Fluency' concerns the flow, tempo and naturalness of speech production, including appropriate use of connectors and hesitation.",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "If a pilot rates Level 5 in five skills and Level 3 in comprehension, the licence endorsement will show —",
+     "options": [
+      "Level 5",
+      "Level 4",
+      "Level 3",
+      "Level 6"
+     ],
+     "answer": 2,
+     "explain": "Because the overall level is the lowest skill rating, a Level-3 comprehension caps the endorsement at Level 3 — below the operational minimum.",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "A pilot rated Level 4 in all skills except Level 6 in pronunciation receives an overall rating of —",
+     "options": [
+      "Level 4",
+      "Level 6",
+      "Level 5",
+      "Level 10"
+     ],
+     "answer": 0,
+     "explain": "The overall level equals the lowest of the six skill ratings, so the Level-4 skills cap the result at Level 4.",
+     "cite": "ICAO Doc 9835 (Language Proficiency Manual)"
+    },
+    {
+     "q": "ICAO language proficiency testing must assess —",
+     "options": [
+      "Speaking and listening in an operational aviation context",
+      "Reading and writing essays",
+      "Grammar in isolation",
+      "Translation ability"
+     ],
+     "answer": 0,
+     "explain": "The requirement targets spoken/aural proficiency for radiotelephony in an operational context — not literacy or translation.",
+     "cite": "ICAO Doc 9835 (Language Proficiency Manual)"
+    },
+    {
+     "q": "The proficiency requirement is intended to reduce accidents caused by —",
+     "options": [
+      "Communication breakdowns between pilots and controllers",
+      "Engine failures",
+      "Weather",
+      "Fuel exhaustion"
+     ],
+     "answer": 0,
+     "explain": "The language provisions arose from accidents/incidents where miscommunication was a factor.",
+     "cite": "ICAO Doc 9835 (Language Proficiency Manual)"
+    },
+    {
+     "q": "A Level 3 (Pre-operational) speaker typically —",
+     "options": [
+      "Maintains communication on routine topics but struggles when complications arise",
+      "Communicates effectively in all situations",
+      "Speaks like a native",
+      "Cannot speak at all"
+     ],
+     "answer": 0,
+     "explain": "Level 3 handles common, concrete exchanges but breaks down under complications or unexpected turns — below the operational standard.",
+     "cite": "ICAO Doc 9835 (Language Proficiency Manual)"
+    },
+    {
+     "q": "Which skill covers the ability to produce stretches of language at an appropriate tempo without excessive hesitation?",
+     "options": [
+      "Fluency",
+      "Vocabulary",
+      "Structure",
+      "Comprehension"
+     ],
+     "answer": 0,
+     "explain": "Fluency addresses flow, tempo and the natural use of connected speech.",
+     "cite": "ICAO Doc 9835 (Language Proficiency Manual)"
+    },
+    {
+     "q": "The ICAO scale describes proficiency at Levels —",
+     "options": [
+      "1 through 6",
+      "A through F",
+      "1 through 4",
+      "0 through 9"
+     ],
+     "answer": 0,
+     "explain": "There are six descriptive levels, 1 (Pre-elementary) to 6 (Expert).",
+     "cite": "ICAO Annex 1"
+    },
+    {
+     "q": "Endorsing a licence with the proficiency level and a re-evaluation date is the responsibility of —",
+     "options": [
+      "The licensing authority / State of licence issue",
+      "The airline marketing team",
+      "ICAO directly",
+      "The individual pilot"
+     ],
+     "answer": 0,
+     "explain": "The State that issues the licence records the demonstrated level and, for Levels 4 and 5, the re-evaluation date.",
+     "cite": "ICAO Annex 1"
+    },
+    {
+     "q": "A speaker whose first-language accent 'rarely interferes with ease of understanding' meets at least —",
+     "options": [
+      "Level 5 in pronunciation",
+      "Level 2",
+      "Level 1",
+      "No level"
+     ],
+     "answer": 0,
+     "explain": "'Rarely interferes' corresponds to Extended (Level 5); 'sometimes interferes' is Operational (Level 4).",
+     "cite": "ICAO Doc 9835 (Language Proficiency Manual)"
+    },
+    {
+     "q": "Vocabulary at Level 4 is sufficient to —",
+     "options": [
+      "Communicate effectively on common, concrete and work-related topics, paraphrasing when needed",
+      "Discuss any academic subject fluently",
+      "Use only memorised phrases",
+      "Read technical manuals aloud"
+     ],
+     "answer": 0,
+     "explain": "Operational vocabulary covers work-related and common topics with successful paraphrase when a precise word is lacking.",
+     "cite": "ICAO Doc 9835 (Language Proficiency Manual)"
+    },
+    {
+     "q": "If a pilot cannot demonstrate at least Level 4, the licensing consequence is that they —",
+     "options": [
+      "May not exercise the licence privileges on international operations",
+      "Lose the licence permanently",
+      "Must fly only at night",
+      "May fly with a safety pilot only"
+     ],
+     "answer": 0,
+     "explain": "Below Level 4, the language endorsement does not permit exercising privileges in international operations.",
+     "cite": "ICAO Annex 1"
+    },
+    {
+     "q": "Re-evaluation is NOT formally required for a pilot assessed at —",
+     "options": [
+      "Level 6 (Expert)",
+      "Level 4",
+      "Level 5",
+      "Level 3"
+     ],
+     "answer": 0,
+     "explain": "Level 6 is considered stable and needs no periodic re-evaluation; Levels 4 and 5 do (roughly 3 and 6 years).",
+     "cite": "ICAO Annex 1"
+    },
+    {
+     "q": "The six ICAO skills are pronunciation, structure, vocabulary, fluency, comprehension and —",
+     "options": [
+      "Interactions",
+      "Translation",
+      "Handwriting",
+      "Memorisation"
+     ],
+     "answer": 0,
+     "explain": "The sixth skill is interactions — responding appropriately and managing the exchange.",
+     "cite": "ICAO Doc 9835 (Language Proficiency Manual)"
+    },
+    {
+     "q": "Testing a pilot only with scripted, predictable questions is inadequate because Level 4 requires handling —",
+     "options": [
+      "Unexpected/non-routine communicative situations",
+      "Longer scripts",
+      "Faster reading",
+      "More vocabulary lists"
+     ],
+     "answer": 0,
+     "explain": "A valid test must sample unexpected situations, since managing the unforeseen is central to operational proficiency.",
+     "cite": "ICAO Doc 9835 (Language Proficiency Manual)"
+    },
+    {
+     "q": "The proficiency requirement applies to communication conducted in —",
+     "options": [
+      "The language used for radiotelephony (English for international ops, or the station's language)",
+      "English only, everywhere",
+      "Arabic only",
+      "Any language the pilot prefers"
+     ],
+     "answer": 0,
+     "explain": "Proficiency is required in the language used for RTF communications — English is required for international operations, and also the language normally used by the ground station.",
+     "cite": "ICAO Annex 1"
+    },
+    {
+     "q": "A holistic descriptor of Level 4 says the speaker can generally handle a communicative situation but may —",
+     "options": [
+      "Require clarification or confirmation in an unexpected turn of events",
+      "Never make an error",
+      "Speak only in fragments",
+      "Rely on an interpreter"
+     ],
+     "answer": 0,
+     "explain": "At Level 4, when events take an unexpected turn the speaker may need to seek clarification/confirmation — but still manages the situation.",
+     "cite": "ICAO Doc 9835 (Language Proficiency Manual)"
+    },
+    {
+     "q": "Which is the correct order of ICAO levels from lowest to highest?",
+     "options": [
+      "Elementary, Pre-operational, Operational, Extended",
+      "Operational, Extended, Expert, Elementary",
+      "Expert, Extended, Operational",
+      "Pre-operational, Elementary, Operational"
+     ],
+     "answer": 0,
+     "explain": "Ascending: 1 Pre-elementary, 2 Elementary, 3 Pre-operational, 4 Operational, 5 Extended, 6 Expert.",
+     "cite": "ICAO Doc 9835 (Language Proficiency Manual)"
     }
    ]
   }

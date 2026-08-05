@@ -370,6 +370,278 @@
       "id": "part-61",
       "anchor": "sec-61-89"
      }
+    },
+    {
+     "q": "An instrument rating permits a pilot to —",
+     "options": [
+      "Fly faster aircraft",
+      "Operate under IFR and in instrument meteorological conditions (IMC)",
+      "Instruct for hire",
+      "Skip the medical"
+     ],
+     "answer": 1,
+     "explain": "The instrument rating authorises flight under IFR and in IMC, within the privileges of the underlying pilot certificate.",
+     "cite": "GACAR Part 61 (Instrument Rating)",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-61"
+     }
+    },
+    {
+     "q": "Instrument-rating aeronautical experience emphasises —",
+     "options": [
+      "Aerobatic time",
+      "Instrument flight time, including cross-country under IFR and instrument approaches",
+      "Seaplane time",
+      "Formation flying"
+     ],
+     "answer": 1,
+     "explain": "The rating requires prescribed instrument time — actual or simulated — including cross-country IFR flying and a number of instrument approaches.",
+     "cite": "GACAR Part 61, §61.89 (instrument rating)",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-61"
+     }
+    },
+    {
+     "q": "To act as PIC under IFR, a pilot must, in addition to holding an instrument rating, be —",
+     "options": [
+      "Under 40 years old",
+      "Instrument current (recent instrument experience within the required period)",
+      "A flight instructor",
+      "A commercial pilot"
+     ],
+     "answer": 1,
+     "explain": "IFR PIC privileges require instrument currency — the prescribed recent instrument experience (approaches, holding and tracking) within the look-back period.",
+     "cite": "GACAR Part 61 (instrument recency)",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-61"
+     }
+    },
+    {
+     "q": "An instrument-rating applicant must pass —",
+     "options": [
+      "Only a medical exam",
+      "An instrument knowledge test and an instrument practical test",
+      "Only an English test",
+      "No tests if experienced"
+     ],
+     "answer": 1,
+     "explain": "The instrument rating requires passing both the instrument aeronautical-knowledge test and the instrument practical (flight) test.",
+     "cite": "GACAR Part 61 (Instrument Rating)",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-61"
+     }
+    },
+    {
+     "q": "An instrument rating authorises flight —",
+     "options": [
+      "Under IFR and in instrument meteorological conditions",
+      "Only in VMC",
+      "On the ground only",
+      "In gliders only"
+     ],
+     "answer": 0,
+     "explain": "The instrument rating permits operating under IFR/in IMC in the appropriate category.",
+     "cite": "GACAR Part 61",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-61"
+     }
+    },
+    {
+     "q": "An instrument-rating applicant must demonstrate proficiency in —",
+     "options": [
+      "Control and navigation of the aircraft solely by reference to instruments",
+      "Aerobatics",
+      "Formation flight",
+      "Seaplane operations"
+     ],
+     "answer": 0,
+     "explain": "The rating tests instrument flying — attitude instrument flying, holding, approaches — by reference to instruments alone.",
+     "cite": "GACAR Part 61",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-61"
+     }
+    },
+    {
+     "q": "Instrument currency (to act as PIC under IFR) typically requires recent —",
+     "options": [
+      "Approaches, holding and course tracking within the recency period",
+      "Take-offs only",
+      "Night landings only",
+      "Aerobatic sequences"
+     ],
+     "answer": 0,
+     "explain": "IFR recency requires a specified number of instrument approaches plus holding and intercepting/tracking tasks within the preceding period.",
+     "cite": "GACAR Part 61",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-61"
+     }
+    },
+    {
+     "q": "If instrument currency lapses, the pilot regains it by —",
+     "options": [
+      "An instrument proficiency check (IPC) after the grace period expires",
+      "Waiting one year",
+      "A new medical",
+      "A written test only"
+     ],
+     "answer": 0,
+     "explain": "After the currency window (and grace period) lapses, an instrument proficiency check is required to resume IFR PIC privileges.",
+     "cite": "GACAR Part 61",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-61"
+     }
+    },
+    {
+     "q": "A required instrument-rating knowledge area is —",
+     "options": [
+      "IFR procedures, the ATC system, and instrument approach charts",
+      "Cabin service",
+      "Aircraft painting",
+      "Ticketing"
+     ],
+     "answer": 0,
+     "explain": "Instrument knowledge covers the ATC/IFR system, procedures, charts, weather and instrument navigation.",
+     "cite": "GACAR Part 61",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-61"
+     }
+    },
+    {
+     "q": "Instrument experience must generally include —",
+     "options": [
+      "Cross-country flight under IFR and instrument flight time",
+      "Only local circuits",
+      "Only simulator time with no flight",
+      "Only day VFR"
+     ],
+     "answer": 0,
+     "explain": "The rating requires instrument flight time and IFR cross-country experience, part of which may be in an approved training device.",
+     "cite": "GACAR Part 61",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-61"
+     }
+    },
+    {
+     "q": "A safety pilot is required when a pilot practises instrument flying —",
+     "options": [
+      "Under simulated instrument conditions (a view-limiting device) in VMC",
+      "In actual IMC",
+      "On the ground",
+      "At night only"
+     ],
+     "answer": 0,
+     "explain": "Simulated instrument flight (hood/foggles) in VMC requires an appropriately rated safety pilot with adequate vision and controls.",
+     "cite": "GACAR Part 91",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91"
+     }
+    },
+    {
+     "q": "The instrument rating is added to a pilot certificate as —",
+     "options": [
+      "A rating on the existing certificate",
+      "A separate licence with a new number",
+      "A medical endorsement",
+      "A type rating"
+     ],
+     "answer": 0,
+     "explain": "The instrument rating is an additional rating placed on the pilot certificate.",
+     "cite": "GACAR Part 61",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-61"
+     }
+    },
+    {
+     "q": "Attitude instrument flying relies primarily on the —",
+     "options": [
+      "Attitude indicator supported by the supporting/performance instruments",
+      "Magnetic compass alone",
+      "GPS map only",
+      "Outside references"
+     ],
+     "answer": 0,
+     "explain": "The control-and-performance (or primary-and-supporting) method centres on the attitude indicator, cross-checked with the other instruments.",
+     "cite": "GACAR Part 61",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-61"
+     }
+    },
+    {
+     "q": "An instrument-rated pilot filing IFR must ensure the aircraft is —",
+     "options": [
+      "Equipped and certified for IFR with current inspections (e.g. pitot-static, transponder)",
+      "Painted white",
+      "Fitted with weather radar",
+      "Under 2000 kg"
+     ],
+     "answer": 0,
+     "explain": "IFR requires the aircraft to be IFR-equipped and to have the required current inspections (pitot-static/altimeter, transponder, VOR checks as applicable).",
+     "cite": "GACAR Part 91",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91"
+     }
+    },
+    {
+     "q": "The instrument proficiency check must be given by —",
+     "options": [
+      "An authorised examiner/instructor",
+      "Any pilot",
+      "A passenger",
+      "The dispatcher"
+     ],
+     "answer": 0,
+     "explain": "An IPC is conducted by an authorised instructor/examiner and covers the required instrument tasks.",
+     "cite": "GACAR Part 61",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-61"
+     }
+    },
+    {
+     "q": "A pilot without a current medical may not —",
+     "options": [
+      "Exercise instrument PIC privileges requiring that medical",
+      "Study charts",
+      "Ride as a passenger",
+      "Use a simulator"
+     ],
+     "answer": 0,
+     "explain": "Exercising IFR PIC privileges still requires the appropriate valid medical certificate.",
+     "cite": "GACAR Part 67",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-67"
+     }
+    },
+    {
+     "q": "Intercepting and tracking a course using navigation systems is —",
+     "options": [
+      "A core instrument-rating skill",
+      "Only a commercial skill",
+      "Not tested",
+      "For gliders only"
+     ],
+     "answer": 0,
+     "explain": "Intercepting and tracking courses/radials/GPS paths is a fundamental instrument competency.",
+     "cite": "GACAR Part 61",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-61"
+     }
     }
    ]
   },
@@ -752,6 +1024,262 @@
       "id": "part-91",
       "anchor": "sec-91-193"
      }
+    },
+    {
+     "q": "To operate under IFR in controlled airspace, a pilot must first —",
+     "options": [
+      "Simply take off",
+      "Receive an appropriate ATC clearance",
+      "Cancel VFR",
+      "Squawk 1200"
+     ],
+     "answer": 1,
+     "explain": "IFR operations in controlled airspace require an ATC clearance before the aircraft may proceed under those rules.",
+     "cite": "GACAR Part 91 (IFR operations)",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91"
+     }
+    },
+    {
+     "q": "Following a two-way radio communications failure under IFR in VMC, the pilot should —",
+     "options": [
+      "Climb to the service ceiling",
+      "Continue under VFR if practicable and land as soon as practicable",
+      "Descend into terrain",
+      "Squawk 1200 and ignore the failure"
+     ],
+     "answer": 1,
+     "explain": "If the failure occurs in VMC, or VMC is encountered, the pilot continues under VFR and lands as soon as practicable — the standard lost-comms rule.",
+     "cite": "GACAR Part 91, §91.185 (two-way radio failure)",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91"
+     }
+    },
+    {
+     "q": "Under IFR lost-comms in IMC, the route to be flown is, in order of priority —",
+     "options": [
+      "Random direct to destination",
+      "Assigned; then vectored (expected); then expected; then filed (AVEF)",
+      "Always the filed route only",
+      "Whatever ATC last vectored, indefinitely"
+     ],
+     "answer": 1,
+     "explain": "The lost-comms route priority is: route Assigned; if none, the route Vectored to; then the route Expected; then the route Filed (the AVE-F order).",
+     "cite": "GACAR Part 91, §91.185",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91"
+     }
+    },
+    {
+     "q": "The IFR fuel requirement for an aeroplane is fuel to reach the destination, then the alternate (if required), plus —",
+     "options": [
+      "No reserve",
+      "A reserve to fly a specified additional time at normal cruise",
+      "Fuel for one circuit only",
+      "Half the trip fuel"
+     ],
+     "answer": 1,
+     "explain": "IFR fuel planning requires enough to reach the intended destination, then any required alternate, plus a final reserve for a specified additional period at normal cruise consumption.",
+     "cite": "GACAR Part 91 (IFR fuel)",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91"
+     }
+    },
+    {
+     "q": "An alternate aerodrome is planned for an IFR flight when —",
+     "options": [
+      "Always, without exception",
+      "The destination forecast weather is below prescribed minima for a defined window around the ETA",
+      "Never for jets",
+      "Only at night"
+     ],
+     "answer": 1,
+     "explain": "An alternate is required when the destination's forecast weather around the estimated time of arrival is below the prescribed ceiling/visibility criteria.",
+     "cite": "GACAR Part 91 (IFR alternate)",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91"
+     }
+    },
+    {
+     "q": "To operate under IFR in controlled airspace, a flight requires —",
+     "options": [
+      "An ATC clearance",
+      "Only a flight plan filed with no clearance",
+      "VMC at all times",
+      "No clearance below 10,000 ft"
+     ],
+     "answer": 0,
+     "explain": "IFR flight in controlled airspace is conducted on an ATC clearance.",
+     "cite": "GACAR Part 91",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91"
+     }
+    },
+    {
+     "q": "Minimum IFR altitudes ensure —",
+     "options": [
+      "Obstacle clearance and (where required) navigation-signal reception",
+      "Maximum fuel economy",
+      "Shortest route",
+      "Passenger comfort"
+     ],
+     "answer": 0,
+     "explain": "MEA/MOCA and similar minimum IFR altitudes provide obstacle clearance and, for MEA, adequate navaid/comm coverage.",
+     "cite": "GACAR Part 91",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91"
+     }
+    },
+    {
+     "q": "On an airway, the minimum en-route altitude (MEA) guarantees —",
+     "options": [
+      "Obstacle clearance and acceptable navaid reception for the segment",
+      "The fastest groundspeed",
+      "No turbulence",
+      "VFR conditions"
+     ],
+     "answer": 0,
+     "explain": "The MEA assures obstacle clearance and navigation-signal reception (and communications, where specified) along the airway segment.",
+     "cite": "GACAR Part 91",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91"
+     }
+    },
+    {
+     "q": "If a two-way radio failure occurs in IMC, the pilot generally continues via —",
+     "options": [
+      "The route/altitude prescribed by the lost-communications procedure",
+      "Any direct route at any altitude",
+      "An immediate descent to the surface",
+      "Radar vectors only"
+     ],
+     "answer": 0,
+     "explain": "Lost-comms rules specify the route (assigned/expected/filed) and altitude (highest of assigned/minimum/expected) to fly, and the transponder code 7600.",
+     "cite": "GACAR Part 91",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91"
+     }
+    },
+    {
+     "q": "An IFR flight plan must generally include —",
+     "options": [
+      "Route, altitude, ETE, fuel, alternate (as required) and aircraft data",
+      "Only the destination",
+      "Only the departure time",
+      "Passenger names only"
+     ],
+     "answer": 0,
+     "explain": "An IFR flight plan carries route, altitudes, timings, fuel, alternate and aircraft/equipment details.",
+     "cite": "GACAR Part 91",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91"
+     }
+    },
+    {
+     "q": "An alternate aerodrome must be planned for an IFR flight when —",
+     "options": [
+      "Destination weather is forecast below prescribed minima for the required period",
+      "The flight is under 50 NM",
+      "It is daytime",
+      "The aircraft has GPS"
+     ],
+     "answer": 0,
+     "explain": "Rules require filing an alternate when the destination forecast within the specified window is below the prescribed ceiling/visibility.",
+     "cite": "GACAR Part 91",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91"
+     }
+    },
+    {
+     "q": "The transponder code to squawk for an IFR flight, unless assigned otherwise, is —",
+     "options": [
+      "The code assigned by ATC",
+      "1200",
+      "7000",
+      "7500"
+     ],
+     "answer": 0,
+     "explain": "IFR flights squawk the discrete code ATC assigns (VFR conskpicuity codes like 1200/7000 are for VFR).",
+     "cite": "GACAR Part 91",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91"
+     }
+    },
+    {
+     "q": "Required IFR equipment includes navigation gear appropriate to the route plus —",
+     "options": [
+      "Two-way radio communications and the instruments for instrument flight",
+      "A weather radar always",
+      "A parachute",
+      "A liferaft"
+     ],
+     "answer": 0,
+     "explain": "IFR requires the instruments/equipment for instrument flight and two-way radio and navigation equipment appropriate to the ground facilities used.",
+     "cite": "GACAR Part 91",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91"
+     }
+    },
+    {
+     "q": "A 'cruise' clearance to an airport authorises the pilot to —",
+     "options": [
+      "Conduct the flight at any altitude from the minimum IFR altitude up to the assigned, and to make an approach",
+      "Fly VFR",
+      "Exceed Vne",
+      "Ignore minimum altitudes"
+     ],
+     "answer": 0,
+     "explain": "A cruise clearance lets the pilot fly at any altitude between the minimum IFR altitude and the assigned altitude and to commence an approach at the destination.",
+     "cite": "GACAR Part 91",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91"
+     }
+    },
+    {
+     "q": "Position reports on an IFR flight (in a non-radar environment) are made —",
+     "options": [
+      "Over designated compulsory reporting points",
+      "Every 5 minutes regardless",
+      "Only on departure",
+      "Never"
+     ],
+     "answer": 0,
+     "explain": "In non-radar airspace, IFR position reports are made over compulsory reporting points.",
+     "cite": "GACAR Part 91",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91"
+     }
+    },
+    {
+     "q": "Class A airspace requires operation —",
+     "options": [
+      "Under IFR at all times",
+      "Under VFR only",
+      "Without a clearance",
+      "Below 500 ft"
+     ],
+     "answer": 0,
+     "explain": "All operations in Class A airspace are conducted under IFR with an ATC clearance.",
+     "cite": "GACAR Part 91",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91"
+     }
     }
    ]
   },
@@ -1094,6 +1622,254 @@
      "answer": 1,
      "explain": "Saudi AIP ENR 1.1 states aircraft approaching from the same side as the traffic pattern shall arrange flight to join straight in on the downwind leg (those from the opposite side cross over the aerodrome at midfield first).",
      "cite": "Saudi AIP, ENR 1.1"
+    },
+    {
+     "q": "A published instrument approach procedure's final approach segment ends at —",
+     "options": [
+      "The initial approach fix",
+      "The missed approach point (or runway threshold on a precision approach)",
+      "The holding fix",
+      "The departure end"
+     ],
+     "answer": 1,
+     "explain": "The final approach segment runs from the final approach fix to the missed approach point (or, on an ILS, to the DA/threshold), where a missed approach is flown if not visual.",
+     "cite": "GACAR Part 97 / PANS-OPS",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-97"
+     }
+    },
+    {
+     "q": "A standard holding pattern uses —",
+     "options": [
+      "Left turns and 2-minute inbound legs",
+      "Right turns with the timing/leg length specified for the altitude",
+      "No turns",
+      "Continuous descent"
+     ],
+     "answer": 1,
+     "explain": "The standard hold uses right-hand turns; inbound leg timing (commonly 1 minute at or below 14,000 ft, 1.5 minutes above) or a DME/RNAV distance defines the pattern.",
+     "cite": "GACAR Part 97 / PANS-OPS",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-97"
+     }
+    },
+    {
+     "q": "On a precision (ILS) approach, reaching the Decision Altitude/Height without the required visual reference requires the pilot to —",
+     "options": [
+      "Continue descending",
+      "Execute the published missed approach",
+      "Enter a hold on the localiser",
+      "Land regardless"
+     ],
+     "answer": 1,
+     "explain": "At DA/DH, if the required visual references are not in sight, the pilot must initiate the published missed approach.",
+     "cite": "GACAR Part 97 / PANS-OPS",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-97"
+     }
+    },
+    {
+     "q": "The three ICAO instrument-approach segments preceding the missed approach are —",
+     "options": [
+      "Taxi, take-off, climb",
+      "Initial, intermediate and final approach",
+      "Hold, cruise, descent",
+      "Departure, enroute, arrival"
+     ],
+     "answer": 1,
+     "explain": "An instrument approach is built from the initial, intermediate and final approach segments (with the missed approach as the fourth), each with its own obstacle-clearance criteria.",
+     "cite": "GACAR Part 97 / PANS-OPS",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-97"
+     }
+    },
+    {
+     "q": "A standard instrument approach procedure is designed to provide —",
+     "options": [
+      "A safe transition from the en-route/terminal phase to a landing (or missed approach)",
+      "A scenic route",
+      "The shortest taxi",
+      "A holding pattern only"
+     ],
+     "answer": 0,
+     "explain": "An instrument approach procedure provides obstacle-protected guidance from the initial approach to landing or the missed approach.",
+     "cite": "GACAR Part 97",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-97"
+     }
+    },
+    {
+     "q": "A precision approach provides —",
+     "options": [
+      "Lateral and vertical guidance (e.g. ILS)",
+      "Lateral guidance only",
+      "No guidance",
+      "Guidance only on the ground"
+     ],
+     "answer": 0,
+     "explain": "Precision approaches (ILS, GLS, PAR) give both lateral and vertical guidance; non-precision give lateral only (with possible advisory vertical).",
+     "cite": "GACAR Part 97",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-97"
+     }
+    },
+    {
+     "q": "The decision altitude/height (DA/DH) on a precision approach is the point at which —",
+     "options": [
+      "A missed approach must be started if the required visual reference is not available",
+      "The gear is raised",
+      "The autopilot engages",
+      "The flight plan closes"
+     ],
+     "answer": 0,
+     "explain": "At DA/DH, without the required visual reference, the missed approach is initiated.",
+     "cite": "GACAR Part 97",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-97"
+     }
+    },
+    {
+     "q": "A procedure turn is used to —",
+     "options": [
+      "Reverse course and establish the aircraft inbound on the final approach course",
+      "Descend below minima",
+      "Hold for fuel",
+      "Taxi to the gate"
+     ],
+     "answer": 0,
+     "explain": "The procedure turn reverses direction to align the aircraft with the final approach course when required.",
+     "cite": "GACAR Part 97",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-97"
+     }
+    },
+    {
+     "q": "The final approach segment of a non-precision approach ends at the —",
+     "options": [
+      "Missed approach point (MAPt)",
+      "Initial approach fix",
+      "Holding fix",
+      "Departure end"
+     ],
+     "answer": 0,
+     "explain": "The non-precision final approach segment runs from the FAF to the MAPt.",
+     "cite": "GACAR Part 97",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-97"
+     }
+    },
+    {
+     "q": "A STAR (standard terminal arrival) connects —",
+     "options": [
+      "The en-route structure to an approach fix",
+      "One gate to another",
+      "The runway to the apron",
+      "Two holds"
+     ],
+     "answer": 0,
+     "explain": "STARs provide a published transition from the en-route phase to the approach.",
+     "cite": "Saudi AIP (ENR)"
+    },
+    {
+     "q": "Holding pattern entries (direct, parallel, teardrop) are chosen based on —",
+     "options": [
+      "The aircraft's heading relative to the holding course on arrival",
+      "Fuel remaining",
+      "Time of day",
+      "Passenger count"
+     ],
+     "answer": 0,
+     "explain": "The entry (direct/parallel/teardrop) is selected from the aircraft's inbound heading relative to the holding course.",
+     "cite": "GACAR Part 97",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-97"
+     }
+    },
+    {
+     "q": "A missed approach is executed by —",
+     "options": [
+      "Following the published missed-approach procedure (climb, track, hold)",
+      "Landing anyway",
+      "Descending below MDA",
+      "Squawking 1200"
+     ],
+     "answer": 0,
+     "explain": "The published missed approach specifies the climb, track and clearance limit/holding to fly when a landing is not made.",
+     "cite": "GACAR Part 97",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-97"
+     }
+    },
+    {
+     "q": "Circling to land after an instrument approach requires the pilot to —",
+     "options": [
+      "Remain within the protected circling area at or above circling minima until aligned to land",
+      "Descend immediately to the runway",
+      "Exceed the circling radius",
+      "Ignore obstacles"
+     ],
+     "answer": 0,
+     "explain": "During a circling manoeuvre the aircraft stays within the protected area at/above circling MDA until in a position to descend to land.",
+     "cite": "GACAR Part 97",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-97"
+     }
+    },
+    {
+     "q": "On the Saudi AIP ENR pages, en-route ATS routes and their minimum altitudes are found in —",
+     "options": [
+      "ENR (En-route) sections",
+      "AD (Aerodrome) only",
+      "GEN administrative pages",
+      "The company manual"
+     ],
+     "answer": 0,
+     "explain": "The ENR part of the AIP publishes ATS routes, airspace and en-route procedures.",
+     "cite": "Saudi AIP (ENR)"
+    },
+    {
+     "q": "Descent below the MDA/DA on an approach is permitted only when —",
+     "options": [
+      "The required visual reference and flight visibility exist and a normal landing can be made",
+      "The fuel is low",
+      "ATC says continue only",
+      "The autopilot is on"
+     ],
+     "answer": 0,
+     "explain": "Descent below minima requires the specified visual references, the required visibility, and the aircraft in a position for a normal landing.",
+     "cite": "GACAR Part 97",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-97"
+     }
+    },
+    {
+     "q": "A DME arc procedure is used to —",
+     "options": [
+      "Join the final approach course at a constant distance from a station",
+      "Hold indefinitely",
+      "Descend on the glidepath",
+      "Taxi to parking"
+     ],
+     "answer": 0,
+     "explain": "A DME arc guides the aircraft at a fixed DME distance to intercept the final approach course.",
+     "cite": "GACAR Part 97",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-97"
+     }
     }
    ]
   },
@@ -1424,6 +2200,206 @@
      "answer": 0,
      "explain": "Class G is uncontrolled airspace; ATC provides no separation service, though flight information may be available on request.",
      "cite": "GACAR Part 71 · ICAO Annex 11"
+    },
+    {
+     "q": "In which ICAO airspace classes is IFR flight provided with separation from all other IFR flights?",
+     "options": [
+      "Classes A, B, C, D and E",
+      "Class A only",
+      "Class G only",
+      "Classes F and G"
+     ],
+     "answer": 0,
+     "explain": "IFR flights are separated from other IFR flights in Classes A–E; in Class A all flight is IFR and separated, while VFR is not permitted.",
+     "cite": "ICAO Annex 11"
+    },
+    {
+     "q": "VFR flight is NOT permitted in which ICAO airspace class?",
+     "options": [
+      "Class A",
+      "Class C",
+      "Class E",
+      "Class G"
+     ],
+     "answer": 0,
+     "explain": "Class A airspace is available to IFR flights only; VFR operations are not permitted there.",
+     "cite": "ICAO Annex 11"
+    },
+    {
+     "q": "In Class C airspace, VFR flights are separated from —",
+     "options": [
+      "Nothing",
+      "IFR flights (and given traffic information on other VFR)",
+      "All other VFR flights",
+      "Only military traffic"
+     ],
+     "answer": 1,
+     "explain": "In Class C, VFR is separated from IFR and receives traffic information (with avoidance advice on request) regarding other VFR flights.",
+     "cite": "ICAO Annex 11"
+    },
+    {
+     "q": "A flight information service and alerting service, but no separation service, is characteristic of —",
+     "options": [
+      "Class A",
+      "Class B",
+      "Class G",
+      "Class C"
+     ],
+     "answer": 2,
+     "explain": "In Class G (uncontrolled) airspace ATC provides only flight information and alerting services; no separation is provided.",
+     "cite": "ICAO Annex 11"
+    },
+    {
+     "q": "Below 10,000 ft AMSL, the standard maximum indicated airspeed for VFR/IFR flights in Classes C, D, E, F and G is —",
+     "options": [
+      "200 kt",
+      "250 kt",
+      "300 kt",
+      "No limit"
+     ],
+     "answer": 1,
+     "explain": "A 250 kt IAS speed limit applies below 10,000 ft AMSL in Classes C–G (Classes A and B have no such general limit).",
+     "cite": "ICAO Annex 11"
+    },
+    {
+     "q": "An Air Traffic Service that provides advice and information useful for the safe and efficient conduct of flights is a —",
+     "options": [
+      "Flight information service",
+      "Area control service",
+      "Approach control service",
+      "Aerodrome control service"
+     ],
+     "answer": 0,
+     "explain": "The flight information service (FIS) provides advice and information useful for the safe and efficient conduct of flights.",
+     "cite": "ICAO Annex 11"
+    },
+    {
+     "q": "Class B airspace normally requires, before entry, that the aircraft —",
+     "options": [
+      "Obtain an ATC clearance",
+      "Only monitor the frequency",
+      "Squawk 1200",
+      "Do nothing special"
+     ],
+     "answer": 0,
+     "explain": "Entry into Class B requires a specific ATC clearance.",
+     "cite": "GACAR Part 71",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-71"
+     }
+    },
+    {
+     "q": "In Class D airspace, ATC provides —",
+     "options": [
+      "Aerodrome control and traffic information (limited separation)",
+      "Full IFR/VFR separation for all",
+      "No service",
+      "Oceanic clearance"
+     ],
+     "answer": 0,
+     "explain": "Class D provides control-tower service with separation between IFR and traffic information on VFR; VFR/VFR are not separated.",
+     "cite": "ICAO Annex 11"
+    },
+    {
+     "q": "Class E airspace is controlled airspace in which VFR flights —",
+     "options": [
+      "Do not require a clearance",
+      "Require a clearance",
+      "Are prohibited",
+      "Must be IFR"
+     ],
+     "answer": 0,
+     "explain": "In Class E, IFR is controlled and separated from IFR; VFR needs no clearance and receives flight information/traffic where available.",
+     "cite": "ICAO Annex 11"
+    },
+    {
+     "q": "A Flight Information Region (FIR) provides —",
+     "options": [
+      "Flight information service and alerting service",
+      "Full separation for all flights",
+      "Only military control",
+      "Customs service"
+     ],
+     "answer": 0,
+     "explain": "A FIR is airspace of defined dimensions within which FIS and alerting service are provided.",
+     "cite": "ICAO Annex 11"
+    },
+    {
+     "q": "A control zone (CTR) normally extends —",
+     "options": [
+      "From the surface upward to a specified limit around an aerodrome",
+      "From 10,000 ft upward only",
+      "Only above FL100",
+      "Around VORs only"
+     ],
+     "answer": 0,
+     "explain": "A CTR is controlled airspace from the surface to an upper limit, established around one or more aerodromes.",
+     "cite": "ICAO Annex 11"
+    },
+    {
+     "q": "A terminal control area (TMA) is usually established —",
+     "options": [
+      "At the confluence of ATS routes near busy aerodromes",
+      "Over open ocean",
+      "Only in Class G",
+      "Around danger areas"
+     ],
+     "answer": 0,
+     "explain": "A TMA is a control area normally established where ATS routes converge near one or more major aerodromes.",
+     "cite": "ICAO Annex 11"
+    },
+    {
+     "q": "A prohibited area is airspace within which flight is —",
+     "options": [
+      "Not permitted at all",
+      "Permitted with clearance",
+      "Permitted only at night",
+      "Permitted for VFR only"
+     ],
+     "answer": 0,
+     "explain": "Flight within a prohibited area is not allowed; a restricted area allows flight under specified conditions.",
+     "cite": "GACAR Part 71",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-71"
+     }
+    },
+    {
+     "q": "A danger area denotes airspace where —",
+     "options": [
+      "Activities dangerous to flight may exist at stated times",
+      "Flight is always forbidden",
+      "Only gliders may fly",
+      "ATC provides radar control"
+     ],
+     "answer": 0,
+     "explain": "A danger area indicates possible hazardous activity at specified periods; it is advisory (often over the high seas).",
+     "cite": "ICAO Annex 11"
+    },
+    {
+     "q": "Above the transition altitude, aircraft set their altimeters to —",
+     "options": [
+      "The standard setting 1013.2 hPa and fly flight levels",
+      "Local QNH",
+      "QFE",
+      "Any convenient value"
+     ],
+     "answer": 0,
+     "explain": "Above transition altitude, the standard pressure setting is used and vertical position is expressed as a flight level.",
+     "cite": "ICAO Doc 8168 (PANS-OPS)"
+    },
+    {
+     "q": "The block of airspace between the transition altitude and transition level is the —",
+     "options": [
+      "Transition layer",
+      "Control zone",
+      "Buffer area",
+      "Terminal area"
+     ],
+     "answer": 0,
+     "explain": "The transition layer lies between the transition altitude (climb) and transition level (descent); climbing aircraft use standard, descending use QNH.",
+     "cite": "ICAO Doc 8168 (PANS-OPS)"
     }
    ]
   },
@@ -1775,6 +2751,162 @@
      ],
      "answer": 0,
      "explain": "A Trigger NOTAM draws attention to, and gives a short reference for, an AIRAC AIP Amendment or Supplement, so operators know a permanent change is about to take effect.",
+     "cite": "ICAO Annex 15"
+    },
+    {
+     "q": "The three categories of NOTAM series are commonly distinguished by their —",
+     "options": [
+      "Colour",
+      "Series letter and purpose (e.g. new, replace, cancel)",
+      "Font",
+      "Length"
+     ],
+     "answer": 1,
+     "explain": "NOTAMs are issued as NOTAMN (new), NOTAMR (replacing an earlier NOTAM) and NOTAMC (cancelling one), identified in the NOTAM's Q-line and identifier.",
+     "cite": "ICAO Annex 15"
+    },
+    {
+     "q": "An AIP Amendment differs from an AIP Supplement in that an Amendment —",
+     "options": [
+      "Is temporary",
+      "Introduces permanent changes to the AIP",
+      "Is never distributed",
+      "Applies only to VFR"
+     ],
+     "answer": 1,
+     "explain": "AIP Amendments make permanent changes to the AIP; Supplements publish temporary changes of a defined duration.",
+     "cite": "ICAO Annex 15"
+    },
+    {
+     "q": "The 'AIRAC' system exists primarily to —",
+     "options": [
+      "Reduce printing costs",
+      "Give operators advance notice of significant changes on common effective dates",
+      "Encrypt NOTAMs",
+      "Replace the AIP"
+     ],
+     "answer": 1,
+     "explain": "AIRAC provides operationally significant changes on standardised, pre-notified effective dates so operators can update charts, databases and procedures in advance.",
+     "cite": "ICAO Annex 15"
+    },
+    {
+     "q": "The Integrated Aeronautical Information Package includes the AIP, its amendments and supplements, NOTAM, AIC and —",
+     "options": [
+      "The aircraft flight manual",
+      "Checklists and pre-flight/post-flight information bulletins",
+      "The company operations manual",
+      "The load sheet"
+     ],
+     "answer": 1,
+     "explain": "The Integrated Aeronautical Information Package comprises the AIP (with amendments/supplements), NOTAM and PIB, AIC, and associated checklists and summaries.",
+     "cite": "ICAO Annex 15"
+    },
+    {
+     "q": "The primary quality objective of aeronautical information services is to ensure data is —",
+     "options": [
+      "Cheap",
+      "Accurate, resolved, timely and traceable (data quality/integrity)",
+      "Colourful",
+      "Written only in Arabic"
+     ],
+     "answer": 1,
+     "explain": "AIS quality management aims for accuracy, resolution, integrity, traceability and timeliness of aeronautical data.",
+     "cite": "ICAO Annex 15"
+    },
+    {
+     "q": "Coordinates and elevations published in the AIP are referenced to —",
+     "options": [
+      "A local datum chosen by each aerodrome",
+      "WGS-84 (horizontal) and mean sea level via EGM geoid (vertical)",
+      "Magnetic north only",
+      "The nearest VOR"
+     ],
+     "answer": 1,
+     "explain": "ICAO requires published geographic coordinates to use the WGS-84 datum, with elevations referenced to mean sea level.",
+     "cite": "ICAO Annex 15"
+    },
+    {
+     "q": "The GEN section of the AIP contains —",
+     "options": [
+      "National regulations, general procedures, tables and charges",
+      "Only aerodrome charts",
+      "Only NOTAMs",
+      "The company manual"
+     ],
+     "answer": 0,
+     "explain": "GEN covers national rules, general information, tables/codes and administrative matters.",
+     "cite": "ICAO Annex 15"
+    },
+    {
+     "q": "AD (Aerodromes) section of the AIP provides —",
+     "options": [
+      "Aerodrome data, charts and operating information",
+      "En-route airways only",
+      "Weather forecasts only",
+      "Crew rosters"
+     ],
+     "answer": 0,
+     "explain": "The AD part gives aerodrome details — physical characteristics, procedures and charts — for each listed aerodrome.",
+     "cite": "ICAO Annex 15"
+    },
+    {
+     "q": "A PIB (Pre-flight Information Bulletin) is —",
+     "options": [
+      "A compilation of valid NOTAMs for a route or area",
+      "A weather chart",
+      "An aircraft manual",
+      "A licence"
+     ],
+     "answer": 0,
+     "explain": "The PIB compiles current NOTAMs relevant to a planned flight, produced from the NOTAM database.",
+     "cite": "ICAO Annex 15"
+    },
+    {
+     "q": "A SNOWTAM is a special series NOTAM notifying —",
+     "options": [
+      "Runway/taxiway conditions due to snow, ice, slush or standing water",
+      "Volcanic ash",
+      "Radio outages",
+      "Bird activity"
+     ],
+     "answer": 0,
+     "explain": "A SNOWTAM reports hazardous surface conditions from snow, ice, slush or water in a standard format.",
+     "cite": "ICAO Annex 15"
+    },
+    {
+     "q": "An ASHTAM notifies —",
+     "options": [
+      "Volcanic activity and ash cloud affecting operations",
+      "Snow conditions",
+      "Airspace closures for airshows",
+      "Fuel prices"
+     ],
+     "answer": 0,
+     "explain": "An ASHTAM gives information on volcanic activity, eruptions and ash clouds of significance to aviation.",
+     "cite": "ICAO Annex 15"
+    },
+    {
+     "q": "Data in the AIP is maintained current through —",
+     "options": [
+      "Amendments, supplements, AIC and NOTAM",
+      "Verbal briefings only",
+      "Social media",
+      "Annual reprints only"
+     ],
+     "answer": 0,
+     "explain": "The AIP is kept current by regular amendments, temporary supplements, AICs and time-critical NOTAM.",
+     "cite": "ICAO Annex 15"
+    },
+    {
+     "q": "The 'quality' of published aeronautical data is expressed in terms of accuracy, resolution and —",
+     "options": [
+      "Integrity",
+      "Colour",
+      "Cost",
+      "Language"
+     ],
+     "answer": 0,
+     "explain": "Data quality combines accuracy, resolution and integrity (plus traceability and timeliness).",
      "cite": "ICAO Annex 15"
     }
    ]
@@ -2129,6 +3261,230 @@
      "answer": 0,
      "explain": "Maintenance records must document total time in service and AD compliance status, among other things, so continued airworthiness can be verified.",
      "cite": "GACAR Part 43"
+    },
+    {
+     "q": "The pitot-static system supplies pressure to the airspeed indicator, altimeter and —",
+     "options": [
+      "Vertical speed indicator",
+      "Tachometer",
+      "Oil pressure gauge",
+      "Compass"
+     ],
+     "answer": 0,
+     "explain": "The pitot-static system drives the ASI (pitot + static), altimeter and VSI (static).",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "If the pitot tube ices over but the static port stays clear, the airspeed indicator will —",
+     "options": [
+      "Behave like an altimeter (read high in a climb, low in a descent)",
+      "Read exactly correct",
+      "Read zero always",
+      "Freeze at Vne"
+     ],
+     "answer": 0,
+     "explain": "A blocked pitot with clear static makes the ASI respond to altitude changes like an altimeter.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "A blocked static source (with alternate static unavailable) causes the altimeter to —",
+     "options": [
+      "Freeze at the altitude where blockage occurred",
+      "Read true altitude",
+      "Read zero",
+      "Spin continuously"
+     ],
+     "answer": 0,
+     "explain": "With the static source blocked, the altimeter holds the reading from the moment of blockage; using alternate static (cabin) restores approximate function.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "The attitude indicator, heading indicator and turn coordinator are typically driven by —",
+     "options": [
+      "Gyroscopes (vacuum/electric)",
+      "The pitot-static system",
+      "Engine oil",
+      "Fuel pressure"
+     ],
+     "answer": 0,
+     "explain": "These are gyroscopic instruments powered by a vacuum pump or electrically.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "An Emergency Locator Transmitter (ELT) transmits on the international distress frequency —",
+     "options": [
+      "406 MHz (with 121.5 MHz homing)",
+      "118.0 MHz",
+      "243 kHz",
+      "1090 MHz only"
+     ],
+     "answer": 0,
+     "explain": "Modern ELTs transmit a digital 406 MHz signal to satellites, with 121.5 MHz for homing.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "An Airworthiness Directive (AD) is —",
+     "options": [
+      "A mandatory instruction to correct an unsafe condition",
+      "An optional service bulletin",
+      "A weather notice",
+      "A pilot licence endorsement"
+     ],
+     "answer": 0,
+     "explain": "ADs are legally mandatory actions issued to correct unsafe conditions in a type/product.",
+     "cite": "GACAR Part 39",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-39"
+     }
+    },
+    {
+     "q": "Responsibility for ensuring an aircraft is in an airworthy condition before flight rests primarily with the —",
+     "options": [
+      "Pilot in command",
+      "Air traffic controller",
+      "Manufacturer",
+      "Passengers"
+     ],
+     "answer": 0,
+     "explain": "The PIC must determine the aircraft is airworthy before flight; the owner/operator is responsible for maintenance.",
+     "cite": "GACAR Part 91",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91"
+     }
+    },
+    {
+     "q": "Preventive maintenance (e.g. simple servicing) may generally be performed by —",
+     "options": [
+      "A certificated pilot on an aircraft they own/operate (where authorised)",
+      "Anyone",
+      "Only the manufacturer",
+      "Only ATC"
+     ],
+     "answer": 0,
+     "explain": "Rules permit certificated pilots to perform listed preventive-maintenance tasks on aircraft they own or operate, within limits.",
+     "cite": "GACAR Part 43",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-43"
+     }
+    },
+    {
+     "q": "A required instrument or equipment item that is inoperative before flight must be —",
+     "options": [
+      "Handled per the MEL or the applicable inoperative-equipment rule",
+      "Ignored",
+      "Repaired only after the flight",
+      "Removed in flight"
+     ],
+     "answer": 0,
+     "explain": "Inoperative equipment is dispatched per the Minimum Equipment List or the general inoperative-instruments-and-equipment rule.",
+     "cite": "GACAR Part 91",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91"
+     }
+    },
+    {
+     "q": "The transponder (and where required altitude reporting) must have been tested/inspected within the preceding —",
+     "options": [
+      "24 calendar months",
+      "12 months",
+      "6 months",
+      "48 months"
+     ],
+     "answer": 0,
+     "explain": "Transponder and altitude-reporting systems require testing within the preceding 24 calendar months for use in controlled airspace.",
+     "cite": "GACAR Part 91",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91"
+     }
+    },
+    {
+     "q": "Continued airworthiness of an aircraft is maintained through —",
+     "options": [
+      "Compliance with the maintenance programme, ADs and inspections",
+      "Frequent repainting",
+      "Higher cruise speeds",
+      "Reducing weight only"
+     ],
+     "answer": 0,
+     "explain": "Airworthiness is sustained by the approved maintenance programme, mandatory ADs and required inspections.",
+     "cite": "GACAR Part 43",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-43"
+     }
+    },
+    {
+     "q": "Supplemental oxygen is required for the flight crew above a cabin pressure altitude of about —",
+     "options": [
+      "A specified altitude for durations/continuous use per the rule (e.g. above ~10,000–12,500 ft)",
+      "Sea level",
+      "FL450 only",
+      "Any altitude at night"
+     ],
+     "answer": 0,
+     "explain": "Rules require crew oxygen above defined cabin altitudes — continuously above the higher threshold and after a time limit at the lower band.",
+     "cite": "GACAR Part 91",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91"
+     }
+    },
+    {
+     "q": "An aircraft's Certificate of Airworthiness remains valid provided —",
+     "options": [
+      "The aircraft is maintained and operated within its approved limitations",
+      "The paint is fresh",
+      "It is flown weekly",
+      "The owner renews it monthly"
+     ],
+     "answer": 0,
+     "explain": "A C of A stays in effect while the aircraft conforms to type design and is maintained/operated per its limitations and the applicable rules.",
+     "cite": "GACAR Part 21",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-21"
+     }
+    },
+    {
+     "q": "The document listing an aircraft's operating limitations, markings and placards is the —",
+     "options": [
+      "Approved flight manual / pilot's operating handbook",
+      "Journey log",
+      "Weather log",
+      "Load sheet only"
+     ],
+     "answer": 0,
+     "explain": "The AFM/POH contains the certificated limitations, procedures and performance data; required placards echo key limits.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "Static wicks fitted to trailing edges serve to —",
+     "options": [
+      "Discharge static electricity to reduce radio interference",
+      "Increase lift",
+      "Measure airspeed",
+      "Detect ice"
+     ],
+     "answer": 0,
+     "explain": "Static dischargers (wicks) bleed off accumulated static charge, reducing precipitation-static interference with radios/navaids.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "A magneto check before take-off verifies —",
+     "options": [
+      "The ignition system and detects a dead/rough mag",
+      "Fuel quantity",
+      "Tyre pressure",
+      "Cabin altitude"
+     ],
+     "answer": 0,
+     "explain": "The run-up mag check confirms both ignition systems work and reveals excessive rpm drop from a faulty magneto or fouled plug.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
     }
    ]
   },
@@ -2472,6 +3828,246 @@
      ],
      "answer": 0,
      "explain": "A compass deviation card, mounted near the compass, lists correction values for the aircraft's own magnetic interference at various headings.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "A rhumb line (loxodrome) is a track that —",
+     "options": [
+      "Crosses every meridian at the same angle and appears straight on a Mercator chart",
+      "Is the shortest distance between two points",
+      "Always follows a great circle",
+      "Points at the magnetic pole"
+     ],
+     "answer": 0,
+     "explain": "A rhumb line maintains a constant true bearing, crossing all meridians at the same angle; it plots as a straight line on a Mercator projection but is not the shortest route.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "To convert a true heading to a magnetic heading, a pilot applies —",
+     "options": [
+      "Deviation",
+      "Variation",
+      "Wind correction angle",
+      "Compass acceleration error"
+     ],
+     "answer": 1,
+     "explain": "Magnetic variation (the angle between true and magnetic north) is applied to convert true to magnetic; deviation is then applied to obtain compass heading.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "On a sectional chart the effect of 'east is least, west is best' is a memory aid for applying —",
+     "options": [
+      "Deviation to compass heading",
+      "Variation between true and magnetic (subtract easterly, add westerly to true)",
+      "Wind correction",
+      "Time-zone changes"
+     ],
+     "answer": 1,
+     "explain": "'East is least (subtract), west is best (add)' reminds pilots to subtract easterly and add westerly variation when converting a true course to a magnetic course.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "A VOR radial is defined as a magnetic bearing —",
+     "options": [
+      "Toward the station",
+      "Away from (outbound from) the station",
+      "Relative to the aircraft nose",
+      "From true north"
+     ],
+     "answer": 1,
+     "explain": "A radial is a magnetic course oriented FROM the VOR station; the aircraft is on a given radial regardless of which way it is heading.",
+     "cite": "FAA Instrument Flying Handbook"
+    },
+    {
+     "q": "An RNAV/GNSS system computes position primarily from —",
+     "options": [
+      "Ground-based NDB signals",
+      "Ranging signals from multiple satellites",
+      "Magnetic dip",
+      "Barometric pressure"
+     ],
+     "answer": 1,
+     "explain": "A GNSS receiver derives three-dimensional position from the ranging signals of several satellites simultaneously.",
+     "cite": "FAA Instrument Flying Handbook"
+    },
+    {
+     "q": "Given a true airspeed of 100 kt and a direct 20 kt tailwind, the groundspeed is —",
+     "options": [
+      "80 kt",
+      "100 kt",
+      "120 kt",
+      "20 kt"
+     ],
+     "answer": 2,
+     "explain": "A direct tailwind adds to true airspeed: 100 kt TAS + 20 kt tailwind = 120 kt groundspeed.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "On a Lambert conformal / sectional chart, a straight line most nearly represents a —",
+     "options": [
+      "Rhumb line",
+      "Great-circle route",
+      "Line of latitude",
+      "Magnetic meridian"
+     ],
+     "answer": 1,
+     "explain": "On the Lambert conformal conic projection used for sectionals, a straight line approximates a great circle — the shortest route.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "True airspeed compared with calibrated airspeed, at altitude, is generally —",
+     "options": [
+      "Lower",
+      "Higher",
+      "Identical",
+      "Zero"
+     ],
+     "answer": 1,
+     "explain": "As altitude increases and air density falls, true airspeed exceeds calibrated (indicated) airspeed for the same dynamic pressure.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "A VOR receiver check using a designated VOT should read —",
+     "options": [
+      "000 FROM or 180 TO (±4°)",
+      "090 FROM only",
+      "The nearest airway",
+      "Any radial within 10°"
+     ],
+     "answer": 0,
+     "explain": "Over a VOT the CDI centres on 0° with a FROM indication (or 180° TO), within a ±4° tolerance.",
+     "cite": "FAA Instrument Flying Handbook"
+    },
+    {
+     "q": "The maximum reception range of a VOR is limited chiefly by —",
+     "options": [
+      "Line-of-sight (VHF) propagation",
+      "Magnetic variation",
+      "Rain attenuation",
+      "Sunspot activity"
+     ],
+     "answer": 0,
+     "explain": "VOR is VHF and line-of-sight, so reception range increases with altitude and is blocked by terrain.",
+     "cite": "FAA Instrument Flying Handbook"
+    },
+    {
+     "q": "An ADF needle points to the station; to track TO an NDB the pilot uses —",
+     "options": [
+      "Relative bearing plus magnetic heading = magnetic bearing to the station",
+      "Only the relative bearing",
+      "The reciprocal of the heading",
+      "The variation alone"
+     ],
+     "answer": 0,
+     "explain": "Magnetic bearing to the station = magnetic heading + relative bearing (the angle from the nose to the needle).",
+     "cite": "FAA Instrument Flying Handbook"
+    },
+    {
+     "q": "Isogonic lines on an aeronautical chart connect points of equal —",
+     "options": [
+      "Magnetic variation",
+      "Elevation",
+      "Pressure",
+      "Temperature"
+     ],
+     "answer": 0,
+     "explain": "Isogonic lines join points of equal magnetic variation; the agonic line is where variation is zero.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "One nautical mile corresponds to approximately —",
+     "options": [
+      "One minute of latitude",
+      "One degree of latitude",
+      "One minute of longitude at all latitudes",
+      "One statute mile"
+     ],
+     "answer": 0,
+     "explain": "One nautical mile ≈ one minute of arc of latitude (about 1.15 statute miles / 1.852 km).",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "Wind correction angle is applied so that the aircraft's —",
+     "options": [
+      "Heading differs from track to offset drift",
+      "Groundspeed equals true airspeed",
+      "Track always equals the heading",
+      "Altitude stays constant"
+     ],
+     "answer": 0,
+     "explain": "The pilot crabs into wind — heading offset from the desired track — so drift is cancelled and the track is maintained.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "RAIM, associated with GPS/GNSS navigation, provides —",
+     "options": [
+      "Integrity monitoring of the satellite solution",
+      "Radio altimeter alerts",
+      "Runway alignment",
+      "Autopilot engagement"
+     ],
+     "answer": 0,
+     "explain": "Receiver Autonomous Integrity Monitoring cross-checks redundant satellite signals and warns the pilot if the position solution is unreliable.",
+     "cite": "FAA Instrument Flying Handbook"
+    },
+    {
+     "q": "A pilotage cross-check compares —",
+     "options": [
+      "Ground features with the chart",
+      "Only the compass with the DG",
+      "Fuel flow with time",
+      "Two VOR radials"
+     ],
+     "answer": 0,
+     "explain": "Pilotage is navigation by visual reference to landmarks, cross-checked against the chart.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "DME slant-range error is greatest when the aircraft is —",
+     "options": [
+      "Far from and low over the station",
+      "Close to and high over the station",
+      "On the ground at the station",
+      "At cruise 100 NM away"
+     ],
+     "answer": 1,
+     "explain": "DME measures slant range; the difference from ground distance is largest when directly over the station at altitude and negligible far away.",
+     "cite": "FAA Instrument Flying Handbook"
+    },
+    {
+     "q": "Magnetic deviation is corrected by reference to the aircraft's —",
+     "options": [
+      "Compass correction (deviation) card",
+      "Sectional chart",
+      "GPS",
+      "Altimeter"
+     ],
+     "answer": 0,
+     "explain": "Deviation — compass error from the aircraft's own magnetic fields — is listed on the compass correction card for various headings.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "A course line drawn on a chart and measured against a meridian gives the —",
+     "options": [
+      "True course",
+      "Magnetic heading",
+      "Compass heading",
+      "Groundspeed"
+     ],
+     "answer": 0,
+     "explain": "Measuring the plotted line against a meridian yields true course; applying variation gives magnetic course, then deviation gives compass course.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "When flying from an area of high pressure/temperature into low without resetting the altimeter, the true altitude will be —",
+     "options": [
+      "Lower than indicated",
+      "Higher than indicated",
+      "Unchanged",
+      "Exactly indicated"
+     ],
+     "answer": 0,
+     "explain": "'From high to low, look out below' — flying into lower pressure or colder air makes true altitude lower than the altimeter indicates.",
      "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
     }
    ]
@@ -2817,6 +4413,246 @@
      "answer": 0,
      "explain": "CAT typically occurs in strong wind-shear zones around the jet stream, often without visible cloud to warn pilots.",
      "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "Dew point is best defined as the temperature to which air must be cooled to become —",
+     "options": [
+      "Completely dry",
+      "Saturated (100% relative humidity)",
+      "Unstable",
+      "Supersonic"
+     ],
+     "answer": 1,
+     "explain": "Dew point is the temperature at which a given parcel of air becomes saturated; the closer the temperature/dew-point spread, the higher the humidity.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "A warm front is typically associated with —",
+     "options": [
+      "A narrow band of violent thunderstorms",
+      "Widespread stratiform cloud and steady precipitation",
+      "Clear skies and gusty winds",
+      "Sudden temperature drops"
+     ],
+     "answer": 1,
+     "explain": "Warm fronts, with their shallow slope, typically bring extensive stratiform cloud, low ceilings and steady precipitation ahead of the front.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "The three ingredients required for a thunderstorm to form are moisture, instability and —",
+     "options": [
+      "Snow",
+      "A lifting mechanism",
+      "High pressure",
+      "Calm wind"
+     ],
+     "answer": 1,
+     "explain": "Thunderstorms require sufficient moisture, an unstable lapse rate and a lifting force (front, terrain, heating or convergence) to trigger deep convection.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "Mountain wave turbulence is most likely when strong winds blow —",
+     "options": [
+      "Parallel to a ridge in stable air",
+      "Roughly perpendicular to a mountain ridge with a stable layer aloft",
+      "In calm conditions",
+      "Only at night"
+     ],
+     "answer": 1,
+     "explain": "Mountain waves form when strong winds cross a ridge roughly perpendicularly with a stable layer aloft, producing wave action, rotors and turbulence downwind.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "Freezing rain at the surface is a reliable indication of —",
+     "options": [
+      "A shallow, cold, dry airmass",
+      "Warmer air aloft above a sub-freezing surface layer (a temperature inversion)",
+      "Convective activity",
+      "Fog only"
+     ],
+     "answer": 1,
+     "explain": "Freezing rain forms when rain from a warmer layer aloft falls through a sub-freezing surface layer — direct evidence of warmer air above (an inversion).",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "The most hazardous aspect of a microburst for an aircraft on approach is —",
+     "options": [
+      "A steady tailwind",
+      "A rapid shift from a performance-increasing headwind to a performance-decreasing tailwind",
+      "Light rain",
+      "Reduced temperature"
+     ],
+     "answer": 1,
+     "explain": "Flying through a microburst, the aircraft first meets a headwind (rising performance), then a strong downdraft and finally a tailwind — a sudden loss of airspeed/performance close to the ground.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "Standard sea-level pressure in the International Standard Atmosphere is —",
+     "options": [
+      "1013.2 hPa (29.92 inHg)",
+      "1000 hPa (29.53 inHg)",
+      "1025 hPa (30.27 inHg)",
+      "950 hPa (28.05 inHg)"
+     ],
+     "answer": 0,
+     "explain": "ISA sea-level pressure is 1013.2 hPa, equal to 29.92 inches of mercury.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "Which cloud type is a sign of stable air and typically produces steady precipitation?",
+     "options": [
+      "Cumulonimbus",
+      "Stratiform (layer) cloud",
+      "Towering cumulus",
+      "Lenticular"
+     ],
+     "answer": 1,
+     "explain": "Stratiform (layered) cloud forms in stable air and yields steady, continuous precipitation; cumuliform cloud signals instability.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "A halo around the sun or moon, produced by cirrostratus, is often an early sign of —",
+     "options": [
+      "Clearing weather",
+      "An approaching warm front",
+      "A cold front passage",
+      "Fog dissipation"
+     ],
+     "answer": 1,
+     "explain": "Cirrostratus and its halo commonly precede an approaching warm front by a day or more.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "Wind reported by an aviation routine weather report (METAR) is referenced to —",
+     "options": [
+      "Magnetic north",
+      "True north",
+      "Grid north",
+      "The runway heading"
+     ],
+     "answer": 1,
+     "explain": "METAR/TAF winds are given in degrees true; ATC-issued surface winds (tower) are magnetic.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "The dew point is the temperature at which air, cooled at constant pressure, becomes —",
+     "options": [
+      "Unstable",
+      "Saturated",
+      "Supersaturated and turbulent",
+      "Isothermal"
+     ],
+     "answer": 1,
+     "explain": "Cooling air to its dew point brings it to saturation (100% relative humidity); further cooling causes condensation.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "Frost on a wing before flight is hazardous because it —",
+     "options": [
+      "Adds significant weight",
+      "Disrupts airflow, reducing lift and increasing stall speed",
+      "Only affects the windscreen",
+      "Improves lift"
+     ],
+     "answer": 1,
+     "explain": "Even thin frost roughens the wing surface, disrupting the boundary layer — it can reduce lift by a large margin and must be removed before flight.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "The three stages of an ordinary (air-mass) thunderstorm are cumulus, mature, and —",
+     "options": [
+      "Dissipating",
+      "Frontal",
+      "Supercell",
+      "Anvil"
+     ],
+     "answer": 0,
+     "explain": "An air-mass thunderstorm progresses through the cumulus (building), mature (peak, with downdrafts) and dissipating stages.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "Squall lines are hazardous to aircraft primarily because they —",
+     "options": [
+      "Are easy to fly through between cells",
+      "Form a continuous line of thunderstorms often too long to circumnavigate",
+      "Only occur at night",
+      "Produce only light rain"
+     ],
+     "answer": 1,
+     "explain": "A squall line is a band of active thunderstorms, often ahead of a cold front, that can be too extensive to safely detour around.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "A ceiling, in aviation weather, is the height above the surface of the lowest layer reported as —",
+     "options": [
+      "Few or scattered",
+      "Broken or overcast (or vertical visibility)",
+      "Clear",
+      "Thin"
+     ],
+     "answer": 1,
+     "explain": "Ceiling is the AGL height of the lowest broken or overcast layer, or the vertical visibility into an obscuration.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "Standing lenticular clouds are a visual indication of —",
+     "options": [
+      "Calm, stable conditions",
+      "Mountain-wave activity and possible severe turbulence",
+      "Approaching fog",
+      "Convective heating"
+     ],
+     "answer": 1,
+     "explain": "Smooth, lens-shaped standing lenticular clouds mark mountain-wave conditions, with turbulence likely even though the clouds themselves look smooth.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "For an unsaturated (dry) parcel, the adiabatic lapse rate is approximately —",
+     "options": [
+      "1.5 °C per 1,000 ft",
+      "3 °C (about 5.4 °F) per 1,000 ft",
+      "6.5 °C per 1,000 ft",
+      "9 °C per 1,000 ft"
+     ],
+     "answer": 1,
+     "explain": "The dry adiabatic lapse rate is about 3 °C per 1,000 ft; the average (environmental) lapse rate is about 2 °C per 1,000 ft.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "Fog that forms as warm, moist air moves over a cooler surface is —",
+     "options": [
+      "Radiation fog",
+      "Advection fog",
+      "Upslope fog",
+      "Steam fog"
+     ],
+     "answer": 1,
+     "explain": "Advection fog forms when warm, moist air is transported horizontally over a colder surface, cooling it to the dew point; unlike radiation fog it needs wind.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "A trough of low pressure is generally associated with —",
+     "options": [
+      "Fair weather and light winds",
+      "Clouds and unsettled/inclement weather",
+      "Descending, drying air",
+      "Clear skies"
+     ],
+     "answer": 1,
+     "explain": "Air converges and rises in a trough of low pressure, favouring cloud and unsettled weather; ridges of high pressure favour fair weather.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "Convective turbulence over land is usually strongest —",
+     "options": [
+      "At dawn",
+      "During the warmest part of the afternoon",
+      "At midnight",
+      "During steady rain"
+     ],
+     "answer": 1,
+     "explain": "Surface heating peaks in the afternoon, driving the strongest thermal (convective) turbulence in the lower atmosphere.",
+     "cite": "FAA Aviation Weather Handbook"
     }
    ]
   },
@@ -3161,6 +4997,174 @@
      "answer": 0,
      "explain": "Top-of-descent planning uses a target descent rate/gradient so the aircraft reaches the desired point and altitude at the right time.",
      "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "Density altitude is pressure altitude corrected for —",
+     "options": [
+      "Non-standard temperature",
+      "Wind",
+      "Magnetic variation",
+      "Aircraft weight"
+     ],
+     "answer": 0,
+     "explain": "Density altitude = pressure altitude corrected for temperature deviation from ISA; high density altitude degrades performance.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "On a high, hot, humid day, take-off and climb performance will —",
+     "options": [
+      "Improve",
+      "Degrade (longer roll, reduced climb)",
+      "Be unchanged",
+      "Only affect landing"
+     ],
+     "answer": 1,
+     "explain": "High density altitude reduces engine power, propeller thrust and lift, lengthening the take-off roll and reducing climb.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "The weight beyond which an aircraft may not be loaded for flight is the —",
+     "options": [
+      "Maximum gross (certificated) weight",
+      "Empty weight",
+      "Zero-fuel weight only",
+      "Ramp weight minus fuel"
+     ],
+     "answer": 0,
+     "explain": "The maximum certificated gross weight is a structural/performance limit that must not be exceeded.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "Loading an aircraft aft of the rearward CG limit tends to make it —",
+     "options": [
+      "More stable and easy to recover from a stall",
+      "Less stable and harder to recover from a stall/spin",
+      "Faster with no drawback",
+      "Nose-heavy"
+     ],
+     "answer": 1,
+     "explain": "An aft CG reduces longitudinal stability and can make stall/spin recovery difficult or impossible.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "If total weight is unchanged but the CG moves forward, the aircraft generally becomes —",
+     "options": [
+      "Less stable",
+      "More stable but with a higher stall speed and more elevator force needed",
+      "Uncontrollable",
+      "Lighter"
+     ],
+     "answer": 1,
+     "explain": "A forward CG increases stability and stall speed and requires more elevator/tail download — cruise performance drops slightly.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "Fuel required for a flight, in planning, must include taxi, trip, contingency, alternate, and —",
+     "options": [
+      "Final reserve",
+      "Only trip fuel",
+      "Nothing further",
+      "Ballast"
+     ],
+     "answer": 0,
+     "explain": "Standard fuel planning adds a final reserve on top of taxi, trip, contingency and alternate fuel.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "With a true airspeed of 100 kt and a 25 kt direct headwind, groundspeed is —",
+     "options": [
+      "125 kt",
+      "100 kt",
+      "75 kt",
+      "50 kt"
+     ],
+     "answer": 2,
+     "explain": "A direct headwind subtracts from TAS: 100 − 25 = 75 kt groundspeed.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "Given 90 kt groundspeed, how long to cover 30 NM?",
+     "options": [
+      "20 minutes",
+      "30 minutes",
+      "15 minutes",
+      "45 minutes"
+     ],
+     "answer": 0,
+     "explain": "Time = distance/speed = 30 NM ÷ 90 kt = 1/3 hour = 20 minutes.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "A crosswind component is largest when the wind is —",
+     "options": [
+      "Straight down the runway",
+      "90° across the runway",
+      "30° off the nose",
+      "A tailwind"
+     ],
+     "answer": 1,
+     "explain": "The crosswind component is the wind speed times the sine of the angle to the runway — maximal at 90°.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "A standard-rate turn is a turn at —",
+     "options": [
+      "3° per second (2 minutes for 360°)",
+      "1° per second",
+      "6° per second",
+      "10° per second"
+     ],
+     "answer": 0,
+     "explain": "A standard-rate (rate-one) turn is 3° per second, completing a 360° turn in two minutes.",
+     "cite": "FAA Instrument Flying Handbook"
+    },
+    {
+     "q": "To convert litres of avgas to a weight, a pilot multiplies by the fuel's —",
+     "options": [
+      "Specific gravity (density)",
+      "Octane rating",
+      "Vapour pressure",
+      "Temperature only"
+     ],
+     "answer": 0,
+     "explain": "Volume × density (specific gravity ≈ 0.72 for avgas) gives fuel weight, needed for weight-and-balance.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "A NOTAM (Notice to Air Missions) informs pilots of —",
+     "options": [
+      "Time-critical aeronautical information such as closures and outages",
+      "Long-term regulation changes only",
+      "Aircraft maintenance schedules",
+      "Company rosters"
+     ],
+     "answer": 0,
+     "explain": "NOTAMs give timely notice of hazards or changes — runway/taxiway closures, navaid outages, temporary restrictions — essential in pre-flight planning.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "Extra (contingency) fuel is carried to cover —",
+     "options": [
+      "Unforeseen factors such as routing changes, wind or ATC delays",
+      "Only taxi",
+      "Ballast requirements",
+      "Nothing — it is optional and never planned"
+     ],
+     "answer": 0,
+     "explain": "Contingency fuel is a margin for the unexpected — adverse winds, re-routes, holding — beyond the planned trip and reserves.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "The point in a flight plan beyond which it is quicker to continue than to return is the —",
+     "options": [
+      "Point of no return / equal-time point concept",
+      "Top of climb",
+      "Top of descent",
+      "Missed-approach point"
+     ],
+     "answer": 0,
+     "explain": "The equal-time point (or point of no return, fuel-based) is where continuing and returning take the same time/fuel — key for long over-water or remote legs.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
     }
    ]
   },
@@ -3457,6 +5461,198 @@
      "answer": 0,
      "explain": "ICAO Doc 9835, the Manual on the Implementation of ICAO Language Proficiency Requirements, expands on Annex 1's rating scale.",
      "cite": "ICAO Annex 1 / Doc 9835"
+    },
+    {
+     "q": "The readability scale used to answer 'HOW DO YOU READ' runs from —",
+     "options": [
+      "1 (unreadable) to 5 (perfectly readable)",
+      "1 (best) to 9 (worst)",
+      "A to E",
+      "0 to 10"
+     ],
+     "answer": 0,
+     "explain": "Readability is reported on a 1-to-5 scale: 1 unreadable, 2 readable now and then, 3 readable but with difficulty, 4 readable, 5 perfectly readable.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "The word used to indicate 'yes' or 'that is correct' in radiotelephony is —",
+     "options": [
+      "ROGER",
+      "AFFIRM",
+      "WILCO",
+      "CORRECT"
+     ],
+     "answer": 1,
+     "explain": "'AFFIRM' means yes; 'ROGER' only means the transmission was received, not agreement.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "A distress message (MAYDAY) has priority over —",
+     "options": [
+      "Only routine messages",
+      "All other transmissions",
+      "Only urgency messages",
+      "Nothing — it has no special priority"
+     ],
+     "answer": 1,
+     "explain": "A distress (MAYDAY) message has absolute priority over all other transmissions.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "The distress and urgency signals are, respectively —",
+     "options": [
+      "SECURITE and PAN PAN",
+      "MAYDAY and PAN PAN",
+      "PAN PAN and MAYDAY",
+      "MAYDAY and SECURITE"
+     ],
+     "answer": 1,
+     "explain": "Distress is 'MAYDAY' (grave and imminent danger); urgency is 'PAN PAN' (a condition concerning safety but not requiring immediate assistance).",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "The phonetic word for the letter 'J' is —",
+     "options": [
+      "Juliett",
+      "Jupiter",
+      "Jack",
+      "Jumbo"
+     ],
+     "answer": 0,
+     "explain": "In the ICAO spelling alphabet, J = Juliett.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "The phonetic word for the letter 'Q' is —",
+     "options": [
+      "Queen",
+      "Quebec",
+      "Quick",
+      "Quiet"
+     ],
+     "answer": 1,
+     "explain": "In the ICAO spelling alphabet, Q = Quebec.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "The phonetic word for the letter 'W' is —",
+     "options": [
+      "Whiskey",
+      "Water",
+      "William",
+      "Wing"
+     ],
+     "answer": 0,
+     "explain": "In the ICAO spelling alphabet, W = Whiskey.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "The number '4' is spoken in radiotelephony as —",
+     "options": [
+      "Four",
+      "Fower",
+      "Quad",
+      "Fort"
+     ],
+     "answer": 1,
+     "explain": "To reduce ambiguity, 4 is pronounced 'FOWER' in ICAO radiotelephony.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "The number '1000' is transmitted as —",
+     "options": [
+      "One zero zero zero",
+      "One thousand",
+      "Ten hundred",
+      "Thousand"
+     ],
+     "answer": 1,
+     "explain": "Whole thousands are spoken as the digit(s) plus 'THOUSAND' — 1000 is 'one thousand'.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "A frequency of 118.1 MHz is normally read as —",
+     "options": [
+      "One one eight decimal one",
+      "One eighteen point one",
+      "One hundred eighteen one",
+      "Eleven eight one"
+     ],
+     "answer": 0,
+     "explain": "VHF frequencies are read digit-by-digit with 'DECIMAL' for the point — 'one one eight decimal one'.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "The word 'CORRECTION' in a transmission indicates —",
+     "options": [
+      "An error has been made; the correct version follows",
+      "The message is cancelled",
+      "Repeat everything",
+      "Change frequency"
+     ],
+     "answer": 0,
+     "explain": "'CORRECTION' signals an error in the transmission; the corrected portion follows.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "'ACKNOWLEDGE' is a request to —",
+     "options": [
+      "Let me know you received and understood this message",
+      "Take off immediately",
+      "Change squawk",
+      "Read back verbatim"
+     ],
+     "answer": 0,
+     "explain": "'ACKNOWLEDGE' asks the recipient to confirm the message was received and understood.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "'APPROVED' from ATC means —",
+     "options": [
+      "Permission for the proposed action is granted",
+      "Hold position",
+      "Unable",
+      "Say again"
+     ],
+     "answer": 0,
+     "explain": "'APPROVED' grants permission for the action or clearance the pilot requested.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "'HOLD SHORT' instructs the pilot to —",
+     "options": [
+      "Stop before the specified point (e.g. a runway)",
+      "Enter the runway",
+      "Expedite crossing",
+      "Backtrack"
+     ],
+     "answer": 0,
+     "explain": "'HOLD SHORT' requires stopping before the designated holding point or runway and requires a read-back.",
+     "cite": "ICAO Doc 4444 (PANS-ATM)"
+    },
+    {
+     "q": "When two stations transmit simultaneously and block each other, the effect is called a —",
+     "options": [
+      "Blocked transmission (a 'step-on')",
+      "Read-back",
+      "Relay",
+      "Squelch"
+     ],
+     "answer": 0,
+     "explain": "Simultaneous transmissions garble each other ('stepping on'); ATC may ask a station to 'say again' after a blocked call.",
+     "cite": "ICAO Annex 10 Vol II"
+    },
+    {
+     "q": "The urgency prefix spoken three times to introduce an urgency message is —",
+     "options": [
+      "PAN PAN, PAN PAN, PAN PAN",
+      "MAYDAY x3",
+      "SECURITE x3",
+      "URGENCY x3"
+     ],
+     "answer": 0,
+     "explain": "An urgency message is prefixed 'PAN PAN' spoken three times; distress uses 'MAYDAY' three times.",
+     "cite": "ICAO Annex 10 Vol II"
     }
    ]
   }

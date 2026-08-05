@@ -387,6 +387,262 @@
       "id": "part-61",
       "anchor": "sec-61-173"
      }
+    },
+    {
+     "q": "The ATP certificate is the —",
+     "options": [
+      "Lowest pilot certificate",
+      "Highest level of pilot certificate, required to act as PIC of scheduled air-carrier aircraft",
+      "Same as a private certificate",
+      "A medical document"
+     ],
+     "answer": 1,
+     "explain": "The Airline Transport Pilot certificate is the highest pilot certificate and is required to act as PIC (and, per the rules, SIC) of certain air-carrier operations.",
+     "cite": "GACAR Part 61, Subpart G",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-61"
+     }
+    },
+    {
+     "q": "A defining ATP eligibility requirement, compared with the commercial certificate, is —",
+     "options": [
+      "A lower age",
+      "A higher minimum age (typically 21) and substantially greater flight experience",
+      "No medical",
+      "No knowledge test"
+     ],
+     "answer": 1,
+     "explain": "ATP applicants must meet a higher minimum age (generally 21) and far greater aeronautical experience, including significant PIC and cross-country/night time.",
+     "cite": "GACAR Part 61, Subpart G",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-61"
+     }
+    },
+    {
+     "q": "An ATP applicant must hold at least —",
+     "options": [
+      "A student pilot certificate",
+      "A commercial pilot certificate with an instrument rating (or equivalent)",
+      "Only a medical",
+      "A flight instructor certificate"
+     ],
+     "answer": 1,
+     "explain": "ATP certification builds on a commercial certificate with an instrument rating (or an acceptable equivalent), plus the additional experience and testing.",
+     "cite": "GACAR Part 61, Subpart G",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-61"
+     }
+    },
+    {
+     "q": "An ATP certificate holder must hold a medical certificate of at least —",
+     "options": [
+      "Class 3",
+      "Class 1 for the relevant airline-transport privileges",
+      "No class",
+      "Class 2 only"
+     ],
+     "answer": 1,
+     "explain": "Exercising airline-transport (air carrier PIC) privileges requires the highest, Class 1, medical certificate.",
+     "cite": "GACAR Part 61, Subpart G / Part 67",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-61"
+     }
+    },
+    {
+     "q": "The airline transport pilot certificate is the —",
+     "options": [
+      "Highest level of pilot certificate",
+      "Same as a student certificate",
+      "A medical document",
+      "A type rating only"
+     ],
+     "answer": 0,
+     "explain": "The ATP is the highest pilot certificate, required for airline captain (and, as specified, first-officer) duties.",
+     "cite": "GACAR Part 61",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-61"
+     }
+    },
+    {
+     "q": "The minimum age for an ATP certificate is —",
+     "options": [
+      "21",
+      "18",
+      "17",
+      "16"
+     ],
+     "answer": 0,
+     "explain": "An ATP applicant must be at least 21 years of age.",
+     "cite": "GACAR Part 61",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-61"
+     }
+    },
+    {
+     "q": "An ATP applicant must hold —",
+     "options": [
+      "A Class 1 medical certificate",
+      "No medical",
+      "A Class 3 medical only",
+      "A student certificate"
+     ],
+     "answer": 0,
+     "explain": "ATP privileges require a Class 1 medical certificate.",
+     "cite": "GACAR Part 67",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-67"
+     }
+    },
+    {
+     "q": "The ATP requires substantial aeronautical experience, typically on the order of —",
+     "options": [
+      "Around 1,500 hours total time (with specified components)",
+      "50 hours",
+      "200 hours",
+      "10 hours"
+     ],
+     "answer": 0,
+     "explain": "The ATP demands large totals — on the order of 1,500 hours including cross-country, night, instrument and PIC components.",
+     "cite": "GACAR Part 61",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-61"
+     }
+    },
+    {
+     "q": "To act as PIC of a large transport aircraft, in addition to the ATP a pilot needs —",
+     "options": [
+      "A type rating for that aircraft",
+      "Only a class rating",
+      "A night rating",
+      "Nothing further"
+     ],
+     "answer": 0,
+     "explain": "A type rating for the specific transport aircraft is required alongside the ATP.",
+     "cite": "GACAR Part 61",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-61"
+     }
+    },
+    {
+     "q": "An ATP holder must maintain competence through —",
+     "options": [
+      "Recurrent training, checks and currency requirements",
+      "A one-time exam only",
+      "Seniority",
+      "Passenger reviews"
+     ],
+     "answer": 0,
+     "explain": "Airline crews undergo recurrent training and proficiency/line checks to retain qualification.",
+     "cite": "GACAR Part 121",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
+    },
+    {
+     "q": "The ATP knowledge test covers advanced subjects including —",
+     "options": [
+      "Air-transport operations, meteorology, performance and crew resource management",
+      "Only basic VFR",
+      "Cabin catering",
+      "Ticket pricing"
+     ],
+     "answer": 0,
+     "explain": "ATP knowledge spans advanced meteorology, transport performance, operations, navigation and human factors/CRM.",
+     "cite": "GACAR Part 61",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-61"
+     }
+    },
+    {
+     "q": "An ATP practical test is conducted to —",
+     "options": [
+      "Airline transport (highest) standards",
+      "Private pilot tolerances",
+      "No standard",
+      "Glider standards"
+     ],
+     "answer": 0,
+     "explain": "The ATP practical test applies the highest airman proficiency standards.",
+     "cite": "GACAR Part 61",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-61"
+     }
+    },
+    {
+     "q": "Crew resource management (CRM) training for airline crews aims to improve —",
+     "options": [
+      "Communication, workload management and decision-making in the crew",
+      "Fuel octane",
+      "Paint durability",
+      "Seat comfort"
+     ],
+     "answer": 0,
+     "explain": "CRM develops effective use of all resources — people, information and equipment — to reduce error.",
+     "cite": "GACAR Part 121",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
+    },
+    {
+     "q": "A first officer at an airline must, at minimum, hold —",
+     "options": [
+      "The certificate/qualifications required by the operating rules (often ATP or as specified) and a type rating as applicable",
+      "Only a student certificate",
+      "No certificate",
+      "A ground-instructor rating"
+     ],
+     "answer": 0,
+     "explain": "Required flight-crew qualifications are set by the operating rules; airline pilots hold the ATP (or the specified certificate) and the appropriate type rating.",
+     "cite": "GACAR Part 61",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-61"
+     }
+    },
+    {
+     "q": "An ATP certificate does not exempt the holder from —",
+     "options": [
+      "Currency, medical and type-specific requirements",
+      "Wearing a headset",
+      "Filing flight plans",
+      "Reading charts"
+     ],
+     "answer": 0,
+     "explain": "Even ATP holders must meet recency, medical and type-rating currency requirements to exercise privileges.",
+     "cite": "GACAR Part 61",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-61"
+     }
+    },
+    {
+     "q": "The high experience requirement for the ATP exists to ensure —",
+     "options": [
+      "A demonstrated depth of skill and judgement for air-transport command",
+      "Faster promotion only",
+      "Lower training cost",
+      "Reduced fuel burn"
+     ],
+     "answer": 0,
+     "explain": "The ATP's experience thresholds are intended to ensure the maturity and skill appropriate to airline command.",
+     "cite": "GACAR Part 61",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-61"
+     }
     }
    ]
   },
@@ -769,6 +1025,262 @@
       "id": "part-121",
       "anchor": "sec-121-1001"
      }
+    },
+    {
+     "q": "Under an air carrier's operational control, the release of a flight is the joint responsibility of —",
+     "options": [
+      "The passengers",
+      "The pilot in command and (for dispatch operations) the aircraft dispatcher",
+      "The cabin crew alone",
+      "The fuel truck driver"
+     ],
+     "answer": 1,
+     "explain": "In dispatch operations, operational control and the flight release are shared between the PIC and the licensed aircraft dispatcher.",
+     "cite": "GACAR Part 121",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
+    },
+    {
+     "q": "A Minimum Equipment List (MEL) allows an aircraft to be dispatched with —",
+     "options": [
+      "Any inoperative item",
+      "Specific inoperative items under defined conditions and procedures",
+      "No inoperative items ever",
+      "Only cosmetic defects"
+     ],
+     "answer": 1,
+     "explain": "An approved MEL permits dispatch with certain items inoperative provided the associated conditions, limitations and procedures are met.",
+     "cite": "GACAR Part 121 (MEL)",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
+    },
+    {
+     "q": "Air carrier operations require crew members to complete —",
+     "options": [
+      "No training",
+      "Approved training and qualification/checking programs before serving",
+      "Only a written test once",
+      "Training only after an incident"
+     ],
+     "answer": 1,
+     "explain": "Part 121/135 carriers must run approved training, qualification and recurrent checking programs; crew must be current and qualified to serve.",
+     "cite": "GACAR Part 121 (training & qualification)",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
+    },
+    {
+     "q": "Flight and duty time limitations for air-carrier crews exist primarily to —",
+     "options": [
+      "Increase utilisation",
+      "Manage fatigue and preserve alertness for safety",
+      "Reduce fuel burn",
+      "Simplify scheduling only"
+     ],
+     "answer": 1,
+     "explain": "Flight, duty and rest limits are safety rules that manage crew fatigue and protect alertness.",
+     "cite": "GACAR Part 121 (flight/duty limitations)",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
+    },
+    {
+     "q": "Scheduled airline operations with transport-category aircraft are governed by GACAR —",
+     "options": [
+      "Part 121",
+      "Part 91 only",
+      "Part 61",
+      "Part 43"
+     ],
+     "answer": 0,
+     "explain": "Part 121 governs commercial air operators using transport-category/commuter aircraft.",
+     "cite": "GACAR Part 121",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
+    },
+    {
+     "q": "Dispatch of a Part 121 flight requires the joint responsibility of —",
+     "options": [
+      "The PIC and the aircraft dispatcher (flight operations officer)",
+      "The passengers",
+      "The manufacturer",
+      "The airport authority"
+     ],
+     "answer": 0,
+     "explain": "Under Part 121 domestic/flag rules, operational control is shared by the PIC and a licensed dispatcher.",
+     "cite": "GACAR Part 121",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
+    },
+    {
+     "q": "A required document carried on a commercial transport flight is the —",
+     "options": [
+      "Operations specifications / operating certificate references and required manuals",
+      "Passenger loyalty card",
+      "Marketing brochure",
+      "Menu"
+     ],
+     "answer": 0,
+     "explain": "Required manuals and operational documents (as specified in the rules and OpSpecs) must be available on board.",
+     "cite": "GACAR Part 121",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
+    },
+    {
+     "q": "Extended-range operations (EDTO/ETOPS) impose requirements based on —",
+     "options": [
+      "The diversion time to an adequate aerodrome with an engine inoperative",
+      "The number of passengers",
+      "The paint colour",
+      "The catering load"
+     ],
+     "answer": 0,
+     "explain": "EDTO/ETOPS rules apply additional requirements tied to the maximum diversion time to a suitable aerodrome.",
+     "cite": "GACAR Part 121",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
+    },
+    {
+     "q": "A cabin crew complement on a transport aircraft is determined mainly by —",
+     "options": [
+      "The passenger seating capacity",
+      "The aircraft colour",
+      "The captain's preference",
+      "The route length only"
+     ],
+     "answer": 0,
+     "explain": "The minimum number of cabin crew is set by the passenger seating capacity (and type certification).",
+     "cite": "GACAR Part 121",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
+    },
+    {
+     "q": "Fuel requirements for a Part 121 flight include trip fuel, contingency, alternate and —",
+     "options": [
+      "Final reserve (holding) fuel",
+      "No reserve",
+      "Only taxi fuel",
+      "Ballast"
+     ],
+     "answer": 0,
+     "explain": "Transport fuel planning adds final reserve/holding fuel on top of trip, contingency and alternate requirements.",
+     "cite": "GACAR Part 121",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
+    },
+    {
+     "q": "Flight-time and duty limitations for airline crews are intended to —",
+     "options": [
+      "Control fatigue",
+      "Increase productivity without limit",
+      "Reduce salaries",
+      "Speed turnarounds"
+     ],
+     "answer": 0,
+     "explain": "Flight/duty/rest limits manage crew fatigue in scheduled operations.",
+     "cite": "GACAR Part 121",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
+    },
+    {
+     "q": "A required element of a Part 121 operator's programme is —",
+     "options": [
+      "An approved training and checking programme for crews",
+      "A frequent-flyer scheme",
+      "A catering contract",
+      "A livery design"
+     ],
+     "answer": 0,
+     "explain": "Approved training/checking programmes for flight and cabin crew are required.",
+     "cite": "GACAR Part 121",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
+    },
+    {
+     "q": "The aircraft used in Part 121 operations must be maintained under —",
+     "options": [
+      "A continuous airworthiness maintenance programme (CAMP)",
+      "The pilot's discretion",
+      "No programme",
+      "The airport's schedule"
+     ],
+     "answer": 0,
+     "explain": "Part 121 fleets follow a continuous airworthiness maintenance programme.",
+     "cite": "GACAR Part 121",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
+    },
+    {
+     "q": "A minimum equipment list (MEL) allows a transport aircraft to be dispatched —",
+     "options": [
+      "With certain items inoperative under defined conditions",
+      "With any item inoperative",
+      "Only when perfect",
+      "Without any documentation"
+     ],
+     "answer": 0,
+     "explain": "An approved MEL permits dispatch with specified inoperative items subject to operational/maintenance conditions.",
+     "cite": "GACAR Part 121",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
+    },
+    {
+     "q": "Weather minima for dispatch consider the destination and —",
+     "options": [
+      "Take-off and alternate aerodrome minima",
+      "Only the cruise winds",
+      "The paint scheme",
+      "The catering"
+     ],
+     "answer": 0,
+     "explain": "Dispatch requires take-off, destination and (where required) alternate minima to be satisfied by the forecast.",
+     "cite": "GACAR Part 121",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
+    },
+    {
+     "q": "A load and trim (weight-and-balance) sheet for a transport flight ensures the aircraft is —",
+     "options": [
+      "Within weight and CG limits for the flight",
+      "Fully fuelled always",
+      "The heaviest possible",
+      "Painted correctly"
+     ],
+     "answer": 0,
+     "explain": "The load sheet confirms take-off/landing weights and CG are within the certified envelope.",
+     "cite": "GACAR Part 121",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
     }
    ]
   },
@@ -1133,6 +1645,262 @@
       "id": "part-121",
       "anchor": "sec-121-1417"
      }
+    },
+    {
+     "q": "For a transport-category take-off, V1 is the —",
+     "options": [
+      "Rotation speed",
+      "Take-off decision speed — the maximum speed at which the pilot must take the first action to stop within the accelerate-stop distance",
+      "Best climb speed",
+      "Never-exceed speed"
+     ],
+     "answer": 1,
+     "explain": "V1 is the decision speed: at or below it the take-off can be safely rejected within the accelerate-stop distance; above it the take-off is continued.",
+     "cite": "GACAR Part 121 (take-off performance)",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
+    },
+    {
+     "q": "The 'balanced field length' is the runway length at which —",
+     "options": [
+      "The aircraft is empty",
+      "The accelerate-stop distance equals the accelerate-go distance for the chosen V1",
+      "No wind exists",
+      "The runway is level"
+     ],
+     "answer": 1,
+     "explain": "At the balanced field length the distance to accelerate to V1 and stop equals the distance to accelerate to V1, lose an engine, and continue to the screen height.",
+     "cite": "GACAR Part 121 (performance)",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
+    },
+    {
+     "q": "Following an engine failure at altitude on a transport aircraft, 'driftdown' refers to —",
+     "options": [
+      "An uncontrolled descent",
+      "A controlled descent to the one-engine-inoperative net level-off altitude while maintaining obstacle clearance",
+      "A go-around",
+      "A holding pattern"
+     ],
+     "answer": 1,
+     "explain": "Driftdown is the planned descent on the remaining engine(s) to the OEI net ceiling, ensuring the net flight path clears enroute obstacles/terrain.",
+     "cite": "GACAR Part 121 (enroute performance)",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
+    },
+    {
+     "q": "Transport-category landing performance requires the aeroplane to be able to land within —",
+     "options": [
+      "The full runway plus overrun",
+      "A defined percentage of the landing distance available (a required landing factor)",
+      "Any distance",
+      "Half the taxiway"
+     ],
+     "answer": 1,
+     "explain": "Dispatch landing performance requires the aeroplane to stop within a required proportion of the landing distance available (a safety factor applied to the demonstrated landing distance).",
+     "cite": "GACAR Part 121 (landing performance)",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
+    },
+    {
+     "q": "Performance Class A (transport) aeroplanes must be able to continue a take-off safely after —",
+     "options": [
+      "A critical engine failure at or after V1",
+      "Any minor squawk",
+      "A passenger complaint",
+      "A radio failure only"
+     ],
+     "answer": 0,
+     "explain": "Class A performance guarantees a take-off can be continued (or safely rejected) around the V1 decision speed with the critical engine failed.",
+     "cite": "GACAR Part 121",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
+    },
+    {
+     "q": "The net take-off flight path is the gross flight path reduced by a margin to —",
+     "options": [
+      "Guarantee obstacle clearance",
+      "Increase payload",
+      "Save fuel",
+      "Reduce noise only"
+     ],
+     "answer": 0,
+     "explain": "The net flight path applies a safety decrement to the demonstrated (gross) climb to ensure obstacle clearance after take-off.",
+     "cite": "GACAR Part 121",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
+    },
+    {
+     "q": "Contaminated-runway take-off performance accounts for —",
+     "options": [
+      "Reduced braking and possible impingement/displacement drag",
+      "Improved acceleration",
+      "Shorter stopping distance",
+      "Higher V1 always"
+     ],
+     "answer": 0,
+     "explain": "Standing water/slush/snow reduce braking and add drag, degrading accelerate-stop and continued take-off performance.",
+     "cite": "GACAR Part 121",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
+    },
+    {
+     "q": "Wind-shear on approach is most dangerous because it can cause a rapid loss of —",
+     "options": [
+      "Airspeed and lift close to the ground",
+      "Fuel",
+      "Cabin pressure",
+      "Radio contact"
+     ],
+     "answer": 0,
+     "explain": "A shift from headwind to tailwind (or a downdraft) can rob the aircraft of airspeed and lift at low altitude — hence wind-shear escape procedures.",
+     "cite": "GACAR Part 121",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
+    },
+    {
+     "q": "A cost-index setting in an FMS balances —",
+     "options": [
+      "Fuel cost against time-related cost to derive an economy speed",
+      "Cabin temperature",
+      "Seat allocation",
+      "Cargo colour"
+     ],
+     "answer": 0,
+     "explain": "The cost index trades fuel burn against time-dependent costs to compute the economical climb/cruise/descent speeds.",
+     "cite": "GACAR Part 121",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
+    },
+    {
+     "q": "Jet-stream cores are associated with —",
+     "options": [
+      "Strong winds and clear-air turbulence at their boundaries",
+      "Calm air",
+      "Fog only",
+      "Low-level shear only"
+     ],
+     "answer": 0,
+     "explain": "Jet streams bring very strong winds and CAT, especially on the cold (polar) side and near the tropopause breaks.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "A tropopause height that is lower generally indicates —",
+     "options": [
+      "Colder (polar) air",
+      "Warmer (tropical) air",
+      "No temperature change",
+      "Higher humidity always"
+     ],
+     "answer": 0,
+     "explain": "The tropopause is lower over the poles (colder) and higher over the tropics (warmer) — relevant to cruise levels and jet streams.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "A significant weather (SIGWX) chart depicts —",
+     "options": [
+      "Fronts, jet streams, CAT, cloud and hazards for the cruise levels",
+      "Only surface winds",
+      "Taxi routes",
+      "Fuel prices"
+     ],
+     "answer": 0,
+     "explain": "SIGWX charts show significant en-route weather — fronts, jets, turbulence, icing, cloud and convection — for flight planning.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "The maximum operating limit speed by Mach number for a transport jet is —",
+     "options": [
+      "MMO",
+      "Va",
+      "Vfe",
+      "Vso"
+     ],
+     "answer": 0,
+     "explain": "MMO is the maximum operating Mach number; VMO is the maximum operating airspeed — both must not be exceeded.",
+     "cite": "GACAR Part 121",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
+    },
+    {
+     "q": "High-altitude 'coffin corner' is the narrowing gap between —",
+     "options": [
+      "Low-speed (stall) buffet and high-speed (Mach) buffet",
+      "Vne and Va",
+      "Flap and gear speeds",
+      "Taxi and rotate speeds"
+     ],
+     "answer": 0,
+     "explain": "Near the service ceiling the stall speed and the critical Mach converge, shrinking the safe speed range ('coffin corner').",
+     "cite": "GACAR Part 121",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
+    },
+    {
+     "q": "Reduced-thrust (flex) take-offs are permitted only when —",
+     "options": [
+      "Actual performance requirements are still met with margin",
+      "The runway is contaminated",
+      "An engine is inoperative",
+      "Payload exceeds limits"
+     ],
+     "answer": 0,
+     "explain": "Flex/derated thrust is used only when the reduced thrust still satisfies field, climb and obstacle requirements.",
+     "cite": "GACAR Part 121",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
+    },
+    {
+     "q": "An accurate outside air temperature is important at altitude because it affects —",
+     "options": [
+      "True airspeed, Mach and performance calculations",
+      "Cabin colour",
+      "Seat pitch",
+      "Radio range"
+     ],
+     "answer": 0,
+     "explain": "OAT feeds TAS/Mach computation and performance; errors affect navigation timing and buffet margins.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "A standard alternate-fuel requirement for a transport flight is based on —",
+     "options": [
+      "The distance/time to the alternate plus approach and landing",
+      "The cruise altitude only",
+      "The passenger count",
+      "The livery"
+     ],
+     "answer": 0,
+     "explain": "Alternate fuel covers the missed approach at destination, cruise to the alternate, approach and landing there.",
+     "cite": "GACAR Part 121",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
     }
    ]
   },
@@ -1468,6 +2236,234 @@
      "answer": 0,
      "explain": "Contracting States must notify ICAO of any difference between their national regulations and ICAO Standards, so operators know where Saudi Arabia's rules diverge.",
      "cite": "GACAR Foreword"
+    },
+    {
+     "q": "The body responsible for civil aviation regulation in the Kingdom of Saudi Arabia is —",
+     "options": [
+      "GACA (General Authority of Civil Aviation)",
+      "ICAO",
+      "IATA",
+      "EASA"
+     ],
+     "answer": 0,
+     "explain": "GACA is the Saudi civil aviation authority; the GACARs are its regulations.",
+     "cite": "GACAR · Civil Aviation Law"
+    },
+    {
+     "q": "The GACARs are structured to align, as far as practicable, with —",
+     "options": [
+      "ICAO Standards and Recommended Practices",
+      "US state law",
+      "IATA fare rules",
+      "Company manuals"
+     ],
+     "answer": 0,
+     "explain": "GACAR is drafted to comply with ICAO SARPs (and mirrors the FAR structure), promoting international harmonisation.",
+     "cite": "GACAR · Civil Aviation Law"
+    },
+    {
+     "q": "The 1944 Chicago Convention established which organisation?",
+     "options": [
+      "ICAO",
+      "IATA",
+      "GACA",
+      "The UN Security Council"
+     ],
+     "answer": 0,
+     "explain": "The Convention on International Civil Aviation (Chicago, 1944) created ICAO.",
+     "cite": "GACAR · Civil Aviation Law"
+    },
+    {
+     "q": "An ICAO Annex contains —",
+     "options": [
+      "Standards and Recommended Practices on a subject area",
+      "Aircraft type certificates",
+      "Airline schedules",
+      "Passenger contracts"
+     ],
+     "answer": 0,
+     "explain": "Each of the ICAO Annexes sets out SARPs for a field such as licensing, rules of the air or aerodromes.",
+     "cite": "GACAR · Civil Aviation Law"
+    },
+    {
+     "q": "Which ICAO Annex covers 'Rules of the Air'?",
+     "options": [
+      "Annex 2",
+      "Annex 6",
+      "Annex 14",
+      "Annex 17"
+     ],
+     "answer": 0,
+     "explain": "Annex 2 is Rules of the Air; Annex 1 licensing, Annex 6 operations, Annex 14 aerodromes.",
+     "cite": "GACAR · Civil Aviation Law"
+    },
+    {
+     "q": "Personnel licensing SARPs are contained in ICAO —",
+     "options": [
+      "Annex 1",
+      "Annex 2",
+      "Annex 8",
+      "Annex 11"
+     ],
+     "answer": 0,
+     "explain": "Annex 1 addresses personnel licensing.",
+     "cite": "GACAR · Civil Aviation Law"
+    },
+    {
+     "q": "A State files a 'difference' with ICAO when its national rule —",
+     "options": [
+      "Differs from an ICAO Standard",
+      "Matches ICAO exactly",
+      "Is a company policy",
+      "Concerns fares"
+     ],
+     "answer": 0,
+     "explain": "States notify ICAO of differences where national regulations depart from a Standard.",
+     "cite": "GACAR · Civil Aviation Law"
+    },
+    {
+     "q": "Under the general operating rules, the final authority as to the operation of an aircraft rests with the —",
+     "options": [
+      "Pilot in command",
+      "Dispatcher",
+      "Air traffic controller",
+      "Chief pilot on the ground"
+     ],
+     "answer": 0,
+     "explain": "The PIC is directly responsible for, and is the final authority as to, the operation of the aircraft.",
+     "cite": "GACAR Part 91",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91"
+     }
+    },
+    {
+     "q": "In an in-flight emergency requiring immediate action, the PIC may —",
+     "options": [
+      "Deviate from any rule to the extent required to meet the emergency",
+      "Never deviate from the rules",
+      "Only deviate with prior ATC approval",
+      "Deviate only in VMC"
+     ],
+     "answer": 0,
+     "explain": "The rules permit the PIC to deviate as required in an emergency, and may require a written report afterward.",
+     "cite": "GACAR Part 91",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91"
+     }
+    },
+    {
+     "q": "Non-commercial general-aviation flight in a private aircraft is primarily governed by GACAR —",
+     "options": [
+      "Part 91",
+      "Part 121",
+      "Part 141",
+      "Part 67"
+     ],
+     "answer": 0,
+     "explain": "Part 91 (general operating and flight rules) governs the conduct of general-aviation flight.",
+     "cite": "GACAR Part 91",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91"
+     }
+    },
+    {
+     "q": "Certification of pilots, flight instructors and ground instructors is found in GACAR —",
+     "options": [
+      "Part 61",
+      "Part 91",
+      "Part 43",
+      "Part 71"
+     ],
+     "answer": 0,
+     "explain": "Part 61 covers certification of pilots, flight/ground instructors and flight engineers.",
+     "cite": "GACAR Part 61",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-61"
+     }
+    },
+    {
+     "q": "Rules for the maintenance, preventive maintenance and alteration of aircraft are in GACAR —",
+     "options": [
+      "Part 43",
+      "Part 61",
+      "Part 91",
+      "Part 67"
+     ],
+     "answer": 0,
+     "explain": "Part 43 governs maintenance, preventive maintenance, rebuilding and alteration.",
+     "cite": "GACAR Part 43",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-43"
+     }
+    },
+    {
+     "q": "Airworthiness Directives are issued under GACAR —",
+     "options": [
+      "Part 39",
+      "Part 21",
+      "Part 43",
+      "Part 91"
+     ],
+     "answer": 0,
+     "explain": "Part 39 provides for Airworthiness Directives — mandatory corrections of unsafe conditions.",
+     "cite": "GACAR Part 39",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-39"
+     }
+    },
+    {
+     "q": "The airspace designation and classification rules are in GACAR —",
+     "options": [
+      "Part 71",
+      "Part 91",
+      "Part 61",
+      "Part 121"
+     ],
+     "answer": 0,
+     "explain": "Part 71 designates airspace, routes and reporting points.",
+     "cite": "GACAR Part 71",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-71"
+     }
+    },
+    {
+     "q": "Commercial air transport by large transport-category aeroplanes is regulated under GACAR —",
+     "options": [
+      "Part 121",
+      "Part 91",
+      "Part 61",
+      "Part 43"
+     ],
+     "answer": 0,
+     "explain": "Part 121 governs operations of commercial air operators using transport-category/commuter aircraft.",
+     "cite": "GACAR Part 121",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-121"
+     }
+    },
+    {
+     "q": "Medical standards and certification are contained in GACAR —",
+     "options": [
+      "Part 67",
+      "Part 61",
+      "Part 91",
+      "Part 71"
+     ],
+     "answer": 0,
+     "explain": "Part 67 sets the medical standards and certification requirements.",
+     "cite": "GACAR Part 67",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-67"
+     }
     }
    ]
   },
@@ -1821,6 +2817,230 @@
      "answer": 0,
      "explain": "Maintenance records must document total time in service and AD compliance status, among other things, so continued airworthiness can be verified.",
      "cite": "GACAR Part 43"
+    },
+    {
+     "q": "The pitot-static system supplies pressure to the airspeed indicator, altimeter and —",
+     "options": [
+      "Vertical speed indicator",
+      "Tachometer",
+      "Oil pressure gauge",
+      "Compass"
+     ],
+     "answer": 0,
+     "explain": "The pitot-static system drives the ASI (pitot + static), altimeter and VSI (static).",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "If the pitot tube ices over but the static port stays clear, the airspeed indicator will —",
+     "options": [
+      "Behave like an altimeter (read high in a climb, low in a descent)",
+      "Read exactly correct",
+      "Read zero always",
+      "Freeze at Vne"
+     ],
+     "answer": 0,
+     "explain": "A blocked pitot with clear static makes the ASI respond to altitude changes like an altimeter.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "A blocked static source (with alternate static unavailable) causes the altimeter to —",
+     "options": [
+      "Freeze at the altitude where blockage occurred",
+      "Read true altitude",
+      "Read zero",
+      "Spin continuously"
+     ],
+     "answer": 0,
+     "explain": "With the static source blocked, the altimeter holds the reading from the moment of blockage; using alternate static (cabin) restores approximate function.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "The attitude indicator, heading indicator and turn coordinator are typically driven by —",
+     "options": [
+      "Gyroscopes (vacuum/electric)",
+      "The pitot-static system",
+      "Engine oil",
+      "Fuel pressure"
+     ],
+     "answer": 0,
+     "explain": "These are gyroscopic instruments powered by a vacuum pump or electrically.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "An Emergency Locator Transmitter (ELT) transmits on the international distress frequency —",
+     "options": [
+      "406 MHz (with 121.5 MHz homing)",
+      "118.0 MHz",
+      "243 kHz",
+      "1090 MHz only"
+     ],
+     "answer": 0,
+     "explain": "Modern ELTs transmit a digital 406 MHz signal to satellites, with 121.5 MHz for homing.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "An Airworthiness Directive (AD) is —",
+     "options": [
+      "A mandatory instruction to correct an unsafe condition",
+      "An optional service bulletin",
+      "A weather notice",
+      "A pilot licence endorsement"
+     ],
+     "answer": 0,
+     "explain": "ADs are legally mandatory actions issued to correct unsafe conditions in a type/product.",
+     "cite": "GACAR Part 39",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-39"
+     }
+    },
+    {
+     "q": "Responsibility for ensuring an aircraft is in an airworthy condition before flight rests primarily with the —",
+     "options": [
+      "Pilot in command",
+      "Air traffic controller",
+      "Manufacturer",
+      "Passengers"
+     ],
+     "answer": 0,
+     "explain": "The PIC must determine the aircraft is airworthy before flight; the owner/operator is responsible for maintenance.",
+     "cite": "GACAR Part 91",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91"
+     }
+    },
+    {
+     "q": "Preventive maintenance (e.g. simple servicing) may generally be performed by —",
+     "options": [
+      "A certificated pilot on an aircraft they own/operate (where authorised)",
+      "Anyone",
+      "Only the manufacturer",
+      "Only ATC"
+     ],
+     "answer": 0,
+     "explain": "Rules permit certificated pilots to perform listed preventive-maintenance tasks on aircraft they own or operate, within limits.",
+     "cite": "GACAR Part 43",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-43"
+     }
+    },
+    {
+     "q": "A required instrument or equipment item that is inoperative before flight must be —",
+     "options": [
+      "Handled per the MEL or the applicable inoperative-equipment rule",
+      "Ignored",
+      "Repaired only after the flight",
+      "Removed in flight"
+     ],
+     "answer": 0,
+     "explain": "Inoperative equipment is dispatched per the Minimum Equipment List or the general inoperative-instruments-and-equipment rule.",
+     "cite": "GACAR Part 91",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91"
+     }
+    },
+    {
+     "q": "The transponder (and where required altitude reporting) must have been tested/inspected within the preceding —",
+     "options": [
+      "24 calendar months",
+      "12 months",
+      "6 months",
+      "48 months"
+     ],
+     "answer": 0,
+     "explain": "Transponder and altitude-reporting systems require testing within the preceding 24 calendar months for use in controlled airspace.",
+     "cite": "GACAR Part 91",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91"
+     }
+    },
+    {
+     "q": "Continued airworthiness of an aircraft is maintained through —",
+     "options": [
+      "Compliance with the maintenance programme, ADs and inspections",
+      "Frequent repainting",
+      "Higher cruise speeds",
+      "Reducing weight only"
+     ],
+     "answer": 0,
+     "explain": "Airworthiness is sustained by the approved maintenance programme, mandatory ADs and required inspections.",
+     "cite": "GACAR Part 43",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-43"
+     }
+    },
+    {
+     "q": "Supplemental oxygen is required for the flight crew above a cabin pressure altitude of about —",
+     "options": [
+      "A specified altitude for durations/continuous use per the rule (e.g. above ~10,000–12,500 ft)",
+      "Sea level",
+      "FL450 only",
+      "Any altitude at night"
+     ],
+     "answer": 0,
+     "explain": "Rules require crew oxygen above defined cabin altitudes — continuously above the higher threshold and after a time limit at the lower band.",
+     "cite": "GACAR Part 91",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-91"
+     }
+    },
+    {
+     "q": "An aircraft's Certificate of Airworthiness remains valid provided —",
+     "options": [
+      "The aircraft is maintained and operated within its approved limitations",
+      "The paint is fresh",
+      "It is flown weekly",
+      "The owner renews it monthly"
+     ],
+     "answer": 0,
+     "explain": "A C of A stays in effect while the aircraft conforms to type design and is maintained/operated per its limitations and the applicable rules.",
+     "cite": "GACAR Part 21",
+     "citeRef": {
+      "kind": "regulations",
+      "id": "part-21"
+     }
+    },
+    {
+     "q": "The document listing an aircraft's operating limitations, markings and placards is the —",
+     "options": [
+      "Approved flight manual / pilot's operating handbook",
+      "Journey log",
+      "Weather log",
+      "Load sheet only"
+     ],
+     "answer": 0,
+     "explain": "The AFM/POH contains the certificated limitations, procedures and performance data; required placards echo key limits.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "Static wicks fitted to trailing edges serve to —",
+     "options": [
+      "Discharge static electricity to reduce radio interference",
+      "Increase lift",
+      "Measure airspeed",
+      "Detect ice"
+     ],
+     "answer": 0,
+     "explain": "Static dischargers (wicks) bleed off accumulated static charge, reducing precipitation-static interference with radios/navaids.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "A magneto check before take-off verifies —",
+     "options": [
+      "The ignition system and detects a dead/rough mag",
+      "Fuel quantity",
+      "Tyre pressure",
+      "Cabin altitude"
+     ],
+     "answer": 0,
+     "explain": "The run-up mag check confirms both ignition systems work and reveals excessive rpm drop from a faulty magneto or fouled plug.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
     }
    ]
   },
@@ -2164,6 +3384,246 @@
      ],
      "answer": 0,
      "explain": "CAT typically occurs in strong wind-shear zones around the jet stream, often without visible cloud to warn pilots.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "Dew point is best defined as the temperature to which air must be cooled to become —",
+     "options": [
+      "Completely dry",
+      "Saturated (100% relative humidity)",
+      "Unstable",
+      "Supersonic"
+     ],
+     "answer": 1,
+     "explain": "Dew point is the temperature at which a given parcel of air becomes saturated; the closer the temperature/dew-point spread, the higher the humidity.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "A warm front is typically associated with —",
+     "options": [
+      "A narrow band of violent thunderstorms",
+      "Widespread stratiform cloud and steady precipitation",
+      "Clear skies and gusty winds",
+      "Sudden temperature drops"
+     ],
+     "answer": 1,
+     "explain": "Warm fronts, with their shallow slope, typically bring extensive stratiform cloud, low ceilings and steady precipitation ahead of the front.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "The three ingredients required for a thunderstorm to form are moisture, instability and —",
+     "options": [
+      "Snow",
+      "A lifting mechanism",
+      "High pressure",
+      "Calm wind"
+     ],
+     "answer": 1,
+     "explain": "Thunderstorms require sufficient moisture, an unstable lapse rate and a lifting force (front, terrain, heating or convergence) to trigger deep convection.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "Mountain wave turbulence is most likely when strong winds blow —",
+     "options": [
+      "Parallel to a ridge in stable air",
+      "Roughly perpendicular to a mountain ridge with a stable layer aloft",
+      "In calm conditions",
+      "Only at night"
+     ],
+     "answer": 1,
+     "explain": "Mountain waves form when strong winds cross a ridge roughly perpendicularly with a stable layer aloft, producing wave action, rotors and turbulence downwind.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "Freezing rain at the surface is a reliable indication of —",
+     "options": [
+      "A shallow, cold, dry airmass",
+      "Warmer air aloft above a sub-freezing surface layer (a temperature inversion)",
+      "Convective activity",
+      "Fog only"
+     ],
+     "answer": 1,
+     "explain": "Freezing rain forms when rain from a warmer layer aloft falls through a sub-freezing surface layer — direct evidence of warmer air above (an inversion).",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "The most hazardous aspect of a microburst for an aircraft on approach is —",
+     "options": [
+      "A steady tailwind",
+      "A rapid shift from a performance-increasing headwind to a performance-decreasing tailwind",
+      "Light rain",
+      "Reduced temperature"
+     ],
+     "answer": 1,
+     "explain": "Flying through a microburst, the aircraft first meets a headwind (rising performance), then a strong downdraft and finally a tailwind — a sudden loss of airspeed/performance close to the ground.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "Standard sea-level pressure in the International Standard Atmosphere is —",
+     "options": [
+      "1013.2 hPa (29.92 inHg)",
+      "1000 hPa (29.53 inHg)",
+      "1025 hPa (30.27 inHg)",
+      "950 hPa (28.05 inHg)"
+     ],
+     "answer": 0,
+     "explain": "ISA sea-level pressure is 1013.2 hPa, equal to 29.92 inches of mercury.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "Which cloud type is a sign of stable air and typically produces steady precipitation?",
+     "options": [
+      "Cumulonimbus",
+      "Stratiform (layer) cloud",
+      "Towering cumulus",
+      "Lenticular"
+     ],
+     "answer": 1,
+     "explain": "Stratiform (layered) cloud forms in stable air and yields steady, continuous precipitation; cumuliform cloud signals instability.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "A halo around the sun or moon, produced by cirrostratus, is often an early sign of —",
+     "options": [
+      "Clearing weather",
+      "An approaching warm front",
+      "A cold front passage",
+      "Fog dissipation"
+     ],
+     "answer": 1,
+     "explain": "Cirrostratus and its halo commonly precede an approaching warm front by a day or more.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "Wind reported by an aviation routine weather report (METAR) is referenced to —",
+     "options": [
+      "Magnetic north",
+      "True north",
+      "Grid north",
+      "The runway heading"
+     ],
+     "answer": 1,
+     "explain": "METAR/TAF winds are given in degrees true; ATC-issued surface winds (tower) are magnetic.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "The dew point is the temperature at which air, cooled at constant pressure, becomes —",
+     "options": [
+      "Unstable",
+      "Saturated",
+      "Supersaturated and turbulent",
+      "Isothermal"
+     ],
+     "answer": 1,
+     "explain": "Cooling air to its dew point brings it to saturation (100% relative humidity); further cooling causes condensation.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "Frost on a wing before flight is hazardous because it —",
+     "options": [
+      "Adds significant weight",
+      "Disrupts airflow, reducing lift and increasing stall speed",
+      "Only affects the windscreen",
+      "Improves lift"
+     ],
+     "answer": 1,
+     "explain": "Even thin frost roughens the wing surface, disrupting the boundary layer — it can reduce lift by a large margin and must be removed before flight.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "The three stages of an ordinary (air-mass) thunderstorm are cumulus, mature, and —",
+     "options": [
+      "Dissipating",
+      "Frontal",
+      "Supercell",
+      "Anvil"
+     ],
+     "answer": 0,
+     "explain": "An air-mass thunderstorm progresses through the cumulus (building), mature (peak, with downdrafts) and dissipating stages.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "Squall lines are hazardous to aircraft primarily because they —",
+     "options": [
+      "Are easy to fly through between cells",
+      "Form a continuous line of thunderstorms often too long to circumnavigate",
+      "Only occur at night",
+      "Produce only light rain"
+     ],
+     "answer": 1,
+     "explain": "A squall line is a band of active thunderstorms, often ahead of a cold front, that can be too extensive to safely detour around.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "A ceiling, in aviation weather, is the height above the surface of the lowest layer reported as —",
+     "options": [
+      "Few or scattered",
+      "Broken or overcast (or vertical visibility)",
+      "Clear",
+      "Thin"
+     ],
+     "answer": 1,
+     "explain": "Ceiling is the AGL height of the lowest broken or overcast layer, or the vertical visibility into an obscuration.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "Standing lenticular clouds are a visual indication of —",
+     "options": [
+      "Calm, stable conditions",
+      "Mountain-wave activity and possible severe turbulence",
+      "Approaching fog",
+      "Convective heating"
+     ],
+     "answer": 1,
+     "explain": "Smooth, lens-shaped standing lenticular clouds mark mountain-wave conditions, with turbulence likely even though the clouds themselves look smooth.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "For an unsaturated (dry) parcel, the adiabatic lapse rate is approximately —",
+     "options": [
+      "1.5 °C per 1,000 ft",
+      "3 °C (about 5.4 °F) per 1,000 ft",
+      "6.5 °C per 1,000 ft",
+      "9 °C per 1,000 ft"
+     ],
+     "answer": 1,
+     "explain": "The dry adiabatic lapse rate is about 3 °C per 1,000 ft; the average (environmental) lapse rate is about 2 °C per 1,000 ft.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "Fog that forms as warm, moist air moves over a cooler surface is —",
+     "options": [
+      "Radiation fog",
+      "Advection fog",
+      "Upslope fog",
+      "Steam fog"
+     ],
+     "answer": 1,
+     "explain": "Advection fog forms when warm, moist air is transported horizontally over a colder surface, cooling it to the dew point; unlike radiation fog it needs wind.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "A trough of low pressure is generally associated with —",
+     "options": [
+      "Fair weather and light winds",
+      "Clouds and unsettled/inclement weather",
+      "Descending, drying air",
+      "Clear skies"
+     ],
+     "answer": 1,
+     "explain": "Air converges and rises in a trough of low pressure, favouring cloud and unsettled weather; ridges of high pressure favour fair weather.",
+     "cite": "FAA Aviation Weather Handbook"
+    },
+    {
+     "q": "Convective turbulence over land is usually strongest —",
+     "options": [
+      "At dawn",
+      "During the warmest part of the afternoon",
+      "At midnight",
+      "During steady rain"
+     ],
+     "answer": 1,
+     "explain": "Surface heating peaks in the afternoon, driving the strongest thermal (convective) turbulence in the lower atmosphere.",
      "cite": "FAA Aviation Weather Handbook"
     }
    ]
@@ -2509,6 +3969,246 @@
      "answer": 0,
      "explain": "A compass deviation card, mounted near the compass, lists correction values for the aircraft's own magnetic interference at various headings.",
      "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "A rhumb line (loxodrome) is a track that —",
+     "options": [
+      "Crosses every meridian at the same angle and appears straight on a Mercator chart",
+      "Is the shortest distance between two points",
+      "Always follows a great circle",
+      "Points at the magnetic pole"
+     ],
+     "answer": 0,
+     "explain": "A rhumb line maintains a constant true bearing, crossing all meridians at the same angle; it plots as a straight line on a Mercator projection but is not the shortest route.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "To convert a true heading to a magnetic heading, a pilot applies —",
+     "options": [
+      "Deviation",
+      "Variation",
+      "Wind correction angle",
+      "Compass acceleration error"
+     ],
+     "answer": 1,
+     "explain": "Magnetic variation (the angle between true and magnetic north) is applied to convert true to magnetic; deviation is then applied to obtain compass heading.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "On a sectional chart the effect of 'east is least, west is best' is a memory aid for applying —",
+     "options": [
+      "Deviation to compass heading",
+      "Variation between true and magnetic (subtract easterly, add westerly to true)",
+      "Wind correction",
+      "Time-zone changes"
+     ],
+     "answer": 1,
+     "explain": "'East is least (subtract), west is best (add)' reminds pilots to subtract easterly and add westerly variation when converting a true course to a magnetic course.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "A VOR radial is defined as a magnetic bearing —",
+     "options": [
+      "Toward the station",
+      "Away from (outbound from) the station",
+      "Relative to the aircraft nose",
+      "From true north"
+     ],
+     "answer": 1,
+     "explain": "A radial is a magnetic course oriented FROM the VOR station; the aircraft is on a given radial regardless of which way it is heading.",
+     "cite": "FAA Instrument Flying Handbook"
+    },
+    {
+     "q": "An RNAV/GNSS system computes position primarily from —",
+     "options": [
+      "Ground-based NDB signals",
+      "Ranging signals from multiple satellites",
+      "Magnetic dip",
+      "Barometric pressure"
+     ],
+     "answer": 1,
+     "explain": "A GNSS receiver derives three-dimensional position from the ranging signals of several satellites simultaneously.",
+     "cite": "FAA Instrument Flying Handbook"
+    },
+    {
+     "q": "Given a true airspeed of 100 kt and a direct 20 kt tailwind, the groundspeed is —",
+     "options": [
+      "80 kt",
+      "100 kt",
+      "120 kt",
+      "20 kt"
+     ],
+     "answer": 2,
+     "explain": "A direct tailwind adds to true airspeed: 100 kt TAS + 20 kt tailwind = 120 kt groundspeed.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "On a Lambert conformal / sectional chart, a straight line most nearly represents a —",
+     "options": [
+      "Rhumb line",
+      "Great-circle route",
+      "Line of latitude",
+      "Magnetic meridian"
+     ],
+     "answer": 1,
+     "explain": "On the Lambert conformal conic projection used for sectionals, a straight line approximates a great circle — the shortest route.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "True airspeed compared with calibrated airspeed, at altitude, is generally —",
+     "options": [
+      "Lower",
+      "Higher",
+      "Identical",
+      "Zero"
+     ],
+     "answer": 1,
+     "explain": "As altitude increases and air density falls, true airspeed exceeds calibrated (indicated) airspeed for the same dynamic pressure.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "A VOR receiver check using a designated VOT should read —",
+     "options": [
+      "000 FROM or 180 TO (±4°)",
+      "090 FROM only",
+      "The nearest airway",
+      "Any radial within 10°"
+     ],
+     "answer": 0,
+     "explain": "Over a VOT the CDI centres on 0° with a FROM indication (or 180° TO), within a ±4° tolerance.",
+     "cite": "FAA Instrument Flying Handbook"
+    },
+    {
+     "q": "The maximum reception range of a VOR is limited chiefly by —",
+     "options": [
+      "Line-of-sight (VHF) propagation",
+      "Magnetic variation",
+      "Rain attenuation",
+      "Sunspot activity"
+     ],
+     "answer": 0,
+     "explain": "VOR is VHF and line-of-sight, so reception range increases with altitude and is blocked by terrain.",
+     "cite": "FAA Instrument Flying Handbook"
+    },
+    {
+     "q": "An ADF needle points to the station; to track TO an NDB the pilot uses —",
+     "options": [
+      "Relative bearing plus magnetic heading = magnetic bearing to the station",
+      "Only the relative bearing",
+      "The reciprocal of the heading",
+      "The variation alone"
+     ],
+     "answer": 0,
+     "explain": "Magnetic bearing to the station = magnetic heading + relative bearing (the angle from the nose to the needle).",
+     "cite": "FAA Instrument Flying Handbook"
+    },
+    {
+     "q": "Isogonic lines on an aeronautical chart connect points of equal —",
+     "options": [
+      "Magnetic variation",
+      "Elevation",
+      "Pressure",
+      "Temperature"
+     ],
+     "answer": 0,
+     "explain": "Isogonic lines join points of equal magnetic variation; the agonic line is where variation is zero.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "One nautical mile corresponds to approximately —",
+     "options": [
+      "One minute of latitude",
+      "One degree of latitude",
+      "One minute of longitude at all latitudes",
+      "One statute mile"
+     ],
+     "answer": 0,
+     "explain": "One nautical mile ≈ one minute of arc of latitude (about 1.15 statute miles / 1.852 km).",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "Wind correction angle is applied so that the aircraft's —",
+     "options": [
+      "Heading differs from track to offset drift",
+      "Groundspeed equals true airspeed",
+      "Track always equals the heading",
+      "Altitude stays constant"
+     ],
+     "answer": 0,
+     "explain": "The pilot crabs into wind — heading offset from the desired track — so drift is cancelled and the track is maintained.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "RAIM, associated with GPS/GNSS navigation, provides —",
+     "options": [
+      "Integrity monitoring of the satellite solution",
+      "Radio altimeter alerts",
+      "Runway alignment",
+      "Autopilot engagement"
+     ],
+     "answer": 0,
+     "explain": "Receiver Autonomous Integrity Monitoring cross-checks redundant satellite signals and warns the pilot if the position solution is unreliable.",
+     "cite": "FAA Instrument Flying Handbook"
+    },
+    {
+     "q": "A pilotage cross-check compares —",
+     "options": [
+      "Ground features with the chart",
+      "Only the compass with the DG",
+      "Fuel flow with time",
+      "Two VOR radials"
+     ],
+     "answer": 0,
+     "explain": "Pilotage is navigation by visual reference to landmarks, cross-checked against the chart.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "DME slant-range error is greatest when the aircraft is —",
+     "options": [
+      "Far from and low over the station",
+      "Close to and high over the station",
+      "On the ground at the station",
+      "At cruise 100 NM away"
+     ],
+     "answer": 1,
+     "explain": "DME measures slant range; the difference from ground distance is largest when directly over the station at altitude and negligible far away.",
+     "cite": "FAA Instrument Flying Handbook"
+    },
+    {
+     "q": "Magnetic deviation is corrected by reference to the aircraft's —",
+     "options": [
+      "Compass correction (deviation) card",
+      "Sectional chart",
+      "GPS",
+      "Altimeter"
+     ],
+     "answer": 0,
+     "explain": "Deviation — compass error from the aircraft's own magnetic fields — is listed on the compass correction card for various headings.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "A course line drawn on a chart and measured against a meridian gives the —",
+     "options": [
+      "True course",
+      "Magnetic heading",
+      "Compass heading",
+      "Groundspeed"
+     ],
+     "answer": 0,
+     "explain": "Measuring the plotted line against a meridian yields true course; applying variation gives magnetic course, then deviation gives compass course.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "When flying from an area of high pressure/temperature into low without resetting the altimeter, the true altitude will be —",
+     "options": [
+      "Lower than indicated",
+      "Higher than indicated",
+      "Unchanged",
+      "Exactly indicated"
+     ],
+     "answer": 0,
+     "explain": "'From high to low, look out below' — flying into lower pressure or colder air makes true altitude lower than the altimeter indicates.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
     }
    ]
   },
@@ -2852,6 +4552,174 @@
      ],
      "answer": 0,
      "explain": "Top-of-descent planning uses a target descent rate/gradient so the aircraft reaches the desired point and altitude at the right time.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "Density altitude is pressure altitude corrected for —",
+     "options": [
+      "Non-standard temperature",
+      "Wind",
+      "Magnetic variation",
+      "Aircraft weight"
+     ],
+     "answer": 0,
+     "explain": "Density altitude = pressure altitude corrected for temperature deviation from ISA; high density altitude degrades performance.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "On a high, hot, humid day, take-off and climb performance will —",
+     "options": [
+      "Improve",
+      "Degrade (longer roll, reduced climb)",
+      "Be unchanged",
+      "Only affect landing"
+     ],
+     "answer": 1,
+     "explain": "High density altitude reduces engine power, propeller thrust and lift, lengthening the take-off roll and reducing climb.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "The weight beyond which an aircraft may not be loaded for flight is the —",
+     "options": [
+      "Maximum gross (certificated) weight",
+      "Empty weight",
+      "Zero-fuel weight only",
+      "Ramp weight minus fuel"
+     ],
+     "answer": 0,
+     "explain": "The maximum certificated gross weight is a structural/performance limit that must not be exceeded.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "Loading an aircraft aft of the rearward CG limit tends to make it —",
+     "options": [
+      "More stable and easy to recover from a stall",
+      "Less stable and harder to recover from a stall/spin",
+      "Faster with no drawback",
+      "Nose-heavy"
+     ],
+     "answer": 1,
+     "explain": "An aft CG reduces longitudinal stability and can make stall/spin recovery difficult or impossible.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "If total weight is unchanged but the CG moves forward, the aircraft generally becomes —",
+     "options": [
+      "Less stable",
+      "More stable but with a higher stall speed and more elevator force needed",
+      "Uncontrollable",
+      "Lighter"
+     ],
+     "answer": 1,
+     "explain": "A forward CG increases stability and stall speed and requires more elevator/tail download — cruise performance drops slightly.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "Fuel required for a flight, in planning, must include taxi, trip, contingency, alternate, and —",
+     "options": [
+      "Final reserve",
+      "Only trip fuel",
+      "Nothing further",
+      "Ballast"
+     ],
+     "answer": 0,
+     "explain": "Standard fuel planning adds a final reserve on top of taxi, trip, contingency and alternate fuel.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "With a true airspeed of 100 kt and a 25 kt direct headwind, groundspeed is —",
+     "options": [
+      "125 kt",
+      "100 kt",
+      "75 kt",
+      "50 kt"
+     ],
+     "answer": 2,
+     "explain": "A direct headwind subtracts from TAS: 100 − 25 = 75 kt groundspeed.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "Given 90 kt groundspeed, how long to cover 30 NM?",
+     "options": [
+      "20 minutes",
+      "30 minutes",
+      "15 minutes",
+      "45 minutes"
+     ],
+     "answer": 0,
+     "explain": "Time = distance/speed = 30 NM ÷ 90 kt = 1/3 hour = 20 minutes.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "A crosswind component is largest when the wind is —",
+     "options": [
+      "Straight down the runway",
+      "90° across the runway",
+      "30° off the nose",
+      "A tailwind"
+     ],
+     "answer": 1,
+     "explain": "The crosswind component is the wind speed times the sine of the angle to the runway — maximal at 90°.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "A standard-rate turn is a turn at —",
+     "options": [
+      "3° per second (2 minutes for 360°)",
+      "1° per second",
+      "6° per second",
+      "10° per second"
+     ],
+     "answer": 0,
+     "explain": "A standard-rate (rate-one) turn is 3° per second, completing a 360° turn in two minutes.",
+     "cite": "FAA Instrument Flying Handbook"
+    },
+    {
+     "q": "To convert litres of avgas to a weight, a pilot multiplies by the fuel's —",
+     "options": [
+      "Specific gravity (density)",
+      "Octane rating",
+      "Vapour pressure",
+      "Temperature only"
+     ],
+     "answer": 0,
+     "explain": "Volume × density (specific gravity ≈ 0.72 for avgas) gives fuel weight, needed for weight-and-balance.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "A NOTAM (Notice to Air Missions) informs pilots of —",
+     "options": [
+      "Time-critical aeronautical information such as closures and outages",
+      "Long-term regulation changes only",
+      "Aircraft maintenance schedules",
+      "Company rosters"
+     ],
+     "answer": 0,
+     "explain": "NOTAMs give timely notice of hazards or changes — runway/taxiway closures, navaid outages, temporary restrictions — essential in pre-flight planning.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "Extra (contingency) fuel is carried to cover —",
+     "options": [
+      "Unforeseen factors such as routing changes, wind or ATC delays",
+      "Only taxi",
+      "Ballast requirements",
+      "Nothing — it is optional and never planned"
+     ],
+     "answer": 0,
+     "explain": "Contingency fuel is a margin for the unexpected — adverse winds, re-routes, holding — beyond the planned trip and reserves.",
+     "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "The point in a flight plan beyond which it is quicker to continue than to return is the —",
+     "options": [
+      "Point of no return / equal-time point concept",
+      "Top of climb",
+      "Top of descent",
+      "Missed-approach point"
+     ],
+     "answer": 0,
+     "explain": "The equal-time point (or point of no return, fuel-based) is where continuing and returning take the same time/fuel — key for long over-water or remote legs.",
      "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
     }
    ]
@@ -3197,6 +5065,246 @@
      "answer": 0,
      "explain": "Situational awareness is the pilot's accurate, up-to-date mental picture of the aircraft, environment, and how they're likely to evolve.",
      "cite": "FAA Pilot's Handbook of Aeronautical Knowledge"
+    },
+    {
+     "q": "Empty-field (or 'empty-sky') myopia causes the eyes at high altitude with nothing to focus on to —",
+     "options": [
+      "Focus sharply at infinity",
+      "Relax to a short focal distance, reducing ability to detect distant traffic",
+      "See ultraviolet light",
+      "Improve night vision"
+     ],
+     "answer": 1,
+     "explain": "With no visual cues the eyes relax to a resting focus of only a few metres, so distant traffic can go undetected — pilots should deliberately focus on distant objects.",
+     "cite": "FAA Aeronautical Information Manual / aeromedical references"
+    },
+    {
+     "q": "The greatest risk from mild hypoxia is that the affected pilot —",
+     "options": [
+      "Feels obvious pain",
+      "May feel a false sense of well-being (euphoria) and not recognise the impairment",
+      "Immediately loses consciousness",
+      "Cannot start the engine"
+     ],
+     "answer": 1,
+     "explain": "Insidious hypoxia often produces euphoria and impaired judgement without the pilot recognising the degradation — which is what makes it dangerous.",
+     "cite": "FAA aeromedical references"
+    },
+    {
+     "q": "Time of useful consciousness at a cabin altitude of 25,000 ft is on the order of —",
+     "options": [
+      "Several hours",
+      "3 to 5 minutes",
+      "Indefinite",
+      "One second"
+     ],
+     "answer": 1,
+     "explain": "At around 25,000 ft, time of useful consciousness after a loss of pressurisation is only about 3–5 minutes, decreasing sharply with altitude.",
+     "cite": "FAA aeromedical references"
+    },
+    {
+     "q": "The leans, a common form of vestibular spatial disorientation, is best countered by —",
+     "options": [
+      "Closing the eyes",
+      "Trusting and flying by the flight instruments",
+      "Making rapid head movements",
+      "Increasing power"
+     ],
+     "answer": 1,
+     "explain": "The 'leans' is a false sensation of bank; the remedy is to believe and fly the instruments rather than bodily sensations.",
+     "cite": "FAA Instrument Flying Handbook / aeromedical references"
+    },
+    {
+     "q": "The startle/surprise response is a human-factors hazard because it can —",
+     "options": [
+      "Improve reaction time",
+      "Momentarily degrade a pilot's cognitive performance and delay a correct response",
+      "Prevent hypoxia",
+      "Increase night vision"
+     ],
+     "answer": 1,
+     "explain": "A sudden, unexpected event can trigger a startle response that briefly impairs perception and decision-making, delaying an appropriate reaction.",
+     "cite": "FAA Risk Management Handbook"
+    },
+    {
+     "q": "Effective crew/single-pilot resource management primarily aims to improve —",
+     "options": [
+      "Engine efficiency",
+      "The management of all available resources — information, equipment and people — to reduce error",
+      "Fuel burn",
+      "Aircraft speed"
+     ],
+     "answer": 1,
+     "explain": "Resource management (CRM/SRM) is about using all available resources — information, automation, people and self — to improve situational awareness and decision-making.",
+     "cite": "FAA Risk Management Handbook"
+    },
+    {
+     "q": "Hypoxia caused by reduced oxygen partial pressure at altitude is —",
+     "options": [
+      "Hypoxic hypoxia",
+      "Anemic hypoxia",
+      "Stagnant hypoxia",
+      "Histotoxic hypoxia"
+     ],
+     "answer": 0,
+     "explain": "Hypoxic (altitude) hypoxia results from the falling partial pressure of oxygen as altitude increases.",
+     "cite": "FAA aeromedical & risk-management references"
+    },
+    {
+     "q": "Carbon monoxide poisoning is best described as which type of hypoxia?",
+     "options": [
+      "Hypoxic",
+      "Anemic (hypemic)",
+      "Stagnant",
+      "Histotoxic"
+     ],
+     "answer": 1,
+     "explain": "CO binds to haemoglobin far more readily than oxygen, reducing the blood's oxygen-carrying capacity — anemic (hypemic) hypoxia.",
+     "cite": "FAA aeromedical & risk-management references"
+    },
+    {
+     "q": "Hyperventilation and hypoxia can feel similar; if in doubt at altitude the pilot should —",
+     "options": [
+      "Assume hypoxia and use supplemental oxygen",
+      "Ignore the symptoms",
+      "Descend rapidly without oxygen",
+      "Breathe faster"
+     ],
+     "answer": 0,
+     "explain": "Because the symptoms overlap and hypoxia is more immediately dangerous, treat the situation as hypoxia — use oxygen and slow the breathing rate.",
+     "cite": "FAA aeromedical & risk-management references"
+    },
+    {
+     "q": "The false climb sensation after a rapid acceleration on take-off is the —",
+     "options": [
+      "Somatogravic illusion",
+      "Coriolis illusion",
+      "Autokinesis",
+      "False horizon"
+     ],
+     "answer": 0,
+     "explain": "Forward acceleration is sensed as a nose-up (pitch) attitude — the somatogravic illusion — which can prompt a dangerous nose-down input at night/IMC.",
+     "cite": "FAA Instrument Flying Handbook"
+    },
+    {
+     "q": "Staring at a single stationary light at night can make it appear to move — this illusion is —",
+     "options": [
+      "Autokinesis",
+      "The leans",
+      "Flicker vertigo",
+      "Empty-field myopia"
+     ],
+     "answer": 0,
+     "explain": "Autokinesis: a fixed light stared at for several seconds appears to wander; scanning avoids it.",
+     "cite": "FAA aeromedical & risk-management references"
+    },
+    {
+     "q": "The rods of the eye, used for night vision, are —",
+     "options": [
+      "Concentrated at the fovea (centre)",
+      "Most sensitive off-centre, so off-centre viewing is used at night",
+      "Colour-sensitive",
+      "Unaffected by darkness"
+     ],
+     "answer": 1,
+     "explain": "Rods surround the fovea; at night, looking slightly off-centre (off-centre viewing) places images on the more light-sensitive rods.",
+     "cite": "FAA aeromedical & risk-management references"
+    },
+    {
+     "q": "Full dark adaptation of the eyes takes approximately —",
+     "options": [
+      "30 minutes",
+      "2 minutes",
+      "5 seconds",
+      "3 hours"
+     ],
+     "answer": 0,
+     "explain": "Dark adaptation takes about 30 minutes and can be undone quickly by bright white light.",
+     "cite": "FAA aeromedical & risk-management references"
+    },
+    {
+     "q": "A pilot should not fly for at least the recommended time after donating blood or with a recent illness because of —",
+     "options": [
+      "Reduced tolerance to hypoxia and impaired performance",
+      "Weight and balance limits",
+      "Radio interference",
+      "Fuel contamination"
+     ],
+     "answer": 0,
+     "explain": "Blood donation, illness, dehydration and similar factors reduce hypoxia tolerance and degrade performance — captured by the 'IM SAFE' checklist.",
+     "cite": "FAA aeromedical & risk-management references"
+    },
+    {
+     "q": "The hazardous attitude 'invulnerability' is countered by the antidote —",
+     "options": [
+      "'It could happen to me'",
+      "'Not so fast, think first'",
+      "'Follow the rules'",
+      "'I'm not helpless'"
+     ],
+     "answer": 0,
+     "explain": "'Invulnerability' ('it won't happen to me') is countered by 'it could happen to me.'",
+     "cite": "FAA Risk Management Handbook"
+    },
+    {
+     "q": "Scanning for traffic is most effective using —",
+     "options": [
+      "A series of short, regularly spaced eye movements",
+      "One continuous sweep",
+      "Only central vision",
+      "Peripheral vision alone"
+     ],
+     "answer": 0,
+     "explain": "Effective scanning uses a series of short, regularly spaced eye movements, each holding briefly, because the eye detects movement/detail only when relatively still.",
+     "cite": "FAA aeromedical & risk-management references"
+    },
+    {
+     "q": "Spatial disorientation is most effectively prevented by —",
+     "options": [
+      "Trusting bodily sensations",
+      "Relying on and believing the flight instruments",
+      "Closing the eyes",
+      "Frequent head movement in IMC"
+     ],
+     "answer": 1,
+     "explain": "In reduced visual reference the vestibular senses mislead; the remedy is to trust the instruments.",
+     "cite": "FAA Instrument Flying Handbook"
+    },
+    {
+     "q": "Middle-ear or sinus block (barotrauma) on descent is best relieved by —",
+     "options": [
+      "Climbing and using the Valsalva/swallowing techniques",
+      "Descending faster",
+      "Holding the breath",
+      "Increasing power only"
+     ],
+     "answer": 0,
+     "explain": "If pressure won't equalise on descent, a climb reduces the differential; swallowing, yawning or a gentle Valsalva helps clear the ears/sinuses.",
+     "cite": "FAA aeromedical & risk-management references"
+    },
+    {
+     "q": "'Get-there-itis' (plan continuation bias) is the tendency to —",
+     "options": [
+      "Continue an original plan despite changing conditions that warrant a diversion",
+      "Turn back too early",
+      "Fly below minimums deliberately",
+      "Ignore the destination weather only"
+     ],
+     "answer": 0,
+     "explain": "Plan-continuation bias pushes a pilot to press on with the original plan when deteriorating conditions call for a diversion or delay.",
+     "cite": "FAA Risk Management Handbook"
+    },
+    {
+     "q": "The 'DECIDE' model and the 3-P (Perceive-Process-Perform) process are tools for —",
+     "options": [
+      "Aeronautical decision-making",
+      "Weight and balance",
+      "Engine leaning",
+      "Radio navigation"
+     ],
+     "answer": 0,
+     "explain": "Both are structured aeronautical decision-making frameworks for identifying and managing risk in flight.",
+     "cite": "FAA Risk Management Handbook"
     }
    ]
   }

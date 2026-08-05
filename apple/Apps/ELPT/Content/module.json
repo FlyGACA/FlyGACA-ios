@@ -6,7 +6,10 @@
   "status": "live",
   "access": "paid",
   "bankIds": [
-   "radio-elpt"
+   "radio-elpt",
+   "elpt-phraseology",
+   "elpt-comprehension",
+   "elpt-rating-scale"
   ],
   "sheetSlugs": [
    "saelpt-study-sheet"
