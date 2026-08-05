@@ -36,19 +36,21 @@ Effort: S <½ day · M ~1 day · L multi-day.
 - [x] **0.3 The truthfulness gate (S).** Listings must not promise banks the bundle lacks —
   nor, symmetrically, app capabilities that don't ship. *Done 2026-08-05: the content sync
   landed (ELPT 4/4 banks, AIP 3/3 — bundles and listings agree), and the six metadata repos
-  dropped the "English and Arabic" in-app claim (the shipping UI and banks are English-only;
-  the Arabic listing itself stays first-class). Standing rule — re-check on every sync and
-  copy edit.*
+  dropped the blanket "English and Arabic" in-app claim (the study content is English; the
+  same-day UI-chrome localization is logged below, and the Arabic listing stays first-class).
+  Standing rule — re-check on every sync and copy edit.*
 - [x] **0.4 The naming system (S).** Display names are `Fly GACA <MODULE>` (already in the
   xcconfigs and Firebase registrations); bundle ids `com.flygaca.<module>`. ⚠️ Tooling trap:
   ELPT's *module id* is `elp` (the web pack id), not `elpt` — module ids are `ppl-exam`,
   `elp`, `aip`, `cpl`, `ir`, `atpl`. App Store *names* may extend beyond the brand prefix
   within 30 code points (e.g. an exam-term suffix) — drafts in 1.4. *Done 2026-08-04
   (system documented; per-app name suffixes remain part of 1.4).*
-- [ ] **0.5 Locale posture (S).** Decide and record the primary-locale mapping for the six ASC
-  records (likely `en-US` primary + `ar-SA` full localization — Arabic is a first-class
-  listing, not a fallback; both locales are searchable on the Saudi storefront). Record the
-  decision here and in the metadata repos' READMEs.
+- [~] **0.5 Locale posture (S).** Decide and record the primary-locale mapping for the six ASC
+  records: **`en-US` primary + `ar-SA` full localization** — Arabic is a first-class
+  listing, not a fallback; both locales are searchable on the Saudi storefront. *Recorded
+  2026-08-05 in [`docs/PORTAL-RUNSHEET-wave1.md`](./docs/PORTAL-RUNSHEET-wave1.md) §2, applied
+  when the ASC records are created; the metadata repos' README one-liners land once the
+  records exist — then flip this to done.*
 
 ## Phase 1 — Keyword strategy (EN + AR)
 
