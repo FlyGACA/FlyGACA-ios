@@ -7,8 +7,9 @@
 //   CAPTION_LANG=ar node apple/Scripts/html-render/render-store.js # ar/RTL captions
 //   CHROME_PATH=/path/to/chrome  SCREENSHOT_OUT=/tmp/out  node …/render-store.js
 //
-// CAPTION_LANG only changes the caption band; the embedded app screens are the
-// same English UI in every locale (the shipping app is English-only).
+// CAPTION_LANG localizes both the caption band and the embedded app screens
+// (Arabic renders RTL), mirroring the shipping bilingual FlyGACAKit UI. Bundled
+// content (questions, bank titles, citations) stays English in every locale.
 const { chromium } = require('playwright-core');
 const fs = require('fs');
 const path = require('path');
@@ -37,7 +38,7 @@ const SLOTS = {
 (async () => {
   const browser = await chromium.launch(CHROME ? { executablePath: CHROME } : {});
   for (const app of APPS) {
-    const raw = buildScreens(app);
+    const raw = buildScreens(app, LANG);
     const plan = captionsFor(app.dir, LANG).filter((s) => !s.optional || raw[s.screen]);
     for (const [slot, spec] of Object.entries(SLOTS)) {
       const dir = path.join(OUT, app.dir, slot);
