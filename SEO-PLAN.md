@@ -33,10 +33,12 @@ Effort: S <½ day · M ~1 day · L multi-day.
   name 30 · subtitle 30 · keyword field 100 · promotional text 170 · description and release
   notes 4000. Enforced mechanically by each metadata repo's `check-metadata.mjs`. *Done
   2026-08-04 (documented; enforcement pre-existed).*
-- [ ] **0.3 The truthfulness gate (S).** Listings must not promise banks the bundle lacks: as
-  of 2026-08 the ELPT app bundles 1 of the web pack's 4 banks and AIP 2 of 3. Until the
-  content sync lands (`ROADMAP.md` → Now), ELPT/AIP descriptions and release notes must
-  describe the bundled content, not the web pack. Close this item when sync + copy agree.
+- [x] **0.3 The truthfulness gate (S).** Listings must not promise banks the bundle lacks —
+  nor, symmetrically, app capabilities that don't ship. *Done 2026-08-05: the content sync
+  landed (ELPT 4/4 banks, AIP 3/3 — bundles and listings agree), and the six metadata repos
+  dropped the "English and Arabic" in-app claim (the shipping UI and banks are English-only;
+  the Arabic listing itself stays first-class). Standing rule — re-check on every sync and
+  copy edit.*
 - [x] **0.4 The naming system (S).** Display names are `Fly GACA <MODULE>` (already in the
   xcconfigs and Firebase registrations); bundle ids `com.flygaca.<module>`. ⚠️ Tooling trap:
   ELPT's *module id* is `elp` (the web pack id), not `elpt` — module ids are `ppl-exam`,

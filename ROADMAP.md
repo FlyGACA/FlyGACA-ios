@@ -37,10 +37,10 @@ items are tracked there).
   secrets (`scripts/native/set-signing-secrets.sh`). That flips `check-signing` to
   `enabled=true`, and the `ios-testflight` job starts uploading ppl · elpt · aip on pushes to
   `main`.
-- **[product] Close the content skew.** The committed snapshots lag the web packs — ELPT bundles
-  1 of the web's 4 banks, AIP 2 of 3 (per the monorepo catalog as of 2026-08). Run
-  `bash scripts/sync-content.sh <path-to-FlyGACA-app>`, review the diff, commit. Store listings
-  must not promise banks the bundle lacks ([`SEO-PLAN.md`](./SEO-PLAN.md) item 0.3).
+- ~~**[product] Close the content skew.**~~ **Done 2026-08-05** (this PR): a reviewed
+  `sync-content.sh` run brought ELPT 1→4 banks and AIP 2→3, and refreshed the grown question
+  sets in all six apps (validated: bankIds ⇔ banks, exam config unchanged). Store listings and
+  bundles agree ([`SEO-PLAN.md`](./SEO-PLAN.md) item 0.3).
 - **[platform] Register the six Firebase iOS apps.** `npm run firebase:register` (idempotent)
   against the `flygaca-app` project, then the manual half: the Sign in with Apple provider and
   the APNs key (`docs/RUNBOOK-ios-firebase.md`). Needed before PlatformLive, harmless to do

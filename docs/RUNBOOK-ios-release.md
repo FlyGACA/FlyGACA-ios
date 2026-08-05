@@ -53,8 +53,8 @@ bash scripts/sync-content.sh [path-to-FlyGACA-app] --all    # + the whole synced
 - If you skip this step, builds still work: the wrapper detects the absent bundler and logs
   "Content bundler not in this repo — building with the committed Content/ snapshot". Expected,
   not a bug.
-- Known skew as of 2026-08: ELPT bundles 1 of the web's 4 banks, AIP 2 of 3 — a sync run closes
-  it ([`../ROADMAP.md`](../ROADMAP.md)).
+- Snapshots in sync with the web packs as of 2026-08-05 (ELPT 4/4 banks, AIP 3/3). If the
+  corpus has moved since, a sync run closes the gap ([`../ROADMAP.md`](../ROADMAP.md)).
 
 ## 2. Generate & test
 
