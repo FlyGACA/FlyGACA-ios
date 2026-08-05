@@ -112,7 +112,15 @@ minimize sibling collision:
 
 ## Phase 2 — Conversion (what searchers see and tap)
 
-- [~] **2.1 Screenshot narrative audit (M).** Committed sets exist for all six apps (rendered
+- [x] **2.1 Screenshot narrative audit + captioned rebuild (M).** *Shipped 2026-08-05:* the
+  audit below drove a full rebuild. Added `apple/Scripts/html-render/render-store.js` +
+  `captions.js` — a captioned store renderer that wraps the faithful base screens with
+  value-prop caption bands (Falcon palette) and emits the reordered set (hero → timed exam →
+  results → study loop). Rendered all six apps × three device slots and pushed the new sets +
+  refreshed README galleries to the metadata repos (fresh PRs). EN captions only; the ar-SA
+  caption pass is the open follow-up (base screens are identical — only `head`/`sub` localize),
+  and the change lives in this repo's `apple/Scripts/` (sync-owned) so the monorepo copy needs
+  the same to stay in sync. Original audit, retained as the spec:
   by the Mac-free `apple/Scripts/html-render/` pipeline from real bundled content — portrait
   via `npm run ios:screenshots`). *Gap:* audit each set so the first three shots carry the
   value proposition unaided — offline everything, bilingual, real exam sim with analytics —
@@ -189,6 +197,11 @@ the **monorepo's** backlog (pointer items here — do not duplicate them into wo
 
 ## Session log
 
+- **2026-08-05** — Built + shipped the captioned screenshots (2.1 → done). Added the
+  `render-store.js` + `captions.js` store renderer (caption bands + value-prop-first order),
+  rendered all six apps × three device slots, and opened fresh PRs replacing each metadata
+  repo's screenshot set + README gallery. EN only; ar-SA captions + the monorepo `apple/Scripts`
+  re-sync remain open.
 - **2026-08-05** — Started Phase 2. Audited the committed screenshot sets (identical nine-shot
   walkthrough across all six apps) and recorded findings in 2.1: the order leads with
   orientation instead of the value prop, there are no marketing captions, and the scored-sim +
