@@ -54,22 +54,53 @@ No fabricated search-volume numbers anywhere in this file: Apple exposes no publ
 volumes, so pools below are **hypotheses from the module subjects and bank vocabulary**, to be
 validated against actual App Store search suggestions and post-launch App Analytics.
 
-- [ ] **1.1 English seed pools per app (M).** Draft ~15 terms per app from its corpus scope.
+**Drafted pools — v1, applied to the six metadata PRs 2026-08-05.** Bank-grounded, packed to
+≤100 code points, with words already in each app's name dropped (Apple indexes the name +
+keywords as one set). These are the exact `keywords.txt` values pushed to each repo's
+`claude/flygaca-docs-suite-2zmgmo` branch; refine against real App Store search suggestions
+post-launch.
+
+| App | `en-US` keywords | `ar-SA` keywords |
+| --- | --- | --- |
+| PPL | private pilot,gaca,gacar,aviation,vfr,controlled airspace,air law,navigation,meteorology | طيران,رخصة طيار,الطيار الخاص,gaca,gacar,قواعد الطيران البصري,مجال جوي,قانون الطيران,ملاحة جوية |
+| CPL | commercial pilot,gaca,gacar,aviation,flight operations,aircraft performance,air law,navigation | طيران,رخصة تجارية,الطيار التجاري,gaca,gacar,عمليات الطيران,أداء الطائرة,قانون الطيران,ملاحة جوية |
+| IR | instrument rating,gaca,gacar,aviation,ifr,instrument approach,procedures,holding patterns,navigation | طيران آلي,التقدير الآلي,gaca,gacar,ifr,إجراءات آلية,الاقتراب الآلي,ملاحة جوية,مجال جوي,أرصاد جوية |
+| ATPL | airline transport pilot,gaca,gacar,aviation,part 121,airline operations,aircraft performance,air law | نقل جوي,رخصة النقل الجوي,gaca,gacar,part 121,عمليات الخطوط الجوية,أداء الطائرة,أرصاد متقدمة |
+| ELPT | icao level 4,radiotelephony,aviation phraseology,atc communication,radio calls,plain language,pilots | icao,المستوى الرابع,لغة الطيران,اللاسلكي,المصطلحات الجوية,اتصالات المراقبة,استيعاب سماعي,سلم التقييم |
+| AIP | eaip,sans,aerodromes,controlled airspace,ais,notam,aviation charts,navigation aids,route information | eaip,دليل الطيران السعودي,المجال الجوي,notam,خرائط الطيران,وسائل الملاحة,الأدلة الجوية,sans,مطار |
+
+**Allocation matrix (1.3).** Each app owns its certificate head term; shared terms are placed to
+minimize sibling collision:
+
+- `gaca` + `gacar` — kept in all six (each targets its own GACAR certificate; legitimately core).
+- `aviation` / `طيران` — the licence apps (PPL·CPL·IR·ATPL) only; AIP and ELPT lead with their
+  own domain (aeronautical-information, aviation-English) instead of the generic term.
+- Shared ground-school long-tail — `navigation`/`ملاحة جوية`, `meteorology`/`أرصاد`,
+  `flight planning`/`تخطيط الطيران`, `human factors`/`عوامل بشرية` — spread so no two apps lead
+  with the identical secondary terms.
+- Certificate heads — `private pilot`, `commercial pilot`, `instrument rating`,
+  `airline transport pilot`, `icao level 4`, `eaip` — each unique to exactly one app.
+- The broadest family terms (e.g. "Saudi pilot exam", "GACA study") are reserved for the eventual
+  **bundle** listing (3.2), not spent inside any single app.
+
+- [~] **1.1 English seed pools per app (M).** Draft ~15 terms per app from its corpus scope.
   Starting hypotheses: PPL — GACA PPL, Saudi private pilot, GACAR, air law, VFR, airspace;
   CPL — commercial pilot exam, GACAR Part 61/119/135, performance; IR — instrument rating,
   IFR, procedures, GACAR Part 97; ATPL — ATPL theory, airline transport, GACAR Part 121;
   ELPT — aviation English, ELPT, SAELPT, ICAO level 4, phraseology; AIP — Saudi AIP,
   aerodromes, charts, airspace, NOTAM-adjacent study terms. Kingdom-context terms (GACA,
   GACAR, Saudi) are the differentiator — generic global terms ("pilot exam") are secondary.
-- [ ] **1.2 Arabic seed pools per app (M).** First-class, not translated word-for-word: pool
+- [~] **1.2 Arabic seed pools per app (M).** First-class, not translated word-for-word: pool
   the terms Saudi cadets actually search (e.g. رخصة الطيار الخاص، رخصة الطيار التجاري، اختبار
   الطيران، الطيران المدني، أسئلة اختبار الطيران). Source terminology from the corpus's Arabic
   layer and the family glossary; validate against Arabic App Store suggestions.
-- [ ] **1.3 The family allocation matrix (S).** Six sibling apps must not compete for the same
+- [~] **1.3 The family allocation matrix (S).** Six sibling apps must not compete for the same
   head terms: assign each shared term (GACA exam, Saudi pilot, GACAR, طيران) to exactly one
   app's keyword field, and record the matrix here. The bundle listing (3.2) is the eventual
   home for the broadest family terms.
-- [ ] **1.4 Subtitle + keyword-field drafts, six apps × two locales (M).** Within the 0.2
+- [~] **1.4 Subtitle + keyword-field drafts, six apps × two locales (M).** Keyword fields
+  drafted + shipped to the six metadata PRs 2026-08-05 (validated ≤100 cp by
+  `check-metadata.mjs`); subtitles left as-is this pass. Within the 0.2
   budgets, subtitle carrying the strongest non-name terms, keyword field packed
   comma-separated without repeating name/subtitle words (Apple ignores duplicates). Deliver as
   PRs to the six metadata repos; their CI enforces limits and EN/AR parity.
@@ -138,6 +169,14 @@ the **monorepo's** backlog (pointer items here — do not duplicate them into wo
 
 ## Session log
 
+- **2026-08-05** — Executed Phase 1 keyword drafts. Wrote bank-grounded `keywords.txt` (EN + AR)
+  for all six apps, dropping name-duplicated words and filling the unused Arabic headroom; packed
+  each to ≤100 code points and validated with every repo's `check-metadata.mjs`. Recorded the
+  drafted pools + the allocation matrix (1.3) above and applied the same values as an `aso:` commit
+  on each metadata repo's `claude/flygaca-docs-suite-2zmgmo` branch (joining the open draft PRs —
+  PPL/CPL/IR/ATPL/ELPT/AIP #6). 1.1–1.4 → partial (drafted; adoption pending PR merge + `fastlane
+  deliver`). Names/subtitles untouched. Still open: post-launch validation against real App Store
+  suggestions, and the 0.5 primary-locale posture.
 - **2026-08-04** — File authored as part of the repo docs suite (see `MIGRATION.md` Stage 4).
   Established the doc map, the character budgets (0.2), the naming system + `elp` trap (0.4),
   and the keyword no-go policy (1.5). Verified repo-side that all six metadata repos carry
