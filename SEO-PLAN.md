@@ -120,12 +120,12 @@ minimize sibling collision:
   refreshed README galleries to the metadata repos. *ar-SA pass shipped 2026-08-05:* the
   renderer now localizes captions (`CAPTION_LANG=ar`, RTL) and the metadata repos moved to a
   per-locale layout — `appstore/screenshots/{en-US,ar-SA}/<device>/`. **Load-bearing honesty
-  note:** the shipping iOS UI is English-only (FlyGACAKit has no Arabic localization —
-  `defaultLocalization: "en"`, hardcoded English `Text(...)`, English content), so the ar-SA
-  set is Arabic/RTL **captions over the real English screens**, never a fabricated Arabic UI.
-  Still open: re-syncing the monorepo's `apple/Scripts/` copy (this change is in the sync-owned
-  tree); a *fully* localized Arabic set (Arabic phone UI) would first require localizing
-  FlyGACAKit — an app-engineering project, not a screenshot task. Original audit, retained as
+  note:** when these shots were rendered the shipping iOS UI was English-only, so the ar-SA set
+  is Arabic/RTL **captions over the real English screens**, never a fabricated Arabic UI.
+  *Update 2026-08-05:* FlyGACAKit is now localized (EN + AR UI chrome — see the session log), so
+  a future re-render can show a genuinely Arabic UI; the *current committed* ar-SA set stays
+  captions-over-English until that re-render ships. Still open: re-syncing the monorepo's
+  `apple/Scripts/` copy (this change is in the sync-owned tree). Original audit, retained as
   the spec:
   by the Mac-free `apple/Scripts/html-render/` pipeline from real bundled content — portrait
   via `npm run ios:screenshots`). *Gap:* audit each set so the first three shots carry the
@@ -203,6 +203,15 @@ the **monorepo's** backlog (pointer items here — do not duplicate them into wo
 
 ## Session log
 
+- **2026-08-05** — Localized **FlyGACAKit** (EN + AR), retiring the "iOS UI is English-only"
+  caveat this file carried. Added a `Loc` bundle-resolver + `Resources/{en,ar}.lproj/Localizable.strings`
+  (34 UI-chrome keys) to FeatureUI and routed all seven views through it; the Disclaimer strings
+  are byte-identical to the web's en/ar `disclaimer.strong`/`.body`. Advertised
+  `CFBundleLocalizations = [en, ar]` in the shared `Info.plist`, so iOS offers Arabic and SwiftUI
+  auto-mirrors RTL on an Arabic device. Content (questions, banks, citations) stays English — it's
+  monorepo-generated, not translated here. Mirrored the change into the monorepo's sync-owned
+  `apple/` tree so a `--all` sync won't clobber it. Unblocks the Arabic *screenshot* re-render
+  (real Arabic UI, not captions) — the remaining follow-up.
 - **2026-08-05** — Shipped the ar-SA screenshot pass. Verified first that the iOS app is
   English-only (no FlyGACAKit localization), so rendered Arabic/RTL **captions over the real
   English screens** (not a fabricated Arabic UI); taught the renderer `CAPTION_LANG=ar` + RTL,

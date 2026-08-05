@@ -55,7 +55,7 @@ public struct QuizView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
                     HStack {
-                        Text("Question \(session.currentIndex + 1) of \(session.questions.count)")
+                        Text(Loc.t("quiz.questionProgress", session.currentIndex + 1, session.questions.count))
                             .font(.caption)
                             .foregroundStyle(.secondary)
                         Spacer()
@@ -67,7 +67,7 @@ public struct QuizView: View {
                         .buttonStyle(.plain)
                         .foregroundStyle(flaggedIDs.contains(question.id) ? FGTheme.clay : Color.secondary)
                         .accessibilityLabel(
-                            flaggedIDs.contains(question.id) ? "Unflag question" : "Flag question")
+                            Loc.t(flaggedIDs.contains(question.id) ? "a11y.unflagQuestion" : "a11y.flagQuestion"))
                     }
                     Text(question.prompt)
                         .font(.headline)
@@ -82,7 +82,7 @@ public struct QuizView: View {
                     if session.config.revealsAnswers, session.currentAnswer != nil {
                         feedback(for: question)
                     }
-                    Button(session.currentIndex + 1 < session.questions.count ? "Next" : "Finish") {
+                    Button(Loc.t(session.currentIndex + 1 < session.questions.count ? "common.next" : "common.finish")) {
                         session.advance()
                     }
                     .buttonStyle(.borderedProminent)
@@ -117,7 +117,7 @@ public struct QuizView: View {
     @ViewBuilder
     private func feedback(for question: Question) -> some View {
         VStack(alignment: .leading, spacing: 6) {
-            Text(session.currentAnswer == question.correctIndex ? "Correct" : "Not quite")
+            Text(Loc.t(session.currentAnswer == question.correctIndex ? "quiz.correct" : "quiz.notQuite"))
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(
                     session.currentAnswer == question.correctIndex ? FGTheme.sage : FGTheme.clay)

@@ -1,0 +1,55 @@
+/* واجهة FeatureUI — العربية.
+   المحتوى (نصوص الأسئلة والخيارات وعناوين البنوك والاستشهادات) ليس هنا:
+   فهو يُؤلَّف بالإنجليزية في المستودع الموحّد ويُعرض حرفيًا في كل اللغات.
+   حافِظ على تطابق المفاتيح مع en.lproj/Localizable.strings. */
+
+/* الشاشة الرئيسية للوحدة — عناوين الأقسام والصفوف */
+"home.section.study" = "الدراسة";
+"home.section.quizByTopic" = "اختبار حسب الموضوع";
+"home.section.flashcards" = "البطاقات التعليمية";
+"home.section.exam" = "الاختبار";
+"home.questionCount" = "%lld سؤال";
+"home.mockExam.untimed" = "اختبار تجريبي (غير مؤقّت)";
+"home.mockExam.title" = "اختبار تجريبي";
+"home.exam.timed" = "اختبار مؤقّت — %1$lld دقيقة، النجاح %2$lld%%";
+
+/* واجهة الأسئلة والاختبار */
+"quiz.questionProgress" = "السؤال %1$lld من %2$lld";
+"quiz.correct" = "إجابة صحيحة";
+"quiz.notQuite" = "ليست صحيحة";
+"common.next" = "التالي";
+"common.finish" = "إنهاء";
+
+/* البطاقات التعليمية */
+"flashcard.again" = "إعادة";
+"flashcard.gotIt" = "أتقنتها";
+"flashcard.tapToReveal" = "انقر البطاقة لإظهار الإجابة";
+"flashcards.cardProgress" = "%1$lld من %2$lld";
+"flashcards.deckComplete" = "اكتملت المجموعة";
+"flashcards.cardsOnTrack" = "%lld بطاقة في المسار الصحيح";
+
+/* نتائج نهاية الجلسة */
+"result.score" = "الدرجة";
+"result.correct" = "الصحيحة";
+"result.result" = "النتيجة";
+"result.pass" = "ناجح";
+"result.fail" = "راسب";
+"result.byTopic" = "حسب الموضوع";
+
+/* الاختبار المؤقّت */
+"exam.timed.fallbackTitle" = "اختبار مؤقّت";
+
+/* تعذّر تحميل المحتوى (العنوان فقط؛ تفاصيل التشخيص تبقى بالإنجليزية) */
+"content.unavailable.title" = "المحتوى غير متوفّر";
+
+/* تسميات إمكانية الوصول */
+"a11y.completed" = "مكتمل";
+"a11y.markComplete" = "وضع علامة الإكمال";
+"a11y.flagQuestion" = "تعليم السؤال";
+"a11y.unflagQuestion" = "إلغاء تعليم السؤال";
+"a11y.timeRemaining" = "الوقت المتبقّي %@";
+
+/* إخلاء المسؤولية — مطابق حرفيًا للنص في disclaimer.strong / disclaimer.body
+   (src/i18n/ar.json في المستودع الموحّد FlyGACA-app). لا تُعِد صياغته. */
+"disclaimer.strong" = "فلاي جاكا منصة تعليمية مستقلة.";
+"disclaimer.body" = "وهي غير تابعة للهيئة العامة للطيران المدني (GACA) ولا معتمدة منها ولا تُديرها، كما أنها لا تمثّل حكومة المملكة العربية السعودية. المصدر الرسمي والمعتمد لجميع لوائح الطيران المدني ومنشوراته ومعلوماته الجوية هو GACA دائمًا. تحقّق دائمًا من أحدث منشور رسمي صادر عن GACA على gaca.gov.sa.";

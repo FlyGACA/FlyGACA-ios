@@ -79,15 +79,17 @@ struct SessionResultView: View {
         List {
             Section {
                 HStack {
-                    ResultStat(label: "Score", value: "\(result.percent)%")
-                    ResultStat(label: "Correct", value: "\(result.correct)/\(result.total)")
+                    ResultStat(label: Loc.t("result.score"), value: "\(result.percent)%")
+                    ResultStat(label: Loc.t("result.correct"), value: "\(result.correct)/\(result.total)")
                     if let passed = result.passed {
-                        ResultStat(label: "Result", value: passed ? "Pass" : "Fail")
+                        ResultStat(
+                            label: Loc.t("result.result"),
+                            value: passed ? Loc.t("result.pass") : Loc.t("result.fail"))
                     }
                 }
             }
             if result.byBank.count > 1 {
-                Section("By topic") {
+                Section {
                     ForEach(result.byBank.keys.sorted(), id: \.self) { bankID in
                         let score = result.byBank[bankID]!
                         HStack {
@@ -98,6 +100,8 @@ struct SessionResultView: View {
                                 .foregroundStyle(.secondary)
                         }
                     }
+                } header: {
+                    Text(Loc.t("result.byTopic"))
                 }
             }
             Section {

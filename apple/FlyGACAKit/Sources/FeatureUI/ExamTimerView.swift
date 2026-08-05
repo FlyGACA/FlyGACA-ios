@@ -18,7 +18,7 @@ public struct ExamTimerView: View {
                     .font(.headline)
                     .monospacedDigit()
                     .foregroundStyle(remaining <= 60 ? FGTheme.clay : .secondary)
-                    .accessibilityLabel("Time remaining \(Self.format(remaining))")
+                    .accessibilityLabel(Loc.t("a11y.timeRemaining", Self.format(remaining)))
                     .onChange(of: remaining <= 0) { _, expired in
                         if expired { session.submit(now: context.date) }
                     }
