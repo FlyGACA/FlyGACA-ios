@@ -118,6 +118,26 @@ minimize sibling collision:
   value proposition unaided — offline everything, bilingual, real exam sim with analytics —
   since most viewers never swipe past them. Regenerate through the same pipeline; the shipped
   files live in the metadata repos.
+
+  **Audit (2026-08-05).** All six apps ship the identical nine-shot sequence — `01-home ·
+  02-quiz-banks · 03-quiz-question · 04-quiz-answered · 05-flashcard-front · 06-flashcard-back ·
+  07-timed-exam-start · 08-timed-exam-timer · 09-mock-results` (PPL adds `10-lessons-list`).
+  Findings:
+  - **The order is a feature walkthrough, not a pitch.** The first three (home → quiz banks →
+    a question) show *where you are* before *why it's worth buying*. The strongest
+    differentiators — the timed, scored exam sim and its analytics/pass score (shots 7–9) —
+    sit past the fold most searchers never swipe to.
+  - **No marketing captions.** The shots read as raw screen captures; the gallery rewards a
+    bold caption overlay per shot (the line that still lands at thumbnail size).
+  - **Recommended first-3 (all apps):** (1) `home` re-cast as a hero with a value-prop caption
+    — e.g. "Everything for the Saudi <cert> exam — offline"; (2) `08-timed-exam-timer` (the
+    headline scored-sim moment); (3) `09-mock-results` (the analytics / pass proof). The study
+    loop (quiz → flashcards) then follows as shots 4–8.
+  - **Bilingual gap:** one rendered set serves both storefront locales; captions, once added,
+    must be localized EN + AR or the Arabic gallery loses the message (ties to 0.5).
+  - **Ownership:** the sequence + captions come from `apple/Scripts/html-render/screens.js` in
+    this repo, then get copied into each metadata repo — so acting on this is a **pipeline
+    change here** + a re-copy (the Phase-2 follow-up); this item is the audit itself.
 - [ ] **2.2 Promotional-text rotation (S).** The 170-code-point field updates without app
   review: draft a small rotation (exam-season push, new-banks-landed, bundle launch) per app,
   both locales, stored in each metadata repo's `promotional_text.txt`.
@@ -169,6 +189,12 @@ the **monorepo's** backlog (pointer items here — do not duplicate them into wo
 
 ## Session log
 
+- **2026-08-05** — Started Phase 2. Audited the committed screenshot sets (identical nine-shot
+  walkthrough across all six apps) and recorded findings in 2.1: the order leads with
+  orientation instead of the value prop, there are no marketing captions, and the scored-sim +
+  analytics shots (the strongest converters) sit past the fold. Proposed a value-prop-first
+  first-3 (hero → timed exam → results) and flagged the EN/AR caption-localization gap.
+  Implementation is a `screens.js` pipeline change + re-copy — the follow-up; 2.1 → partial.
 - **2026-08-05** — Executed Phase 1 keyword drafts. Wrote bank-grounded `keywords.txt` (EN + AR)
   for all six apps, dropping name-duplicated words and filling the unused Arabic headroom; packed
   each to ≤100 code points and validated with every repo's `check-metadata.mjs`. Recorded the
