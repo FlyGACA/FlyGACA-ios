@@ -191,9 +191,10 @@ the **monorepo's** backlog (pointer items here — do not duplicate them into wo
 - [ ] **4.2 `SoftwareApplication` JSON-LD on pack pages (S, monorepo-owned).** Store links +
   price into the pack pages' structured data, feeding web/AI search the store presence.
 - [~] **4.3 Store URLs point home (S, metadata repos).** `support_url` / `marketing_url` /
-  `privacy_url` are populated (https-enforced by each repo's CI). *Gap:* confirm each app's
-  `marketing_url` targets its own pack page (`/study/packs/<pack-id>` — mind `ppl-exam` and
-  `elp` ids), not the generic homepage.
+  `privacy_url` are populated (https-enforced by each repo's CI). `support_url` now deep-links
+  to the monorepo's `/support` page per app (`flygaca.com/support?app=<pack-id>`) rather than the
+  bare homepage. *Gap:* confirm each app's `marketing_url` targets its own pack page
+  (`/study/packs/<pack-id>` — mind `ppl-exam` and `elp` ids), not the generic homepage.
 
 ## Explicitly deprioritized (2026 reality)
 
