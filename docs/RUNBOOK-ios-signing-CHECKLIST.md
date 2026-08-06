@@ -12,8 +12,8 @@ no CLI can create Apple certs/profiles/app records for you.
 
 ## A. Apple Developer portal — developer.apple.com/account
 
-- [ ] **App Group** → Identifiers → App Groups → register `group.com.flygaca.study`.
-- [ ] **App IDs** — three explicit IDs, each with **App Groups** enabled + `group.com.flygaca.study`:
+- [ ] **App Group** → Identifiers → App Groups → register `group.com.FlyGACA`.
+- [ ] **App IDs** — three explicit IDs, each with **App Groups** enabled + `group.com.FlyGACA`:
   - [ ] `com.flygaca.ppl`
   - [ ] `com.flygaca.elpt`
   - [ ] `com.flygaca.aip`

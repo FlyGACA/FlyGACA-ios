@@ -23,4 +23,4 @@ INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPort
 
 // One store + keychain for the whole family — cross-app streaks/SRS/sign-in.
 // Declare the same group in each target's App Groups + Keychain capabilities.
-FG_APP_GROUP = group.com.flygaca.study
+FG_APP_GROUP = group.com.FlyGACA

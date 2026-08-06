@@ -90,9 +90,11 @@ laptop. To activate the lane:
    - Provisioning profile names are **exact**: `FlyGACA <APP> AppStore` (passed as
      `PROVISIONING_PROFILE_SPECIFIER`). Manual signing is deliberate — the App Group
      entitlement rules out wildcard profiles.
-   - `apple/Apps/Shared/App.entitlements` already declares **Sign in with Apple**; the
-     capability must be enabled on all six App IDs — grouped under the primary
-     `com.flygaca.ppl` — before the next signed build, or provisioning fails
+   - **Sign in with Apple was removed** from `apple/Apps/Shared/App.entitlements` (2026-08):
+     the shipping apps are paid-up-front and offline, and the registered App IDs/profiles
+     don't carry the capability. The app group is `group.com.FlyGACA` (matching the portal).
+     When the Firebase sign-in phase lands, re-add the entitlement AND enable the capability
+     on all App IDs — grouped under the primary `com.flygaca.ppl` — then regenerate profiles
      ([`RUNBOOK-ios-firebase.md`](./RUNBOOK-ios-firebase.md) §4a).
 3. `check-signing` turns the secrets' presence into an `enabled` output; when true, a push to
    `main` (or `workflow_dispatch`) builds signed and uploads via `xcrun altool`. The matrix is
@@ -122,7 +124,7 @@ Two caveats worth memorizing:
 ## 6. Adding a Wave 2 app (CPL / IR / ATPL) to TestFlight
 
 Per the checklist's closing section: repeat the Apple-portal loop for the new bundle id (App ID
-with App Group **and Sign in with Apple**, `FlyGACA <APP> AppStore` profile,
+with App Group `group.com.FlyGACA`, `FlyGACA <APP> AppStore` profile,
 `PROVISIONING_PROFILE_<APP>_BASE64` secret, paid App Store Connect record), then add the
 `{app, scheme}` entry to the `ios-testflight` matrix in `.github/workflows/ios.yml`. Content
 gate first, though: Wave 2 banks are GACAR-cited drafts until reviewed
@@ -152,8 +154,8 @@ Where a monorepo-authored doc says X, in this repo do Y:
   even though no bundler runs here.
 - **Five matrix jobs "cancelled"** — `fail-fast: true`: find the one app that actually failed;
   the rest were collateral.
-- **Provisioning fails on a signed build** — usual suspects in order: Sign in with Apple not
-  enabled/grouped on the App ID (§4a above), profile name not exactly `FlyGACA <APP> AppStore`,
+- **Provisioning fails on a signed build** — usual suspects in order: App Group mismatch
+  (profiles must grant `group.com.FlyGACA`), profile name not exactly `FlyGACA <APP> AppStore`,
   cert/profile mismatch. Deeper table: [`RUNBOOK-ios-signing.md`](./RUNBOOK-ios-signing.md) →
   Troubleshooting (also covers the alpha-channel icon and duplicate-build-number upload
   rejections).

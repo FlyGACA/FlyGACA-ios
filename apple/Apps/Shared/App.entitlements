@@ -4,15 +4,11 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.flygaca.study</string>
+		<string>group.com.FlyGACA</string>
 	</array>
-	<!-- Sign in with Apple. The matching capability must be enabled on all six
-	     App IDs in the Apple Developer portal before the next *signed* build, or
-	     provisioning fails — see docs/RUNBOOK-ios-firebase.md §4. Unsigned local
-	     builds and the skipped-by-default TestFlight job are unaffected. -->
-	<key>com.apple.developer.applesignin</key>
-	<array>
-		<string>Default</string>
-	</array>
+	<!-- Sign in with Apple was removed 2026-08: the shipping apps are paid-up-front
+	     and fully offline, and the registered App IDs/profiles don't carry the
+	     capability. Re-add it here AND on all App IDs (regenerating the profiles)
+	     when the Firebase sign-in phase lands — see docs/RUNBOOK-ios-firebase.md §4. -->
 </dict>
 </plist>
