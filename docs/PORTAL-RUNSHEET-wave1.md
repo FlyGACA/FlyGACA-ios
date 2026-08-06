@@ -66,6 +66,13 @@ records found"* until they exist). The listing copy itself — descriptions, key
 promotional text, screenshots — ships later from each metadata repo's fastlane `deliver`
 layout; **don't hand-enter it now**. Record creation needs only:
 
+> **Status — 2026-08-06:** all three records now exist in App Store Connect (Saudi PPL Exam
+> Prep · Saudi AIP Study · Saudi ELPT Prep — iOS 1.0, *Prepare for Submission*), so the
+> "create the records" step is done and §6's App Store ID field is unblocked. The ✅ values
+> below are the actual App Store Connect values read off the records. PPL's SKU came out as
+> the bare `ppl` (not the `flygaca-ppl-ios` first recommended); the ELPT/AIP SKU + Apple ID
+> rows stay 🟡 until their App Information screens are read off the portal.
+
 | Field | PPL | ELPT | AIP |
 | --- | --- | --- | --- |
 | Platform | iOS | iOS | iOS |
@@ -74,7 +81,8 @@ layout; **don't hand-enter it now**. Record creation needs only:
 | Name — ar-SA | تحضير اختبار PPL ✅ | تحضير اختبار ELPT ✅ | حزمة AIP السعودية ✅ |
 | Subtitle — en-US | GACAR-cited PPL written prep ✅ | Aviation English proficiency ✅ | Aeronautical info, GEN & ENR ✅ |
 | Subtitle — ar-SA | تحضير نظري لرخصة الطيار الخاص ✅ | إجادة الإنجليزية للطيران ✅ | معلومات جوية للمطارات السعودية ✅ |
-| SKU | `flygaca-ppl-ios` 🟡 | `flygaca-elpt-ios` 🟡 | `flygaca-aip-ios` 🟡 |
+| SKU | `ppl` ✅ | `elpt` 🟡 | `aip` 🟡 |
+| Apple ID (App Store ID) | `6798457189` ✅ | 🟡 read it off the record | 🟡 read it off the record |
 | Primary language | **en-US**, then add **ar-SA as a full localization** 🟡 — the SEO-PLAN 0.5 posture: Arabic is a first-class listing, not a fallback; both locales are searchable on the Saudi storefront | same | same |
 | Category | **Education** 🟡 (secondary: Reference 🟡 — no category is recorded anywhere in the repos) | Education 🟡 | Education 🟡 |
 | Price | 🔵 the Apple price point nearest the web's **SAR 39** pack (`apple/ARCHITECTURE.md` §4: paid-up-front mirroring the web price; no exact tier is recorded — pick it here, same for all three) | 🔵 | 🔵 |
