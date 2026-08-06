@@ -172,6 +172,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # App Store Connect rejects uploads built with SDKs older than iOS 26
+      # ("SDK version issue", 409). macos-15's default Xcode is 16.4, but the
+      # image also ships Xcode 26.x — select the newest one.
+      - name: Select Xcode 26 (uploads require the iOS 26 SDK)
+        run: |
+          XCODE_APP=$(ls -d /Applications/Xcode_26*.app | sort -V | tail -1)
+          echo "Selecting $XCODE_APP"
+          sudo xcode-select -s "$XCODE_APP"
+          xcodebuild -version
+
       - name: Install XcodeGen
         run: brew install xcodegen
 
