@@ -4,3 +4,5 @@
 FG_MODULE_ID = ppl-exam
 PRODUCT_BUNDLE_IDENTIFIER = com.flygaca.ppl
 INFOPLIST_KEY_CFBundleDisplayName = Fly GACA PPL
+
+PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*] = FlyGACA PPL AppStore

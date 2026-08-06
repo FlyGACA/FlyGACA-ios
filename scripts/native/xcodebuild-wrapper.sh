@@ -323,6 +323,11 @@ build_app() {
       local profile_name="${FG_PROVISIONING_PROFILE:-FlyGACA ${SCHEME} AppStore}"
       echo "  Signing: Apple Distribution / $profile_name (team $APPLE_TEAM_ID)"
 
+      # No signing overrides on the command line: they would apply to EVERY
+      # target, and the FlyGACAKit_FeatureUI package resource bundle rejects a
+      # provisioning profile. Manual signing lives in the app xcconfigs
+      # (Apps/Shared/App-Shared.xcconfig + per-app PROVISIONING_PROFILE_SPECIFIER),
+      # which only the app targets read.
       if ! xcodebuild \
         -project "$XCODE_PROJECT" \
         -scheme "$SCHEME" \
@@ -330,10 +335,6 @@ build_app() {
         -archivePath "$archive_path" \
         -arch arm64 \
         -sdk iphoneos \
-        CODE_SIGN_STYLE=Manual \
-        DEVELOPMENT_TEAM="$APPLE_TEAM_ID" \
-        CODE_SIGN_IDENTITY="Apple Distribution" \
-        PROVISIONING_PROFILE_SPECIFIER="$profile_name" \
         "${version_args[@]}" \
         archive; then
         log_error "Signed archive failed for $app"

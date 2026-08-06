@@ -24,3 +24,14 @@ INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPort
 // One store + keychain for the whole family — cross-app streaks/SRS/sign-in.
 // Declare the same group in each target's App Groups + Keychain capabilities.
 FG_APP_GROUP = group.com.FlyGACA
+
+// App Store signing. These live HERE (app targets only) instead of on the
+// xcodebuild command line because command-line overrides hit every target,
+// including the FlyGACAKit_FeatureUI package resource bundle, which cannot
+// take a provisioning profile ("does not support provisioning profiles").
+// Scoped to the device SDK so simulator/dev builds are untouched; unsigned CI
+// archives still pass CODE_SIGNING_ALLOWED=NO, which outranks all of this.
+// Each app's xcconfig adds its PROVISIONING_PROFILE_SPECIFIER.
+CODE_SIGN_STYLE[sdk=iphoneos*] = Manual
+DEVELOPMENT_TEAM[sdk=iphoneos*] = 76U6H3M3N6
+CODE_SIGN_IDENTITY[sdk=iphoneos*] = Apple Distribution
