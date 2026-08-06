@@ -81,7 +81,7 @@ layout; **don't hand-enter it now**. Record creation needs only:
 | Age rating | **4+** via an all-"None" questionnaire 🟡 (study app: no mature content, no unrestricted web, no user-generated content) | same | same |
 | Privacy nutrition labels | **Data Not Collected** 🟡 — fully offline, no accounts, no analytics, no tracking. Revisit if telemetry ever ships | same | same |
 | Export compliance | already answered in-binary ✅ — `ITSAppUsesNonExemptEncryption = NO` (`apple/Apps/Shared/App-Shared.xcconfig`), so no per-build prompt | same | same |
-| Support URL | `https://flygaca.com` ✅ (site root — no dedicated support page exists yet; worth adding one before submission) | same | same |
+| Support URL | `https://flygaca.com/support?app=ppl-exam` ✅ | `https://flygaca.com/support?app=elp` ✅ | `https://flygaca.com/support?app=aip` ✅ |
 | Marketing URL | `https://flygaca.com/study/packs/ppl-exam` ✅ | `https://flygaca.com/study/packs/elp` ✅ | `https://flygaca.com/study/packs/aip` ✅ |
 | Privacy Policy URL | `https://flygaca.com/privacy` ✅ | same | same |
 
