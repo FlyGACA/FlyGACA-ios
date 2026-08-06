@@ -6,10 +6,10 @@
 // first (hero -> scored exam -> results -> the study loop). render-store.js
 // consumes this; the original render.js (raw screens) is left untouched.
 //
-// Captions localize per storefront locale (`en`, `ar`). The base screens do NOT
-// localize — the shipping iOS UI is English-only (FlyGACAKit has no Arabic
-// localization), so the Arabic set is Arabic/RTL *captions* over the real
-// English app screens, never a fabricated Arabic UI.
+// Captions localize per storefront locale (`en`, `ar`). The base screens (screens.js)
+// localize too — the shipping FlyGACAKit UI is bilingual (EN + AR, RTL), so the
+// Arabic set is a genuine Arabic/RTL app UI, not captions over English screens.
+// Bundled content (questions, bank titles, citations) stays English in every locale.
 
 const C = { night: '#0A0E12', sage: '#8FC9A8', white: '#FFFFFF', sec: 'rgba(235,240,245,0.55)', mist: '#1A2A38' };
 

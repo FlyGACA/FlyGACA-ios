@@ -10,6 +10,7 @@ three tiers; know which one you're editing.
 | Doc | What it is |
 | --- | --- |
 | [`RUNBOOK-ios-release.md`](./RUNBOOK-ios-release.md) | **Start here.** The end-to-end release path from this repo's point of view — sync → generate → test → build → sign → TestFlight — plus the reconciliation map over the snapshot runbooks below. |
+| [`PORTAL-RUNSHEET-wave1.md`](./PORTAL-RUNSHEET-wave1.md) | The click-ordered Apple portal + App Store Connect runsheet for Wave 1 — every value pre-filled from the repos (App IDs, profile names, the ten secrets, per-app record fields, ready-to-paste review notes). |
 | `README.md` | This index. |
 
 The root suite (`CAUSE.md`, `ROADMAP.md`, `MIGRATION.md`, `SEO-PLAN.md`,
