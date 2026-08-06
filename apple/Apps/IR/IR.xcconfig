@@ -4,5 +4,3 @@
 FG_MODULE_ID = ir
 PRODUCT_BUNDLE_IDENTIFIER = com.flygaca.ir
 INFOPLIST_KEY_CFBundleDisplayName = Fly GACA IR
-
-PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*] = FlyGACA IR AppStore

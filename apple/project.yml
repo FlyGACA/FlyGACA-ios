@@ -23,6 +23,18 @@ targetTemplates:
     configFiles:
       Debug: Apps/${target_name}/${target_name}.xcconfig
       Release: Apps/${target_name}/${target_name}.xcconfig
+    # App Store manual signing. This MUST live here (not the xcconfigs, which
+    # XcodeGen's generated target settings override; not the xcodebuild command
+    # line, which leaks onto the FlyGACAKit_FeatureUI package resource bundle —
+    # a target that rejects provisioning profiles). Scoped to the device SDK so
+    # simulator/dev builds are untouched; unsigned CI archives still pass
+    # CODE_SIGNING_ALLOWED=NO on the command line, which outranks all of this.
+    settings:
+      base:
+        CODE_SIGN_STYLE[sdk=iphoneos*]: Manual
+        DEVELOPMENT_TEAM[sdk=iphoneos*]: 76U6H3M3N6
+        CODE_SIGN_IDENTITY[sdk=iphoneos*]: Apple Distribution
+        PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]: FlyGACA ${target_name} AppStore
     sources:
       - path: Apps/Shared/FlyGACAApp.swift
       - path: Apps/${target_name}/Assets.xcassets

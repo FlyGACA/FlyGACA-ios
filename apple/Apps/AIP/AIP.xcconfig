@@ -4,5 +4,3 @@
 FG_MODULE_ID = aip
 PRODUCT_BUNDLE_IDENTIFIER = com.flygaca.aip
 INFOPLIST_KEY_CFBundleDisplayName = Fly GACA AIP
-
-PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*] = FlyGACA AIP AppStore

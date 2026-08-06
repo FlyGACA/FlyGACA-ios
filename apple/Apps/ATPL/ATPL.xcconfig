@@ -4,5 +4,3 @@
 FG_MODULE_ID = atpl
 PRODUCT_BUNDLE_IDENTIFIER = com.flygaca.atpl
 INFOPLIST_KEY_CFBundleDisplayName = Fly GACA ATPL
-
-PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*] = FlyGACA ATPL AppStore
