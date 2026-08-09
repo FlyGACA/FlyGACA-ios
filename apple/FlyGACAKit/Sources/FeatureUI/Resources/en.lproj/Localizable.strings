@@ -9,6 +9,9 @@
 "home.section.flashcards" = "Flashcards";
 "home.section.exam" = "Exam";
 "home.questionCount" = "%lld questions";
+"home.section.simulator" = "Scenario simulator";
+"home.simulator.title" = "ICAO scenario check-ride";
+"home.simulator.subtitle" = "%lld live-radio scenarios";
 "home.mockExam.untimed" = "Mock exam (untimed)";
 "home.mockExam.title" = "Mock exam";
 "home.exam.timed" = "Timed exam — %1$lld min, pass %2$lld%%";
@@ -20,6 +23,15 @@
 "quiz.transcript" = "RADIO EXCHANGE";
 "common.next" = "Next";
 "common.finish" = "Finish";
+
+/* Scenario simulator briefing */
+"sim.title" = "Scenario simulator";
+"sim.brief.title" = "BRIEFING";
+"sim.brief.body" = "You are on frequency. Each scenario plays a real radio exchange — read the transmission, decide what it means, and respond as you would in the cockpit. No answer reveals until the debrief.";
+"sim.brief.pool" = "Scenario pool";
+"sim.brief.run" = "This run";
+"sim.brief.passMark" = "Pass mark";
+"sim.brief.start" = "Start check-ride";
 
 /* Flashcards */
 "flashcard.again" = "Again";

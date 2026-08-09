@@ -9,6 +9,9 @@
 "home.section.flashcards" = "البطاقات التعليمية";
 "home.section.exam" = "الاختبار";
 "home.questionCount" = "%lld سؤال";
+"home.section.simulator" = "محاكي السيناريوهات";
+"home.simulator.title" = "فحص سيناريوهات ICAO";
+"home.simulator.subtitle" = "%lld سيناريو لاسلكي مباشر";
 "home.mockExam.untimed" = "اختبار تجريبي (غير مؤقّت)";
 "home.mockExam.title" = "اختبار تجريبي";
 "home.exam.timed" = "اختبار مؤقّت — %1$lld دقيقة، النجاح %2$lld%%";
@@ -20,6 +23,15 @@
 "quiz.transcript" = "تبادل لاسلكي";
 "common.next" = "التالي";
 "common.finish" = "إنهاء";
+
+/* إحاطة محاكي السيناريوهات */
+"sim.title" = "محاكي السيناريوهات";
+"sim.brief.title" = "الإحاطة";
+"sim.brief.body" = "أنت على التردد الآن. يعرض كل سيناريو تبادلًا لاسلكيًا حقيقيًا — اقرأ الإرسال، حدّد معناه، وردّ كما تفعل في قمرة القيادة. لا تُكشف الإجابات حتى المراجعة النهائية.";
+"sim.brief.pool" = "مجموع السيناريوهات";
+"sim.brief.run" = "في هذه الجولة";
+"sim.brief.passMark" = "درجة النجاح";
+"sim.brief.start" = "ابدأ الفحص";
 
 /* البطاقات التعليمية */
 "flashcard.again" = "إعادة";
