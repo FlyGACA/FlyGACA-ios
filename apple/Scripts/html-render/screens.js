@@ -54,6 +54,7 @@ const STRINGS = {
     questionCount: (n) => `${n} questions`,
     questionProgress: (a, b) => `Question ${a} of ${b}`,
     cardProgress: (a, b) => `${a} of ${b}`,
+    simTitle: 'Scenario simulator', transcript: 'RADIO EXCHANGE',
   },
   ar: {
     study: 'الدراسة', practice: 'تدريب' /* [decided] */, quizByTopic: 'اختبار حسب الموضوع',
@@ -69,6 +70,7 @@ const STRINGS = {
     questionCount: (n) => `${n} سؤال`,
     questionProgress: (a, b) => `السؤال ${a} من ${b}`,
     cardProgress: (a, b) => `${a} من ${b}`,
+    simTitle: 'محاكي السيناريوهات', transcript: 'تبادل لاسلكي',
   },
 };
 
@@ -156,6 +158,13 @@ function page(inner, rtl) {
 function buildScreens(app, lang = 'en') {
   const CONTENT = path.resolve(__dirname, '../../Apps', app.dir, 'Content');
   const quiz = JSON.parse(fs.readFileSync(path.join(CONTENT, 'quiz.json'), 'utf8'));
+  // App-local additive pack (mirrors ContentLoader.extraBanks): merged after the
+  // synced corpus so e.g. ELPT's scenario bank renders in its screenshots.
+  const extraPath = path.join(CONTENT, 'quiz-extra.json');
+  if (fs.existsSync(extraPath)) {
+    const extra = JSON.parse(fs.readFileSync(extraPath, 'utf8'));
+    quiz.banks = quiz.banks.concat(extra.banks || []);
+  }
   const gsPath = path.join(CONTENT, 'groundschool.json');
   const hasGS = fs.existsSync(gsPath);
   const gs = hasGS ? JSON.parse(fs.readFileSync(gsPath, 'utf8')) : null;
@@ -247,115 +256,3 @@ function buildScreens(app, lang = 'en') {
       </div>
     `, rtl);
   }
-
-  function flashcard(revealed) {
-    const q = quiz.banks[0].questions[1];
-    const front = q.q;
-    const back = `${q.options[q.answer]}\n\n${q.explain}`;
-    const cardInner = revealed
-      ? `<div style="font-size:16px;line-height:1.5;white-space:pre-line">${back}</div>`
-      : `<div style="font-size:19px;font-weight:600;line-height:1.4">${front}</div>`;
-    const controls = revealed
-      ? `<div style="display:flex;gap:12px;margin-top:16px">
-           <button style="flex:1;background:transparent;border:1px solid ${C.clay};color:${C.clay};border-radius:12px;padding:14px;font-size:16px;font-weight:600">${t.again}</button>
-           <button style="flex:1;background:${C.teal};border:none;color:#fff;border-radius:12px;padding:14px;font-size:16px;font-weight:600">${t.gotIt}</button>
-         </div>`
-      : `<div style="text-align:center;font-size:13px;color:${C.sec};margin-top:16px">${t.tapToReveal}</div>`;
-    return page(`
-      ${statusbar()}
-      <div class="navbar"><div class="back">${arrow} ${t.flashcards}</div><div class="mid">${quiz.banks[0].title}</div></div>
-      <div class="body" style="display:flex;flex-direction:column;padding:20px 22px">
-        <div style="text-align:center;font-size:13px;color:${C.sec};margin-bottom:18px">${t.cardProgress(2, quiz.banks[0].questions.length)}</div>
-        <div style="background:${C.deep};border-radius:16px;min-height:300px;display:flex;align-items:center;justify-content:center;text-align:center;padding:28px">
-          ${cardInner}
-        </div>
-        ${controls}
-      </div>
-    `, rtl);
-  }
-
-  function timedStart() {
-    const q = examBank.questions[0];
-    const choices = q.options.map(o => `<div class="choice"><span>${o}</span><span class="ic" style="color:${C.ter}">○</span></div>`).join('');
-    return page(`
-      ${statusbar()}
-      <div class="navbar"><div class="back" style="justify-content:space-between;display:flex;width:100%">${arrow} ${name} <span style="color:${C.sec};font-weight:600;font-variant-numeric:tabular-nums">30:00</span></div><div class="mid">${t.examTitle}</div></div>
-      <div class="body" style="overflow:hidden">
-        <div style="padding:8px 6px">
-          <div style="font-size:13px;color:${C.sec};margin-bottom:14px">${t.questionProgress(1, 25)}</div>
-          <div style="font-size:17px;font-weight:600;line-height:1.35;margin-bottom:20px">${q.q}</div>
-          ${choicesBlock(choices)}
-        </div>
-      </div>
-    `, rtl);
-  }
-
-  function timedActive() {
-    const q = examBank.questions[1] || examBank.questions[0];
-    const choices = q.options.map((o, i) => i === 1
-      ? `<div class="choice" style="border-color:${C.teal}"><span>${o}</span><span class="ic" style="color:${C.teal}">◉</span></div>`
-      : `<div class="choice"><span>${o}</span><span class="ic" style="color:${C.ter}">○</span></div>`).join('');
-    return page(`
-      ${statusbar()}
-      <div class="navbar"><div class="back" style="justify-content:space-between;display:flex;width:100%">${arrow} ${t.exam} <span style="color:${C.clay};font-weight:700;font-variant-numeric:tabular-nums">0:48</span></div><div class="mid">${t.examTitle}</div></div>
-      <div class="body" style="overflow:hidden">
-        <div style="padding:8px 6px">
-          <div style="font-size:13px;color:${C.sec};margin-bottom:14px">${t.questionProgress(12, 25)}</div>
-          <div style="font-size:17px;font-weight:600;line-height:1.35;margin-bottom:20px">${q.q}</div>
-          ${choicesBlock(choices)}
-          <button class="tealbtn" style="margin-top:20px">${t.next}</button>
-        </div>
-      </div>
-    `, rtl);
-  }
-
-  function results() {
-    const banks = quiz.banks.slice(0, 6);
-    const tots = [4, 5, 3, 4, 5, 4], cors = [4, 4, 3, 3, 5, 3];
-    const rows = banks.map((b, i) =>
-      `<div class="row"><span style="font-size:16px">${b.title}</span><span style="color:${C.sec};font-variant-numeric:tabular-nums">${cors[i]}/${tots[i]}</span></div>`).join('');
-    return page(`
-      ${statusbar()}
-      <div class="navbar"><div class="back">${arrow} ${name}</div><div class="mid">${t.results}</div></div>
-      <div class="body">
-        <div class="card" style="margin-top:6px">
-          <div style="display:flex;padding:22px 8px">
-            ${stat('82%', t.score)}${stat('22/25', t.resultCorrect)}${stat(t.pass, t.result, C.sage)}
-          </div>
-        </div>
-        <div class="section-hdr">${t.byTopic}</div>
-        <div class="card">${rows}</div>
-      </div>
-    `, rtl);
-  }
-
-  function lessons() {
-    const m = gs.modules[0];
-    const rows = m.lessons.slice(0, 6).map(l =>
-      `<div class="row" style="align-items:flex-start"><div class="lead"><span class="t" style="font-weight:600">${l.title}</span><span class="s" style="line-height:1.4">${l.objective}</span></div></div>`).join('');
-    return page(`
-      ${statusbar()}
-      <div class="navbar"><div class="back">${arrow} ${name}</div><div class="mid">${m.title}</div></div>
-      <div class="body">
-        <div class="card" style="margin-top:6px"><div style="padding:14px 16px;font-size:15px;color:${C.sec};line-height:1.45">${m.summary}</div></div>
-        <div class="card" style="margin-top:14px">${rows}</div>
-      </div>
-    `, rtl);
-  }
-
-  const set = {
-    '01-home': home,
-    '02-quiz-banks': quizBanks,
-    '03-quiz-question': quizQuestion,
-    '04-quiz-answered': quizAnswered,
-    '05-flashcard-front': () => flashcard(false),
-    '06-flashcard-back': () => flashcard(true),
-    '07-timed-exam-start': timedStart,
-    '08-timed-exam-timer': timedActive,
-    '09-mock-results': results,
-  };
-  if (hasGS) set['10-lessons-list'] = lessons;
-  return set;
-}
-
-module.exports = { buildScreens };
