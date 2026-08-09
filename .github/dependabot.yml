@@ -1,0 +1,9 @@
+version: 2
+updates:
+  # Keep GitHub Actions pinned SHAs current — Dependabot bumps the SHA and the
+  # `# vX` comment together.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
