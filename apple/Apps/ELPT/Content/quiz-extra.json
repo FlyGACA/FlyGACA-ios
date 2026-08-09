@@ -247,6 +247,246 @@
      "answer": 1,
      "explain": "In context, ‘no delay’ reassures the crew the request is easily accommodated. Interpreting phraseology by context — not word-for-word — separates Levels 5–6 from Level 4.",
      "cite": "ICAO Doc 9432"
+    },
+    {
+     "q": "ATC: Saudia 220, climb FL280.\nPILOT: Climb FL280, Saudia 220.\nATC: Saudia 220, negative — FL260, stop climb FL260, traffic above.\n\nWhat should the crew do first?",
+     "options": [
+      "Continue to FL280 since that clearance was read back first",
+      "Stop the climb immediately and level at FL260",
+      "Ask for the reason before changing level",
+      "Climb faster to pass above the traffic"
+     ],
+     "answer": 1,
+     "explain": "The second instruction revokes the first — level off at once. Reclearances under traffic pressure are classic ELPT listening traps: the LAST instruction is the one that counts.",
+     "cite": "ICAO Doc 4444 · Annex 10"
+    },
+    {
+     "q": "PILOT: Tower, Flynas 400, we smell burning in the cabin, source unknown — request return to the gate.\n\nWhy is ‘source unknown’ important information to transmit?",
+     "options": [
+      "It excuses the crew from further reports",
+      "It tells ATC the crew cannot confirm a fire, so the response stays precautionary, not an emergency evacuation",
+      "It is required phraseology for all returns to gate",
+      "It allows ATC to refuse the request"
+     ],
+     "answer": 1,
+     "explain": "Precise plain English calibrates the emergency response. Smell without confirmed fire = precaution; confirmed fire = emergency. ELPT examiners listen for exactly this discrimination.",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "ATIS: …departure runway 16, wind 140 at 12, visibility 8 km, few CBs southwest…\n\n‘Few CBs southwest’ tells the departing pilot to expect —",
+     "options": [
+      "Clear skies after departure",
+      "Isolated cumulonimbus cells southwest of the field — turbulence and possible deviations",
+      "Fog banks moving in from the southwest",
+      "Military activity southwest of the airport"
+     ],
+     "answer": 1,
+     "explain": "CB = cumulonimbus: the thunderstorm cloud. Decoding weather abbreviations and linking them to operational impact (deviations, turbulence) is core ELPT comprehension.",
+     "cite": "ICAO Annex 3 · Doc 9432"
+    },
+    {
+     "q": "PILOT: Approach, Gulf Air 19, we're low on fuel — request no delay for landing.\nATC: Gulf Air 19, are you declaring a fuel emergency?\n\nThe controller asks this because —",
+     "options": [
+      "Controllers always question fuel reports",
+      "‘Low on fuel’ is not standard phraseology — ‘MINIMUM FUEL’ or a MAYDAY fuel declaration triggers defined handling, and the controller must know which it is",
+      "The controller wants the fuel figure in kilograms",
+      "The pilot used an Arabic accent"
+     ],
+     "answer": 1,
+     "explain": "ICAO defines MINIMUM FUEL (committed to land, accept no further delay) and emergency fuel (MAYDAY). Vague terms like ‘low on fuel’ force the controller to clarify — a documented interaction failure point in real incidents.",
+     "cite": "ICAO Doc 9432 · Annex 10"
+    },
+    {
+     "q": "TOWER: Flyadeal 55, line up and wait runway 27.\nPILOT: Lining up runway 27, Flyadeal 55.\n\nAfter two minutes with no take-off clearance, the BEST plain-English call is —",
+     "options": [
+      "Say nothing; the tower is busy",
+      "‘Tower, Flyadeal 55, holding on the runway two minutes, confirm take-off clearance?’",
+      "‘Tower, why the delay?’",
+      "Start the take-off roll slowly"
+     ],
+     "answer": 1,
+     "explain": "A calm, factual query restates position and asks for confirmation — textbook interaction. Sitting silently on an active runway is a real runway-incursion factor probed in ELPT interviews.",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "PILOT: Riyadh Radar, Saudia 610, TCAS RA — climbing.\n\nThis transmission tells the controller that —",
+     "options": [
+      "The pilot requests a climb clearance",
+      "The aircraft is following a collision-avoidance system command and has deviated from its clearance; ATC responsibility for separation is suspended until the pilot reports clear of conflict",
+      "The autopilot has failed",
+      "The aircraft is in radar contact"
+     ],
+     "answer": 1,
+     "explain": "‘TCAS RA’ is a report, not a request — the crew follows the Resolution Advisory even against ATC instructions. Controllers must not issue contrary instructions until ‘clear of conflict’ is reported.",
+     "cite": "ICAO Doc 4444 · Annex 10"
+    },
+    {
+     "q": "ATC: Saudia 74, behind the landing Saudia A320, line up behind, runway 34R.\nPILOT: Behind the landing A320, line up behind, runway 34R, Saudia 74.\n\nThe word ‘behind’ at the start and end of the instruction exists to —",
+     "options": [
+      "Fill silence on the frequency",
+      "Emphasise the conditional nature of the clearance — lining up only after the landing traffic has passed",
+      "Test the pilot's English",
+      "Indicate the A320 is behind Saudia 74"
+     ],
+     "answer": 1,
+     "explain": "Conditional clearances bracket the condition with ‘behind … behind’. Mishearing these is a documented runway-incursion cause, so ELPT listening tests use them heavily.",
+     "cite": "ICAO Annex 10 · Doc 9432"
+    },
+    {
+     "q": "PILOT: Jeddah Tower, Flynas 88, we've lost the nose-wheel steering — we can vacate the runway but can't taxi.\n\nThe clearest follow-up the pilot should expect or request is —",
+     "options": [
+      "Immediate take-off clearance to depart again",
+      "A tug/tow and possible runway closure while the aircraft is disabled on the taxiway",
+      "Instructions to shut down all engines and evacuate",
+      "A gate change"
+     ],
+     "answer": 1,
+     "explain": "Loss of steering means a disabled aircraft needing a tow — and possibly closing the strip. Describing a technical fault in plain English and anticipating the operational consequence is Level 5 behaviour.",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "ATC: Gulf Air 6, descend now FL100, expedite until FL200.\n\n‘Expedite until FL200’ means the pilot should —",
+     "options": [
+      "Cruise at FL200 before continuing down",
+      "Descend as quickly as practicable through the levels down to FL200, then continue normally to FL100",
+      "Descend slowly to avoid traffic",
+      "Level at FL200 and await further clearance"
+     ],
+     "answer": 1,
+     "explain": "‘Expedite’ = best rate through the specified band, usually for separation. Precise comprehension of rate instructions is standard ELPT material.",
+     "cite": "ICAO Doc 4444"
+    },
+    {
+     "q": "PILOT: Tower, Saudia 99, request return — we have a cracked windscreen on the captain's side, visibility is OK.\nATC: Saudia 99, roger, radar vectors ILS runway 33L, report the windscreen condition worsens.\n\nThe controller's ‘report … worsens’ instruction is an example of —",
+     "options": [
+      "Unnecessary radio chatter",
+      "A conditional report instruction that keeps the controller informed as the situation develops",
+      "A request to land immediately",
+      "Standard phraseology for all landings"
+     ],
+     "answer": 1,
+     "explain": "Controllers manage abnormal situations with conditional reports. The pilot's concise plain-English fault description (‘cracked … visibility is OK’) is the ELPT skill on show here.",
+     "cite": "ICAO Doc 9432 · Doc 9835"
+    },
+    {
+     "q": "PILOT: Ground, Flyadeal 12, the ground crew signal is confusing — they are pointing both arms up then crossing them. Confirm: do they want us to stop?\n\nThis transmission shows —",
+     "options": [
+      "Poor English that should be avoided on frequency",
+      "Good interaction: when a visual signal is unclear, the pilot checks before moving the aircraft",
+      "A misuse of the ground frequency",
+      "An emergency situation"
+     ],
+     "answer": 1,
+     "explain": "Checking and confirming whenever understanding is in doubt is explicitly rated in the ICAO interaction descriptor — silence and guessing is the Level-3 failure mode.",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "ATC: Saudia 301, hold at KATNI, FL150, expect further clearance at 42.\nPILOT: Hold at KATNI, FL150, Saudia 301.\n\nWhat did the readback omit, and does it matter?",
+     "options": [
+      "The EFC time ‘42’ — it matters because it is part of the holding clearance and protects lost-comms procedures",
+      "Nothing important — EFC times are advisory",
+      "The callsign — a serious error",
+      "The flight level — the readback is invalid"
+     ],
+     "answer": 0,
+     "explain": "Holding instructions include the expect-further-clearance time; on radio failure the pilot times the approach from it. Omitting it in readback lets an error pass uncorrected.",
+     "cite": "ICAO Annex 10 · Doc 4444"
+    },
+    {
+     "q": "PILOT: Approach, Gulf Air 47, both generators have failed — we're on battery power and need to land as soon as possible.\n\nWhy does ‘on battery power’ matter operationally to ATC?",
+     "options": [
+      "It doesn't; batteries last indefinitely",
+      "Electrical power is time-limited — the aircraft may lose radios, instruments and lighting within tens of minutes, so the landing cannot be delayed",
+      "It means the engines have failed",
+      "It only matters at night"
+     ],
+     "answer": 1,
+     "explain": "Battery endurance is finite — this phrase converts a technical report into an implicit urgency. Controllers hearing it should treat the flight as time-critical; pilots saying it should be ready to declare urgency explicitly.",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "TOWER: Flynas 23, cleared to land runway 09, caution — previous arrival reported moderate windshear at 300 feet.\n\nThe pilot's most professional acknowledgement is —",
+     "options": [
+      "‘Roger’ only",
+      "‘Cleared to land runway 09, and we'll be prepared for a possible go-around, Flynas 23’",
+      "‘Say again the windshear part’",
+      "‘We refuse the clearance’"
+     ],
+     "answer": 1,
+     "explain": "Reading back the clearance AND stating the intended mitigation shows comprehension plus interaction — the two skills ICAO weights most heavily in live exchange assessment.",
+     "cite": "ICAO Doc 9432 · Doc 9835"
+    },
+    {
+     "q": "PILOT: Riyadh Tower, Saudia 515, passenger has collapsed and is unresponsive — we are two minutes out, request paramedics meet us at the aircraft, and priority taxi to stand.\n\n‘Unresponsive’ in this plain-English report means —",
+     "options": [
+      "The passenger is asleep",
+      "The passenger does not react to voice or touch — a serious medical state requiring immediate help",
+      "The passenger refuses to answer questions",
+      "The passenger's phone is off"
+     ],
+     "answer": 1,
+     "explain": "Accurate plain-English medical descriptors drive the level of response. ‘Unresponsive’ signals possible cardiac arrest — very different from ‘feels unwell’.",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "ATC: Flyadeal 67, turn left heading 040.\nPILOT: Turn left heading 040, Flyadeal 67.\nATC: Flyadeal 67, you turned RIGHT — turn left NOW heading 040, traffic 3 miles opposite direction.\n\nThis exchange illustrates which ICAO concern most directly?",
+     "options": [
+      "Vocabulary range",
+      "How a single misheard direction can create an immediate conflict, and why controllers monitor readback AND compliance",
+      "Grammar accuracy",
+      "Pronunciation of numbers"
+     ],
+     "answer": 1,
+     "explain": "Correct readback with wrong execution still kills separation. ELPT scenarios based on real incidents test whether pilots grasp that language errors have immediate operational consequences.",
+     "cite": "ICAO Doc 9432"
+    },
+    {
+     "q": "PILOT: Dammam Approach, Gulf Air 30, we think we hit a flock of birds after take-off — one engine is surging, we're levelling at 4,000 and running the checklist.\n\n‘Surging’ most nearly means the engine is —",
+     "options": [
+      "Running perfectly",
+      "Repeatedly gaining and losing power — a sign of compressor stalls, often after bird ingestion",
+      "On fire",
+      "Shut down"
+     ],
+     "answer": 1,
+     "explain": "Plain-English technical descriptors like ‘surging’, ‘vibrating’, ‘fluctuating’ let non-specialist controllers picture the problem. This register is exactly what Doc 9835 trains and rates.",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "ATIS: …braking action reported MEDIUM TO POOR by a Boeing 737…\nATC: Saudia 180, runway 34L, cleared to land.\n\nThe professional pilot response to this combination is to —",
+     "options": [
+      "Land normally; braking action reports are not binding",
+      "Factor the report into the landing decision — consider autobrake setting, a longer runway, or delaying — and acknowledge the report in the readback",
+      "Divert immediately without question",
+      "Ask the Boeing 737 directly on frequency"
+     ],
+     "answer": 1,
+     "explain": "PIREPs in the ATIS are decision inputs, not commands. Acknowledging them shows the controller you understood — and ELPT examiners look for exactly this situational linking.",
+     "cite": "ICAO Annex 11 · Doc 9432"
+    },
+    {
+     "q": "PILOT: Tower, Saudia 700, the cabin crew report smoke smell from the aft galley — it has stopped, but we want the fire brigade to check at the gate.\nATC: Saudia 700, roger, fire services will meet you at stand 12.\n\nWhy is ‘it has stopped’ valuable in the report?",
+     "options": [
+      "It reduces paperwork",
+      "It tells responders the event may be over but investigation is still needed — calibrating urgency without hiding the risk",
+      "It is required by law in every report",
+      "It allows the crew to skip the checklist"
+     ],
+     "answer": 1,
+     "explain": "Complete plain-English reports include what changed. ‘Stopped but please check’ is neither alarm nor all-clear — the precise middle register ICAO Level 5+ expects.",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "ATC: Flynas 41, traffic 2 o'clock, 5 miles, same level, Boeing 777 — report in sight.\nPILOT: Traffic in sight, Flynas 41.\nATC: Flynas 41, maintain visual separation from that traffic, cleared approach runway 16.\n\n‘Maintain visual separation’ transfers to the pilot —",
+     "options": [
+      "Nothing; ATC keeps full responsibility",
+      "Responsibility for not colliding with the seen traffic, using own manoeuvring if needed",
+      "Permission to switch frequency",
+      "Responsibility for the other aircraft's navigation"
+     ],
+     "answer": 1,
+     "explain": "Visual-separation clearances shift collision responsibility to the pilot who reported the traffic in sight. Understanding who owns separation at each moment is advanced ELPT comprehension.",
+     "cite": "ICAO Doc 4444"
     }
    ]
   }
