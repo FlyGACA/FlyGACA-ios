@@ -69,14 +69,27 @@ public struct QuizView: View {
                         .accessibilityLabel(
                             Loc.t(flaggedIDs.contains(question.id) ? "a11y.unflagQuestion" : "a11y.flagQuestion"))
                     }
-                    Text(question.prompt)
-                        .font(.headline)
+                    SessionProgressBar(
+                        answered: session.currentIndex,
+                        total: session.questions.count
+                    )
+                    if let scenario = scenarioParts(of: question.prompt) {
+                        ScenarioCard(lines: scenario.transcript)
+                        Text(scenario.question)
+                            .font(.headline)
+                    } else {
+                        Text(question.prompt)
+                            .font(.headline)
+                    }
                     ForEach(question.choices.indices, id: \.self) { index in
                         ChoiceRow(
+                            index: index,
                             text: question.choices[index],
                             mark: mark(for: index, in: question)
                         ) {
-                            session.answer(index)
+                            withAnimation(.easeInOut(duration: 0.15)) {
+                                session.answer(index)
+                            }
                         }
                     }
                     if session.config.revealsAnswers, session.currentAnswer != nil {
@@ -92,6 +105,31 @@ public struct QuizView: View {
                 .padding()
             }
         }
+    }
+
+    /// ELPT-style scenario prompts carry a radio exchange before the question
+    /// ("TOWER: …\nPILOT: …\n\nWhat should the pilot do?"). When the first
+    /// block is a transcript (any line with an ALL-CAPS speaker prefix), it is
+    /// split out for the cockpit-style ScenarioCard; anything else renders as
+    /// one plain prompt.
+    private func scenarioParts(of prompt: String) -> (transcript: [String], question: String)? {
+        let blocks = prompt.components(separatedBy: "\n\n")
+        guard blocks.count > 1 else { return nil }
+        // Leading blocks whose lines are ALL speaker-prefixed are transcript;
+        // the first block with a non-prefixed line starts the question prose.
+        var transcript: [String] = []
+        var questionStart = blocks.count
+        for (offset, block) in blocks.enumerated() {
+            let lines = block.components(separatedBy: "\n").filter { !$0.isEmpty }
+            if !lines.isEmpty, lines.allSatisfy({ TranscriptLine.split($0) != nil }) {
+                transcript.append(contentsOf: lines)
+            } else {
+                questionStart = offset
+                break
+            }
+        }
+        guard !transcript.isEmpty, questionStart < blocks.count else { return nil }
+        return (transcript, blocks[questionStart...].joined(separator: "\n\n"))
     }
 
     private func toggleFlag(_ question: Question) {

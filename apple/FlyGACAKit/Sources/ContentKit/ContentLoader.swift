@@ -50,7 +50,15 @@ public enum ContentLoader {
     /// optional (not every pack has lessons or reading paths).
     public static func load(from directory: URL) throws -> ModuleContent {
         let moduleFile = try JSONDecoder().decode(ModuleFile.self, from: data("module.json", in: directory))
-        let quiz = try QuizFile.decode(data("quiz.json", in: directory))
+        var quiz = try QuizFile.decode(data("quiz.json", in: directory))
+        // Additive, app-local bank packs (`quiz-extra.json`, same wire schema)
+        // are appended after the synced corpus banks. The active directory is
+        // tried first and the bundle is the fallback, so a remote-refresh cache
+        // snapshot (which carries only quiz.json + module.json) can never
+        // silently drop an app-local pack.
+        if let extra = extraBanks(activeDirectory: directory) {
+            quiz = QuizFile(generated: quiz.generated, exam: quiz.exam, banks: quiz.banks + extra)
+        }
         let groundSchool = try? JSONDecoder().decode(
             GroundSchoolFile.self, from: data("groundschool.json", in: directory))
         let paths = try? JSONDecoder().decode(
@@ -62,6 +70,25 @@ public enum ContentLoader {
             groundSchool: groundSchool,
             paths: paths
         )
+    }
+
+    /// The banks of an optional `quiz-extra.json`, from the active directory or
+    /// (falling back) the app bundle. Returns nil when the file is absent;
+    /// a malformed pack also returns nil — additive content must never block
+    /// the synced corpus from loading.
+    private static func extraBanks(activeDirectory: URL) -> [Bank]? {
+        var candidates = [activeDirectory]
+        if let bundled = bundledContentDirectory(), bundled != activeDirectory {
+            candidates.append(bundled)
+        }
+        for directory in candidates {
+            let url = directory.appendingPathComponent("quiz-extra.json")
+            guard let data = try? Data(contentsOf: url) else { continue }
+            if let decoded = try? QuizFile.decode(data) {
+                return decoded.banks
+            }
+        }
+        return nil
     }
 
     private static func data(_ name: String, in directory: URL) throws -> Data {

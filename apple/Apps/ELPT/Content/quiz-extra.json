@@ -1,0 +1,254 @@
+{
+ "generated": "2026-08-09",
+ "note": "App-local additive pack: ICAO ELPT-style scenario bank. Same wire schema as quiz.json; ContentLoader appends these banks after the synced corpus banks.",
+ "banks": [
+  {
+   "id": "elpt-scenarios",
+   "title": "Scenarios — Live Radio & Emergencies",
+   "desc": "ICAO ELPT-style scenario questions: real radio exchanges, readback traps and plain-English emergencies, the way the interview actually feels.",
+   "source": "ICAO Annex 10 · Doc 9432 · Doc 9835",
+   "questions": [
+    {
+     "q": "TOWER: Saudia 412, wind 330 at 18 gusting 28, runway 34L, cleared to land.\nPILOT: Cleared to land runway 34R, Saudia 412.\n\nWhat is wrong with the pilot's readback?",
+     "options": [
+      "Nothing — the readback is complete and correct",
+      "The pilot read back the wrong runway",
+      "The pilot omitted the wind information",
+      "The pilot used the wrong callsign"
+     ],
+     "answer": 1,
+     "explain": "The clearance was for runway 34L but the pilot read back 34R. A wrong-runway readback is a critical error — the controller must correct it immediately before landing.",
+     "cite": "ICAO Annex 10 · Doc 9432"
+    },
+    {
+     "q": "PILOT: Riyadh Tower, Flynas 208, we have a hydraulic failure, request priority landing and a tow after vacating.\n\nIn plain English, what is the pilot telling the tower?",
+     "options": [
+      "The aircraft cannot fly and must land immediately off-airport",
+      "A flight-control system has failed and the flight needs to land before other traffic, then be towed off the runway",
+      "The brakes have failed and the aircraft cannot stop on the runway",
+      "The crew wants to cancel the flight and return to the gate"
+     ],
+     "answer": 1,
+     "explain": "‘Hydraulic failure’ in plain English means a system that powers flight controls/gear/brakes is lost; ‘priority landing’ asks to be sequenced first. This is exactly the plain-language phrasing ICAO Level 4+ expects in abnormal situations.",
+     "cite": "ICAO Doc 9835 · Annex 1"
+    },
+    {
+     "q": "ATC: Gulf Air 55, say again your last transmission — you were stepped on.\n\nWhat does ‘stepped on’ mean in this transmission?",
+     "options": [
+      "The aircraft taxied over a stop bar",
+      "Another transmission blocked the pilot's call, so it was unreadable",
+      "The pilot used an incorrect phrase",
+      "The radar controller took over the frequency"
+     ],
+     "answer": 1,
+     "explain": "‘Stepped on’ is plain English for a transmission blocked by another station transmitting at the same time. Recognising informal radiotelephony language is a core ELPT comprehension skill.",
+     "cite": "ICAO Doc 9432"
+    },
+    {
+     "q": "PILOT: Jeddah Approach, Saudia 771, declaring PAN PAN, PAN PAN, PAN PAN — smoke in the cockpit, request immediate return and fire services on arrival.\n\nWhy does the pilot say ‘PAN PAN’ rather than ‘MAYDAY’?",
+     "options": [
+      "PAN PAN is used only at night",
+      "The situation is urgent but does not pose immediate grave danger to life or the aircraft",
+      "PAN PAN is the Arabic equivalent of MAYDAY",
+      "The aircraft is on the ground, where MAYDAY is prohibited"
+     ],
+     "answer": 1,
+     "explain": "PAN PAN signals urgency; MAYDAY signals distress (grave and imminent danger). Smoke in the cockpit without loss of control is typically urgency — and the pilot upgraded correctly by asking for services on arrival.",
+     "cite": "ICAO Annex 10"
+    },
+    {
+     "q": "TOWER: Flynas 90, hold position — traffic on final.\nPILOT: Holding position, Flynas 90.\n\nThe controller then says: ‘Flynas 90, say intentions.’ What is the controller asking?",
+     "options": [
+      "What the pilot plans to do next",
+      "The aircraft's fuel endurance",
+      "The number of passengers on board",
+      "The aircraft's registration"
+     ],
+     "answer": 0,
+     "explain": "‘Say intentions’ is a standard plain-language request for the pilot's plan. In an ELPT interview or simulated exchange, answering it clearly and concisely demonstrates interaction skill.",
+     "cite": "ICAO Doc 9432"
+    },
+    {
+     "q": "PILOT: Tower, Flyadeal 33, we just had a bird strike on rotation — engine vibration, we're climbing out and will need to come back.\n\n‘On rotation’ means the bird strike happened —",
+     "options": [
+      "while the aircraft was turning onto the runway",
+      "at the moment the pilot raised the nose to lift off",
+      "during the turnaround at the gate",
+      "while orbiting in the holding pattern"
+     ],
+     "answer": 1,
+     "explain": "‘Rotation’ is the moment the pilot pulls back to lift the nose wheel and become airborne. Plain-English descriptors of the flight phase are assessed vocabulary in the ICAO rating scale.",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "ATIS: …Riyadh information KILO, 1350 UTC, ILS approach runway 33L, transition level 130, temperature 44, QNH 1003…\n\nA pilot taxiing out at 1400 UTC should —",
+     "options": [
+      "Use information KILO for the departure briefing",
+      "Listen again, because a new ATIS may have been issued at the top of the hour",
+      "Request information LIMA from ground control",
+      "Set QNH 1030 before taxi"
+     ],
+     "answer": 1,
+     "explain": "ATIS is updated as conditions change (commonly hourly). Before departure the pilot must confirm the current information letter — if KILO has been superseded, using it is an error examiners probe for.",
+     "cite": "ICAO Annex 11 · Doc 9432"
+    },
+    {
+     "q": "PILOT: Dammam Ground, Gulf Air 12, request pushback.\nATC: Gulf Air 12, pushback approved, face west.\nPILOT: Pushback approved, Gulf Air 12.\n\nWhat did the pilot's readback omit?",
+     "options": [
+      "The callsign",
+      "The direction to face after pushback",
+      "The word ‘approved’",
+      "Nothing — the readback was complete"
+     ],
+     "answer": 1,
+     "explain": "‘Face west’ is a safety-relevant instruction and must be read back. Incomplete readbacks of conditional instructions are a classic ELPT scenario trap.",
+     "cite": "ICAO Annex 10"
+    },
+    {
+     "q": "PILOT: Approach, Saudia 300, we're a Boeing 777 — request lower due to severe turbulence at FL350.\nATC: Saudia 300, descend FL330, report reaching.\n\nWhy would ‘report reaching’ matter to the controller?",
+     "options": [
+      "It confirms the aircraft's fuel state",
+      "The controller needs to know when the level is vacated and occupied to keep separation from other traffic",
+      "It is required only during emergencies",
+      "It lets the controller close the flight plan"
+     ],
+     "answer": 1,
+     "explain": "Level reports protect vertical separation. Understanding the purpose behind instructions — not just the words — is what distinguishes ICAO Level 5 from Level 4.",
+     "cite": "ICAO Doc 4444"
+    },
+    {
+     "q": "PILOT: Tower, Flynas 61, MAYDAY MAYDAY MAYDAY, engine fire, we are stopping on the runway and evacuating.\n\nWhich of these is the BEST plain-English summary for the cabin crew briefing afterwards?",
+     "options": [
+      "We experienced an engine malfunction so we discontinued the take-off",
+      "The engine caught fire, we stopped the aircraft on the runway and got everyone out",
+      "A technical issue necessitated an operational halt and passenger disembarkation",
+      "We rejected the departure due to a propulsion anomaly"
+     ],
+     "answer": 1,
+     "explain": "Plain English for non-routine events must be direct and free of jargon or euphemism. Option B is clear, simple and complete — the standard ICAO expects in an ELPT interview.",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "ATC: Saudia 90, expect vectors for the ILS 34R; the glideslope is out of service — this will be a localiser-only approach.\n\nWhat should the pilot understand about this approach?",
+     "options": [
+      "The approach is cancelled and a diversion is required",
+      "Lateral guidance is available but vertical guidance is not, so the approach has higher minimums",
+      "The runway lighting is inoperative",
+      "The approach will be flown visually only"
+     ],
+     "answer": 1,
+     "explain": "Localiser-only means lateral guidance without the glideslope — a non-precision profile with higher minima. Comprehending operational consequences of a transmission is a core ELPT skill.",
+     "cite": "ICAO Doc 8168"
+    },
+    {
+     "q": "PILOT: Ground, Flyadeal 7, we have a passenger with chest pain on board — request medical assistance at the gate after landing.\nATC: Flyadeal 7, roger, medical services will meet you. Taxi to stand B4.\n\nIf the passenger's condition worsens before landing, the pilot should —",
+     "options": [
+      "Keep the original plan; the request is already made",
+      "Update ATC in plain English so priority handling and paramedics can be escalated",
+      "Declare the flight an emergency only after landing",
+      "Ask the cabin crew to handle it without informing ATC"
+     ],
+     "answer": 1,
+     "explain": "Interaction — checking, confirming and updating as a situation develops — is one of the six ICAO skills. A deteriorating medical case must be escalated in clear plain English.",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "TOWER: Saudia 150, cleared for take-off runway 33L.\nPILOT: Cleared for take-off 33L, Saudia 150.\nTOWER: Saudia 150, stop! Stop take-off, vehicle on the runway!\n\nThe correct pilot response is to —",
+     "options": [
+      "Continue, because take-off clearance was already received",
+      "Reject the take-off immediately and advise the tower when able",
+      "Ask the tower to repeat the instruction before acting",
+      "Vacate at the next intersection at high speed"
+     ],
+     "answer": 1,
+     "explain": "An instruction to stop overrides the earlier clearance — a rejected take-off below V1 is mandatory. ELPT scenarios test whether you understand instantly and respond with plain, unambiguous language once safe.",
+     "cite": "ICAO Doc 9432"
+    },
+    {
+     "q": "PILOT: Jeddah Approach, Gulf Air 88, we are unsure of our position after the storm and request radar vectors to the field.\n\nWhich ICAO skill is this pilot demonstrating most directly?",
+     "options": [
+      "Pronunciation",
+      "Interaction — asking for clarification and assistance when comprehension or situational awareness is lost",
+      "Vocabulary range in technical subjects",
+      "Grammatical accuracy of past tenses"
+     ],
+     "answer": 1,
+     "explain": "Admitting uncertainty and requesting help is textbook interaction. ICAO Doc 9835 explicitly treats managing misunderstandings as higher-level behaviour than error-free grammar.",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "ATC: Flynas 21, caution wake turbulence, departing heavy Airbus A330 just airborne, runway 33R, cleared for take-off.\n\nThe most appropriate plain-English action by the pilot is to —",
+     "options": [
+      "Accept immediately; wake turbulence only affects arriving aircraft",
+      "Request a short delay to allow the wake to dissipate before accepting the clearance",
+      "Change to the parallel runway without clearance",
+      "Take off and climb above the heavy's flight path"
+     ],
+     "answer": 1,
+     "explain": "‘Caution wake turbulence’ places responsibility on the pilot — requesting a delay (typically 2 minutes behind a heavy) is the standard safe response and shows comprehension plus correct interaction.",
+     "cite": "ICAO Doc 4444"
+    },
+    {
+     "q": "PILOT: Tower, Saudia 505, radio failure on tower frequency — how do you read this transmission on guard?\nTOWER: Saudia 505, Tower reads you 3 on guard, transmit blind on tower 118.6.\n\n‘Transmit blind’ means the pilot should —",
+     "options": [
+      "Stop transmitting until landing",
+      "Send the message on the given frequency even though replies may not be heard, transmitting it twice",
+      "Switch all radios off and squawk 7600 only",
+      "Land without any clearance immediately"
+     ],
+     "answer": 1,
+     "explain": "Transmitting blind = broadcasting position/intentions twice on the designated frequency when reception is uncertain. Unusual phraseology under degraded comms is classic Level 5/6 comprehension material.",
+     "cite": "ICAO Annex 10"
+    },
+    {
+     "q": "ATIS: …expect RVR 800 metres in fog patches…\nATC: Saudia 77, taxi holding point runway 34L via A, A5.\nPILOT: Holding point 34L via A5, Saudia 77.\n\nWhat is missing or risky about this readback in low visibility?",
+     "options": [
+      "The pilot should have read back the full taxi route ‘via Alpha, Alpha 5’, not just part of it",
+      "The pilot should have requested take-off clearance",
+      "Nothing — partial readbacks are always acceptable",
+      "The pilot used the wrong frequency"
+     ],
+     "answer": 0,
+     "explain": "In low-visibility operations the full taxi route must be read back exactly. Shortened readbacks of taxi instructions are a known runway-incursion precursor and a favourite ELPT scenario trap.",
+     "cite": "ICAO Doc 9432 · Annex 10"
+    },
+    {
+     "q": "PILOT: Approach, Flyadeal 99, the cabin crew report a passenger refusing to sit and becoming aggressive — we may need security to meet the aircraft.\n\nThe BEST ICAO-style plain-English term for this situation is —",
+     "options": [
+      "A passenger disturbance",
+      "An unruly passenger",
+      "A panic attack",
+      "A hijack in progress"
+     ],
+     "answer": 1,
+     "explain": "‘Unruly passenger’ is the recognised plain-English term. Precise, standard vocabulary for security events avoids dangerous over- or under-statement — exactly what ELPT interviewers probe.",
+     "cite": "ICAO Doc 9835"
+    },
+    {
+     "q": "TOWER: Gulf Air 30, go around, I say again, go around — windshear reported on final.\nPILOT: Going around, Gulf Air 30.\n\nWhy does the controller say ‘I say again’?",
+     "options": [
+      "It is standard politeness on the frequency",
+      "To emphasise a critical safety instruction that must not be missed or misheard",
+      "Because the pilot asked for a repeat",
+      "To give the pilot time to decide"
+     ],
+     "answer": 1,
+     "explain": "‘I say again’ flags that the repeated part is vital. Recognising emphasis markers and responding immediately — not debating — is the interaction behaviour ICAO assesses.",
+     "cite": "ICAO Annex 10"
+    },
+    {
+     "q": "PILOT: Riyadh Approach, Saudia 888, we've had a lightning strike — all instruments appear normal, but we'd like a longer final to run the checklists.\nATC: Saudia 888, roger, expect a 15-mile final, no delay.\n\n‘No delay’ here means —",
+     "options": [
+      "The aircraft must land within one minute",
+      "The longer final can be given without delaying other traffic",
+      "The checklist must be skipped",
+      "The flight will not be delayed on the ground"
+     ],
+     "answer": 1,
+     "explain": "In context, ‘no delay’ reassures the crew the request is easily accommodated. Interpreting phraseology by context — not word-for-word — separates Levels 5–6 from Level 4.",
+     "cite": "ICAO Doc 9432"
+    }
+   ]
+  }
+ ]
+}
