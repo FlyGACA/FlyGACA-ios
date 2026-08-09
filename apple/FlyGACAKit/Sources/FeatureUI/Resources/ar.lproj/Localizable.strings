@@ -17,6 +17,7 @@
 "quiz.questionProgress" = "السؤال %1$lld من %2$lld";
 "quiz.correct" = "إجابة صحيحة";
 "quiz.notQuite" = "ليست صحيحة";
+"quiz.transcript" = "تبادل لاسلكي";
 "common.next" = "التالي";
 "common.finish" = "إنهاء";
 
@@ -48,6 +49,7 @@
 "a11y.flagQuestion" = "تعليم السؤال";
 "a11y.unflagQuestion" = "إلغاء تعليم السؤال";
 "a11y.timeRemaining" = "الوقت المتبقّي %@";
+"a11y.progress" = "تمت الإجابة عن %1$lld من %2$lld";
 
 /* إخلاء المسؤولية — مطابق حرفيًا للنص في disclaimer.strong / disclaimer.body
    (src/i18n/ar.json في المستودع الموحّد FlyGACA-app). لا تُعِد صياغته. */
