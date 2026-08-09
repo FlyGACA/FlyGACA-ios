@@ -20,6 +20,18 @@ struct ModuleHomeView: View {
 
     private var moduleID: String { content.manifest.id }
 
+    /// Per-bank glyph — matched on the bank id's keywords so a new bank gets a
+    /// sensible icon without any code change.
+    private func icon(for bank: Bank) -> String {
+        let id = bank.id
+        if id.contains("scenario") { return "dot.radiowaves.left.and.right" }
+        if id.contains("radio") { return "antenna.radiowaves.left.and.right" }
+        if id.contains("phraseology") { return "text.bubble" }
+        if id.contains("comprehension") { return "ear" }
+        if id.contains("rating") { return "chart.bar" }
+        return "questionmark.circle"
+    }
+
     var body: some View {
         List {
             if let groundSchool = content.groundSchool {
@@ -45,11 +57,16 @@ struct ModuleHomeView: View {
                             bankID: bank.id
                         )
                     } label: {
-                        VStack(alignment: .leading, spacing: 2) {
-                            Text(bank.title)
-                            Text(Loc.t("home.questionCount", bank.questions.count))
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
+                        HStack(spacing: 10) {
+                            Image(systemName: icon(for: bank))
+                                .foregroundStyle(FGTheme.teal)
+                                .frame(width: 22)
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text(bank.title)
+                                Text(Loc.t("home.questionCount", bank.questions.count))
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                            }
                         }
                     }
                 }
@@ -58,8 +75,10 @@ struct ModuleHomeView: View {
             }
             Section {
                 ForEach(content.quiz.banks) { bank in
-                    NavigationLink(bank.title) {
+                    NavigationLink {
                         FlashcardsScreen(bank: bank, store: store)
+                    } label: {
+                        Label(bank.title, systemImage: "rectangle.on.rectangle.angled")
                     }
                 }
             } header: {
@@ -79,12 +98,12 @@ struct ModuleHomeView: View {
                         bankID: nil
                     )
                 } label: {
-                    Text(Loc.t("home.mockExam.untimed"))
+                    Label(Loc.t("home.mockExam.untimed"), systemImage: "doc.questionmark")
                 }
                 NavigationLink {
                     ExamScreen(content: content, bankTitles: bankTitles, moduleID: moduleID, store: store)
                 } label: {
-                    Text(Loc.t("home.exam.timed", content.exam.minutes, content.exam.passMark))
+                    Label(Loc.t("home.exam.timed", content.exam.minutes, content.exam.passMark), systemImage: "timer")
                 }
             } header: {
                 Text(Loc.t("home.section.exam"))
