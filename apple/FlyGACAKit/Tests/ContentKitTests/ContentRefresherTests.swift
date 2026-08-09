@@ -1,13 +1,17 @@
 import CoreModels
+import CryptoKit
 import XCTest
 
 @testable import ContentKit
 
 /// ContentRefresher is pure Foundation (no network in `swift test`) — these
 /// tests drive it through a fake transport so they stay hermetic and fast.
+/// Every successful-refresh fixture is signed with a throwaway Ed25519 key,
+/// mirroring how `quiz.json.sig` is served next to `quiz.json` in production.
 final class ContentRefresherTests: XCTestCase {
     private var bundledDirectory: URL!
     private var cacheDirectory: URL!
+    private let signingKey = Curve25519.Signing.PrivateKey()
 
     override func setUpWithError() throws {
         let root = FileManager.default.temporaryDirectory
@@ -44,6 +48,21 @@ final class ContentRefresherTests: XCTestCase {
         ContentStore(bundledDirectory: bundledDirectory, cacheDirectory: cacheDirectory, moduleID: "aip")
     }
 
+    private func makeVerifier() -> CorpusSignatureVerifier {
+        CorpusSignatureVerifier(
+            base64PublicKey: signingKey.publicKey.rawRepresentation.base64EncodedString())
+    }
+
+    private func makeRefresher(
+        transport: FakeTransport,
+        signatureVerifier: CorpusSignatureVerifier? = nil
+    ) -> ContentRefresher {
+        ContentRefresher(
+            transport: transport,
+            corpusURL: URL(string: "https://flygaca.com/data/quiz.json")!,
+            signatureVerifier: signatureVerifier ?? makeVerifier())
+    }
+
     // MARK: - Fake transport
 
     private enum FakeError: Error { case exhausted }
@@ -61,6 +80,16 @@ final class ContentRefresherTests: XCTestCase {
             guard !responses.isEmpty else { throw FakeError.exhausted }
             return responses.removeFirst()
         }
+    }
+
+    /// The base64 Ed25519 signature `ContentRefresher` expects at
+    /// `quiz.json.sig` — over the exact served bytes, like the publish
+    /// pipeline (scripts/sign-corpus.sh).
+    private func signatureResult(for data: Data) throws -> ContentFetchResult {
+        ContentFetchResult(
+            statusCode: 200,
+            data: Data(try signingKey.signature(for: data).base64EncodedString().utf8),
+            etag: nil)
     }
 
     private func remoteCorpusData(generated: String, extraBankID: String? = nil) -> Data {
@@ -92,7 +121,7 @@ final class ContentRefresherTests: XCTestCase {
         try writeBundledFixture()
         let store = makeStore()
         let transport = FakeTransport([ContentFetchResult(statusCode: 304, data: nil, etag: nil)])
-        let refresher = ContentRefresher(transport: transport, corpusURL: URL(string: "https://flygaca.com/data/quiz.json")!)
+        let refresher = makeRefresher(transport: transport)
 
         let outcome = try await refresher.refresh(store: store)
 
@@ -106,7 +135,7 @@ final class ContentRefresherTests: XCTestCase {
         let transport = FakeTransport([
             ContentFetchResult(statusCode: 200, data: remoteCorpusData(generated: "v1"), etag: "etag-1")
         ])
-        let refresher = ContentRefresher(transport: transport, corpusURL: URL(string: "https://flygaca.com/data/quiz.json")!)
+        let refresher = makeRefresher(transport: transport)
 
         let outcome = try await refresher.refresh(store: store)
 
@@ -117,13 +146,12 @@ final class ContentRefresherTests: XCTestCase {
     func testRefreshedCorpusIsFilteredValidatedAndPreferredOnNextLoad() async throws {
         try writeBundledFixture(generated: "v1")
         let store = makeStore()
+        let corpus = remoteCorpusData(generated: "v2", extraBankID: "ppl-1")
         let transport = FakeTransport([
-            ContentFetchResult(
-                statusCode: 200,
-                data: remoteCorpusData(generated: "v2", extraBankID: "ppl-1"),
-                etag: "etag-2")
+            ContentFetchResult(statusCode: 200, data: corpus, etag: "etag-2"),
+            try signatureResult(for: corpus),
         ])
-        let refresher = ContentRefresher(transport: transport, corpusURL: URL(string: "https://flygaca.com/data/quiz.json")!)
+        let refresher = makeRefresher(transport: transport)
 
         let outcome = try await refresher.refresh(store: store)
 
@@ -147,18 +175,22 @@ final class ContentRefresherTests: XCTestCase {
     func testSecondRefreshSendsThePersistedETag() async throws {
         try writeBundledFixture(generated: "v1")
         let store = makeStore()
+        let corpus = remoteCorpusData(generated: "v2")
         let transport = FakeTransport([
-            ContentFetchResult(statusCode: 200, data: remoteCorpusData(generated: "v2"), etag: "etag-2"),
+            ContentFetchResult(statusCode: 200, data: corpus, etag: "etag-2"),
+            try signatureResult(for: corpus),
             ContentFetchResult(statusCode: 304, data: nil, etag: nil),
         ])
-        let refresher = ContentRefresher(transport: transport, corpusURL: URL(string: "https://flygaca.com/data/quiz.json")!)
+        let refresher = makeRefresher(transport: transport)
 
         _ = try await refresher.refresh(store: store)
         let second = try await refresher.refresh(store: store)
 
         XCTAssertEqual(second, .notModified)
         let seenETags = await transport.requestedETags
-        XCTAssertEqual(seenETags, [nil, "etag-2"])
+        // Corpus fetch (no ETag yet), signature fetch (never conditional),
+        // then the second corpus fetch with the persisted ETag.
+        XCTAssertEqual(seenETags, [nil, nil, "etag-2"])
     }
 
     func testEmptyModuleSliceThrows() async throws {
@@ -171,8 +203,11 @@ final class ContentRefresherTests: XCTestCase {
             ] }
             """.utf8
         )
-        let transport = FakeTransport([ContentFetchResult(statusCode: 200, data: onlyForeignBank, etag: nil)])
-        let refresher = ContentRefresher(transport: transport, corpusURL: URL(string: "https://flygaca.com/data/quiz.json")!)
+        let transport = FakeTransport([
+            ContentFetchResult(statusCode: 200, data: onlyForeignBank, etag: nil),
+            try signatureResult(for: onlyForeignBank),
+        ])
+        let refresher = makeRefresher(transport: transport)
 
         do {
             _ = try await refresher.refresh(store: store)
@@ -188,7 +223,7 @@ final class ContentRefresherTests: XCTestCase {
         let transport = FakeTransport([
             ContentFetchResult(statusCode: 200, data: Data("not json".utf8), etag: nil)
         ])
-        let refresher = ContentRefresher(transport: transport, corpusURL: URL(string: "https://flygaca.com/data/quiz.json")!)
+        let refresher = makeRefresher(transport: transport)
 
         do {
             _ = try await refresher.refresh(store: store)
@@ -202,7 +237,7 @@ final class ContentRefresherTests: XCTestCase {
         try writeBundledFixture(generated: "v1")
         let store = makeStore()
         let transport = FakeTransport([ContentFetchResult(statusCode: 500, data: Data(), etag: nil)])
-        let refresher = ContentRefresher(transport: transport, corpusURL: URL(string: "https://flygaca.com/data/quiz.json")!)
+        let refresher = makeRefresher(transport: transport)
 
         do {
             _ = try await refresher.refresh(store: store)
@@ -210,5 +245,89 @@ final class ContentRefresherTests: XCTestCase {
         } catch ContentRefreshError.badStatus(let code) {
             XCTAssertEqual(code, 500)
         }
+    }
+
+    // MARK: - Signature verification
+
+    func testMissingSignatureFileRejectsRefresh() async throws {
+        try writeBundledFixture(generated: "v1")
+        let store = makeStore()
+        let corpus = remoteCorpusData(generated: "v2")
+        let transport = FakeTransport([
+            ContentFetchResult(statusCode: 200, data: corpus, etag: "etag-2"),
+            ContentFetchResult(statusCode: 404, data: nil, etag: nil),
+        ])
+        let refresher = makeRefresher(transport: transport)
+
+        do {
+            _ = try await refresher.refresh(store: store)
+            XCTFail("expected invalidSignature")
+        } catch ContentRefreshError.invalidSignature {
+            // expected
+        }
+        // The unsigned corpus must never reach the cache.
+        XCTAssertFalse(FileManager.default.fileExists(atPath: cacheDirectory.appendingPathComponent("quiz.json").path))
+    }
+
+    func testForgedSignatureRejectsRefresh() async throws {
+        try writeBundledFixture(generated: "v1")
+        let store = makeStore()
+        let corpus = remoteCorpusData(generated: "v2")
+        // A validly-formed signature, but over different bytes — i.e. forged.
+        let forged = try signatureResult(for: remoteCorpusData(generated: "v3"))
+        let transport = FakeTransport([
+            ContentFetchResult(statusCode: 200, data: corpus, etag: "etag-2"),
+            forged,
+        ])
+        let refresher = makeRefresher(transport: transport)
+
+        do {
+            _ = try await refresher.refresh(store: store)
+            XCTFail("expected invalidSignature")
+        } catch ContentRefreshError.invalidSignature {
+            // expected
+        }
+        XCTAssertFalse(FileManager.default.fileExists(atPath: cacheDirectory.appendingPathComponent("quiz.json").path))
+    }
+
+    func testUndecodableSignatureRejectsRefresh() async throws {
+        try writeBundledFixture(generated: "v1")
+        let store = makeStore()
+        let corpus = remoteCorpusData(generated: "v2")
+        let transport = FakeTransport([
+            ContentFetchResult(statusCode: 200, data: corpus, etag: "etag-2"),
+            ContentFetchResult(statusCode: 200, data: Data("%%% not base64 %%%".utf8), etag: nil),
+        ])
+        let refresher = makeRefresher(transport: transport)
+
+        do {
+            _ = try await refresher.refresh(store: store)
+            XCTFail("expected invalidSignature")
+        } catch ContentRefreshError.invalidSignature {
+            // expected
+        }
+    }
+
+    func testUnconfiguredVerifierFailsClosed() async throws {
+        try writeBundledFixture(generated: "v1")
+        let store = makeStore()
+        let corpus = remoteCorpusData(generated: "v2")
+        let transport = FakeTransport([
+            ContentFetchResult(statusCode: 200, data: corpus, etag: "etag-2"),
+            try signatureResult(for: corpus),
+        ])
+        // No FGCorpusPublicKey (as in an app whose Info.plist lacks the key):
+        // even a genuinely valid signature is rejected — fail closed.
+        let refresher = makeRefresher(
+            transport: transport,
+            signatureVerifier: CorpusSignatureVerifier(base64PublicKey: nil))
+
+        do {
+            _ = try await refresher.refresh(store: store)
+            XCTFail("expected invalidSignature")
+        } catch ContentRefreshError.invalidSignature {
+            // expected
+        }
+        XCTAssertFalse(FileManager.default.fileExists(atPath: cacheDirectory.appendingPathComponent("quiz.json").path))
     }
 }
