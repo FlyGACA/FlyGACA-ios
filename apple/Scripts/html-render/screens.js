@@ -54,6 +54,7 @@ const STRINGS = {
     questionCount: (n) => `${n} questions`,
     questionProgress: (a, b) => `Question ${a} of ${b}`,
     cardProgress: (a, b) => `${a} of ${b}`,
+    simTitle: 'Scenario simulator', transcript: 'RADIO EXCHANGE',
   },
   ar: {
     study: 'الدراسة', practice: 'تدريب' /* [decided] */, quizByTopic: 'اختبار حسب الموضوع',
@@ -69,6 +70,7 @@ const STRINGS = {
     questionCount: (n) => `${n} سؤال`,
     questionProgress: (a, b) => `السؤال ${a} من ${b}`,
     cardProgress: (a, b) => `${a} من ${b}`,
+    simTitle: 'محاكي السيناريوهات', transcript: 'تبادل لاسلكي',
   },
 };
 
@@ -156,6 +158,13 @@ function page(inner, rtl) {
 function buildScreens(app, lang = 'en') {
   const CONTENT = path.resolve(__dirname, '../../Apps', app.dir, 'Content');
   const quiz = JSON.parse(fs.readFileSync(path.join(CONTENT, 'quiz.json'), 'utf8'));
+  // App-local additive pack (mirrors ContentLoader.extraBanks): merged after the
+  // synced corpus so e.g. ELPT's scenario bank renders in its screenshots.
+  const extraPath = path.join(CONTENT, 'quiz-extra.json');
+  if (fs.existsSync(extraPath)) {
+    const extra = JSON.parse(fs.readFileSync(extraPath, 'utf8'));
+    quiz.banks = quiz.banks.concat(extra.banks || []);
+  }
   const gsPath = path.join(CONTENT, 'groundschool.json');
   const hasGS = fs.existsSync(gsPath);
   const gs = hasGS ? JSON.parse(fs.readFileSync(gsPath, 'utf8')) : null;
@@ -343,6 +352,55 @@ function buildScreens(app, lang = 'en') {
     `, rtl);
   }
 
+  // Scenario question prompt = leading blocks whose lines are all
+  // speaker-prefixed (verbatim of ScenarioSimulatorView.isScenario).
+  function scenarioParts(q) {
+    const blocks = q.q.split('\n\n');
+    if (blocks.length < 2) return null;
+    const transcript = [];
+    for (const b of blocks) {
+      const lines = b.split('\n').filter(Boolean);
+      if (lines.length && lines.every((l) => /^[A-Z0-9 /]{1,12}:/.test(l))) transcript.push(...lines);
+      else return transcript.length ? { transcript, question: b } : null;
+    }
+    return null;
+  }
+
+  function scenarioSim() {
+    let pick = null;
+    for (const b of quiz.banks) for (const q of b.questions) {
+      const parts = scenarioParts(q);
+      if (parts) { pick = { q, parts }; break; }
+    }
+    if (!pick) return null;
+    const { q, parts } = pick;
+    const lines = parts.transcript.map((l) => {
+      const i = l.indexOf(':');
+      return `<div style="margin-bottom:8px;line-height:1.45"><span style="color:${C.sage};font-weight:700">${l.slice(0, i + 1)}</span><span>${l.slice(i + 1)}</span></div>`;
+    }).join('');
+    const badges = ['A', 'B', 'C', 'D'];
+    const choices = q.options.map((o, i) =>
+      `<div class="choice" style="justify-content:flex-start;gap:12px"><span style="flex:none;width:26px;height:26px;border-radius:13px;border:1.5px solid ${C.mist};color:${C.sec};font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center">${badges[i]}</span><span>${o}</span></div>`).join('');
+    return page(`
+      ${statusbar()}
+      <div class="navbar"><div class="back">${arrow} ${name}</div><div class="mid">${t.simTitle}</div></div>
+      <div class="body" style="overflow:hidden">
+        <div style="padding:8px 6px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+            <span style="font-size:13px;color:${C.sec}">${t.questionProgress(3, 10)}</span>
+            <span style="flex:1;height:6px;border-radius:3px;background:${C.mist};overflow:hidden;display:block"><span style="display:block;width:30%;height:100%;border-radius:3px;background:${C.teal}"></span></span>
+          </div>
+          <div style="background:${C.deep};border:1px solid ${C.mist};border-radius:12px;padding:14px 14px 6px;margin-bottom:16px">
+            <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;color:${C.teal};margin-bottom:10px">◉ ${t.transcript}</div>
+            <div style="font-size:15px">${lines}</div>
+          </div>
+          <div style="font-size:17px;font-weight:600;line-height:1.35;margin-bottom:20px">${parts.question}</div>
+          ${choicesBlock(choices)}
+        </div>
+      </div>
+    `, rtl);
+  }
+
   const set = {
     '01-home': home,
     '02-quiz-banks': quizBanks,
@@ -355,6 +413,11 @@ function buildScreens(app, lang = 'en') {
     '09-mock-results': results,
   };
   if (hasGS) set['10-lessons-list'] = lessons;
+  // Only present when the module ships scenario content (today: ELPT's
+  // quiz-extra.json). captions.js marks the shot optional, so other modules
+  // skip it automatically.
+  const hasScenario = quiz.banks.some((b) => b.questions.some((q) => scenarioParts(q)));
+  if (hasScenario) set['11-scenario-sim'] = scenarioSim;
   return set;
 }
 
