@@ -20,6 +20,12 @@ struct ModuleHomeView: View {
 
     private var moduleID: String { content.manifest.id }
 
+    /// Every transcript-style question across all banks — feeds the Scenario
+    /// Simulator. Empty for modules with no scenario content.
+    private var scenarioQuestions: [Question] {
+        content.quiz.banks.flatMap(\.questions).filter(ScenarioSimulatorView.isScenario)
+    }
+
     /// Per-bank glyph — matched on the bank id's keywords so a new bank gets a
     /// sensible icon without any code change.
     private func icon(for bank: Bank) -> String {
@@ -43,6 +49,33 @@ struct ModuleHomeView: View {
                     }
                 } header: {
                     Text(Loc.t("home.section.study"))
+                }
+            }
+            if !scenarioQuestions.isEmpty {
+                Section {
+                    NavigationLink {
+                        ScenarioSimulatorView(
+                            questions: scenarioQuestions,
+                            exam: content.exam,
+                            bankTitles: bankTitles,
+                            moduleID: moduleID,
+                            store: store
+                        )
+                    } label: {
+                        HStack(spacing: 10) {
+                            Image(systemName: "headphones")
+                                .foregroundStyle(FGTheme.gold)
+                                .frame(width: 22)
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text(Loc.t("home.simulator.title"))
+                                Text(Loc.t("home.simulator.subtitle", scenarioQuestions.count))
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
+                    }
+                } header: {
+                    Text(Loc.t("home.section.simulator"))
                 }
             }
             Section {
