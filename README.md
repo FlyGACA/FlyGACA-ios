@@ -4,14 +4,17 @@
 
 <p>
   <a href="https://github.com/ay2m/FlyGACA/actions/workflows/ios.yml"><img src="https://img.shields.io/github/actions/workflow/status/ay2m/FlyGACA/ios.yml?style=for-the-badge&label=CI&labelColor=0a0e12&color=2d6e8a" alt="CI Status" /></a>
+  <a href="apple/FlyGACAKit/Package.swift"><img src="https://img.shields.io/badge/Swift-5.9%2B-F05138?style=for-the-badge&logo=swift&logoColor=white&labelColor=0a0e12" alt="Swift 5.9+" /></a>
+  <a href="apple/project.yml"><img src="https://img.shields.io/badge/iOS-17%2B-2d6e8a?style=for-the-badge&logo=apple&logoColor=white&labelColor=0a0e12" alt="iOS 17+" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-8fc9a8?style=for-the-badge&labelColor=0a0e12" alt="License" /></a>
 </p>
 
-The native SwiftUI home of the Fly GACA study apps: **one shared Swift package
-(`FlyGACAKit`), one App Store app per study module** — ELPT and AIP — sold
-together via an App Store app bundle. Every app carries the same offline feature
-set (study mode, quizzing, flashcards with spaced repetition, mock tests and
-timed scored exam prep with analytics); a module is **data, not code**.
+The native SwiftUI counterpart to [flygaca.com](https://flygaca.com) — the App Store home of the
+Fly GACA study apps: **one shared Swift package (`FlyGACAKit`), one App Store app per study
+module** — ELPT and AIP — sold together via an App Store app bundle. Every app carries the same
+fully offline feature set (study mode, quizzing, flashcards with spaced repetition, mock tests and
+timed scored exam prep with analytics), backed by SwiftData and shared progress across the family
+via an App Group; a module is **data, not code**.
 
 <p align="center">
   <img src="apple/Apps/ELPT/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png" alt="ELPT" width="64" />
