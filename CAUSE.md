@@ -28,8 +28,7 @@ One cause, three surfaces:
   GACAR questions with exact Part/section citations, and refuses to guess when it can't ground
   an answer in the regulations.
 - **This repo** — the native iOS family: one shared Swift package, one App Store app per study
-  module (PPL, ELPT, AIP, CPL, IR, ATPL), every one of them fully usable offline. A module is
-  data, not code.
+  module (ELPT, AIP), every one of them fully usable offline. A module is data, not code.
 
 ## Principles
 
@@ -59,8 +58,8 @@ This repo is the cause compiled for the flight bag:
 - **Offline-first is the product.** Every app bundles its whole module — banks, lessons, exam
   config — and works with airplane mode on. No account, no network, no excuses.
 - **One family on one device.** The shared App Group (`group.com.flygaca.study`) carries
-  streaks, spaced repetition and progress across all six apps, so buying the next rating
-  doesn't mean starting over.
+  streaks, spaced repetition and progress across every app in the family, so buying the next
+  rating doesn't mean starting over.
 - **Web-parity semantics.** Spaced repetition, exam scoring and streaks are literal ports of
   the web contracts, guarded by parity test vectors — a student moving between phone and
   browser is always studying against the same rules.

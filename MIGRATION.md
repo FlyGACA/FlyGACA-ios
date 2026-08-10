@@ -8,6 +8,12 @@ a standalone home. It is **history only** — no open items are tracked here. Op
 House rule (inherited from the monorepo's own `MIGRATION.md`): when reality moves on, annotate
 the stage — don't rewrite it.
 
+> **Annotation (2026-08-10).** The stages below describe **six** app targets, which is what was
+> extracted and is still accurate as history. Four of them — PPL, CPL, IR, ATPL — have since been
+> **paused** and removed from the repo (targets, content, icons, scripts, CI entries); the family
+> now ships **ELPT + AIP**. Read every "six apps" below as a historical count. See
+> [`ROADMAP.md`](./ROADMAP.md) for the pause and the restore path.
+
 ## ✅ Stage 0 — the placeholder (2026-07-24)
 
 - The repo was born as a throwaway Xcode starter (`80d47c0`): an `Untitled Project.xcodeproj`

@@ -1,7 +1,7 @@
 # Fly GACA iOS App Family — Architecture
 
 The native SwiftUI products: **one shared codebase, one App Store app per module**
-(PPL, ELPT, AIP, CPL, IR, ATPL today; FOI, AGI and more as their content lands), sold
+(ELPT and AIP today; FOI, AGI and more as their content lands), sold
 together via an App Store **app bundle**. Every app carries the identical core feature
 set — Study mode, Quizzing, Flashcards (spaced repetition), Mock/Practice tests,
 and timed scored Exam Prep with analytics — and none of it is per-app code.
@@ -95,7 +95,7 @@ each module's slice and copies records **verbatim** — the wire schema is the
 web schema, so corpus and apps can never drift:
 
 ```
-apple/Apps/PPL/Content/
+apple/Apps/ELPT/Content/
   module.json        ← the pack manifest + contentVersion stamp
   quiz.json          ← only this module's banks (terse web schema)
   groundschool.json  ← only this module's lessons (when the pack has them)
@@ -182,16 +182,13 @@ apple/
       FlyGACAApp.swift           ← THE app shell, shared by every target
       Info.plist                 ← injects FGModuleID = $(FG_MODULE_ID)
       App-Shared.xcconfig        ← iOS 17 floor, app group, shared keys
-    PPL/  { PPL.xcconfig,  Content/ }   ← com.flygaca.ppl,  module ppl-exam
     ELPT/ { ELPT.xcconfig, Content/ }   ← com.flygaca.elpt, module elp
     AIP/  { AIP.xcconfig,  Content/ }   ← com.flygaca.aip,  module aip
-    CPL/  { CPL.xcconfig,  Content/ }   ← com.flygaca.cpl,  module cpl
-    IR/   { IR.xcconfig,   Content/ }   ← com.flygaca.ir,   module ir
-    ATPL/ { ATPL.xcconfig, Content/ }   ← com.flygaca.atpl, module atpl
 ```
 
-The `xcconfig` + `Content/` folder for CPL/IR/ATPL already exist in this repo; only the
-Xcode **target** wiring (the click-path in README.md) remains a Mac-side step.
+The licence-exam modules (PPL, CPL, IR, ATPL) are **paused** — their folders and targets
+were removed on 2026-08-10 and live in git history only. A new app is a `Content/` folder,
+an xcconfig and a two-line `project.yml` target; no Swift changes.
 
 The Xcode **project** (`apple/FlyGACA.xcodeproj`, one app target per store
 product) is created on a Mac — see README.md for the click-path. Reusable UI is
@@ -208,14 +205,13 @@ place for per-module view code to accumulate.
   subscriptions** — one-time-IAP unlocks cannot be bundled. Paid-up-front is
   the simplest path to the family bundle, and buying the app *is* the
   entitlement (`FullAccess` in AppServices is the shipping default, not a stub).
-- **Wave 1:** PPL, ELPT, AIP (content exists today) → then the first app bundle
-  ("Saudi Pilot Study Pack") with completing-the-bundle credit for users who
-  already bought one. Apple allows up to 10 apps per bundle.
-- **Wave 2:** CPL (`cpl`), IR (`ir`), ATPL (`atpl`) — their packs are now live in
-  `prepCatalog.ts` with GACAR-cited draft banks, so the apps inherit them; the
-  `Content/` slices are emitted by `scripts/build-ios-content.mjs`. See
-  `docs/APPS-FAMILY-ROADMAP.md` for the full lineup.
-- **Wave 3+:** FOI (`foi`), AGI (`agi`), Dispatcher, AME and the rest — net-new
+- **Shipping:** ELPT (`elp`) and AIP (`aip`) → then the app bundle ("Saudi Pilot
+  Study Pack") with completing-the-bundle credit for users who already bought
+  one. Apple allows up to 10 apps per bundle.
+- **Paused:** PPL (`ppl-exam`), CPL (`cpl`), IR (`ir`), ATPL (`atpl`) — the licence
+  written-exam modules, on hold pending a strategic decision. Their packs stay live
+  in `prepCatalog.ts` and on the **web**; only the native apps are paused.
+- **Later:** FOI (`foi`), AGI (`agi`), Dispatcher, AME and the rest — net-new
   packs that enter `prepCatalog.ts` first, then the apps inherit them.
 - **Family continuity:** App Group (shared SwiftData store) + shared Keychain
   group (Firebase auth in Phase 4) make the apps feel like one product on
@@ -233,8 +229,8 @@ place for per-module view code to accumulate.
 |---|---|---|
 | **1 — Core framework & shared UI** | package scaffold, CoreModels, ContentKit, FeatureUI shells | `swift build` / `swift test` green on a Mac; 13 banks decode with valid answer indices; one app target shows its module home in the simulator |
 | **2 — Engines** | session/exam clock wiring, durable SRS + streaks via StudyStore, results → history | SRS parity vectors pass; attempts persist across launches; full offline loop in one app (study → quiz → cards → mock → exam → analytics) |
-| **3 — Content & family** | bundler in CI, ELPT + AIP targets, cross-app continuity | PPL mock exam scores identically to the web for the same answer set; a new app ships with zero Swift changes; streak carries across two apps on one device |
-| **4 — Platform & store** | PlatformLive (Firebase Auth + App Check, progress upload, Captain Adel SSE), remote refresh + SRS reconcile, readiness dashboard, App Store Connect (3 paid apps + bundle) | bundle purchasable in sandbox; TestFlight builds for all Wave-1 apps |
+| **3 — Content & family** | bundler in CI, ELPT + AIP targets, cross-app continuity | a mock exam scores identically to the web for the same answer set; a new app ships with zero Swift changes; streak carries across two apps on one device |
+| **4 — Platform & store** | PlatformLive (Firebase Auth + App Check, progress upload, Captain Adel SSE), remote refresh + SRS reconcile, readiness dashboard, App Store Connect (paid apps + bundle) | bundle purchasable in sandbox; TestFlight builds for every shipping app |
 
 Known risks the design already absorbs: SwiftData model non-Sendability
 (store actor owns all models), migration fragility (flat models + blobs +
@@ -254,4 +250,4 @@ cd apple/FlyGACAKit
 swift build && swift test    # no SDK downloads — pure targets only
 ```
 
-Then follow README.md to create the PPL app target and run it in the simulator.
+Then follow README.md to create an app target and run it in the simulator.

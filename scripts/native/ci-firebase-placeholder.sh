@@ -44,9 +44,5 @@ PLIST
   echo "wrote placeholder $app/GoogleService-Info.plist"
 }
 
-write_placeholder PPL  com.flygaca.ppl
 write_placeholder ELPT com.flygaca.elpt
 write_placeholder AIP  com.flygaca.aip
-write_placeholder CPL  com.flygaca.cpl
-write_placeholder IR   com.flygaca.ir
-write_placeholder ATPL com.flygaca.atpl

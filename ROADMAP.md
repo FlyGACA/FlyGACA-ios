@@ -1,10 +1,18 @@
 # Roadmap — ay2m/FlyGACA (the native iOS family)
 
 What's next for the Fly GACA iOS apps. The extraction from the web monorepo is **complete** —
-this repo generates, builds, tests and archives all six apps (PPL, ELPT, AIP, CPL, IR, ATPL) on
-its own. This file looks **forward** and is the **single source of truth for open work in this
-repo**; the extraction history lives in [`MIGRATION.md`](./MIGRATION.md) (history only — no open
-items are tracked there).
+this repo generates, builds, tests and archives its apps (ELPT, AIP) on its own. This file looks
+**forward** and is the **single source of truth for open work in this repo**; the extraction
+history lives in [`MIGRATION.md`](./MIGRATION.md) (history only — no open items are tracked
+there).
+
+> **Paused: the licence-exam modules.** PPL, CPL, IR and ATPL are on hold pending a strategic
+> decision, and were removed from this repo on 2026-08-10 — targets, xcconfigs, bundled content,
+> icons, npm scripts, CI matrices and the screenshot sets. Nothing is lost: they live in git
+> history, their App Store metadata repos are intact and marked parked, and their web study
+> packs are untouched and still selling at `flygaca.com/study/packs/*`. Restoring one is a
+> revert of that commit plus its Apple-portal steps. Until then the family is **ELPT + AIP**,
+> and no roadmap item below covers a paused module.
 
 ## How to read this
 
@@ -20,28 +28,28 @@ items are tracked there).
   carries its own differently numbered "Phase Roadmap" — a known divergent snapshot; where they
   disagree, `ARCHITECTURE.md` wins. The family lineup and wave plan stay canonical in the
   monorepo's `docs/APPS-FAMILY-ROADMAP.md`; each app's store-listing milestones live in its own
-  metadata repo (`FlyGACA/PPL` … `FlyGACA/AIP`). This file wins only for "what this repo does
+  metadata repo (`FlyGACA/ELPT`, `FlyGACA/AIP`). This file wins only for "what this repo does
   next".
 
-## Now — light the Wave 1 path to TestFlight
+## Now — light the path to TestFlight
 
-- **[platform] Enable Sign in with Apple on all six App IDs.** The shared entitlements file
-  (`apple/Apps/Shared/App.entitlements`) already declares Sign in with Apple alongside the App
-  Group, so the next *signed* build fails provisioning until the capability is enabled — and
-  grouped under the primary App ID (`com.flygaca.ppl`) — in the Apple portal.
-  `docs/RUNBOOK-ios-firebase.md` §4a has the click-path. Blocker for everything below.
-- **[platform] Create the signing secrets and the Wave 1 store records.** Work through
-  `docs/RUNBOOK-ios-signing-CHECKLIST.md`: App Group + three App IDs + a distribution cert +
-  three App Store profiles (named `FlyGACA <APP> AppStore` — the names are load-bearing), three
-  paid-up-front App Store Connect records, the App Store Connect API key, then the ten GitHub
+- **[platform] Pick the Sign-in-with-Apple primary App ID.** The capability was removed from
+  `apple/Apps/Shared/App.entitlements` in 2026-08 and the registered App IDs don't carry it, so
+  nothing is blocked today. But the portal docs still name `com.flygaca.ppl` as the primary that
+  ELPT and AIP group under — a paused module. When sign-in ships, make **`com.flygaca.elpt`**
+  the primary and group AIP under it; re-adding the capability means regenerating the profiles.
+  `docs/RUNBOOK-ios-firebase.md` §4a has the click-path.
+- **[platform] Create the signing secrets and the store records.** Work through
+  `docs/RUNBOOK-ios-signing-CHECKLIST.md`: App Group + two App IDs + a distribution cert + two
+  App Store profiles (named `FlyGACA <APP> AppStore` — the names are load-bearing), two
+  paid-up-front App Store Connect records, the App Store Connect API key, then the nine GitHub
   secrets (`scripts/native/set-signing-secrets.sh`). That flips `check-signing` to
-  `enabled=true`, and the `ios-testflight` job starts uploading ppl · elpt · aip on pushes to
-  `main`.
-- ~~**[product] Close the content skew.**~~ **Done 2026-08-05** (this PR): a reviewed
-  `sync-content.sh` run brought ELPT 1→4 banks and AIP 2→3, and refreshed the grown question
-  sets in all six apps (validated: bankIds ⇔ banks, exam config unchanged). Store listings and
-  bundles agree ([`SEO-PLAN.md`](./SEO-PLAN.md) item 0.3).
-- **[platform] Register the six Firebase iOS apps.** `npm run firebase:register` (idempotent)
+  `enabled=true`, and the `ios-testflight` job starts uploading elpt · aip on pushes to `main`.
+- ~~**[product] Close the content skew.**~~ **Done 2026-08-05**: a reviewed `sync-content.sh`
+  run brought ELPT to 4 banks and AIP to 3, and refreshed the grown question sets (validated:
+  bankIds ⇔ banks, exam config unchanged). Store listings and bundles agree
+  ([`SEO-PLAN.md`](./SEO-PLAN.md) item 0.3). ELPT bundles a 5th scenario bank on top.
+- **[platform] Register the Firebase iOS apps.** `npm run firebase:register` (idempotent)
   against the `flygaca-app` project, then the manual half: the Sign in with Apple provider and
   the APNs key (`docs/RUNBOOK-ios-firebase.md`). Needed before PlatformLive, harmless to do
   early — the plists are gitignored and `optional: true` in `apple/project.yml`.
@@ -49,20 +57,14 @@ items are tracked there).
   `ROADMAP.md`, `MIGRATION.md`, `SEO-PLAN.md`, `THE-BOOK-OF-FLY-GACA.md`, `CONTRIBUTING.md`,
   `docs/RUNBOOK-ios-release.md`, `docs/README.md`, a README refresh and CLAUDE.md pointers.
 
-## Next — Wave 2 and the store shelf
+## Next — the store shelf
 
-- **[product] Wave 2 (CPL, IR, ATPL) from draft to shippable.** Their banks are GACAR-cited
-  *drafts* pending review to house style (the monorepo's `docs/STUDY-CONTENT-REVIEW.md` defines
-  what that means). Review lands in the monorepo → synced here → then the signing checklist's
-  "Adding CPL / IR / ATPL later" loop (App ID + profile + secret + an entry in the
-  `ios-testflight` matrix in `.github/workflows/ios.yml` — the matrix is explicit, not derived
-  from the six-app list).
 - **[platform] Wire `AppleTests/ScreenshotTests.swift` into the project.** The shared target
   template in `apple/project.yml` has `testTargets: []`, so the XCUITest snapshot flow can't run
   via `xcodebuild test` today. Wiring it is a `project.yml` change — coordinate with the
   monorepo, since `--all` syncs overwrite `project.yml`.
-- **[product] Ship the Wave 1 store listings.** The listing copy, keywords and screenshots live
-  in the six metadata repos and ship from there (fastlane `deliver` layout); tracked here only
+- **[product] Ship the store listings.** The listing copy, keywords and screenshots live
+  in the ELPT and AIP metadata repos and ship from there (fastlane `deliver` layout); tracked here only
   as the family gate — an app without its listing can't leave TestFlight. Strategy:
   [`SEO-PLAN.md`](./SEO-PLAN.md).
 - **[platform] ~~Localize the app (EN + AR).~~ Done 2026-08-05.** FeatureUI's UI chrome now
@@ -84,7 +86,7 @@ items are tracked there).
   free-tier fallback is ever wanted. Firebase/RevenueCat imports stay quarantined in this one
   target.
 - **[product] The app bundle.** "Saudi Pilot Study Pack" — the paid App Store bundle (Apple
-  allows up to 10 apps) once Wave 1 is live, with completing-the-bundle credit for users who
+  allows up to 10 apps) once both apps are live, with completing-the-bundle credit for users who
   already bought one. Pricing mirrors the web's SAR 39 packs (`apple/ARCHITECTURE.md` §4).
 - **[product] Wave 3 modules.** FOI (`foi`), AGI (`agi`), Dispatcher, AME and the rest — each
   enters the monorepo's `prepCatalog.ts` first, then becomes a `Content/` folder + a small
@@ -93,7 +95,7 @@ items are tracked there).
   it, `--all` syncs stop meaning "track the monorepo verbatim" and the synced `apple/` docs
   become editable here. Cross-repo decision — coordinate, don't improvise.
 - **[platform] Consider path filters for `ios.yml`.** Today a docs-only PR fires the full
-  six-app macOS matrix. Cheap to add once the workflow is otherwise stable; not worth a CI edit
+  macOS build matrix. Cheap to add once the workflow is otherwise stable; not worth a CI edit
   before the signing lane is proven.
 - **[docs] Re-review `THE-BOOK-OF-FLY-GACA.md`'s dated stamps** whenever any repo's shape
   moves — the Book describes, it does not govern, and its "Last reviewed" dates are the honesty

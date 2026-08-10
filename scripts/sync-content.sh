@@ -11,7 +11,7 @@ set -euo pipefail
 #                                                 # shared shell, spec and docs
 #
 # Default sync: apple/Apps/<App>/Content/ + Assets.xcassets (app icons) for the
-# six apps. --all additionally syncs FlyGACAKit/, Apps/Shared/, project.yml,
+# shipping apps. --all additionally syncs FlyGACAKit/, Apps/Shared/, project.yml,
 # ARCHITECTURE.md, apple/README.md, AppleTests/ and apple/Scripts/ so the whole
 # apple/ tree tracks the monorepo. Review the diff before committing.
 
@@ -45,7 +45,9 @@ copy_dir() {
 log_info "Regenerating per-app content in the monorepo…"
 (cd "$MONO" && node scripts/build-ios-content.mjs)
 
-APPS=(PPL ELPT AIP CPL IR ATPL)
+# The licence-exam apps (PPL, CPL, IR, ATPL) are paused — see ROADMAP.md. Keep
+# this list in step with apple/project.yml's targets.
+APPS=(ELPT AIP)
 for app in "${APPS[@]}"; do
   copy_dir "$MONO/apple/Apps/$app/Content" "$REPO_ROOT/apple/Apps/$app/Content"
   copy_dir "$MONO/apple/Apps/$app/Assets.xcassets" "$REPO_ROOT/apple/Apps/$app/Assets.xcassets"

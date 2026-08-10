@@ -8,12 +8,8 @@ const OUT = process.env.SCREENSHOT_OUT
 const CHROME = process.env.CHROME_PATH || undefined;
 
 const APPS = [
-  { dir: 'PPL', name: 'Fly GACA PPL' },
   { dir: 'ELPT', name: 'Fly GACA ELPT' },
   { dir: 'AIP', name: 'Fly GACA AIP' },
-  { dir: 'CPL', name: 'Fly GACA CPL' },
-  { dir: 'IR', name: 'Fly GACA IR' },
-  { dir: 'ATPL', name: 'Fly GACA ATPL' },
 ];
 
 // Landscape viewports (swapped W/H). Screens that read well wide: quiz, exam.

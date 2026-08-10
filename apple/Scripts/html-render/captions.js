@@ -93,18 +93,10 @@ const ORDER = Object.keys(SHOTS);
 // Per-app hero copy, per locale.
 const HERO = {
   en: {
-    PPL:  { head: 'The Saudi PPL exam,<br>in your pocket',  sub: 'The full question bank, offline — every answer cites the exact GACAR.' },
-    CPL:  { head: 'The Saudi CPL exam,<br>in your pocket',  sub: 'Commercial-pilot theory, offline — every answer cites the exact GACAR.' },
-    IR:   { head: 'The Saudi Instrument<br>Rating, mastered', sub: 'IFR rules and procedures, offline — every answer cites the exact GACAR.' },
-    ATPL: { head: 'The Saudi ATPL exam,<br>in your pocket', sub: 'Airline-transport theory, offline — every answer cites the exact GACAR.' },
     ELPT: { head: 'Aviation English,<br>exam-ready',        sub: 'ICAO Level 4 prep — phraseology and comprehension, fully offline.' },
     AIP:  { head: 'The Saudi AIP,<br>made studyable',       sub: 'Aerodromes, airspace and charts — offline, and always cited.' },
   },
   ar: {
-    PPL:  { head: 'رخصة الطيار الخاص السعودية،<br>في جيبك', sub: 'بنك الأسئلة كاملاً وبدون إنترنت — كل إجابة تستند إلى مادة GACAR بدقّة.' },
-    CPL:  { head: 'رخصة الطيار التجاري السعودية،<br>في جيبك', sub: 'النظري التجاري كاملاً وبدون إنترنت — كل إجابة تستند إلى مادة GACAR.' },
-    IR:   { head: 'تقدير الطيران الآلي السعودي،<br>بين يديك', sub: 'قواعد وإجراءات الطيران الآلي بدون إنترنت — كل إجابة تستند إلى مادة GACAR.' },
-    ATPL: { head: 'رخصة طيار النقل الجوي السعودية،<br>في جيبك', sub: 'نظري النقل الجوي كاملاً وبدون إنترنت — كل إجابة تستند إلى مادة GACAR.' },
     ELPT: { head: 'الإنجليزية للطيران،<br>جاهزٌ للاختبار', sub: 'تحضير مستوى الإيكاو الرابع — المصطلحات والاستيعاب، بدون إنترنت.' },
     AIP:  { head: 'دليل الطيران السعودي (AIP)،<br>سهل الدراسة', sub: 'المطارات والمجال الجوي والخرائط — بدون إنترنت، وموثّقة دائماً.' },
   },
@@ -115,7 +107,7 @@ function captionsFor(dir, lang = 'en') {
   const L = HERO[lang] ? lang : 'en';
   return ORDER.map((name) => {
     const shot = SHOTS[name];
-    const copy = shot.hero ? (HERO[L][dir] || HERO[L].PPL) : shot[L];
+    const copy = shot.hero ? (HERO[L][dir] || HERO[L].ELPT) : shot[L];
     return { name, screen: shot.screen, optional: !!shot.optional, head: copy.head, sub: copy.sub };
   });
 }

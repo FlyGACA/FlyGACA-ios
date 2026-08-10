@@ -4,7 +4,7 @@ import SwiftData
 public enum Persistence {
     /// The shared container every app target declares in its App Groups
     /// capability — one store for the whole family, so sign-in-free continuity
-    /// (streaks, SRS, attempts) works across PPL/ELPT/AIP/… on the same device.
+    /// (streaks, SRS, attempts) works across ELPT/AIP/… on the same device.
     public static let appGroupID = "group.com.FlyGACA"
 
     public static let schema = Schema([

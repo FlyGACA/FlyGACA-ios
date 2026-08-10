@@ -1,11 +1,11 @@
 #!/bin/bash
 set -euo pipefail
 
-# firebase-register-apps.sh — register the six Fly GACA iOS apps in the shared
+# firebase-register-apps.sh — register the Fly GACA iOS apps in the shared
 # Firebase project and download each GoogleService-Info.plist.
 #
-# One Firebase project (flygaca-app) backs the whole family, so it needs six iOS
-# app registrations — one per bundle id — and each app's config plist dropped next
+# One Firebase project (flygaca-app) backs the whole family, so it needs one iOS
+# app registration per bundle id — and each app's config plist dropped next
 # to its target (apple/Apps/<APP>/GoogleService-Info.plist), where project.yml
 # copies it into the bundle. This automates the console clicks in
 # docs/RUNBOOK-ios-firebase.md; the Sign in with Apple provider + APNs auth key
@@ -37,12 +37,8 @@ firebase projects:list >/dev/null 2>&1 || die "Not logged in. Run: firebase logi
 
 # APP  DISPLAY_NAME  BUNDLE_ID  (order matches the App Store family)
 APPS=(
-  "PPL|Fly GACA PPL|com.flygaca.ppl"
   "ELPT|Fly GACA ELPT|com.flygaca.elpt"
   "AIP|Fly GACA AIP|com.flygaca.aip"
-  "CPL|Fly GACA CPL|com.flygaca.cpl"
-  "IR|Fly GACA IR|com.flygaca.ir"
-  "ATPL|Fly GACA ATPL|com.flygaca.atpl"
 )
 
 # Print the Firebase App ID for a given iOS bundle id, or empty if none exists.
@@ -92,6 +88,6 @@ for entry in "${APPS[@]}"; do
 done
 
 echo
-ok "All six iOS apps registered and configured."
+ok "All iOS apps registered and configured."
 echo "  These plists are git-ignored (secrets). Next: Sign in with Apple + APNs"
 echo "  auth key are manual — see docs/RUNBOOK-ios-firebase.md."

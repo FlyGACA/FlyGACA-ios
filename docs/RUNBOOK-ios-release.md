@@ -71,8 +71,8 @@ cross-platform contract and gate everything else in CI.
 ## 3. Build
 
 ```bash
-npm run ios:build:ppl              # debug; also elpt aip cpl ir atpl / all
-npm run ios:build:release:ppl      # unsigned .xcarchive + dSYM extraction (also :all)
+npm run ios:build:elpt             # debug; also aip / all
+npm run ios:build:release:elpt     # unsigned .xcarchive + dSYM extraction (also :all)
 ```
 
 Both run through `xcodebuild-wrapper.sh` with `CODE_SIGNING_ALLOWED=NO` — reproducing locally
@@ -94,11 +94,13 @@ laptop. To activate the lane:
      the shipping apps are paid-up-front and offline, and the registered App IDs/profiles
      don't carry the capability. The app group is `group.com.FlyGACA` (matching the portal).
      When the Firebase sign-in phase lands, re-add the entitlement AND enable the capability
-     on all App IDs — grouped under the primary `com.flygaca.ppl` — then regenerate profiles
-     ([`RUNBOOK-ios-firebase.md`](./RUNBOOK-ios-firebase.md) §4a).
+     on all App IDs — grouped under a primary App ID — then regenerate profiles
+     ([`RUNBOOK-ios-firebase.md`](./RUNBOOK-ios-firebase.md) §4a). That doc still names
+     `com.flygaca.ppl` as the primary; it belongs to a **paused** module, so use
+     `com.flygaca.elpt` instead.
 3. `check-signing` turns the secrets' presence into an `enabled` output; when true, a push to
    `main` (or `workflow_dispatch`) builds signed and uploads via `xcrun altool`. The matrix is
-   **Wave 1 only and explicit**: `ppl · elpt · aip`.
+   **explicit, not derived from the app list**: `elpt · aip`.
 
 The wrapper's CI-only env flags, for reading the workflow: `FG_BUILD_NUMBER`,
 `FG_SIGNED_RELEASE=1` (+ `APPLE_TEAM_ID`), `FG_PROVISIONING_PROFILE`, `FG_UPLOAD_TESTFLIGHT=1`
@@ -121,14 +123,14 @@ Two caveats worth memorizing:
   `swift-test` / `xcodegen-validate` / `ios-build`, so a failed release archive or TestFlight
   upload never turns it red. Check those jobs directly.
 
-## 6. Adding a Wave 2 app (CPL / IR / ATPL) to TestFlight
+## 6. Adding an app to TestFlight
 
 Per the checklist's closing section: repeat the Apple-portal loop for the new bundle id (App ID
 with App Group `group.com.FlyGACA`, `FlyGACA <APP> AppStore` profile,
 `PROVISIONING_PROFILE_<APP>_BASE64` secret, paid App Store Connect record), then add the
-`{app, scheme}` entry to the `ios-testflight` matrix in `.github/workflows/ios.yml`. Content
-gate first, though: Wave 2 banks are GACAR-cited drafts until reviewed
-([`../ROADMAP.md`](../ROADMAP.md) → Next).
+`{app, scheme}` entry to the `ios-testflight` matrix in `.github/workflows/ios.yml`. Note the
+licence-exam modules (PPL, CPL, IR, ATPL) are **paused** — restoring one means reverting its
+removal commit as well ([`../ROADMAP.md`](../ROADMAP.md)).
 
 ## Reconciliation map
 

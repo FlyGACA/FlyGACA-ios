@@ -1,7 +1,7 @@
 // swift-tools-version: 5.9
-// FlyGACAKit — the shared engine behind every Fly GACA App Store app (PPL, ELPT,
-// AIP, and the wave-2 certificates). Each app target is a paper-thin shell over
-// this package; see apple/ARCHITECTURE.md for the target graph and rules.
+// FlyGACAKit — the shared engine behind every Fly GACA App Store app (ELPT, AIP).
+// Each app target is a paper-thin shell over this package; see
+// apple/ARCHITECTURE.md for the target graph and rules.
 //
 // Dependency direction (enforced by the target declarations below):
 //   CoreModels ← StudyEngines / ContentKit / AppServices ← PersistenceKit ← FeatureUI

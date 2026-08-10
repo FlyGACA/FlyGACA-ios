@@ -43,8 +43,8 @@ products cite and defer to. The public fronts are **flygaca.com** and **captadel
 | --- | --- |
 | [FlyGACA/FlyGACA-app](https://github.com/FlyGACA/FlyGACA-app) | **The web monorepo** — flygaca.com: React/Vite PWA (library, tools, study, chat, accounts), the Firebase Functions backend (`functions/`), and the **source of truth** for the regulatory corpus (`public/data/`) and the pack catalog (`src/lib/prepCatalog.ts`), plus all content pipelines. |
 | [FlyGACA/Captain-Adel](https://github.com/FlyGACA/Captain-Adel) | **The AI flight instructor** — captadel.com: one Node/Express service; the retrieval+answer brain (`src/brain/`) is the single source of truth and also powers Fly GACA's chat server-to-server. |
-| [ay2m/FlyGACA](https://github.com/ay2m/FlyGACA) (this repo) | **The native iOS family** — one shared Swift package (`FlyGACAKit`) + one App Store app per study module: PPL, ELPT, AIP, CPL, IR, ATPL. |
-| [FlyGACA/PPL](https://github.com/FlyGACA/PPL) · [CPL](https://github.com/FlyGACA/CPL) · [IR](https://github.com/FlyGACA/IR) · [ATPL](https://github.com/FlyGACA/ATPL) · [ELPT](https://github.com/FlyGACA/ELPT) · [AIP](https://github.com/FlyGACA/AIP) | **The six store-metadata repos** — App Store Connect listing copy (EN + AR), screenshots, and a per-app roadmap. No source code; each names this repo's `apple/Apps/<Module>/` as the code home. |
+| [ay2m/FlyGACA](https://github.com/ay2m/FlyGACA) (this repo) | **The native iOS family** — one shared Swift package (`FlyGACAKit`) + one App Store app per study module: ELPT and AIP. The licence-exam modules (PPL, CPL, IR, ATPL) are paused. |
+| [FlyGACA/ELPT](https://github.com/FlyGACA/ELPT) · [AIP](https://github.com/FlyGACA/AIP) · and the parked [PPL](https://github.com/FlyGACA/PPL) · [CPL](https://github.com/FlyGACA/CPL) · [IR](https://github.com/FlyGACA/IR) · [ATPL](https://github.com/FlyGACA/ATPL) | **The six store-metadata repos** — App Store Connect listing copy (EN + AR), screenshots, and a per-app roadmap. No source code; each names this repo's `apple/Apps/<Module>/` as the code home. Four are parked with their metadata retained. |
 | [FlyGACA/Office](https://github.com/FlyGACA/Office) | **The operating documents** — strategy, governance, legal, finance, compliance, GTM, brand: the company's paperwork, not product code. Its contents are sensitive; product repos take from it only public-safe facts. |
 
 ### How content flows (one direction, always)
@@ -63,12 +63,12 @@ FlyGACA-app  public/data/  +  src/lib/prepCatalog.ts     ← THE source of truth
                                ay2m/FlyGACA  apple/Apps/*/Content/    ← committed snapshots
                                      │
                                      ▼
-                               the six iOS apps (fully offline)
+                                 the iOS apps (fully offline)
 ```
 
 Nothing ever flows backward. This repo has **no bundler and no corpus** by design; the
 monorepo's own `apple/` tree is a legacy copy of this one, pending retirement
-([`MIGRATION.md`](./MIGRATION.md)). The six metadata repos flow the other way entirely — copy
+([`MIGRATION.md`](./MIGRATION.md)). The metadata repos flow the other way entirely — copy
 and screenshots out to App Store Connect — and the Office stands apart, feeding the product
 repos only its canonical entity facts.
 
@@ -122,24 +122,22 @@ auto-routing until it matches-or-beats the incumbent in both languages. Groundin
 cite-or-refuse. The same brain serves captadel.com and, server-to-server, Fly GACA's own chat
 — two tenants, one truth.
 
-### The six apps — this repo
+### The apps — this repo
 
 One shared Swift package, one ~20-line app target per module; **a module is data, not code**.
 Every app carries the identical offline feature set: study mode, quizzing, flashcards with
 spaced repetition, mock tests, and a timed, scored exam sim with analytics.
 
-| App | Bundle id | Module id | Banks · questions (bundled, as of 2026-08) | Wave |
-| --- | --- | --- | --- | --- |
-| PPL | `com.flygaca.ppl` | `ppl-exam` | 13 · 295 | 1 |
-| ELPT | `com.flygaca.elpt` | `elp` | 1 · 24 *(web pack: 4 banks — sync pending)* | 1 |
-| AIP | `com.flygaca.aip` | `aip` | 2 · 51 *(web pack: 3 — sync pending)* | 1 |
-| CPL | `com.flygaca.cpl` | `cpl` | 12 · 259 *(draft content)* | 2 |
-| IR | `com.flygaca.ir` | `ir` | 10 · 228 *(draft content)* | 2 |
-| ATPL | `com.flygaca.atpl` | `atpl` | 9 · 197 *(draft content)* | 2 |
+| App | Bundle id | Module id | Banks · questions (bundled, as of 2026-08) |
+| --- | --- | --- | --- |
+| ELPT | `com.flygaca.elpt` | `elp` | 5 · 191 *(incl. the scenario bank)* |
+| AIP | `com.flygaca.aip` | `aip` | 3 · 113 |
 
-Wave 1 is the TestFlight-first cohort; Wave 2 is debug-buildable with GACAR-cited draft banks
-awaiting review; Wave 3+ (FOI, AGI, Dispatcher, AME …) enters the monorepo's `prepCatalog.ts`
-first. The store strategy is paid-up-front apps plus an App Store bundle ("Saudi Pilot Study
+Paused since 2026-08-10 and removed from the repo (git history keeps them): PPL (`ppl-exam`),
+CPL (`cpl`), IR (`ir`), ATPL (`atpl`) — the licence written-exam modules. Their **web** study
+packs are unaffected and still sell at `flygaca.com/study/packs/*`.
+
+Future modules (FOI, AGI, Dispatcher, AME …) enter the monorepo's `prepCatalog.ts` first. The store strategy is paid-up-front apps plus an App Store bundle ("Saudi Pilot Study
 Pack", up to 10 apps) — `apple/ARCHITECTURE.md` §4.
 
 ---
@@ -155,8 +153,8 @@ disagree, GACA wins, without argument.*
   `src/lib/prepCatalog.ts`.
 - **The snapshots** — each iOS app bundles its module's slice verbatim (`module.json`,
   `quiz.json`, plus ground school / reading paths where the pack has them): the wire schema
-  *is* the web schema, so the platforms cannot drift structurally. 639,045 bytes across all
-  six apps as of 2026-08-04 — small enough that a database would be pure overhead.
+  *is* the web schema, so the platforms cannot drift structurally — and small enough that a
+  database would be pure overhead.
 
 ### The parity scriptures
 
@@ -173,7 +171,7 @@ platforms diverge:
 | **Question identity** | the web has no stable ids (progress keyed by array index); iOS mints `sha256("bankID|prompt")` → first 16 hex chars at decode time, keeping `index`/`legacyKey` for progress parity across refreshes | `CoreModels` |
 
 User state on iOS lives in SwiftData inside the App Group `group.com.flygaca.study`, so
-streaks, SRS and attempts are one story across all six apps on a device; `StudyStore` (a
+streaks, SRS and attempts are one story across every app on a device; `StudyStore` (a
 `@ModelActor`) is the single write path. When PlatformLive lands, progress uploads to the same
 Firestore document the web writes (`users/{uid}/progress/summary`) — one student, one record.
 
@@ -216,7 +214,7 @@ live in each repo's `CLAUDE.md`.*
 11. Engines never do IO — `now: Date` is a parameter, and `swift test` needs no simulator.
 12. Firebase/RevenueCat never leak upstream of PlatformLive; UI talks to `AppServices`
     protocols, and the offline mocks *are* the shipping product until Phase 4.
-13. One app shell for all six targets — per-app difference is xcconfig data, never a Swift
+13. One app shell for every target — per-app difference is xcconfig data, never a Swift
     fork. A module is data, not code.
 14. Content syncs one way, monorepo → here, and every sync diff is reviewed before commit.
 
@@ -242,8 +240,8 @@ live in each repo's `CLAUDE.md`.*
 | --- | --- |
 | FlyGACA-app | `npm run verify`: typecheck → lint → format → test (i18n parity included) → build → bundle budget (188 kB gz initial) → per-chunk perf budget. CI adds a coverage ratchet, a separate functions gate (`lint · test:coverage · build` in `functions/`), emulator-backed Firestore-rules tests, and Playwright e2e + a11y. Production deploys only via `deploy.yml`. |
 | Captain-Adel | `smoke` + unit tests + `eval:dry` on every push/PR; the live eval suite (EN + AR citation/refusal/injection bars) runs weekly and gates provider changes via the parity harness. Deploy re-runs the gate, ships to Cloud Run (KSA region), health-checks `/health`. |
-| ay2m/FlyGACA | `ios.yml`, seven jobs: `swift-test` (parity vectors — gates everything) → `xcodegen-validate` → six-app debug matrix (`fail-fast: true`) → release archives on `main` → secrets-gated Wave-1 TestFlight → `build-summary`. Caveat: the summary doesn't cover release/TestFlight failures — check those jobs directly. Triggers: push to `main`, PR to `main`, dispatch only. |
-| PPL · CPL · IR · ATPL · ELPT · AIP | `metadata.yml` runs `check-metadata.mjs` on every push/PR: required fields, EN/AR locale parity, code-point limits (30/30/100/170/4000), https-only URLs. |
+| ay2m/FlyGACA | `ios.yml`, seven jobs: `swift-test` (parity vectors — gates everything) → `xcodegen-validate` → per-app debug matrix (`fail-fast: true`) → release archives on `main` → secrets-gated TestFlight → `build-summary`. Caveat: the summary doesn't cover release/TestFlight failures — check those jobs directly. Triggers: push to `main`, PR to `main`, dispatch only. |
+| ELPT · AIP · (parked: PPL · CPL · IR · ATPL) | `metadata.yml` runs `check-metadata.mjs` on every push/PR: required fields, EN/AR locale parity, code-point limits (30/30/100/170/4000), https-only URLs. |
 | Office | `docs-check.yml`: YAML front-matter on every `.md`, plus a build-cache hash proving every doc's committed PDF is fresh (Markdown and HTML alike). |
 
 ---
@@ -262,13 +260,14 @@ live in each repo's `CLAUDE.md`.*
 - **PDPL** — the Saudi Personal Data Protection Law; the reason hosting and model inference
   default in-Kingdom.
 - **Pack / bank / question** — a pack is a study product (declared in `prepCatalog.ts`); a
-  pack holds banks; a bank holds questions. The iOS module ids are the web pack ids:
-  `ppl-exam`, `elp`, `aip`, `cpl`, `ir`, `atpl`.
-- **Wave** — the shipping cohorts of the app family: Wave 1 = PPL/ELPT/AIP, Wave 2 =
-  CPL/IR/ATPL, Wave 3+ = future packs.
+  pack holds banks; a bank holds questions. The iOS module ids are the web pack ids: `elp`
+  and `aip` today (`ppl-exam`, `cpl`, `ir`, `atpl` belong to the paused modules).
+- **Wave** — the shipping cohorts of the app family. Wave 1 was PPL/ELPT/AIP and Wave 2
+  CPL/IR/ATPL; with the licence modules paused the live cohort is ELPT/AIP, and the wave
+  labels are now history rather than a plan.
 - **Leitner / SRS** — the spaced-repetition system (Book IV); "mastered" means box ≥ 3.
-- **App Group** — `group.com.flygaca.study`: the shared on-device container that makes six
-  apps feel like one product.
+- **App Group** — `group.com.flygaca.study`: the shared on-device container that makes the
+  family feel like one product.
 - **PlatformLive** — the not-yet-built iOS target where Firebase/RevenueCat will live;
   until then the apps are fully offline and the mocks are the product.
 - **The bundle** — "Saudi Pilot Study Pack", the planned paid App Store bundle of the family.
@@ -290,10 +289,10 @@ live in each repo's `CLAUDE.md`.*
 accident. (As of 2026-08-04; sources: the architecture docs and CLAUDE.md files of the product
 repos.)*
 
-1. **The wrapped web view.** The study family could have shipped as six thin shells around the
+1. **The wrapped web view.** The study family could have shipped as thin shells around the
    PWA. Set aside: the product *is* offline-first native feel — SwiftUI + bundled content,
    with the web's semantics ported and parity-tested instead.
-2. **A database for content.** ~624 KB of JSON across six apps does not need one. Content
+2. **A database for content.** A few hundred KB of JSON per app does not need one. Content
    stays read-only structs; SwiftData holds only user state. (Realm was ruled out separately —
    its SDKs were deprecated upstream.)
 3. **A multi-package Swift split.** One local package with six library targets gives strict
@@ -302,7 +301,7 @@ repos.)*
    regenerated on demand. Merge conflicts in `.pbxproj` are a tax nobody pays here.
 5. **Firebase in the pure targets.** Every SDK import waits in PlatformLive. The pure targets
    build instantly, test without a simulator, and preview on mocks.
-6. **Per-app Swift.** Six forks of one shell was the obvious path and the wrong one: a module
+6. **Per-app Swift.** Forking the shell per app was the obvious path and the wrong one: a module
    is a `Content/` folder and an xcconfig. The Swift never multiplies.
 7. **Free apps with one-time IAP unlocks.** Apple's app bundles exclude one-time-IAP apps, so
    the family went paid-up-front (buying the app *is* the entitlement); free + auto-renewable
@@ -326,7 +325,7 @@ repos.)*
 | See what this repo does next / its history | [`ROADMAP.md`](./ROADMAP.md) / [`MIGRATION.md`](./MIGRATION.md) |
 | Build, test, ship an app from here | [`README.md`](./README.md) → [`docs/RUNBOOK-ios-release.md`](./docs/RUNBOOK-ios-release.md) (and [`docs/README.md`](./docs/README.md) for which runbook to trust) |
 | Understand the iOS architecture deeply | `apple/ARCHITECTURE.md` (monorepo-synced) |
-| Work on store listings / ASO | [`SEO-PLAN.md`](./SEO-PLAN.md), then the six metadata repos |
+| Work on store listings / ASO | [`SEO-PLAN.md`](./SEO-PLAN.md), then the metadata repos |
 | Touch the corpus, packs, web app, or backend | the monorepo — [FlyGACA/FlyGACA-app](https://github.com/FlyGACA/FlyGACA-app) (`CLAUDE.md`, `ROADMAP.md`, `docs/`) |
 | Touch the AI instructor | [FlyGACA/Captain-Adel](https://github.com/FlyGACA/Captain-Adel) (`CLAUDE.md`, `evals/`) |
 | Company / operating questions | [FlyGACA/Office](https://github.com/FlyGACA/Office) — minimum necessary, it is sensitive |

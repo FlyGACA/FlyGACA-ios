@@ -7,14 +7,14 @@
 > pointed at a FlyGACA-app clone. Everything else applies here unchanged.
 
 
-Six App Store apps share one Firebase project (`flygaca-app`), so Firebase needs **six
-iOS app registrations** — one per bundle id — and Sign in with Apple needs configuring
+The App Store apps share one Firebase project (`flygaca-app`), so Firebase needs **one
+iOS app registration per bundle id** — and Sign in with Apple needs configuring
 in two places that are easy to confuse. This is the console/portal half; it is manual by
 nature (no API covers the Apple provider or the Apple Developer portal).
 
-> **Shortcut for the six registrations:** the app-registration + plist-download step can be
+> **Shortcut for the registrations:** the app-registration + plist-download step can be
 > scripted. After `npm i -g firebase-tools && firebase login`, run
-> `npm run firebase:register` (`scripts/native/firebase-register-apps.sh`) — it creates the six
+> `npm run firebase:register` (`scripts/native/firebase-register-apps.sh`) — it creates the
 > iOS apps for the bundle ids below and writes each `apple/Apps/<APP>/GoogleService-Info.plist`
 > (git-ignored). The Sign in with Apple provider + APNs auth key below stay manual.
 
@@ -22,27 +22,27 @@ The app side is already wired: `apple/project.yml` copies each app's
 `GoogleService-Info.plist` into its bundle, and `Apps/Shared/App.entitlements` carries
 `com.apple.developer.applesignin`. Nothing here needs code changes.
 
-## The six apps
+## The apps
 
 | Target | Bundle id | Display name |
 | --- | --- | --- |
-| PPL | `com.flygaca.ppl` | Fly GACA PPL |
 | ELPT | `com.flygaca.elpt` | Fly GACA ELPT |
 | AIP | `com.flygaca.aip` | Fly GACA AIP |
-| CPL | `com.flygaca.cpl` | Fly GACA CPL |
-| IR | `com.flygaca.ir` | Fly GACA IR |
-| ATPL | `com.flygaca.atpl` | Fly GACA ATPL |
+
+The licence-exam modules (PPL, CPL, IR, ATPL) are **paused** and no longer build from this
+repo — see `ROADMAP.md`. Any Firebase app registrations already created for their bundle ids
+are harmless; leave them.
 
 Identity lives in `apple/Apps/<Target>/<Target>.xcconfig`; that file is the source of
 truth for the bundle id, not this table.
 
-## 1. Register the six iOS apps
+## 1. Register the iOS apps
 
 Firebase Console → `flygaca-app` → Project settings → General → Your apps → **Add app →
 iOS**, once per row above. App Store ID can stay blank until the app exists in App Store
 Connect.
 
-## 2. Add the six `GoogleService-Info.plist` files
+## 2. Add the `GoogleService-Info.plist` files
 
 Download each app's plist as you register it and save it to its target folder:
 
@@ -50,12 +50,12 @@ Download each app's plist as you register it and save it to its target folder:
 apple/Apps/<Target>/GoogleService-Info.plist
 ```
 
-The six files are **not** interchangeable — each carries its own `CLIENT_ID`,
+The files are **not** interchangeable — each carries its own `CLIENT_ID`,
 `GOOGLE_APP_ID`, and `BUNDLE_ID`. A swapped pair builds cleanly and fails at runtime, so
 verify before moving on:
 
 ```bash
-for a in PPL ELPT AIP CPL IR ATPL; do
+for a in ELPT AIP; do
   printf '%-6s ' "$a"
   plutil -extract BUNDLE_ID raw "apple/Apps/$a/GoogleService-Info.plist" 2>/dev/null || echo MISSING
 done
@@ -93,7 +93,7 @@ ID / `.p8` fields (step 4b–4d) are additionally required for either of:
 
 ## 4. Apple Developer portal
 
-### 4a. Enable the capability on all six App IDs — and group them
+### 4a. Enable the capability on every App ID — and group them
 
 Certificates, Identifiers & Profiles → Identifiers → each App ID → enable **Sign In with
 Apple**. There is no callback-URL field here; that belongs on a Services ID (4b).
@@ -101,11 +101,16 @@ Apple**. There is no callback-URL field here; that belongs on a Services ID (4b)
 When configuring, Apple asks whether each App ID is a *primary* or is *grouped with an
 existing primary*:
 
-- `com.flygaca.ppl` → **Enable as a primary App ID**
-- the other five → **Group with an existing primary App ID** → `com.flygaca.ppl`
+- `com.flygaca.elpt` → **Enable as a primary App ID**
+- every other App ID → **Group with an existing primary App ID** → `com.flygaca.elpt`
+
+> Earlier revisions of this runbook named `com.flygaca.ppl` as the primary. PPL is a **paused**
+> module, so the primary is now ELPT. Nothing is stranded: Sign in with Apple was removed from
+> `apple/Apps/Shared/App.entitlements` in 2026-08 and the registered App IDs never carried the
+> capability, so no user identifier has been issued under the old primary.
 
 **Grouping is load-bearing.** Apple issues its user identifier per App-ID group, so
-without it one person signing into PPL and then CPL arrives as two different Apple users
+without it one person signing into ELPT and then AIP arrives as two different Apple users
 and lands on two separate Firebase accounts. That breaks the shared-account model the
 family is built on — `Apps/Shared/App-Shared.xcconfig` declares a single App Group and
 keychain (`group.com.flygaca.study`) precisely so streaks, SRS, and sign-in carry across
@@ -121,7 +126,7 @@ provisioning.
 
 Identifiers → + → **Services IDs** → enable Sign In with Apple → Configure:
 
-- Primary App ID: `com.flygaca.ppl`
+- Primary App ID: `com.flygaca.elpt`
 - Domains and Subdomains: `flygaca-app.firebaseapp.com`
 - Return URLs: `https://flygaca-app.firebaseapp.com/__/auth/handler`
 
@@ -145,12 +150,12 @@ Settings → Authorized domains. `docs/RUNBOOK-firebase.md` covers that failure 
 
 ```bash
 npm run ios:generate     # succeeds with or without the plists present
-npm run ios:build:ppl    # unsigned local build
+npm run ios:build:elpt   # unsigned local build
 ```
 
 In Xcode, each app's **Copy Bundle Resources** must list its own
 `GoogleService-Info.plist` and no other app's. With the Firebase CLI authenticated,
-`firebase apps:list IOS` should return all six bundle ids.
+`firebase apps:list IOS` should return every bundle id above.
 
 ## Related
 

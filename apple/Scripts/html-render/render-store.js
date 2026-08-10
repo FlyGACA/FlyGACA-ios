@@ -22,12 +22,8 @@ const LANG = process.env.CAPTION_LANG || 'en';
 const RTL = rtlFor(LANG);
 
 const APPS = [
-  { dir: 'PPL', name: 'Fly GACA PPL' },
   { dir: 'ELPT', name: 'Fly GACA ELPT' },
   { dir: 'AIP', name: 'Fly GACA AIP' },
-  { dir: 'CPL', name: 'Fly GACA CPL' },
-  { dir: 'IR', name: 'Fly GACA IR' },
-  { dir: 'ATPL', name: 'Fly GACA ATPL' },
 ];
 const SLOTS = {
   'iphone-6.9': { width: 430, height: 932, scale: 3 },
