@@ -1,8 +1,25 @@
-# Apple portal runsheet — Wave 1 (PPL · ELPT · AIP)
+# Apple portal runsheet — ELPT · AIP
 
-Every value below is pre-filled from this repo and the three metadata repos
-(`FlyGACA/PPL` · `ELPT` · `AIP`), in click order, so the portal session needs no
-improvisation. Companions: [`RUNBOOK-ios-signing.md`](./RUNBOOK-ios-signing.md) (the why +
+> **⏸ Status update, 2026-08-10 — PPL is paused.** This runsheet was written for a
+> three-app Wave 1 (PPL · ELPT · AIP). PPL has since been paused along with CPL, IR and
+> ATPL (see [`../ROADMAP.md`](../ROADMAP.md)), so **do the PPL rows only if that decision
+> is reversed**. The PPL values are **kept, not deleted** — they record real portal state
+> that still exists at Apple:
+>
+> - An App Store Connect record exists: *Saudi PPL Exam Prep*, Apple ID `6798457189`,
+>   SKU `ppl`, state *Prepare for Submission*. Leave it parked — an unsubmitted record
+>   costs nothing and holds the name.
+> - `com.flygaca.ppl` was designated the Sign-in-with-Apple **primary App ID**. That
+>   designation is moot today: the capability was removed from
+>   `apple/Apps/Shared/App.entitlements` in 2026-08 and the App IDs never carried it, so
+>   no Apple user identifier was ever issued under it. If sign-in ships, make
+>   **`com.flygaca.elpt`** the primary instead (§1.2, §4b).
+> - A `FlyGACA PPL AppStore` profile and the `PROVISIONING_PROFILE_PPL_BASE64` secret are
+>   now orphaned. Harmless; delete at leisure.
+
+Every value below is pre-filled from this repo and the metadata repos
+(`FlyGACA/ELPT` · `AIP`, plus the parked `FlyGACA/PPL`), in click order, so the portal
+session needs no improvisation. Companions: [`RUNBOOK-ios-signing.md`](./RUNBOOK-ios-signing.md) (the why +
 troubleshooting), [`RUNBOOK-ios-signing-CHECKLIST.md`](./RUNBOOK-ios-signing-CHECKLIST.md)
 (the boxes this expands), [`RUNBOOK-ios-firebase.md`](./RUNBOOK-ios-firebase.md) (§4a Sign
 in with Apple).
@@ -34,9 +51,9 @@ carry the App Groups capability).
 
 | App ID | Capabilities | Sign in with Apple setting |
 | --- | --- | --- |
-| `com.flygaca.ppl` ✅ | App Groups → `group.com.flygaca.study` · Sign In with Apple | **Enable as a primary App ID** |
-| `com.flygaca.elpt` ✅ | same | **Group with an existing primary** → `com.flygaca.ppl` |
-| `com.flygaca.aip` ✅ | same | **Group with an existing primary** → `com.flygaca.ppl` |
+| ⏸ `com.flygaca.ppl` | App Groups → `group.com.flygaca.study` · Sign In with Apple | paused module — was the primary; see the banner |
+| `com.flygaca.elpt` ✅ | App Groups → `group.com.flygaca.study` | **Enable as a primary App ID** (replaces PPL) |
+| `com.flygaca.aip` ✅ | same | **Group with an existing primary** → `com.flygaca.elpt` |
 
 Grouping is load-bearing: Apple issues its user identifier per App-ID *group*, so ungrouped
 apps would split one person into two Firebase accounts when sign-in ships. Set it now, before
@@ -175,7 +192,7 @@ with `base64 -w0 <file>` on Linux, `base64 -i <file>` on macOS):
 
 ## 6. Appendix — Firebase console half (not needed for the offline v1)
 
-- **Register the six iOS apps**: `npm run firebase:register` (idempotent), or console →
+- **Register the iOS apps**: `npm run firebase:register` (idempotent), or console →
   Project settings → Your apps → **Add app → iOS** once per bundle id. The "App Store ID"
   field can stay blank until §2's records exist.
 - **Apple provider** (needed only when PlatformLive ships sign-in): Authentication →
@@ -189,10 +206,12 @@ with `base64 -w0 <file>` on Linux, `base64 -i <file>` on macOS):
   Project settings → **Cloud Messaging** → the iOS app → upload the key with its Key ID +
   Team ID. Only needed when push reminders ship.
 
-## 7. Wave 2 later (CPL · IR · ATPL)
+## 7. Paused modules (PPL · CPL · IR · ATPL) — only if the pause is lifted
 
-Per app, once its bank content clears review-to-house-style: portal App ID (+ both
-capabilities, **grouped under `com.flygaca.ppl`**) → `FlyGACA <APP> AppStore` profile →
-`PROVISIONING_PROFILE_<APP>_BASE64` secret → add its `{app, scheme}` entry to the
-`ios-testflight` matrix in `.github/workflows/ios.yml` → paid ASC record (its metadata repo
-is already CI-green with screenshots).
+These four modules are on hold; nothing here is scheduled work. If a module is restored,
+the code side is a revert of the 2026-08-10 removal commit, then per app: portal App ID
+(+ the App Group capability, **grouped under `com.flygaca.elpt`** if sign-in is live by
+then) → `FlyGACA <APP> AppStore` profile → `PROVISIONING_PROFILE_<APP>_BASE64` secret → add
+its `{app, scheme}` entry to the `ios-testflight` matrix in `.github/workflows/ios.yml` →
+paid ASC record (each metadata repo is already CI-green with screenshots; PPL's ASC record
+already exists — see the banner).

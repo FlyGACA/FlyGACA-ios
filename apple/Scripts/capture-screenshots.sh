@@ -10,16 +10,12 @@ SCREENSHOTS_DIR="${PWD}/screenshots"
 RAW_DIR="${SCREENSHOTS_DIR}/raw"
 DEVICES=("iPhone15Pro" "iPadPro")
 ORIENTATIONS=("portrait" "landscape")
-SCHEME="PPL"  # Change to capture different app variants (PPL, ELPT, AIP, CPL, IR, ATPL)
+SCHEME="ELPT"  # Change to capture different app variants (ELPT, AIP)
 
 # Bundle id per scheme — keep in sync with apple/Apps/<App>/<App>.xcconfig.
 declare -A BUNDLE_IDS=(
-  [PPL]="com.flygaca.ppl"
   [ELPT]="com.flygaca.elpt"
   [AIP]="com.flygaca.aip"
-  [CPL]="com.flygaca.cpl"
-  [IR]="com.flygaca.ir"
-  [ATPL]="com.flygaca.atpl"
 )
 BUNDLE_ID="${BUNDLE_IDS[$SCHEME]:?Unknown SCHEME '$SCHEME' — add it to BUNDLE_IDS}"
 

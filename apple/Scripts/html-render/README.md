@@ -3,7 +3,7 @@
 A fallback that renders **marketing mockups** of the FlyGACA app screens without
 Xcode or a simulator. It recreates each screen as HTML/CSS using the **exact
 Falcon palette** (`FlyGACAKit/Sources/FeatureUI/Theme.swift`) and the **real
-bundled GACAR content** (`Apps/PPL/Content/*.json`), then rasterizes at native
+bundled GACAR content** (`Apps/<App>/Content/*.json`), then rasterizes at native
 device resolutions with Playwright + Chromium.
 
 Use this when you need presentable App-Store/website images and don't have a Mac
@@ -12,7 +12,9 @@ path instead (`apple/Scripts/capture-screenshots.sh`).
 
 ## What it produces
 
-10 portrait screens × 2 devices + 3 landscape screens × 2 devices = **26 PNGs**:
+Up to 10 portrait screens × 2 devices + 3 landscape screens × 2 devices, per app.
+The exact count varies by module: optional screens are emitted only when the
+module ships the content behind them (see the `lessons` note below).
 
 - iPhone 15 Pro — 1179×2556
 - iPad Pro 12.9" — 2048×2732
@@ -41,9 +43,9 @@ Environment overrides:
 
 - `screens.js` — one function per screen, returning a full HTML document. Colors
   are copied verbatim from `Theme.swift`; content is read live from
-  `Apps/PPL/Content/{quiz,groundschool}.json`, so screenshots update when the
+  `Apps/<App>/Content/{quiz,groundschool}.json`, so screenshots update when the
   content does.
-- `render.js` — portrait renderer (all 10 screens, both devices).
+- `render.js` — portrait renderer (every available screen, both devices).
 - `render-landscape.js` — landscape renderer (quiz + exam screens).
 
 ## Keeping it faithful
@@ -57,7 +59,7 @@ Environment overrides:
 | `flashcard` | `FlashcardView.swift` |
 | `timedStart`, `timedActive` | `QuizView.swift` + `ExamTimerView.swift` |
 | `results` | `Components.swift` (`SessionResultView`, `ResultStat`) |
-| `lessons` | `ModuleHomeView.swift` (`LessonListScreen`) |
+| `lessons` | `ModuleHomeView.swift` (`LessonListScreen`) — emitted only for a module that ships `groundschool.json`. No current module does, so this screen is dormant; the code stays generic for whenever one lands. |
 
 When a view changes (layout, colors, copy), update the matching function here so
 the mockups don't drift from the app.

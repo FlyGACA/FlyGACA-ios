@@ -10,7 +10,7 @@ statutes live in [`CLAUDE.md`](./CLAUDE.md) (conventions & gotchas) and
   it). `node` must be on PATH for the build scripts.
 - There is **no `npm install`** — `package.json` is a zero-dependency script dispatcher.
 - `npm run ios:generate` → XcodeGen produces `apple/FlyGACA.xcodeproj` (generated, never
-  committed). Pick a scheme (PPL … ATPL) and run; everything works fully offline.
+  committed). Pick a scheme (ELPT or AIP) and run; everything works fully offline.
 
 ## Testing
 
@@ -40,15 +40,15 @@ Content and the shared Swift tree flow **one way**: monorepo → here, via
   [monorepo](https://github.com/FlyGACA/FlyGACA-app) first, then sync here (review the diff
   before committing it).
 - **Store listing copy, keywords, screenshots** → the app's own metadata repo
-  (`FlyGACA/PPL` … `FlyGACA/AIP`), not here.
+  (`FlyGACA/ELPT`, `FlyGACA/AIP`), not here.
 - **Repo-native docs, scripts under `scripts/`, CI, root files** → here. New docs go at the
   repo root or `docs/` (sync never touches them — see [`docs/README.md`](./docs/README.md)).
 
 ## Branches, PRs, CI
 
 - PRs target `main`. A push to a feature branch runs **nothing**; opening the PR fires
-  `swift-test`, `xcodegen-validate` and the six-app macOS debug matrix (`fail-fast: true` —
-  one real failure cancels the other five).
+  `swift-test`, `xcodegen-validate` and the macOS debug matrix over every app
+  (`fail-fast: true` — one real failure cancels the rest).
 - Keep PRs scoped; a sync commit is its own PR, reviewed as a diff, not mixed with feature
   work.
 

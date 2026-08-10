@@ -11,11 +11,10 @@ One-time human setup to activate the `ios-testflight` job in `.github/workflows/
 Until these secrets exist, the job is skipped and CI stays green — nothing breaks by
 deferring this.
 
-**Scope:** *signing* is wired for the three Wave-1 apps (PPL, ELPT, AIP) under
-`apple/` — not the Capacitor shell (`com.flygaca.app`). The Wave-2 apps (CPL, IR,
-ATPL) already exist and build/archive in CI (see `docs/APPS-FAMILY-ROADMAP.md` and
-`RUNBOOK-ios-xcodebuild.md`); they are simply not signed/uploaded yet. To bring one
-into TestFlight, repeat Steps 1–3 below for it (a new App ID, an
+**Scope:** *signing* is wired for the two shipping apps (ELPT, AIP) under
+`apple/` — not the Capacitor shell (`com.flygaca.app`). The licence-exam modules
+(PPL, CPL, IR, ATPL) are **paused** and no longer exist in this repo — see
+`ROADMAP.md`. To bring a new app into TestFlight, repeat Steps 1–3 below for it (a new App ID, an
 `FlyGACA <APP> AppStore` profile, a `PROVISIONING_PROFILE_<APP>_BASE64` secret) and
 add its `{app, scheme}` entry to the `ios-testflight` matrix in `.github/workflows/ios.yml`.
 
@@ -24,7 +23,7 @@ add its `{app, scheme}` entry to the `ios-testflight` matrix in `.github/workflo
 ```
 push to main
   └─ check-signing (are BUILD_CERTIFICATE_BASE64 + APP_STORE_CONNECT_API_KEY_ID set?)
-       └─ ios-testflight (matrix: ppl, elpt, aip) — only when secrets are present
+       └─ ios-testflight (matrix: elpt, aip) — only when secrets are present
             ├─ import cert + profile into a temp keychain (deleted after the run)
             ├─ xcodegen generate → signed xcodebuild archive
             ├─ xcodebuild -exportArchive → .ipa (kept as a CI artifact)
@@ -41,30 +40,28 @@ carry the App Groups capability.
 At [developer.apple.com](https://developer.apple.com/account) → Certificates, Identifiers & Profiles:
 
 1. **App Group**: Identifiers → App Groups → register `group.com.flygaca.study`.
-2. **App IDs**: register three explicit App IDs, each with the **App Groups**
+2. **App IDs**: register two explicit App IDs, each with the **App Groups**
    capability enabled and `group.com.flygaca.study` assigned:
-   - `com.flygaca.ppl`
    - `com.flygaca.elpt`
    - `com.flygaca.aip`
 3. **Distribution certificate**: Certificates → create an **Apple Distribution**
    certificate (generate the CSR via Keychain Access on any Mac). Then in Keychain
    Access, export the certificate **with its private key** as a `.p12` and set a
    password (this becomes `P12_PASSWORD`).
-4. **Provisioning profiles**: create three **App Store** distribution profiles, one
+4. **Provisioning profiles**: create two **App Store** distribution profiles, one
    per App ID, using that certificate, named **exactly**:
-   - `FlyGACA PPL AppStore`
    - `FlyGACA ELPT AppStore`
    - `FlyGACA AIP AppStore`
 
    The names are load-bearing — the CI passes them as `PROVISIONING_PROFILE_SPECIFIER`
    and writes them into ExportOptions. (Override per-run with `FG_PROVISIONING_PROFILE`
-   if you must rename.) Download the three `.mobileprovision` files.
+   if you must rename.) Download both `.mobileprovision` files.
 
 ## Step 2 — App Store Connect
 
 At [appstoreconnect.apple.com](https://appstoreconnect.apple.com):
 
-1. **App records**: create the three apps (paid-up-front per `apple/ARCHITECTURE.md` §4),
+1. **App records**: create the two apps (paid-up-front per `apple/ARCHITECTURE.md` §4),
    one per bundle ID above. **Uploads fail with "No suitable application records found"
    until these exist.**
 2. **API key**: Users & Access → Integrations → App Store Connect API → Team Keys →
@@ -77,7 +74,6 @@ Base64-encode the binary assets (on macOS; on Linux use `base64 -w0 <file>`):
 
 ```bash
 base64 -i Distribution.p12 | pbcopy                     # → BUILD_CERTIFICATE_BASE64
-base64 -i FlyGACA_PPL_AppStore.mobileprovision | pbcopy # → PROVISIONING_PROFILE_PPL_BASE64
 base64 -i FlyGACA_ELPT_AppStore.mobileprovision | pbcopy # → PROVISIONING_PROFILE_ELPT_BASE64
 base64 -i FlyGACA_AIP_AppStore.mobileprovision | pbcopy # → PROVISIONING_PROFILE_AIP_BASE64
 base64 -i AuthKey_XXXXXXXXXX.p8 | pbcopy                # → APP_STORE_CONNECT_API_KEY_BASE64
@@ -91,7 +87,6 @@ Create every secret (repo → Settings → Secrets and variables → Actions, or
 | `BUILD_CERTIFICATE_BASE64` | The Apple Distribution `.p12`, base64 |
 | `P12_PASSWORD` | Password chosen when exporting the `.p12` |
 | `KEYCHAIN_PASSWORD` | Any random string (temp CI keychain only) |
-| `PROVISIONING_PROFILE_PPL_BASE64` | App Store profile for `com.flygaca.ppl`, base64 |
 | `PROVISIONING_PROFILE_ELPT_BASE64` | App Store profile for `com.flygaca.elpt`, base64 |
 | `PROVISIONING_PROFILE_AIP_BASE64` | App Store profile for `com.flygaca.aip`, base64 |
 | `APP_STORE_CONNECT_API_KEY_ID` | The API key's Key ID |
@@ -101,12 +96,12 @@ Create every secret (repo → Settings → Secrets and variables → Actions, or
 ## Step 4 — First run
 
 Push to `main` (or trigger `workflow_dispatch` on the iOS workflow). `check-signing`
-now outputs `enabled=true`, and `ios-testflight` runs for all three apps. After Apple
+now outputs `enabled=true`, and `ios-testflight` runs for both apps. After Apple
 finishes processing (typically 5–15 minutes per build), the builds appear under each
 app's TestFlight tab.
 
 Build numbers (`CFBundleVersion`) come from `github.run_number`, so they increase
-monotonically and are shared across the three apps — that's fine, uniqueness is
+monotonically and are shared across both apps — that's fine, uniqueness is
 per-app in App Store Connect.
 
 ## Troubleshooting

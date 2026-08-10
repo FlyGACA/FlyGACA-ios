@@ -1,16 +1,21 @@
 # SEO-PLAN — App Store search (ASO) for the Fly GACA iOS family
 
-The live, checkbox-tracked backlog for **store search visibility** of the six apps (PPL, ELPT,
-AIP, CPL, IR, ATPL). This is the shared memory across ASO sessions — **update it as items
-complete** (tick the box, add the date, note follow-ups). Authored 2026-08-04 against the six
-metadata repos and the store strategy docs; nothing has been executed against App Store Connect
-yet (no store records exist).
+The live, checkbox-tracked backlog for **store search visibility** of the shipping apps
+(**ELPT, AIP**). This is the shared memory across ASO sessions — **update it as items complete**
+(tick the box, add the date, note follow-ups). Authored 2026-08-04 against the metadata repos
+and the store strategy docs; nothing has been executed against App Store Connect yet.
+
+> **Paused modules (2026-08-10).** PPL, CPL, IR and ATPL are on hold and no longer build from
+> this repo. Their drafted keyword pools and per-app hypotheses are **kept below, marked
+> ⏸ paused** — they were already pushed to those metadata repos and are the restore material if
+> a module comes back. Do not spend ASO effort on them; do not delete them either. Only the
+> ELPT and AIP rows are live work.
 
 **Doc map.** This file owns the cross-app store-*search* strategy and nothing else. Web/AI
 search for flygaca.com is owned by the monorepo's `SEO-PLAN.md` (+ the `flygaca-seo` skill) —
 none of it is duplicated here. Store submission *mechanics* (lineup, pricing, App Store Connect
 setup, review-survival, cross-promo rules) are owned by the monorepo's `docs/STORE-SUITE.md`.
-The **shipping** listing strings live in the six metadata repos (`FlyGACA/PPL` … `FlyGACA/AIP`,
+The **shipping** listing strings live in the metadata repos (`FlyGACA/ELPT`, `FlyGACA/AIP`,
 fastlane `deliver` layout, EN + AR, CI-gated by each repo's `check-metadata.mjs`) — adoption of
 anything drafted here happens as PRs to those repos, never by editing this file into a copy
 deck.
@@ -41,11 +46,11 @@ Effort: S <½ day · M ~1 day · L multi-day.
   Standing rule — re-check on every sync and copy edit.*
 - [x] **0.4 The naming system (S).** Display names are `Fly GACA <MODULE>` (already in the
   xcconfigs and Firebase registrations); bundle ids `com.flygaca.<module>`. ⚠️ Tooling trap:
-  ELPT's *module id* is `elp` (the web pack id), not `elpt` — module ids are `ppl-exam`,
-  `elp`, `aip`, `cpl`, `ir`, `atpl`. App Store *names* may extend beyond the brand prefix
+  ELPT's *module id* is `elp` (the web pack id), not `elpt` — the shipping module ids are
+  `elp` and `aip`. App Store *names* may extend beyond the brand prefix
   within 30 code points (e.g. an exam-term suffix) — drafts in 1.4. *Done 2026-08-04
   (system documented; per-app name suffixes remain part of 1.4).*
-- [~] **0.5 Locale posture (S).** Decide and record the primary-locale mapping for the six ASC
+- [~] **0.5 Locale posture (S).** Decide and record the primary-locale mapping for the ASC
   records: **`en-US` primary + `ar-SA` full localization** — Arabic is a first-class
   listing, not a fallback; both locales are searchable on the Saudi storefront. *Recorded
   2026-08-05 in [`docs/PORTAL-RUNSHEET-wave1.md`](./docs/PORTAL-RUNSHEET-wave1.md) §2, applied
@@ -58,7 +63,8 @@ No fabricated search-volume numbers anywhere in this file: Apple exposes no publ
 volumes, so pools below are **hypotheses from the module subjects and bank vocabulary**, to be
 validated against actual App Store search suggestions and post-launch App Analytics.
 
-**Drafted pools — v1, applied to the six metadata PRs 2026-08-05.** Bank-grounded, packed to
+**Drafted pools — v1, applied to the metadata PRs 2026-08-05.** Rows marked ⏸ belong to paused
+ modules: retained as restore material, not live work. Bank-grounded, packed to
 ≤100 code points, with words already in each app's name dropped (Apple indexes the name +
 keywords as one set). These are the exact `keywords.txt` values pushed to each repo's
 `claude/flygaca-docs-suite-2zmgmo` branch; refine against real App Store search suggestions
@@ -66,19 +72,21 @@ post-launch.
 
 | App | `en-US` keywords | `ar-SA` keywords |
 | --- | --- | --- |
-| PPL | private pilot,gaca,gacar,aviation,vfr,controlled airspace,air law,navigation,meteorology | طيران,رخصة طيار,الطيار الخاص,gaca,gacar,قواعد الطيران البصري,مجال جوي,قانون الطيران,ملاحة جوية |
-| CPL | commercial pilot,gaca,gacar,aviation,flight operations,aircraft performance,air law,navigation | طيران,رخصة تجارية,الطيار التجاري,gaca,gacar,عمليات الطيران,أداء الطائرة,قانون الطيران,ملاحة جوية |
-| IR | instrument rating,gaca,gacar,aviation,ifr,instrument approach,procedures,holding patterns,navigation | طيران آلي,التقدير الآلي,gaca,gacar,ifr,إجراءات آلية,الاقتراب الآلي,ملاحة جوية,مجال جوي,أرصاد جوية |
-| ATPL | airline transport pilot,gaca,gacar,aviation,part 121,airline operations,aircraft performance,air law | نقل جوي,رخصة النقل الجوي,gaca,gacar,part 121,عمليات الخطوط الجوية,أداء الطائرة,أرصاد متقدمة |
+| ⏸ PPL | private pilot,gaca,gacar,aviation,vfr,controlled airspace,air law,navigation,meteorology | طيران,رخصة طيار,الطيار الخاص,gaca,gacar,قواعد الطيران البصري,مجال جوي,قانون الطيران,ملاحة جوية |
+| ⏸ CPL | commercial pilot,gaca,gacar,aviation,flight operations,aircraft performance,air law,navigation | طيران,رخصة تجارية,الطيار التجاري,gaca,gacar,عمليات الطيران,أداء الطائرة,قانون الطيران,ملاحة جوية |
+| ⏸ IR | instrument rating,gaca,gacar,aviation,ifr,instrument approach,procedures,holding patterns,navigation | طيران آلي,التقدير الآلي,gaca,gacar,ifr,إجراءات آلية,الاقتراب الآلي,ملاحة جوية,مجال جوي,أرصاد جوية |
+| ⏸ ATPL | airline transport pilot,gaca,gacar,aviation,part 121,airline operations,aircraft performance,air law | نقل جوي,رخصة النقل الجوي,gaca,gacar,part 121,عمليات الخطوط الجوية,أداء الطائرة,أرصاد متقدمة |
 | ELPT | icao level 4,radiotelephony,aviation phraseology,atc communication,radio calls,plain language,pilots | icao,المستوى الرابع,لغة الطيران,اللاسلكي,المصطلحات الجوية,اتصالات المراقبة,استيعاب سماعي,سلم التقييم |
 | AIP | eaip,sans,aerodromes,controlled airspace,ais,notam,aviation charts,navigation aids,route information | eaip,دليل الطيران السعودي,المجال الجوي,notam,خرائط الطيران,وسائل الملاحة,الأدلة الجوية,sans,مطار |
 
 **Allocation matrix (1.3).** Each app owns its certificate head term; shared terms are placed to
 minimize sibling collision:
 
-- `gaca` + `gacar` — kept in all six (each targets its own GACAR certificate; legitimately core).
-- `aviation` / `طيران` — the licence apps (PPL·CPL·IR·ATPL) only; AIP and ELPT lead with their
-  own domain (aeronautical-information, aviation-English) instead of the generic term.
+- `gaca` + `gacar` — kept in every app (each targets its own GACAR scope; legitimately core).
+- `aviation` / `طيران` — was reserved for the licence apps (PPL·CPL·IR·ATPL), all now paused;
+  AIP and ELPT lead with their own domain (aeronautical-information, aviation-English) instead
+  of the generic term. With the licence apps gone there is no sibling collision on it — worth
+  re-testing whether ELPT/AIP should now claim it.
 - Shared ground-school long-tail — `navigation`/`ملاحة جوية`, `meteorology`/`أرصاد`,
   `flight planning`/`تخطيط الطيران`, `human factors`/`عوامل بشرية` — spread so no two apps lead
   with the identical secondary terms.
@@ -98,16 +106,16 @@ minimize sibling collision:
   the terms Saudi cadets actually search (e.g. رخصة الطيار الخاص، رخصة الطيار التجاري، اختبار
   الطيران، الطيران المدني، أسئلة اختبار الطيران). Source terminology from the corpus's Arabic
   layer and the family glossary; validate against Arabic App Store suggestions.
-- [~] **1.3 The family allocation matrix (S).** Six sibling apps must not compete for the same
+- [~] **1.3 The family allocation matrix (S).** Sibling apps must not compete for the same
   head terms: assign each shared term (GACA exam, Saudi pilot, GACAR, طيران) to exactly one
   app's keyword field, and record the matrix here. The bundle listing (3.2) is the eventual
   home for the broadest family terms.
-- [~] **1.4 Subtitle + keyword-field drafts, six apps × two locales (M).** Keyword fields
-  drafted + shipped to the six metadata PRs 2026-08-05 (validated ≤100 cp by
+- [~] **1.4 Subtitle + keyword-field drafts, per app × two locales (M).** Keyword fields
+  drafted + shipped to the metadata PRs 2026-08-05 (validated ≤100 cp by
   `check-metadata.mjs`); subtitles left as-is this pass. Within the 0.2
   budgets, subtitle carrying the strongest non-name terms, keyword field packed
   comma-separated without repeating name/subtitle words (Apple ignores duplicates). Deliver as
-  PRs to the six metadata repos; their CI enforces limits and EN/AR parity.
+  PRs to the metadata repos; their CI enforces limits and EN/AR parity.
 - [x] **1.5 The no-go rules (S).** Standing policy, applies to every draft: no competitor or
   third-party app names in keywords; nothing implying GACA affiliation or official status —
   the disclaimer discipline applies to metadata too (an app named or keyworded to read as
@@ -168,14 +176,16 @@ minimize sibling collision:
 
 ## Phase 3 — The family and the bundle
 
-- [ ] **3.1 The 4.3(b) dossier (M).** Six sibling apps from one shell invite a spam/app-farm
-  reading (Guideline 4.3(b)). Write the differentiation dossier *before* first review, ready
-  to paste into Review notes: per-app distinct corpus slice (13/1/2/12/10/9 banks as bundled
-  today), distinct certificate audience, distinct name/subtitle/keywords/icon, and the
-  architecture defense — one shared engine, module-specific *content*, exactly the
-  ASA-Prepware/Gleim category precedent. Mechanics context: monorepo `docs/STORE-SUITE.md`.
+- [ ] **3.1 The 4.3(b) dossier (M).** Sibling apps from one shell can invite a spam/app-farm
+  reading (Guideline 4.3(b)). Much less acute now that the family is two apps in genuinely
+  different domains (aviation English vs aeronautical information), but still write the
+  differentiation dossier *before* first review, ready to paste into Review notes: per-app
+  distinct corpus slice (ELPT 5 banks, AIP 3 as bundled today), distinct audience, distinct
+  name/subtitle/keywords/icon, and the architecture defense — one shared engine,
+  module-specific *content*, exactly the ASA-Prepware/Gleim category precedent. Mechanics context: monorepo `docs/STORE-SUITE.md`.
 - [ ] **3.2 The bundle listing (S).** "Saudi Pilot Study Pack" — the paid app bundle (≤10
-  apps) once Wave 1 is live, with completing-the-bundle credit. The bundle gets the broadest
+  apps) once both apps are live, with completing-the-bundle credit. Re-check it is still worth
+  doing for a two-app family. The bundle gets the broadest
   family search terms per the 1.3 matrix. Pricing/strategy: `apple/ARCHITECTURE.md` §4.
 - [ ] **3.3 Cross-promo hygiene (S).** Family cross-references in descriptions + the developer
   page per STORE-SUITE's cross-promo rules — never keyword-squatting sibling terms (keeps 1.3

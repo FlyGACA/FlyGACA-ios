@@ -13,12 +13,8 @@ const CHROME = process.env.CHROME_PATH || undefined;
 // The App Store family: one focused product per study module. Screenshots differ
 // only by the module's own content + name (shared FeatureUI chrome).
 const APPS = [
-  { dir: 'PPL', name: 'Fly GACA PPL' },
   { dir: 'ELPT', name: 'Fly GACA ELPT' },
   { dir: 'AIP', name: 'Fly GACA AIP' },
-  { dir: 'CPL', name: 'Fly GACA CPL' },
-  { dir: 'IR', name: 'Fly GACA IR' },
-  { dir: 'ATPL', name: 'Fly GACA ATPL' },
 ];
 
 // App Store Connect portrait slots → logical viewport + scale = exact pixel size.

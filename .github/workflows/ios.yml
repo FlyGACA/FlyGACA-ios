@@ -78,7 +78,7 @@ jobs:
       contents: read
     strategy:
       matrix:
-        app: [ppl, elpt, aip, cpl, ir, atpl]
+        app: [elpt, aip]
       fail-fast: true
     steps:
       - uses: actions/checkout@v4
@@ -111,7 +111,7 @@ jobs:
       contents: read
     strategy:
       matrix:
-        app: [ppl, elpt, aip, cpl, ir, atpl]
+        app: [elpt, aip]
       fail-fast: false
     steps:
       - uses: actions/checkout@v4
@@ -157,14 +157,11 @@ jobs:
       contents: read
     strategy:
       fail-fast: false
-      # Wave 1 only. CPL/IR/ATPL build & archive (see the ios-build matrices) but
-      # can't be signed/uploaded until each has an Apple App ID, an App Store
-      # provisioning profile, and a PROVISIONING_PROFILE_<APP>_BASE64 secret — see
-      # docs/RUNBOOK-ios-signing.md. Add them here once those exist.
+      # Every shipping app signs here. A new app needs an Apple App ID, an App
+      # Store provisioning profile, and a PROVISIONING_PROFILE_<APP>_BASE64
+      # secret before it can join — see docs/RUNBOOK-ios-signing.md.
       matrix:
         include:
-          - app: ppl
-            scheme: PPL
           - app: elpt
             scheme: ELPT
           - app: aip
@@ -200,7 +197,6 @@ jobs:
           KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
           # Explicit references only — dynamic secrets[...] indexing would expose
           # the whole secrets context to the runner (CodeQL: Excessive Secrets Exposure)
-          PROFILE_PPL_B64: ${{ secrets.PROVISIONING_PROFILE_PPL_BASE64 }}
           PROFILE_ELPT_B64: ${{ secrets.PROVISIONING_PROFILE_ELPT_BASE64 }}
           PROFILE_AIP_B64: ${{ secrets.PROVISIONING_PROFILE_AIP_BASE64 }}
           ASC_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
@@ -211,7 +207,6 @@ jobs:
           KEYCHAIN_PATH="$RUNNER_TEMP/app-signing.keychain-db"
 
           case "${{ matrix.scheme }}" in
-            PPL)  PROFILE_B64="$PROFILE_PPL_B64" ;;
             ELPT) PROFILE_B64="$PROFILE_ELPT_B64" ;;
             AIP)  PROFILE_B64="$PROFILE_AIP_B64" ;;
             *) echo "Unknown scheme ${{ matrix.scheme }}" >&2; exit 1 ;;

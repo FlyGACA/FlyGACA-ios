@@ -3,7 +3,7 @@ set -euo pipefail
 
 # set-signing-secrets.sh — base64-encode the Apple signing assets and push them
 # to the GitHub repo as Actions secrets, so the `ios-testflight` job in
-# .github/workflows/ios.yml can sign + upload the Wave-1 apps (PPL, ELPT, AIP).
+# .github/workflows/ios.yml can sign + upload the shipping apps (ELPT, AIP).
 #
 # See docs/RUNBOOK-ios-signing-CHECKLIST.md. You still create the certs, profiles,
 # app records and API key in Apple's portals — this only uploads them as secrets.
@@ -15,7 +15,6 @@ set -euo pipefail
 #          P12_PASSWORD='your-p12-password'          # KEYCHAIN_PASSWORD optional (auto-random)
 #   bash scripts/native/set-signing-secrets.sh \
 #       Distribution.p12 \
-#       FlyGACA_PPL_AppStore.mobileprovision \
 #       FlyGACA_ELPT_AppStore.mobileprovision \
 #       FlyGACA_AIP_AppStore.mobileprovision \
 #       AuthKey_XXXXXXXXXX.p8
@@ -32,9 +31,9 @@ die()  { echo -e "${RED}✗${NC} $1" >&2; exit 1; }
 command -v gh >/dev/null 2>&1 || die "gh CLI not found. Install: https://cli.github.com"
 gh auth status >/dev/null 2>&1 || die "gh not authenticated. Run: gh auth login"
 
-[ "$#" -eq 5 ] || die "Expected 5 files: <p12> <ppl.mobileprovision> <elpt.mobileprovision> <aip.mobileprovision> <asc.p8>"
-P12="$1"; PROF_PPL="$2"; PROF_ELPT="$3"; PROF_AIP="$4"; P8="$5"
-for f in "$P12" "$PROF_PPL" "$PROF_ELPT" "$PROF_AIP" "$P8"; do
+[ "$#" -eq 4 ] || die "Expected 4 files: <p12> <elpt.mobileprovision> <aip.mobileprovision> <asc.p8>"
+P12="$1"; PROF_ELPT="$2"; PROF_AIP="$3"; P8="$4"
+for f in "$P12" "$PROF_ELPT" "$PROF_AIP" "$P8"; do
   [ -f "$f" ] || die "File not found: $f"
 done
 
@@ -58,11 +57,10 @@ setp KEYCHAIN_PASSWORD "$KEYCHAIN_PASSWORD"
 setp APP_STORE_CONNECT_API_KEY_ID "$APP_STORE_CONNECT_API_KEY_ID"
 setp APP_STORE_CONNECT_API_ISSUER_ID "$APP_STORE_CONNECT_API_ISSUER_ID"
 setf BUILD_CERTIFICATE_BASE64 "$P12"
-setf PROVISIONING_PROFILE_PPL_BASE64 "$PROF_PPL"
 setf PROVISIONING_PROFILE_ELPT_BASE64 "$PROF_ELPT"
 setf PROVISIONING_PROFILE_AIP_BASE64 "$PROF_AIP"
 setf APP_STORE_CONNECT_API_KEY_BASE64 "$P8"
 
 echo
-ok "All 10 signing secrets set on $REPO."
-echo "  Push to main (or re-run the iOS workflow) — ios-testflight now runs for ppl/elpt/aip."
+ok "All 9 signing secrets set on $REPO."
+echo "  Push to main (or re-run the iOS workflow) — ios-testflight now runs for elpt/aip."

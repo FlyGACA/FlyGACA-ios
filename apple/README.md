@@ -21,8 +21,8 @@ From the repo root (content comes verbatim from `public/data/` + the pack
 catalog in `src/lib/prepCatalog.ts`):
 
 ```bash
-node scripts/build-ios-content.mjs          # PPL, ELPT and AIP
-node scripts/build-ios-content.mjs --app ppl
+node scripts/build-ios-content.mjs          # ELPT and AIP
+node scripts/build-ios-content.mjs --app elpt
 ```
 
 ## 3. Generate the Xcode project (XcodeGen)
@@ -39,7 +39,7 @@ open apple/FlyGACA.xcodeproj
 to Mint). If neither is available it prints how to install it — the one-liner is
 `brew install xcodegen`.
 
-The spec wires up, per app target (PPL, ELPT, AIP):
+The spec wires up, per app target (ELPT, AIP):
 
 - `Apps/Shared/FlyGACAApp.swift` (the shared shell),
 - `Apps/<App>/Content` as a **folder reference** (blue folder), so it ships as a
@@ -55,7 +55,7 @@ flashcards, mock and timed exam — all offline. (The Sign in with Apple entitle
 is declared, but the sign-in flow itself joins later with Firebase — see
 `docs/RUNBOOK-ios-firebase.md` for the console setup it needs.)
 
-You can also build without opening Xcode: `npm run ios:build:ppl` (see
+You can also build without opening Xcode: `npm run ios:build:elpt` (see
 `docs/RUNBOOK-ios-xcodebuild.md`).
 
 ## 4. Add the next app (IFR, …)
@@ -71,7 +71,7 @@ shared — never edit it per app.
 - Firebase/RevenueCat SDKs and the `PlatformLive` target — the platform half of
   Phase 4 (see ARCHITECTURE.md §5). Until then the apps run fully offline by
   design, and `AppServices` mocks stand in for the platform.
-- The six `GoogleService-Info.plist` files. The *slot* exists —
+- The per-app `GoogleService-Info.plist` files. The *slot* exists —
   `apple/project.yml` copies `Apps/<App>/GoogleService-Info.plist` into each
   bundle, declared `optional` so generation and unsigned builds work without it —
   but registering the apps and downloading the files is manual console work:

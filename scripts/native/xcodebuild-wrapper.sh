@@ -4,8 +4,8 @@ set -e
 # iOS xcodebuild wrapper — orchestrates content generation, validation, and builds
 # Usage:
 #   xcodebuild-wrapper.sh <app|all|info> [debug|release] [scheme-override]
-#   xcodebuild-wrapper.sh ppl debug      # Debug build for PPL
-#   xcodebuild-wrapper.sh all release    # Release builds for all three apps
+#   xcodebuild-wrapper.sh elpt debug     # Debug build for ELPT
+#   xcodebuild-wrapper.sh all release    # Release builds for every app
 #   xcodebuild-wrapper.sh info           # Print environment info
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -16,8 +16,8 @@ APP="${1:-info}"
 CONFIGURATION="${2:-debug}"
 SCHEME_OVERRIDE="${3:-}"
 
-# Supported apps (Wave 1: ppl/elpt/aip · Wave 2: cpl/ir/atpl)
-APPS=("ppl" "elpt" "aip" "cpl" "ir" "atpl")
+# Supported apps. The licence-exam modules (ppl/cpl/ir/atpl) are paused — see ROADMAP.md.
+APPS=("elpt" "aip")
 
 # Color output
 RED='\033[0;31m'
@@ -80,14 +80,14 @@ print_info() {
   echo "  Xcode: $(xcodebuild -version | head -n 1)"
   echo "  Swift: $(swift --version | head -n 1)"
   echo "  iOS Support: $(xcode-select -p)/Platforms/iPhoneOS.platform/Developer/SDKs"
-  echo "  FlyGACA Apps: ppl, elpt, aip, cpl, ir, atpl"
+  echo "  FlyGACA Apps: elpt, aip"
   echo ""
   echo "Available commands:"
   echo "  npm run ios:generate               # Generate Xcode project (needs xcodegen)"
   echo "  npm run ios:icons                  # Regenerate the per-app App Store icons"
-  echo "  npm run ios:build:ppl              # Debug build PPL app (also: elpt aip cpl ir atpl)"
-  echo "  npm run ios:build:all              # Debug builds all six apps"
-  echo "  npm run ios:build:release:ppl      # Release build PPL (unsigned archive)"
+  echo "  npm run ios:build:elpt             # Debug build ELPT app (also: aip)"
+  echo "  npm run ios:build:all              # Debug builds every app"
+  echo "  npm run ios:build:release:elpt     # Release build ELPT (unsigned archive)"
   echo "  npm run ios:test                   # Run Swift Package tests"
   echo "  npm run ios:test:watch             # Watch mode for tests"
   echo "  npm run ios:clean                  # Clean build artifacts"
@@ -236,11 +236,6 @@ build_app() {
 
   # Map app name to scheme and bundle ID
   case "$app" in
-    ppl)
-      SCHEME="PPL"
-      BUNDLE_ID="com.flygaca.ppl"
-      MODULE_ID="ppl-exam"
-      ;;
     elpt)
       SCHEME="ELPT"
       BUNDLE_ID="com.flygaca.elpt"
@@ -250,21 +245,6 @@ build_app() {
       SCHEME="AIP"
       BUNDLE_ID="com.flygaca.aip"
       MODULE_ID="aip"
-      ;;
-    cpl)
-      SCHEME="CPL"
-      BUNDLE_ID="com.flygaca.cpl"
-      MODULE_ID="cpl"
-      ;;
-    ir)
-      SCHEME="IR"
-      BUNDLE_ID="com.flygaca.ir"
-      MODULE_ID="ir"
-      ;;
-    atpl)
-      SCHEME="ATPL"
-      BUNDLE_ID="com.flygaca.atpl"
-      MODULE_ID="atpl"
       ;;
     *)
       log_error "Unknown app: $app"
@@ -410,7 +390,7 @@ main() {
       done
       log_success "All builds completed successfully"
       ;;
-    ppl|elpt|aip|cpl|ir|atpl)
+    elpt|aip)
       check_prerequisites
       generate_project
       generate_content "$APP"
@@ -421,7 +401,7 @@ main() {
       echo ""
       echo "Usage: $0 <app|all|info> [debug|release]"
       echo ""
-      echo "Apps: ppl, elpt, aip, cpl, ir, atpl, all"
+      echo "Apps: elpt, aip, all"
       echo "Config: debug (default), release"
       exit 1
       ;;

@@ -65,18 +65,9 @@ targetTemplates:
       gatherCoverageData: false
 
 targets:
-  # Wave 1 — live on the App Store roadmap first (content shipped longest).
-  PPL:
-    templates: [FlyGACAApp]
+  # The licence-exam modules (PPL, CPL, IR, ATPL) are paused — see ROADMAP.md.
+  # Restoring one is a revert: its Apps/<APP>/ folder plus a two-line entry here.
   ELPT:
     templates: [FlyGACAApp]
   AIP:
-    templates: [FlyGACAApp]
-  # Wave 2 — GACAR-cited draft banks live in prepCatalog.ts; debug-buildable now,
-  # TestFlight signing still pending Apple App IDs/profiles (RUNBOOK-ios-signing.md).
-  CPL:
-    templates: [FlyGACAApp]
-  IR:
-    templates: [FlyGACAApp]
-  ATPL:
     templates: [FlyGACAApp]

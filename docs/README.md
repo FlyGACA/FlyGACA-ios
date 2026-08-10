@@ -10,7 +10,7 @@ three tiers; know which one you're editing.
 | Doc | What it is |
 | --- | --- |
 | [`RUNBOOK-ios-release.md`](./RUNBOOK-ios-release.md) | **Start here.** The end-to-end release path from this repo's point of view — sync → generate → test → build → sign → TestFlight — plus the reconciliation map over the snapshot runbooks below. |
-| [`PORTAL-RUNSHEET-wave1.md`](./PORTAL-RUNSHEET-wave1.md) | The click-ordered Apple portal + App Store Connect runsheet for Wave 1 — every value pre-filled from the repos (App IDs, profile names, the ten secrets, per-app record fields, ready-to-paste review notes). |
+| [`PORTAL-RUNSHEET-wave1.md`](./PORTAL-RUNSHEET-wave1.md) | The click-ordered Apple portal + App Store Connect runsheet — every value pre-filled from the repos (App IDs, profile names, the signing secrets, per-app record fields, ready-to-paste review notes). Written for a three-app Wave 1; its PPL rows are annotated as paused. |
 | `README.md` | This index. |
 
 The root suite (`CAUSE.md`, `ROADMAP.md`, `MIGRATION.md`, `SEO-PLAN.md`,
@@ -29,7 +29,7 @@ what keeps them diffable. All reconciliation lives in
 | --- | --- |
 | [`RUNBOOK-ios-signing.md`](./RUNBOOK-ios-signing.md) | Code signing & TestFlight — the full why + troubleshooting. |
 | [`RUNBOOK-ios-signing-CHECKLIST.md`](./RUNBOOK-ios-signing-CHECKLIST.md) | The condensed do-this-in-order signing checklist (ten secrets, profile names). Carries no "Note (this repo)" banner — treat it as monorepo-authored anyway. |
-| [`RUNBOOK-ios-firebase.md`](./RUNBOOK-ios-firebase.md) | The one Firebase project (`flygaca-app`) behind all six apps; §4a's Sign in with Apple grouping is load-bearing. |
+| [`RUNBOOK-ios-firebase.md`](./RUNBOOK-ios-firebase.md) | The one Firebase project (`flygaca-app`) behind every app; §4a's Sign in with Apple grouping matters only if sign-in ships, and names a paused module as primary — read it with `ROADMAP.md` in hand. |
 | [`RUNBOOK-ios-xcodebuild.md`](./RUNBOOK-ios-xcodebuild.md) | Build/CI/troubleshooting reference, incl. "Adding a New iOS App". Its "Phase Roadmap" numbering diverges from `apple/ARCHITECTURE.md` §5 — the architecture doc wins. |
 
 ## Sync-overwritten — edit in the monorepo, never here

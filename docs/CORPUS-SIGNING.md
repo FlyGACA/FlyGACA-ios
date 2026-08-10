@@ -35,7 +35,7 @@ store it in the deploy secret manager) and prints the base64 raw public key.
 
 ## Wire the public key into the apps
 
-The key is shared by all six apps, so set it once in
+The key is shared by every app, so set it once in
 `apple/Apps/Shared/App-Shared.xcconfig`:
 
 ```
