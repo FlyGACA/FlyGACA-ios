@@ -23,7 +23,7 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Run Swift tests
         run: cd apple/FlyGACAKit && swift test
@@ -35,7 +35,7 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Install XcodeGen
         run: brew install xcodegen
@@ -81,7 +81,7 @@ jobs:
         app: [elpt, aip]
       fail-fast: true
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Install XcodeGen
         run: brew install xcodegen
@@ -114,7 +114,7 @@ jobs:
         app: [elpt, aip]
       fail-fast: false
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Install XcodeGen
         run: brew install xcodegen
@@ -167,7 +167,7 @@ jobs:
           - app: aip
             scheme: AIP
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       # App Store Connect rejects uploads built with SDKs older than iOS 26
       # ("SDK version issue", 409). macos-15's default Xcode is 16.4, but the
