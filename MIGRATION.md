@@ -8,11 +8,17 @@ a standalone home. It is **history only** — no open items are tracked here. Op
 House rule (inherited from the monorepo's own `MIGRATION.md`): when reality moves on, annotate
 the stage — don't rewrite it.
 
-> **Annotation (2026-08-10).** The stages below describe **six** app targets, which is what was
-> extracted and is still accurate as history. Four of them — PPL, CPL, IR, ATPL — have since been
-> **paused** and removed from the repo (targets, content, icons, scripts, CI entries); the family
-> now ships **ELPT + AIP**. Read every "six apps" below as a historical count. See
-> [`ROADMAP.md`](./ROADMAP.md) for the pause and the restore path.
+> **Annotation (2026-08-10).** Two things below are now history, not current state:
+> 1. The stages describe **six** app targets — what was extracted. Four (PPL, CPL, IR, ATPL) have
+>    since been **paused** and removed; the family now ships **ELPT + AIP**. Read "six apps" as a
+>    historical count.
+> 2. The stages describe the monorepo's `apple/` tree as a live parallel copy synced here (incl.
+>    the `--all` mode and "monorepo-authored docs"). That mirror was **retired 2026-08**: the
+>    monorepo deleted its `apple/` tree, this repo is now the sole home of the app code, and
+>    `sync-content.sh` pulls only generated `Content/` + icons (no `--all`, no doc sync). The docs
+>    once called "monorepo-authored" are owned here now.
+>
+> See [`ROADMAP.md`](./ROADMAP.md) for both.
 
 ## ✅ Stage 0 — the placeholder (2026-07-24)
 

@@ -1,10 +1,11 @@
 # iOS xcodebuild Automation Runbook
 
-> **Note (this repo):** this runbook is shared with the [FlyGACA-app](https://github.com/FlyGACA/FlyGACA-app) monorepo, where the content
-> bundler (`scripts/build-ios-content.mjs`), the pack catalog (`src/lib/prepCatalog.ts`)
-> and the icon generator (`npm run ios:icons`) live. In this repo the per-app `Content/`
-> folders and icons are committed snapshots — refresh them with `bash scripts/sync-content.sh`
-> pointed at a FlyGACA-app clone. Everything else applies here unchanged.
+> **Note:** this runbook is owned here — the monorepo's `apple/` mirror was retired 2026-08, so
+> this is the real source, not a synced copy. Only the CONTENT generators
+> (`build-ios-content.mjs`, `npm run ios:icons`) + the corpus + `src/lib/prepCatalog.ts` live in
+> the [FlyGACA-app](https://github.com/FlyGACA/FlyGACA-app) monorepo; the per-app `Content/`
+> folders and icons are committed snapshots here, refreshed with `bash scripts/sync-content.sh`
+> pointed at a FlyGACA-app clone. Everything else is native to this repo.
 
 
 ## Overview

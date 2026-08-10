@@ -136,9 +136,9 @@ minimize sibling collision:
   is Arabic/RTL **captions over the real English screens**, never a fabricated Arabic UI.
   *Update 2026-08-05:* FlyGACAKit is now localized (EN + AR UI chrome — see the session log), so
   a future re-render can show a genuinely Arabic UI; the *current committed* ar-SA set stays
-  captions-over-English until that re-render ships. Still open: re-syncing the monorepo's
-  `apple/Scripts/` copy (this change is in the sync-owned tree). Original audit, retained as
-  the spec:
+  captions-over-English until that re-render ships. (The old "re-sync the monorepo's
+  `apple/Scripts/` copy" note is moot — that mirror was retired 2026-08; `apple/Scripts/` is owned
+  here now.) Original audit, retained as the spec:
   by the Mac-free `apple/Scripts/html-render/` pipeline from real bundled content — portrait
   via `npm run ios:screenshots`). *Gap:* audit each set so the first three shots carry the
   value proposition unaided — offline everything, bilingual, real exam sim with analytics —

@@ -33,20 +33,25 @@ changes; both are denser and more authoritative than this file for anything Swif
 | `FlyGACA/ELPT` · `AIP` (shipping) · `PPL` · `CPL` · `IR` · `ATPL` (paused) | Per-app **App Store metadata repos** — store listing copy (EN/AR), screenshots, per-app roadmap. They hold **no source code**; they reference this repo's `apple/Apps/<Module>/` as the code home. If a task is "update the App Store description/screenshots for X", it belongs in that module's own repo, not here. |
 | `FlyGACA/Office` | Business/governance/legal/finance docs |
 
-`FlyGACA-app`'s own `apple/` folder is a legacy copy of this same tree; the monorepo README
-says it is being retired in favor of this repo. Until then, content flows **monorepo → here**
-one-way (`scripts/sync-content.sh`), never the reverse.
+**This repo is the sole home of the native app code.** The monorepo used to carry a duplicate
+`apple/` mirror; it was **retired 2026-08** (`FlyGACA-app` no longer has an `apple/` tree). The
+split: this repo owns all Swift + Xcode config (`FlyGACAKit`, `project.yml`, `apple/Scripts`,
+`ARCHITECTURE.md`, `README.md`) and hand-edits them here; the monorepo stays the **source of
+truth for content only** — its `build-ios-content.mjs` / `gen-app-icons.mjs` generate each app's
+`Content/` + `Assets.xcassets` and `scripts/sync-content.sh` pulls them **monorepo → here**, never
+the reverse. There is no longer an `--all` mode syncing Swift code (there is nothing upstream to
+sync it from).
 
 ### The repo docs
 
-Repo-native docs live at the root and in `docs/` — the two places `sync-content.sh` never
-touches: `CAUSE.md` (mission + the seven principles), `ROADMAP.md` (open work in this repo —
+Every doc in this repo is now natively owned here (nothing is sync-overwritten anymore):
+`CAUSE.md` (mission + the seven principles), `ROADMAP.md` (open work in this repo —
 single source of truth), `MIGRATION.md` (the extraction history), `SEO-PLAN.md` (App Store
 search / ASO for the shipping apps), `THE-BOOK-OF-FLY-GACA.md` (the whole-family reference — all
 ten repos; descriptive, dated, each repo's own docs govern), `CONTRIBUTING.md`,
-`docs/RUNBOOK-ios-release.md` (the end-to-end release path from this repo's POV, incl. the
-reconciliation map over the monorepo-authored runbooks), and `docs/README.md` (the index of
-which doc is repo-native vs monorepo-authored vs sync-overwritten).
+`docs/RUNBOOK-ios-release.md` (the end-to-end release path), the rest of the `docs/RUNBOOK-ios-*`
+set, and `docs/README.md` (the doc index). These originated as copies of the monorepo's versions,
+but after the `apple/` mirror's retirement (2026-08) they are the real source, edited here.
 
 ## Architecture (see `apple/ARCHITECTURE.md` for full detail)
 
@@ -98,41 +103,44 @@ These semantics are shared with the web app (`FlyGACA-app`); users move between 
   `Question.id`, while
   retaining `index`/`legacyKey` for progress parity across content refreshes.
 
-User state lives in SwiftData, App Group `group.com.flygaca.study` (shared by every app in
-the family on-device, so streaks/SRS carry across apps). `StudyStore` (a `@ModelActor`) is
-the single write path; SwiftData model objects never escape the actor (they aren't `Sendable`).
+User state lives in SwiftData, in a shared App Group (shared by every app in the family on-device,
+so streaks/SRS carry across apps). `StudyStore` (a `@ModelActor`) is the single write path;
+SwiftData model objects never escape the actor (they aren't `Sendable`).
 
-## Content: committed snapshots, not generated here
+> ⚠️ **App Group id mismatch — pre-existing, unresolved.** The shipping code uses
+> **`group.com.FlyGACA`** (`apple/Apps/Shared/App.entitlements` and `App-Shared.xcconfig` agree);
+> this file's prose historically said `group.com.flygaca.study`. They disagree and only one can be
+> right — the entitlements value is what actually ships. Changing it is a signing + on-device
+> data-continuity decision (it re-keys the shared container), so it's left untouched here pending
+> a deliberate call. If `group.com.flygaca.study` is the intended id, fix the entitlements +
+> xcconfig (and the App Group in the Apple portal); otherwise fix any doc that still says it.
+
+## Content: committed snapshots, generated in the monorepo
 
 Each app ships `apple/Apps/<App>/Content/` (`module.json`, `quiz.json`, plus
 `groundschool.json` / `paths-index.json` — no current module ships those two; the loaders
 treat them as optional). Snapshots can lag the web packs as the corpus moves — a
 `sync-content.sh` run closes any gap (last full sync 2026-08-05: ELPT and AIP in step with the
 monorepo catalog; ELPT additionally bundles a scenario bank in `quiz-extra.json`).
-**This repo does not
-contain the content bundler** (`scripts/build-ios-content.mjs`) — that script, the
-regulatory corpus (`public/data/`), and the pack catalog (`src/lib/prepCatalog.ts`) all live
-in the `FlyGACA-app` monorepo. Here, `Content/` folders (and the per-app icons, generated by
-the monorepo's `npm run ios:icons`) are **committed snapshots**, refreshed by:
+**This repo owns its Swift code but NOT the content bundler** — `build-ios-content.mjs` /
+`gen-app-icons.mjs`, the regulatory corpus (`public/data/`), and the pack catalog
+(`src/lib/prepCatalog.ts`) all live in the `FlyGACA-app` monorepo, which stays the source of
+truth for content. Here, `Content/` folders and the per-app icons are **committed snapshots**,
+refreshed by:
 
 ```bash
 # with a FlyGACA-app clone next to this repo (default ../FlyGACA-app), or pass its path
-bash scripts/sync-content.sh [path-to-FlyGACA-app] [--all]
+bash scripts/sync-content.sh [path-to-FlyGACA-app]
 ```
 
-Default mode syncs each app's `Content/` + `Assets.xcassets` folders only. `--all` additionally
-syncs `FlyGACAKit/{Sources,Tests,Package.swift}`, `Apps/Shared/`, each app's `.xcconfig`, `AppleTests/`,
-`apple/Scripts/`, `project.yml`, `ARCHITECTURE.md` and `apple/README.md` — i.e. the whole
-`apple/` tree tracking the monorepo verbatim. Always review the diff before committing a sync.
+That shells into the monorepo and runs its generators with `--out apple/Apps` so they write
+`Content/` + `Assets.xcassets` **straight into this repo** — no intermediate copy, no `--all`
+mode. (Before the mirror's retirement, `--all` also copied the Swift code from the monorepo's
+`apple/` tree; that tree is gone and this repo hand-owns its Swift now, so the mode was removed.)
+Always review the diff before committing a sync.
 
-Because the bundler is absent here, `scripts/native/xcodebuild-wrapper.sh` falls back to
-building from the committed `Content/` snapshot when `scripts/build-ios-content.mjs` isn't
-found (it only exists in the monorepo checkout) — this is expected, not a bug.
-
-**Note:** `apple/README.md` and the `docs/RUNBOOK-ios-*.md` files are themselves synced
-verbatim from the monorepo and are written from *its* point of view — they reference
-`node scripts/build-ios-content.mjs` and `npm run ios:icons` as if present here. They are
-not; use `scripts/sync-content.sh` instead when those docs say to regenerate content/icons.
+`scripts/native/xcodebuild-wrapper.sh` builds from the committed `Content/` snapshot (the bundler
+isn't present here — it lives in the monorepo) — this is expected, not a bug.
 
 ## Build & test commands (verified against `package.json`)
 
@@ -262,16 +270,15 @@ These are one-time human/console setup, not something to script from first princ
 - **XcodeGen emits the Xcode 16 project format** (`objectVersion 77`) — open/build with Xcode
   16+ only; CI pins `macos-15` runners for this reason. (`apple/README.md:1` still says
   "Xcode 15+" — it's wrong; `apple/project.yml`'s own comment is authoritative.)
-- **`docs/RUNBOOK-ios-*.md` and `apple/README.md` are monorepo-authored** (three of the four
-  runbooks carry a "Note (this repo)" banner; `RUNBOOK-ios-signing-CHECKLIST.md` and
-  `apple/README.md` don't — treat them as monorepo-authored anyway) and describe tools this
-  repo doesn't ship (`build-ios-content.mjs`, `npm run ios:icons`). When they conflict with
-  what's actually runnable here, trust `scripts/sync-content.sh`, this file, and the
-  repo-native `docs/RUNBOOK-ios-release.md` (its reconciliation map lists every known
-  conflict; `docs/README.md` indexes which doc is which). The fourth
-  runbook, `docs/RUNBOOK-ios-xcodebuild.md`, is the build/CI/troubleshooting reference (incl.
-  "Adding a New iOS App") — but its Phase Roadmap numbers phases differently from
-  `ARCHITECTURE.md` §5: its "Phase 4 ✅" is the signing/TestFlight slice, **not** PlatformLive.
+- **`docs/RUNBOOK-ios-*.md`, `apple/ARCHITECTURE.md` and `apple/README.md` are now natively
+  owned here** (they began as copies of the monorepo's, but the `apple/` mirror was retired
+  2026-08, so this is the real source — edit them here). A couple still describe the *content*
+  bundler (`build-ios-content.mjs`, `npm run ios:icons`) as if present in this repo; it isn't —
+  it lives in the monorepo and `scripts/sync-content.sh` invokes it. `docs/RUNBOOK-ios-release.md`
+  is the release path; `docs/README.md` indexes the set. `docs/RUNBOOK-ios-xcodebuild.md` is the
+  build/CI/troubleshooting reference (incl. "Adding a New iOS App") — but its Phase Roadmap
+  numbers phases differently from `ARCHITECTURE.md` §5: its "Phase 4 ✅" is the signing/TestFlight
+  slice, **not** PlatformLive.
 - **Tests span 4 targets / 10 files** — `CoreModelsTests`, `StudyEnginesTests` (Leitner,
   Readiness, Sampler, Session, Streak), `ContentKitTests`, `PersistenceKitTests` — not just
   the SRS parity vectors.
