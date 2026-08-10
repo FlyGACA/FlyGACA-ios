@@ -66,8 +66,9 @@ FlyGACA-app  public/data/  +  src/lib/prepCatalog.ts     ← THE source of truth
                                  the iOS apps (fully offline)
 ```
 
-Nothing ever flows backward. This repo has **no bundler and no corpus** by design; the
-monorepo's own `apple/` tree is a legacy copy of this one, pending retirement
+Nothing ever flows backward. This repo has **no bundler and no corpus** by design; the monorepo's
+own `apple/` mirror was **retired 2026-08**, so this repo is now the sole home of the app code —
+only generated `Content/` + icons still flow monorepo → here
 ([`MIGRATION.md`](./MIGRATION.md)). The metadata repos flow the other way entirely — copy
 and screenshots out to App Store Connect — and the Office stands apart, feeding the product
 repos only its canonical entity facts.
@@ -324,7 +325,7 @@ repos.)*
 | Understand *why* any of this exists | [`CAUSE.md`](./CAUSE.md) |
 | See what this repo does next / its history | [`ROADMAP.md`](./ROADMAP.md) / [`MIGRATION.md`](./MIGRATION.md) |
 | Build, test, ship an app from here | [`README.md`](./README.md) → [`docs/RUNBOOK-ios-release.md`](./docs/RUNBOOK-ios-release.md) (and [`docs/README.md`](./docs/README.md) for which runbook to trust) |
-| Understand the iOS architecture deeply | `apple/ARCHITECTURE.md` (monorepo-synced) |
+| Understand the iOS architecture deeply | `apple/ARCHITECTURE.md` (owned in this repo) |
 | Work on store listings / ASO | [`SEO-PLAN.md`](./SEO-PLAN.md), then the metadata repos |
 | Touch the corpus, packs, web app, or backend | the monorepo — [FlyGACA/FlyGACA-app](https://github.com/FlyGACA/FlyGACA-app) (`CLAUDE.md`, `ROADMAP.md`, `docs/`) |
 | Touch the AI instructor | [FlyGACA/Captain-Adel](https://github.com/FlyGACA/Captain-Adel) (`CLAUDE.md`, `evals/`) |

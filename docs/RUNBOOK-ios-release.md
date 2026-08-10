@@ -1,11 +1,11 @@
 # RUNBOOK — iOS release, end to end (ay2m/FlyGACA)
 
-The release path **from this repo's point of view**: refresh content → generate → test → build →
-sign → TestFlight. The four sibling runbooks in this folder are monorepo-authored snapshots
-(see [`README.md`](./README.md)); they hold the deep procedures and are linked from each step —
-but where they conflict with what is actually runnable here, **this file and the root
-`CLAUDE.md` win** (the [Reconciliation map](#reconciliation-map) at the bottom lists every known
-conflict).
+The release path, end to end: refresh content → generate → test → build → sign → TestFlight. The
+four sibling runbooks in this folder hold the deep procedures and are linked from each step. They
+began as copies of the monorepo's versions, but the `apple/` mirror was retired 2026-08 so they
+are **owned here now** — a couple still say the content generators live in this repo (they live in
+the monorepo; `scripts/sync-content.sh` invokes them). The [Reconciliation map](#reconciliation-map)
+at the bottom lists the remaining wording quirks.
 
 ## What lives where
 
@@ -42,14 +42,13 @@ conflict).
 ```bash
 # with a FlyGACA-app clone next to this repo (default ../FlyGACA-app), or pass its path
 bash scripts/sync-content.sh [path-to-FlyGACA-app]          # Content/ + Assets.xcassets only
-bash scripts/sync-content.sh [path-to-FlyGACA-app] --all    # + the whole synced apple/ tree
 ```
 
-- Default mode **deletes and replaces** `apple/Apps/*/Content` and `apple/Apps/*/Assets.xcassets`.
-- `--all` additionally deletes and replaces `apple/FlyGACAKit/{Sources,Tests}`,
-  `apple/Apps/Shared/`, each app's `.xcconfig`, `apple/AppleTests/`, `apple/Scripts/`, and
-  overwrites `apple/project.yml`, `apple/FlyGACAKit/Package.swift`, `apple/ARCHITECTURE.md`
-  and `apple/README.md`. **Always review the diff before committing a sync.**
+- It shells into the monorepo and runs its content + icon generators with `--out apple/Apps`, so
+  they write `apple/Apps/*/Content` and `apple/Apps/*/Assets.xcassets` **straight into this repo**.
+  Nothing else is touched — this repo owns its Swift code, `project.yml`, `apple/Scripts` and the
+  `apple/` docs natively. (The old `--all` mode that copied the whole `apple/` tree is gone; the
+  monorepo's mirror was retired 2026-08.) **Review the diff before committing a sync.**
 - If you skip this step, builds still work: the wrapper detects the absent bundler and logs
   "Content bundler not in this repo — building with the committed Content/ snapshot". Expected,
   not a bug.
@@ -134,15 +133,15 @@ removal commit as well ([`../ROADMAP.md`](../ROADMAP.md)).
 
 ## Reconciliation map
 
-Where a monorepo-authored doc says X, in this repo do Y:
+These docs are owned here now, but a few carry wording from when they were monorepo copies. Where
+one says X, the truth in this repo is Y — fix in place as you touch them:
 
-| The synced doc says | Here, the truth is |
+| The doc says | Here, the truth is |
 | --- | --- |
-| `node scripts/build-ios-content.mjs` / `npm run ios:icons` regenerate content/icons (`apple/README.md`, several runbooks) | Neither exists here — `bash scripts/sync-content.sh` is the only refresh path (step 1) |
+| `node scripts/build-ios-content.mjs` / `npm run ios:icons` regenerate content/icons (`apple/README.md`, a couple runbooks) | Those generators live in the **monorepo**, not here — `bash scripts/sync-content.sh` (which invokes them via `--out`) is the refresh path (step 1) |
 | `apple/README.md`: "Mac + Xcode 15+" | Xcode **16+** — `apple/project.yml`'s objectVersion-77 comment is authoritative |
 | `RUNBOOK-ios-xcodebuild.md` "Phase Roadmap": "Phase 4 ✅" | That's its own numbering for the signing/TestFlight slice — **not** `apple/ARCHITECTURE.md` §5's Phase 4 (PlatformLive, unbuilt) |
-| `npm run ios:info` help text advertises `npm run ios:icons` | Stale — the script only exists in the monorepo |
-| `AppleTests/ScreenshotTests.swift` implies a runnable XCUITest flow (and cites a `SCREENSHOTS.md`) | Not wired: `apple/project.yml` has `testTargets: []`; the cited `SCREENSHOTS.md` doesn't exist in this repo |
+| `AppleTests/ScreenshotTests.swift` implies a runnable XCUITest flow | Not wired: `apple/project.yml` has `testTargets: []` |
 | `apple/ARCHITECTURE.md` §3 lists three test directories | Four exist — `PersistenceKitTests` too (4 targets / 10 files) |
 
 ## Troubleshooting

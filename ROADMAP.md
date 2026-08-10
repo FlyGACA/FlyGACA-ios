@@ -23,8 +23,8 @@ there).
 - Shipped items stay visible as ~~strikethrough~~ + **Done.** with a date, rather than being
   deleted.
 - Precedence, so this file never becomes a second source of truth: `apple/ARCHITECTURE.md` §5
-  owns the engineering *phase design* (Phases 1–4; it is monorepo-synced, so it is never
-  restated here — Phase 4, PlatformLive, is the big one below). `docs/RUNBOOK-ios-xcodebuild.md`
+  owns the engineering *phase design* (Phases 1–4, owned here — not restated in this file; Phase
+  4, PlatformLive, is the big one below). `docs/RUNBOOK-ios-xcodebuild.md`
   carries its own differently numbered "Phase Roadmap" — a known divergent snapshot; where they
   disagree, `ARCHITECTURE.md` wins. The family lineup and wave plan stay canonical in the
   monorepo's `docs/APPS-FAMILY-ROADMAP.md`; each app's store-listing milestones live in its own
@@ -61,8 +61,8 @@ there).
 
 - **[platform] Wire `AppleTests/ScreenshotTests.swift` into the project.** The shared target
   template in `apple/project.yml` has `testTargets: []`, so the XCUITest snapshot flow can't run
-  via `xcodebuild test` today. Wiring it is a `project.yml` change — coordinate with the
-  monorepo, since `--all` syncs overwrite `project.yml`.
+  via `xcodebuild test` today. Wiring it is a `project.yml` change — and since the monorepo mirror
+  is retired, `project.yml` is now owned here, so just make the edit.
 - **[product] Ship the store listings.** The listing copy, keywords and screenshots live
   in the ELPT and AIP metadata repos and ship from there (fastlane `deliver` layout); tracked here only
   as the family gate — an app without its listing can't leave TestFlight. Strategy:
@@ -91,9 +91,11 @@ there).
 - **[product] Wave 3 modules.** FOI (`foi`), AGI (`agi`), Dispatcher, AME and the rest — each
   enters the monorepo's `prepCatalog.ts` first, then becomes a `Content/` folder + a small
   xcconfig + a 3-line `apple/project.yml` target here. A module is data, not code.
-- **[platform] Retire the monorepo's legacy `apple/` copy.** Ends the era of two trees; after
-  it, `--all` syncs stop meaning "track the monorepo verbatim" and the synced `apple/` docs
-  become editable here. Cross-repo decision — coordinate, don't improvise.
+- **[platform] ~~Retire the monorepo's legacy `apple/` copy.~~ Done 2026-08-10.** The era of two
+  trees is over: `FlyGACA-app` deleted its `apple/` mirror, this repo is the sole home of the app
+  code, and `sync-content.sh` lost its `--all` mode. The monorepo keeps only the content
+  generators (`build-ios-content.mjs` / `gen-app-icons.mjs`), which now write straight into this
+  repo's `apple/Apps` via `--out`. All `apple/` docs and Swift/config are hand-owned here now.
 - **[platform] Consider path filters for `ios.yml`.** Today a docs-only PR fires the full
   macOS build matrix. Cheap to add once the workflow is otherwise stable; not worth a CI edit
   before the signing lane is proven.
@@ -105,10 +107,10 @@ there).
 
 - `cd apple/FlyGACAKit && swift test` green — run it directly; `npm run ios:test` exits 0 even
   when tests fail.
-- Nothing hand-edited inside the sync-owned zones (`apple/Apps/*/Content`, `Assets.xcassets`,
-  and under `--all`: `FlyGACAKit/{Sources,Tests}`, `Apps/Shared`, the per-app xcconfigs,
-  `AppleTests`, `apple/Scripts`, `project.yml`, `apple/ARCHITECTURE.md`, `apple/README.md`) —
-  those changes belong in the monorepo first.
+- Only `apple/Apps/*/Content` + `Assets.xcassets` are generated (in the monorepo, via
+  `sync-content.sh`) — don't hand-edit those; a content change belongs in the monorepo's corpus /
+  `prepCatalog.ts`. **Everything else under `apple/` (FlyGACAKit, `project.yml`, `Apps/Shared`,
+  the xcconfigs, `AppleTests`, `apple/Scripts`, the `apple/` docs) is owned here — edit it here.**
 - The disclaimer is never reworded, anywhere. Copy it verbatim from `README.md` if a new
   surface needs it.
 - `CLAUDE.md` stays true: if a change makes it stale, the same PR updates it.

@@ -29,20 +29,17 @@ changing both platforms together.
 
 ## The sync boundary — where your change belongs
 
-Content and the shared Swift tree flow **one way**: monorepo → here, via
-`bash scripts/sync-content.sh`. A `--all` sync deletes-and-replaces
-`apple/FlyGACAKit/{Sources,Tests}`, `apple/Apps/Shared/`, the per-app xcconfigs,
-`apple/AppleTests/`, `apple/Scripts/`, and overwrites `apple/project.yml`,
-`apple/ARCHITECTURE.md` and `apple/README.md`; the default mode replaces every
-`apple/Apps/*/Content` and `Assets.xcassets`. Therefore:
+**This repo owns its Swift code, Xcode config and all its docs.** Only each app's `Content/` +
+`Assets.xcassets` come from the monorepo, generated there and written straight into this repo by
+`bash scripts/sync-content.sh` (the monorepo's `apple/` mirror was retired 2026-08; there is no
+`--all` mode). Therefore:
 
-- **Kit/Swift, shared shell, content, icons, the synced apple/ docs** → change in the
-  [monorepo](https://github.com/FlyGACA/FlyGACA-app) first, then sync here (review the diff
-  before committing it).
+- **Kit/Swift, shared shell, `project.yml`, `apple/Scripts`, the `apple/` docs** → change **here**.
+- **Content (quiz banks, module manifests) and icons** → change the corpus / `prepCatalog.ts` in
+  the [monorepo](https://github.com/FlyGACA/FlyGACA-app), then `sync-content.sh` here (review the
+  diff before committing). Don't hand-edit `Content/` or `Assets.xcassets` — a sync overwrites them.
 - **Store listing copy, keywords, screenshots** → the app's own metadata repo
   (`FlyGACA/ELPT`, `FlyGACA/AIP`), not here.
-- **Repo-native docs, scripts under `scripts/`, CI, root files** → here. New docs go at the
-  repo root or `docs/` (sync never touches them — see [`docs/README.md`](./docs/README.md)).
 
 ## Branches, PRs, CI
 
