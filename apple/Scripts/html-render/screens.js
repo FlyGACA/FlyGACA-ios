@@ -8,7 +8,7 @@
 // and its display name — an honest mirror of the shipping app. `buildScreens(app,
 // lang)` loads `apple/Apps/<app.dir>/Content` and returns the screen set for that
 // module; ground-school screens are included only when the module ships
-// groundschool.json (today just PPL).
+// groundschool.json (no current module ships it — the screen stays dormant).
 //
 // Localization: `lang` ('en' | 'ar') localizes the UI *chrome* to match the
 // shipping bilingual FlyGACAKit UI (Resources/{en,ar}.lproj/Localizable.strings) —
