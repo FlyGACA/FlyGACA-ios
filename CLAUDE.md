@@ -258,14 +258,6 @@ These are one-time human/console setup, not something to script from first princ
 
 ## Conventions & gotchas worth knowing before editing
 
-- **`.claude/` is Claude Code tooling, not app code.** It holds the vendored MIT `diagram-design`
-  skill — editorial diagrams as self-contained HTML, skinned to the Falcon palette from
-  `FeatureUI/Theme.swift` — plus its `/export-diagram`, `/import-drawio`, `/import-mermaid`
-  commands; provenance and the local skin delta are in `.claude/skills/THIRD_PARTY_NOTICES.md`.
-  Its output is documentation (for `apple/ARCHITECTURE.md`, the `docs/RUNBOOK-ios-*` set) and
-  enters no app target, so `FlyGACAKit` keeps its zero external dependencies and `swift build` /
-  `swift test` are untouched. `Theme.swift` stays the authority on colour — if the diagram style
-  guide ever disagrees with it, fix the style guide.
 - **PlatformLive doesn't exist yet** (Phase 4 of the roadmap in `ARCHITECTURE.md` §5). Until
   it lands, the apps are fully offline by design and `AppServices` mocks (`Mocks.swift`) *are*
   the shipping product — do not add Firebase/RevenueCat imports anywhere else.
