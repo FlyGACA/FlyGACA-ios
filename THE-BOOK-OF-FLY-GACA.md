@@ -171,7 +171,7 @@ platforms diverge:
 | **Streak** | same day unchanged; consecutive day +1; gap resets | web `nextStreak` ↔ `Streaks` |
 | **Question identity** | the web has no stable ids (progress keyed by array index); iOS mints `sha256("bankID|prompt")` → first 16 hex chars at decode time, keeping `index`/`legacyKey` for progress parity across refreshes | `CoreModels` |
 
-User state on iOS lives in SwiftData inside the App Group `group.com.flygaca.study`, so
+User state on iOS lives in SwiftData inside the App Group `group.com.FlyGACA`, so
 streaks, SRS and attempts are one story across every app on a device; `StudyStore` (a
 `@ModelActor`) is the single write path. When PlatformLive lands, progress uploads to the same
 Firestore document the web writes (`users/{uid}/progress/summary`) — one student, one record.
@@ -267,7 +267,7 @@ live in each repo's `CLAUDE.md`.*
   CPL/IR/ATPL; with the licence modules paused the live cohort is ELPT/AIP, and the wave
   labels are now history rather than a plan.
 - **Leitner / SRS** — the spaced-repetition system (Book IV); "mastered" means box ≥ 3.
-- **App Group** — `group.com.flygaca.study`: the shared on-device container that makes the
+- **App Group** — `group.com.FlyGACA`: the shared on-device container that makes the
   family feel like one product.
 - **PlatformLive** — the not-yet-built iOS target where Firebase/RevenueCat will live;
   until then the apps are fully offline and the mocks are the product.

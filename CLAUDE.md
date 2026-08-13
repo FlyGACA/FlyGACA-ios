@@ -107,13 +107,20 @@ User state lives in SwiftData, in a shared App Group (shared by every app in the
 so streaks/SRS carry across apps). `StudyStore` (a `@ModelActor`) is the single write path;
 SwiftData model objects never escape the actor (they aren't `Sendable`).
 
-> ⚠️ **App Group id mismatch — pre-existing, unresolved.** The shipping code uses
-> **`group.com.FlyGACA`** (`apple/Apps/Shared/App.entitlements` and `App-Shared.xcconfig` agree);
-> this file's prose historically said `group.com.flygaca.study`. They disagree and only one can be
-> right — the entitlements value is what actually ships. Changing it is a signing + on-device
-> data-continuity decision (it re-keys the shared container), so it's left untouched here pending
-> a deliberate call. If `group.com.flygaca.study` is the intended id, fix the entitlements +
-> xcconfig (and the App Group in the Apple portal); otherwise fix any doc that still says it.
+> ⚠️ **App Group id — docs now match the code; the Apple portal still needs checking.** The id is
+> **`group.com.FlyGACA`**, and all three places that decide it agree:
+> `apple/Apps/Shared/App.entitlements`, `App-Shared.xcconfig`'s `FG_APP_GROUP`, and
+> `PersistenceKit/Persistence.swift`'s `appGroupID`. Eight docs used to say
+> `group.com.flygaca.study` instead (this file, `CAUSE.md`, `THE-BOOK-OF-FLY-GACA.md`,
+> `apple/README.md`, `apple/ARCHITECTURE.md`, and three runbooks) — all corrected to the code's
+> value, since the code is what ships and no code change was made.
+>
+> **What is still open is external:** `docs/PORTAL-RUNSHEET-wave1.md` previously recorded
+> `group.com.flygaca.study` as already registered in the Apple Developer portal. If that is true,
+> a profile built from it won't grant what the app requests and the signed build fails — App
+> Groups can't be renamed, so `group.com.FlyGACA` must be registered and reassigned on both App
+> IDs. Nothing has reached TestFlight, so there is no on-device data to migrate: it is a
+> portal-only fix. Don't "resolve" this by editing the entitlements back.
 
 ## Content: committed snapshots, generated in the monorepo
 
@@ -157,8 +164,7 @@ npm run ios:build:release:<app> # unsigned release archive (.xcarchive) + dSYM e
 npm run ios:build:release:all
 npm run ios:clean               # rm -rf FlyGACAKit/.build + Xcode DerivedData for FlyGACA (does NOT
                                 #   touch apple/.build/, where archives/dSYMs/IPAs land)
-npm run ios:info                # print environment (its "available commands" list still advertises
-                                #   npm run ios:icons, which only exists in the monorepo)
+npm run ios:info                # print environment + the available commands
 npm run ios:screenshots         # apple/Scripts/html-render/render.js — Mac-free mockups, PORTRAIT only
                                 #   (landscape: node apple/Scripts/html-render/render-landscape.js)
 npm run firebase:register       # scripts/native/firebase-register-apps.sh — registers the Firebase iOS apps
@@ -233,8 +239,11 @@ These are one-time human/console setup, not something to script from first princ
   Apple's provider/portal). **If sign-in ever ships, grouping the App IDs under one primary is
   load-bearing** — without it, one Apple user signing into two family apps gets two different
   Apple-issued identifiers and two separate Firebase accounts, breaking the shared-account
-  model the App Group is built for. The portal docs still name `com.flygaca.ppl` as that
-  primary; it belongs to a paused module, so the primary must become `com.flygaca.elpt`.
+  model the App Group is built for. That primary is **`com.flygaca.elpt`** — every doc now says
+  so (`RUNBOOK-ios-firebase.md` §4a, `PORTAL-RUNSHEET-wave1.md` §1.2,
+  `RUNBOOK-ios-release.md`), and the old `com.flygaca.ppl` designation is recorded as moot: the
+  App IDs never carried the capability, so no Apple user identifier was issued under it. Only the
+  portal work is outstanding.
   `GoogleService-Info.plist`
   files are gitignored (`apple/Apps/*/GoogleService-Info.plist`) but not secret — they ship
   inside the app binary; access is enforced by Firestore rules + App Check, not file secrecy.
@@ -253,8 +262,8 @@ These are one-time human/console setup, not something to script from first princ
     captures (pixel-exact, needs a Mac + Xcode). `AppleTests/ScreenshotTests.swift` documents
     the intended `XCUITest` snapshot flow but is **not yet wired into `apple/project.yml`**
     (`testTargets: []` on the shared `FlyGACAApp` target template, inherited by every app) — it
-    can't run via `xcodebuild test` today. (Its header cites a `SCREENSHOTS.md` that doesn't
-    exist in this repo — dangling pointer, don't hunt for it.)
+    can't run via `xcodebuild test` today. (Its header used to point at a `SCREENSHOTS.md` that
+    does not exist here; it now points at the two pipelines that do work.)
 
 ## Conventions & gotchas worth knowing before editing
 
@@ -268,8 +277,8 @@ These are one-time human/console setup, not something to script from first princ
   the monorepo's `prepCatalog.ts` → `Content/` synced here → a 3-line `apple/project.yml`
   target + a small `.xcconfig` → `npm run ios:generate`. AIP is the worked example.
 - **XcodeGen emits the Xcode 16 project format** (`objectVersion 77`) — open/build with Xcode
-  16+ only; CI pins `macos-15` runners for this reason. (`apple/README.md:1` still says
-  "Xcode 15+" — it's wrong; `apple/project.yml`'s own comment is authoritative.)
+  16+ only; CI pins `macos-15` runners for this reason. `apple/project.yml`'s own comment is
+  authoritative, and `apple/README.md:1` now agrees (it used to say "Xcode 15+").
 - **`docs/RUNBOOK-ios-*.md`, `apple/ARCHITECTURE.md` and `apple/README.md` are now natively
   owned here** (they began as copies of the monorepo's, but the `apple/` mirror was retired
   2026-08, so this is the real source — edit them here). A couple still describe the *content*

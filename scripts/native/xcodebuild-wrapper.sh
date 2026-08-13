@@ -84,7 +84,7 @@ print_info() {
   echo ""
   echo "Available commands:"
   echo "  npm run ios:generate               # Generate Xcode project (needs xcodegen)"
-  echo "  npm run ios:icons                  # Regenerate the per-app App Store icons"
+  echo "  npm run sync:content               # Pull Content/ + icons from the FlyGACA-app monorepo"
   echo "  npm run ios:build:elpt             # Debug build ELPT app (also: aip)"
   echo "  npm run ios:build:all              # Debug builds every app"
   echo "  npm run ios:build:release:elpt     # Release build ELPT (unsigned archive)"

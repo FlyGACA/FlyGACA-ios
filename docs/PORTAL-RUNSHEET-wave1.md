@@ -44,15 +44,27 @@ as you click) · **🔵 DECIDE** at the portal.
 All under **Certificates, Identifiers & Profiles**.
 
 **1.1 App Group** — Identifiers → App Groups → register:
-`group.com.flygaca.study` ✅ (this is why wildcard App IDs are impossible — wildcards can't
+`group.com.FlyGACA` (this is why wildcard App IDs are impossible — wildcards can't
 carry the App Groups capability).
+
+> [!IMPORTANT]
+> **Verify this one against the portal before signing.** This line previously read
+> `group.com.flygaca.study` with a ✅, i.e. it claimed a group by *that* name was already
+> registered — but the shipping code asks for `group.com.FlyGACA` in all three places that
+> decide it (`apple/Apps/Shared/App.entitlements`, `App-Shared.xcconfig`'s `FG_APP_GROUP`, and
+> `PersistenceKit/Persistence.swift`'s `appGroupID`). Every doc has been aligned to the code,
+> because the code is what ships. If the portal really holds `group.com.flygaca.study`, then a
+> profile generated from it will not grant what the app requests and the signed build fails —
+> App Groups cannot be renamed, so register `group.com.FlyGACA` and reassign it on both App IDs.
+> Nothing has shipped to TestFlight yet, so there is no on-device data to migrate; this is a
+> portal-only fix. The ✅ was dropped from this line until someone confirms it in the portal.
 
 **1.2 App IDs** — three explicit App IDs, each with **both** capabilities:
 
 | App ID | Capabilities | Sign in with Apple setting |
 | --- | --- | --- |
-| ⏸ `com.flygaca.ppl` | App Groups → `group.com.flygaca.study` · Sign In with Apple | paused module — was the primary; see the banner |
-| `com.flygaca.elpt` ✅ | App Groups → `group.com.flygaca.study` | **Enable as a primary App ID** (replaces PPL) |
+| ⏸ `com.flygaca.ppl` | App Groups → `group.com.FlyGACA` · Sign In with Apple | paused module — was the primary; see the banner |
+| `com.flygaca.elpt` ✅ | App Groups → `group.com.FlyGACA` | **Enable as a primary App ID** (replaces PPL) |
 | `com.flygaca.aip` ✅ | same | **Group with an existing primary** → `com.flygaca.elpt` |
 
 Grouping is load-bearing: Apple issues its user identifier per App-ID *group*, so ungrouped

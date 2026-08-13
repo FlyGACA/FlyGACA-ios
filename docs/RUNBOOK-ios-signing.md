@@ -33,16 +33,16 @@ push to main
 
 Signing is **manual** (no Xcode-managed signing in CI): an Apple Distribution
 certificate + one App Store provisioning profile per app. The App Group
-(`group.com.flygaca.study`) rules out wildcard profiles — wildcard App IDs cannot
+(`group.com.FlyGACA`) rules out wildcard profiles — wildcard App IDs cannot
 carry the App Groups capability.
 
 ## Step 1 — Apple Developer portal
 
 At [developer.apple.com](https://developer.apple.com/account) → Certificates, Identifiers & Profiles:
 
-1. **App Group**: Identifiers → App Groups → register `group.com.flygaca.study`.
+1. **App Group**: Identifiers → App Groups → register `group.com.FlyGACA`.
 2. **App IDs**: register two explicit App IDs, each with the **App Groups**
-   capability enabled and `group.com.flygaca.study` assigned:
+   capability enabled and `group.com.FlyGACA` assigned:
    - `com.flygaca.elpt`
    - `com.flygaca.aip`
 3. **Distribution certificate**: Certificates → create an **Apple Distribution**
