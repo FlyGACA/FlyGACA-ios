@@ -116,7 +116,7 @@ mid-exam.
 ### User state (SwiftData, App Group container)
 
 Flat models, nested payloads as JSON `Data` blobs (keeps lightweight migration
-viable); all in `group.com.flygaca.study` so streaks/SRS/attempts are shared by
+viable); all in `group.com.FlyGACA` so streaks/SRS/attempts are shared by
 every app in the family on the device:
 
 | Model | Keys | Holds |

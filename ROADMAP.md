@@ -33,12 +33,15 @@ there).
 
 ## Now — light the path to TestFlight
 
-- **[platform] Pick the Sign-in-with-Apple primary App ID.** The capability was removed from
-  `apple/Apps/Shared/App.entitlements` in 2026-08 and the registered App IDs don't carry it, so
-  nothing is blocked today. But the portal docs still name `com.flygaca.ppl` as the primary that
-  ELPT and AIP group under — a paused module. When sign-in ships, make **`com.flygaca.elpt`**
-  the primary and group AIP under it; re-adding the capability means regenerating the profiles.
-  `docs/RUNBOOK-ios-firebase.md` §4a has the click-path.
+- **[platform] Sign-in-with-Apple primary App ID — decided in the docs, not yet done in the
+  portal.** The capability was removed from `apple/Apps/Shared/App.entitlements` in 2026-08 and
+  the registered App IDs don't carry it, so nothing is blocked today. The primary is
+  **`com.flygaca.elpt`** with AIP grouped under it, and every doc now says so —
+  `docs/RUNBOOK-ios-firebase.md` §4a (the click-path), `docs/PORTAL-RUNSHEET-wave1.md` §1.2 and
+  `docs/RUNBOOK-ios-release.md`; the old `com.flygaca.ppl` designation is recorded as moot, since
+  no Apple user identifier was ever issued under it. What remains is the **portal work itself**
+  when sign-in ships: enable the capability on both App IDs, group AIP under ELPT, regenerate the
+  profiles.
 - **[platform] Create the signing secrets and the store records.** Work through
   `docs/RUNBOOK-ios-signing-CHECKLIST.md`: App Group + two App IDs + a distribution cert + two
   App Store profiles (named `FlyGACA <APP> AppStore` — the names are load-bearing), two

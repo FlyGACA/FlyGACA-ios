@@ -1,7 +1,9 @@
 import XCTest
 
 // NOTE: this target is not yet wired into apple/project.yml's `testTargets` (every
-// app currently declares `testTargets: []`) — see SCREENSHOTS.md. Adding it needs a
+// app currently declares `testTargets: []`). For the two screenshot pipelines that
+// DO work today, see apple/Scripts/capture-screenshots.sh (real simulator, needs a
+// Mac) and apple/Scripts/html-render/ (Mac-free mockups). Adding it needs a
 // `type: bundle.ui-testing` target + a per-app `scheme.testTargets` override, which
 // is Mac/XcodeGen-side work (no Xcode toolchain to verify it here). Until then this
 // file documents the intended flow but cannot run via `xcodebuild test`.

@@ -94,9 +94,10 @@ laptop. To activate the lane:
      don't carry the capability. The app group is `group.com.FlyGACA` (matching the portal).
      When the Firebase sign-in phase lands, re-add the entitlement AND enable the capability
      on all App IDs — grouped under a primary App ID — then regenerate profiles
-     ([`RUNBOOK-ios-firebase.md`](./RUNBOOK-ios-firebase.md) §4a). That doc still names
-     `com.flygaca.ppl` as the primary; it belongs to a **paused** module, so use
-     `com.flygaca.elpt` instead.
+     ([`RUNBOOK-ios-firebase.md`](./RUNBOOK-ios-firebase.md) §4a). The primary is
+     **`com.flygaca.elpt`**; §4a names it and records why it is no longer `com.flygaca.ppl`
+     (a paused module). Nothing is stranded — the App IDs never carried the capability, so no
+     Apple user identifier was issued under the old primary.
 3. `check-signing` turns the secrets' presence into an `enabled` output; when true, a push to
    `main` (or `workflow_dispatch`) builds signed and uploads via `xcrun altool`. The matrix is
    **explicit, not derived from the app list**: `elpt · aip`.

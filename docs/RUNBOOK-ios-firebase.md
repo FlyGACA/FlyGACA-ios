@@ -114,7 +114,7 @@ existing primary*:
 without it one person signing into ELPT and then AIP arrives as two different Apple users
 and lands on two separate Firebase accounts. That breaks the shared-account model the
 family is built on — `Apps/Shared/App-Shared.xcconfig` declares a single App Group and
-keychain (`group.com.flygaca.study`) precisely so streaks, SRS, and sign-in carry across
+keychain (`group.com.FlyGACA`) precisely so streaks, SRS, and sign-in carry across
 apps. Grouping retroactively re-identifies anyone who already signed in, so set it before
 the first release.
 

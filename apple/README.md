@@ -1,4 +1,4 @@
-# Fly GACA iOS — getting started (Mac + Xcode 15+)
+# Fly GACA iOS — getting started (Mac + Xcode 16+)
 
 One shared Swift package (`FlyGACAKit`), one App Store app per study module.
 Read `ARCHITECTURE.md` for the why; this is the how.
@@ -48,7 +48,7 @@ The spec wires up, per app target (ELPT, AIP):
 - the local `FlyGACAKit` package with its `FeatureUI` product linked,
 - the target's xcconfig (`Apps/<App>/<App>.xcconfig`), which pins the module id,
   bundle id, display name, the shared `Apps/Shared/Info.plist` and the App Group
-  entitlement (`Apps/Shared/App.entitlements` → `group.com.flygaca.study`).
+  entitlement (`Apps/Shared/App.entitlements` → `group.com.FlyGACA`).
 
 Run any scheme. You should land on that module's home — banks, ground school,
 flashcards, mock and timed exam — all offline. (The Sign in with Apple entitlement
