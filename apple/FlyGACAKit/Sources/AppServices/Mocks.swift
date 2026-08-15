@@ -46,3 +46,28 @@ public struct CannedChat: ChatClient {
         }
     }
 }
+
+/// Mock payment service for offline and test support.
+public struct MockPayment: PaymentProviding {
+    public init() {}
+
+    public func createPayment(_ request: PaymentRequest) async throws -> PaymentResponse {
+        PaymentResponse(
+            id: "pay_mock_12345",
+            status: "paid",
+            amount: request.amountHalalas,
+            fee: 0,
+            transactionUrl: "https://flygaca.com/checkout/mock"
+        )
+    }
+
+    public func verifyPayment(id: String) async throws -> PaymentResponse {
+        PaymentResponse(
+            id: id,
+            status: "paid",
+            amount: 7900,
+            fee: 0
+        )
+    }
+}
+

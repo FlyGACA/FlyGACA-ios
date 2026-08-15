@@ -65,3 +65,51 @@ public struct ChatTurn: Codable, Equatable, Sendable {
 public protocol ChatClient: Sendable {
     func send(_ message: String, history: [ChatTurn]) async throws -> AsyncThrowingStream<String, any Error>
 }
+
+public struct PaymentRequest: Codable, Equatable, Sendable {
+    public let amountHalalas: Int
+    public let currency: String
+    public let description: String
+    public let callbackURL: String
+
+    public init(
+        amountHalalas: Int,
+        currency: String = "SAR",
+        description: String,
+        callbackURL: String = "https://flygaca.com/checkout/callback"
+    ) {
+        self.amountHalalas = amountHalalas
+        self.currency = currency
+        self.description = description
+        self.callbackURL = callbackURL
+    }
+}
+
+public struct PaymentResponse: Codable, Equatable, Sendable {
+    public let id: String
+    public let status: String
+    public let amount: Int
+    public let fee: Int?
+    public let transactionUrl: String?
+
+    public init(
+        id: String,
+        status: String,
+        amount: Int,
+        fee: Int? = nil,
+        transactionUrl: String? = nil
+    ) {
+        self.id = id
+        self.status = status
+        self.amount = amount
+        self.fee = fee
+        self.transactionUrl = transactionUrl
+    }
+}
+
+/// Payment Gateway seam — Moyasar integration for Saudi Riyal transactions.
+public protocol PaymentProviding: Sendable {
+    func createPayment(_ request: PaymentRequest) async throws -> PaymentResponse
+    func verifyPayment(id: String) async throws -> PaymentResponse
+}
+

@@ -23,17 +23,19 @@ let package = Package(
         .library(name: "ContentKit", targets: ["ContentKit"]),
         .library(name: "PersistenceKit", targets: ["PersistenceKit"]),
         .library(name: "AppServices", targets: ["AppServices"]),
+        .library(name: "PlatformLive", targets: ["PlatformLive"]),
         .library(name: "FeatureUI", targets: ["FeatureUI"]),
     ],
     targets: [
         .target(name: "CoreModels"),
         .target(name: "StudyEngines", dependencies: ["CoreModels"]),
         .target(name: "ContentKit", dependencies: ["CoreModels"]),
-        .target(name: "PersistenceKit", dependencies: ["CoreModels", "StudyEngines"]),
         .target(name: "AppServices", dependencies: ["CoreModels"]),
+        .target(name: "PersistenceKit", dependencies: ["CoreModels", "StudyEngines", "AppServices"]),
+        .target(name: "PlatformLive", dependencies: ["CoreModels", "AppServices", "PersistenceKit"]),
         .target(
             name: "FeatureUI",
-            dependencies: ["CoreModels", "StudyEngines", "ContentKit", "PersistenceKit", "AppServices"],
+            dependencies: ["CoreModels", "StudyEngines", "ContentKit", "PersistenceKit", "AppServices", "PlatformLive"],
             // Bilingual UI chrome (en + ar). The localized .strings live in
             // Resources/{en,ar}.lproj and resolve through `Bundle.module` — see
             // Localization.swift. Content (questions, banks) stays English; it is
@@ -45,7 +47,11 @@ let package = Package(
         .testTarget(name: "ContentKitTests", dependencies: ["ContentKit"]),
         .testTarget(
             name: "PersistenceKitTests",
-            dependencies: ["PersistenceKit", "CoreModels", "StudyEngines"]
+            dependencies: ["PersistenceKit", "CoreModels", "StudyEngines", "AppServices"]
+        ),
+        .testTarget(
+            name: "PlatformLiveTests",
+            dependencies: ["PlatformLive", "CoreModels", "AppServices", "PersistenceKit"]
         ),
     ]
 )

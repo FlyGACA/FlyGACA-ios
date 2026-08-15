@@ -200,13 +200,13 @@ place for per-module view code to accumulate.
 
 ## 4. App Store strategy
 
-- **Paid-up-front apps** (price point mirroring the web's SAR 39 pack), because
+- **Paid-up-front apps** (SAR 79 per app; SAR 139 for the app bundle), because
   **Apple app bundles only support paid apps or free apps with auto-renewable
   subscriptions** — one-time-IAP unlocks cannot be bundled. Paid-up-front is
   the simplest path to the family bundle, and buying the app *is* the
   entitlement (`FullAccess` in AppServices is the shipping default, not a stub).
 - **Shipping:** ELPT (`elp`) and AIP (`aip`) → then the app bundle ("Saudi Pilot
-  Study Pack") with completing-the-bundle credit for users who already bought
+  Study Pack", SAR 139) with completing-the-bundle credit for users who already bought
   one. Apple allows up to 10 apps per bundle.
 - **Paused:** PPL (`ppl-exam`), CPL (`cpl`), IR (`ir`), ATPL (`atpl`) — the licence
   written-exam modules, on hold pending a strategic decision. Their packs stay live

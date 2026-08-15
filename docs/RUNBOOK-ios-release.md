@@ -142,7 +142,7 @@ one says X, the truth in this repo is Y — fix in place as you touch them:
 | `node scripts/build-ios-content.mjs` / `npm run ios:icons` regenerate content/icons (`apple/README.md`, a couple runbooks) | Those generators live in the **monorepo**, not here — `bash scripts/sync-content.sh` (which invokes them via `--out`) is the refresh path (step 1) |
 | `apple/README.md`: "Mac + Xcode 15+" | Xcode **16+** — `apple/project.yml`'s objectVersion-77 comment is authoritative |
 | `RUNBOOK-ios-xcodebuild.md` "Phase Roadmap": "Phase 4 ✅" | That's its own numbering for the signing/TestFlight slice — **not** `apple/ARCHITECTURE.md` §5's Phase 4 (PlatformLive, unbuilt) |
-| `AppleTests/ScreenshotTests.swift` implies a runnable XCUITest flow | Not wired: `apple/project.yml` has `testTargets: []` |
+| `AppleTests/ScreenshotTests.swift` implies a runnable XCUITest flow | Wired in `apple/project.yml` as `type: bundle.ui-testing` target |
 | `apple/ARCHITECTURE.md` §3 lists three test directories | Four exist — `PersistenceKitTests` too (4 targets / 10 files) |
 
 ## Troubleshooting

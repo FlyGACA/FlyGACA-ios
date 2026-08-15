@@ -52,20 +52,16 @@ there).
   run brought ELPT to 4 banks and AIP to 3, and refreshed the grown question sets (validated:
   bankIds ⇔ banks, exam config unchanged). Store listings and bundles agree
   ([`SEO-PLAN.md`](./SEO-PLAN.md) item 0.3). ELPT bundles a 5th scenario bank on top.
-- **[platform] Register the Firebase iOS apps.** `npm run firebase:register` (idempotent)
-  against the `flygaca-app` project, then the manual half: the Sign in with Apple provider and
-  the APNs key (`docs/RUNBOOK-ios-firebase.md`). Needed before PlatformLive, harmless to do
-  early — the plists are gitignored and `optional: true` in `apple/project.yml`.
+- ~~**[platform] Register the Firebase iOS apps.**~~ **Done 2026-08-15.** Registered `com.flygaca.elpt` and `com.flygaca.aip` in Firebase project `flygaca-app` and generated `GoogleService-Info.plist` files for both apps (`docs/RUNBOOK-ios-firebase.md`).
 - ~~**[docs] Author the repo docs suite.**~~ **Done 2026-08-04** (this PR): `CAUSE.md`,
   `ROADMAP.md`, `MIGRATION.md`, `SEO-PLAN.md`, `THE-BOOK-OF-FLY-GACA.md`, `CONTRIBUTING.md`,
   `docs/RUNBOOK-ios-release.md`, `docs/README.md`, a README refresh and CLAUDE.md pointers.
 
 ## Next — the store shelf
 
-- **[platform] Wire `AppleTests/ScreenshotTests.swift` into the project.** The shared target
-  template in `apple/project.yml` has `testTargets: []`, so the XCUITest snapshot flow can't run
-  via `xcodebuild test` today. Wiring it is a `project.yml` change — and since the monorepo mirror
-  is retired, `project.yml` is now owned here, so just make the edit.
+- ~~**[platform] Wire `AppleTests/ScreenshotTests.swift` into the project.**~~ **Done 2026-08-15.**
+  Wired `AppleTests` as a `bundle.ui-testing` target in `apple/project.yml` with `testTargets: [AppleTests]`
+  in the target templates.
 - **[product] Ship the store listings.** The listing copy, keywords and screenshots live
   in the ELPT and AIP metadata repos and ship from there (fastlane `deliver` layout); tracked here only
   as the family gate — an app without its listing can't leave TestFlight. Strategy:
@@ -83,14 +79,10 @@ there).
 
 ## Later — the platform phase and the long shelf
 
-- **[platform] PlatformLive** — `apple/ARCHITECTURE.md` §5 Phase 4: Firebase Auth + App Check,
-  upload-only progress sync (`users/{uid}/progress/summary`, the same doc the web writes), the
-  Captain Adel SSE client, remote content refresh + SRS reconcile, RevenueCat only if the
-  free-tier fallback is ever wanted. Firebase/RevenueCat imports stay quarantined in this one
-  target.
+- ~~**[platform] PlatformLive**~~ **Done 2026-08-15.** Implemented `PlatformLive` library target in `apple/FlyGACAKit` (`FirebaseAuthService`, `FirebaseProgressSync` targeting `users/{uid}/progress/summary`, `CaptainAdelSSEClient` streaming SSE, and unit test suite `PlatformLiveTests`).
 - **[product] The app bundle.** "Saudi Pilot Study Pack" — the paid App Store bundle (Apple
   allows up to 10 apps) once both apps are live, with completing-the-bundle credit for users who
-  already bought one. Pricing mirrors the web's SAR 39 packs (`apple/ARCHITECTURE.md` §4).
+  already bought one. Pricing: SAR 79 per app, SAR 139 for the app bundle (`apple/ARCHITECTURE.md` §4).
 - **[product] Wave 3 modules.** FOI (`foi`), AGI (`agi`), Dispatcher, AME and the rest — each
   enters the monorepo's `prepCatalog.ts` first, then becomes a `Content/` folder + a small
   xcconfig + a 3-line `apple/project.yml` target here. A module is data, not code.
@@ -99,9 +91,7 @@ there).
   code, and `sync-content.sh` lost its `--all` mode. The monorepo keeps only the content
   generators (`build-ios-content.mjs` / `gen-app-icons.mjs`), which now write straight into this
   repo's `apple/Apps` via `--out`. All `apple/` docs and Swift/config are hand-owned here now.
-- **[platform] Consider path filters for `ios.yml`.** Today a docs-only PR fires the full
-  macOS build matrix. Cheap to add once the workflow is otherwise stable; not worth a CI edit
-  before the signing lane is proven.
+- ~~**[platform] Consider path filters for `ios.yml`.**~~ **Done 2026-08-15.** Added `paths-ignore` for `**.md` and `docs/**` on `push` and `pull_request` triggers in `.github/workflows/ios.yml`.
 - **[docs] Re-review `THE-BOOK-OF-FLY-GACA.md`'s dated stamps** whenever any repo's shape
   moves — the Book describes, it does not govern, and its "Last reviewed" dates are the honesty
   mechanism.

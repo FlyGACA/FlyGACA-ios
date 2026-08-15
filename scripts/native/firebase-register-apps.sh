@@ -59,6 +59,9 @@ app_id_for_bundle() {
 
 info "Project: $PROJECT"
 for entry in "${APPS[@]}"; do
+  app=""
+  display=""
+  bundle=""
   IFS='|' read -r app display bundle <<< "$entry"
   plist="$APPLE_DIR/Apps/$app/GoogleService-Info.plist"
 
@@ -78,7 +81,7 @@ for entry in "${APPS[@]}"; do
     warn "Keeping existing $app/GoogleService-Info.plist (set FORCE=1 to overwrite)"
     continue
   fi
-  info "Downloading config for $app…"
+  info "Downloading config for ${app}..."
   # sdkconfig prints the plist to stdout (with a log preamble); keep only the XML.
   firebase apps:sdkconfig IOS "$appId" --project "$PROJECT" 2>/dev/null \
     | awk '/<\?xml/,/<\/plist>/' > "$plist"

@@ -260,10 +260,8 @@ These are one-time human/console setup, not something to script from first princ
     Store copy needing quick iteration.
   - `apple/Scripts/capture-screenshots.sh` + `process-screenshots.sh` — real simulator
     captures (pixel-exact, needs a Mac + Xcode). `AppleTests/ScreenshotTests.swift` documents
-    the intended `XCUITest` snapshot flow but is **not yet wired into `apple/project.yml`**
-    (`testTargets: []` on the shared `FlyGACAApp` target template, inherited by every app) — it
-    can't run via `xcodebuild test` today. (Its header used to point at a `SCREENSHOTS.md` that
-    does not exist here; it now points at the two pipelines that do work.)
+    the `XCUITest` snapshot flow and is wired into `apple/project.yml` as `AppleTests`
+    (`testTargets: [AppleTests]`).
 
 ## Conventions & gotchas worth knowing before editing
 

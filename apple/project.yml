@@ -61,7 +61,7 @@ targetTemplates:
       - package: FlyGACAKit
         product: PersistenceKit
     scheme:
-      testTargets: []
+      testTargets: [AppleTests]
       gatherCoverageData: false
 
 targets:
@@ -71,3 +71,12 @@ targets:
     templates: [FlyGACAApp]
   AIP:
     templates: [FlyGACAApp]
+
+  AppleTests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - AppleTests
+    dependencies:
+      - target: ELPT
+

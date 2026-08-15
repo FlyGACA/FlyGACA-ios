@@ -1,12 +1,9 @@
 import XCTest
 
-// NOTE: this target is not yet wired into apple/project.yml's `testTargets` (every
-// app currently declares `testTargets: []`). For the two screenshot pipelines that
-// DO work today, see apple/Scripts/capture-screenshots.sh (real simulator, needs a
-// Mac) and apple/Scripts/html-render/ (Mac-free mockups). Adding it needs a
-// `type: bundle.ui-testing` target + a per-app `scheme.testTargets` override, which
-// is Mac/XcodeGen-side work (no Xcode toolchain to verify it here). Until then this
-// file documents the intended flow but cannot run via `xcodebuild test`.
+// NOTE: this target is wired into apple/project.yml as a `type: bundle.ui-testing` target
+// (`AppleTests`), with `testTargets: [AppleTests]` in the app target templates.
+// For screenshot pipelines, see apple/Scripts/capture-screenshots.sh (simulator captures)
+// and apple/Scripts/html-render/ (Mac-free mockups).
 //
 // The element lookups below are written against the real ModuleHomeView.swift /
 // QuizView.swift / FlashcardView.swift structure (a `List` of `Section`s, no

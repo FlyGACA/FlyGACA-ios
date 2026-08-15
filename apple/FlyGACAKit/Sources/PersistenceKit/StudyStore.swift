@@ -1,3 +1,4 @@
+import AppServices
 import CoreModels
 import Foundation
 import StudyEngines
@@ -180,6 +181,21 @@ public actor StudyStore {
         )
         modelContext.insert(fresh)
         return fresh
+    }
+
+    /// Progress summary snapshot matching web `ProgressSummary` for cloud sync.
+    public func progressSummary(moduleID: String) throws -> ProgressSummary {
+        let best = try quizBest(moduleID: moduleID)
+        let done = try lessonsDone(moduleID: moduleID)
+        let exams = try examHistory(moduleID: moduleID)
+        let examBest = exams.map(\.percent).max()
+        return ProgressSummary(
+            quizBest: best,
+            examBest: examBest,
+            examCount: exams.count,
+            gsDone: done,
+            updatedAt: Date()
+        )
     }
 
     // ── Content refresh reconciliation (Phase 4) ──

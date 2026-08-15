@@ -114,7 +114,7 @@ layout; **don't hand-enter it now**. Record creation needs only:
 | Apple ID (App Store ID) | `6798457189` ✅ | 🟡 read it off the record | 🟡 read it off the record |
 | Primary language | **en-US**, then add **ar-SA as a full localization** 🟡 — the SEO-PLAN 0.5 posture: Arabic is a first-class listing, not a fallback; both locales are searchable on the Saudi storefront | same | same |
 | Category | **Education** 🟡 (secondary: Reference 🟡 — no category is recorded anywhere in the repos) | Education 🟡 | Education 🟡 |
-| Price | 🔵 the Apple price point nearest the web's **SAR 39** pack (`apple/ARCHITECTURE.md` §4: paid-up-front mirroring the web price; no exact tier is recorded — pick it here, same for all three) | 🔵 | 🔵 |
+| Price | 🔵 the Apple price point for **SAR 79** per app (`apple/ARCHITECTURE.md` §4; app bundle is **SAR 139**) | 🔵 | 🔵 |
 | Age rating | **4+** via an all-"None" questionnaire 🟡 (study app: no mature content, no unrestricted web, no user-generated content) | same | same |
 | Privacy nutrition labels | **Data Not Collected** 🟡 — fully offline, no accounts, no analytics, no tracking. Revisit if telemetry ever ships | same | same |
 | Export compliance | already answered in-binary ✅ — `ITSAppUsesNonExemptEncryption = NO` (`apple/Apps/Shared/App-Shared.xcconfig`), so no per-build prompt | same | same |
