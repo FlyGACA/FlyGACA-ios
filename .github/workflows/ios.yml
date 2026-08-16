@@ -100,7 +100,7 @@ jobs:
 
       - name: Upload build artifacts
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ios-build-${{ matrix.app }}-debug
           path: apple/.build/Build/Products/
@@ -135,7 +135,7 @@ jobs:
 
       - name: Upload Release artifacts
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ios-build-${{ matrix.app }}-release-${{ github.sha }}
           path: |
@@ -146,7 +146,7 @@ jobs:
 
       - name: Upload dSYM symbols
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ios-dsyms-${{ matrix.app }}-${{ github.sha }}
           path: apple/.build/dSYMs/
@@ -245,7 +245,7 @@ jobs:
 
       - name: Upload signed .ipa
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ios-ipa-${{ matrix.app }}-${{ github.sha }}
           path: apple/.build/export/${{ matrix.scheme }}/*.ipa
@@ -254,7 +254,7 @@ jobs:
 
       - name: Upload dSYM symbols (signed build)
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ios-dsyms-signed-${{ matrix.app }}-${{ github.sha }}
           path: apple/.build/dSYMs/
