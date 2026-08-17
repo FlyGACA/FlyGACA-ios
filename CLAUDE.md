@@ -233,7 +233,9 @@ needed locally.
 One workflow, adapted from the monorepo's iOS workflow (no content-validation job — this
 repo has no bundler; no `npm ci` — thin `package.json`, zero deps). Triggers are pushes to
 `main`, PRs **targeting** `main`, and `workflow_dispatch` — a push to a feature branch runs
-nothing. Jobs, all on `macos-15` unless noted:
+nothing. Both event triggers carry `paths-ignore: ['**.md', 'docs/**']`, so a docs-only PR runs
+**no jobs at all** and shows zero checks; that's the configuration working, not a stuck queue.
+Jobs, all on `macos-15` unless noted:
 
 - **swift-test** — `cd apple/FlyGACAKit && swift test`. Gates everything else.
 - **xcodegen-validate** — installs XcodeGen, `xcodegen generate`, lists schemes.
