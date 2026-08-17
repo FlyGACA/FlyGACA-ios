@@ -50,8 +50,20 @@ single source of truth), `MIGRATION.md` (the extraction history), `SEO-PLAN.md` 
 search / ASO for the shipping apps), `THE-BOOK-OF-FLY-GACA.md` (the whole-family reference — all
 ten repos; descriptive, dated, each repo's own docs govern), `CONTRIBUTING.md`,
 `docs/RUNBOOK-ios-release.md` (the end-to-end release path), the rest of the `docs/RUNBOOK-ios-*`
-set, and `docs/README.md` (the doc index). These originated as copies of the monorepo's versions,
+set, `docs/CORPUS-SIGNING.md` (the Ed25519 contract for remote content),
+`docs/PORTAL-RUNSHEET-wave1.md` (the Apple-portal checklist), and `docs/README.md` (the doc
+index). These originated as copies of the monorepo's versions,
 but after the `apple/` mirror's retirement (2026-08) they are the real source, edited here.
+
+`.claude/agents/` defines three subagents scoped to this repo — **swift-kit** (anything inside
+`apple/FlyGACAKit`), **parity-guard** (the cross-platform study semantics below) and
+**ios-release** (builds, signing, TestFlight, CI, screenshots); `agents/README.md` says when each
+is the right one.
+
+One caveat on cross-repo links: the monorepo lost its `docs/` tree in 2026-08, so pointers from
+here into `FlyGACA-app/docs/…` (e.g. `APPS-FAMILY-ROADMAP.md`, referenced from `ROADMAP.md`) no
+longer resolve. Content generation itself is unaffected — `scripts/build-ios-content.mjs`,
+`gen-app-icons.mjs`, `public/data/` and `src/lib/prepCatalog.ts` are all still there.
 
 ## Architecture (see `apple/ARCHITECTURE.md` for full detail)
 
@@ -59,20 +71,38 @@ but after the `apple/` mirror's retirement (2026-08) they are the real source, e
 toolchain; `Package.swift` also declares `.macOS(.v14)` so the package builds/tests from the CLI),
 SwiftUI, SwiftData, iOS 17+ floor. MVVM with light Clean layering, as
 **one local Swift package with multiple library targets** — no multi-package overhead.
-Storage: SwiftData for user state; content is read-only JSON decoded into structs (~624 KB of
-committed `Content/` across the two apps — still too small to justify a database).
+Storage: SwiftData for user state; content is read-only JSON decoded into structs (~150 KB of
+committed `Content/` across the two apps — still far too small to justify a database).
 
 ### Target graph (`apple/FlyGACAKit/Package.swift`)
 
 ```
 CoreModels (no deps)
   ├─ StudyEngines    (SRS, sessions, streaks, sampler, readiness — no IO)
-  ├─ ContentKit      (bundled/cached content loading + remote refresh — no Firebase)
+  ├─ ContentKit      (bundled/cached content loading + signed remote refresh)
   ├─ AppServices     (protocol seams + offline mocks; deps: CoreModels only)
-  └─ PersistenceKit  (SwiftData @Model + StudyStore actor; deps: CoreModels, StudyEngines)
+  └─ PersistenceKit  (SwiftData @Model + StudyStore actor;
+                      deps: CoreModels, StudyEngines, AppServices)
+PlatformLive (live impls of the AppServices protocols;
+              deps: CoreModels, AppServices, PersistenceKit)
 FeatureUI (deps: all of the above — every screen, incl. SingleModuleRootView)
-PlatformLive (Phase 4, not yet built — Firebase/RevenueCat live only here)
 ```
+
+**PlatformLive now exists** (it was "Phase 4, not yet built" until recently) —
+`Sources/PlatformLive/` holds `FirebaseAuthService`, `FirebaseProgressSync` (writes the web app's
+`users/{uid}/progress/summary` contract), `CaptainAdelSSEClient` (SSE against
+`https://flygaca.com/api/chat`), `MoyasarPaymentService` (Mada / Apple Pay / card, SAR) and
+`PlatformLiveFactory`, with `Tests/PlatformLiveTests/`. Two things about it are easy to get wrong:
+
+- It is written **against the REST/SSE endpoints over `URLSession`, with no SPM dependencies** —
+  `FlyGACAKit` still has **zero external dependencies**, so `swift build`/`swift test` stay
+  instant. Do not "finish" it by adding firebase-ios-sdk or purchases-ios without a deliberate
+  decision; `apple/ARCHITECTURE.md` §5 and `Package.swift`'s header comment still describe the
+  older SDK-based plan and are stale on this point.
+- **Nothing injects it yet.** `FeatureUI` declares the dependency but no source file imports it,
+  and the app shell links only `FeatureUI` + `PersistenceKit`. The shipping apps still run
+  entirely on the `AppServices` mocks and are offline by design; wiring PlatformLive into a
+  composition root is open work, not done work.
 
 App targets link **two** products, not one: `FeatureUI` *and* `PersistenceKit` (the shared shell
 opens the SwiftData store and constructs `StudyStore` itself — `apple/project.yml`).
@@ -81,10 +111,18 @@ Rules that keep this healthy — do not violate them:
 
 - **Engines never do IO.** `StudySession` takes `now: Date` as a parameter; tests pass fixed
   dates. `swift test` needs no simulator, no SDK downloads.
-- **Firebase/RevenueCat never leak upstream** of the not-yet-built `PlatformLive` target.
-  Keeps the pure targets instant to build and every screen previewable via `AppServices` mocks.
+- **Platform integrations never leak upstream** of `PlatformLive`. Keeps the pure targets instant
+  to build and every screen previewable via `AppServices` mocks.
 - **UI talks to protocols** (`AuthProviding`, `EntitlementsProviding`, `ProgressSyncing`,
-  `ChatClient` in `AppServices`), not concrete platform SDKs.
+  `ChatClient`, `PaymentProviding` in `AppServices`), not concrete platform SDKs.
+- **Remote content is signed or refused.** `ContentKit`'s `ContentRefresher` can pull
+  `quiz.json` from flygaca.com, but `CorpusSignatureVerifier` requires a valid detached Ed25519
+  signature (`quiz.json.sig`, CryptoKit) and **fails closed** — a missing/bad signature, or a
+  missing `FGCorpusPublicKey` in `Info.plist`, throws and leaves the existing cache untouched.
+  See `docs/CORPUS-SIGNING.md`; don't add a bypass for local testing.
+- **The UI chrome is bilingual, the content is not.** `FeatureUI/Localization.swift` +
+  `Resources/{en,ar}.lproj/Localizable.strings` resolve through `Bundle.module`; questions and
+  banks stay English (they are generated in the monorepo, not translated here).
 
 ### Cross-platform parity — do not break silently
 
@@ -195,7 +233,9 @@ needed locally.
 One workflow, adapted from the monorepo's iOS workflow (no content-validation job — this
 repo has no bundler; no `npm ci` — thin `package.json`, zero deps). Triggers are pushes to
 `main`, PRs **targeting** `main`, and `workflow_dispatch` — a push to a feature branch runs
-nothing. Jobs, all on `macos-15` unless noted:
+nothing. Both event triggers carry `paths-ignore: ['**.md', 'docs/**']`, so a docs-only PR runs
+**no jobs at all** and shows zero checks; that's the configuration working, not a stuck queue.
+Jobs, all on `macos-15` unless noted:
 
 - **swift-test** — `cd apple/FlyGACAKit && swift test`. Gates everything else.
 - **xcodegen-validate** — installs XcodeGen, `xcodegen generate`, lists schemes.
@@ -265,9 +305,9 @@ These are one-time human/console setup, not something to script from first princ
 
 ## Conventions & gotchas worth knowing before editing
 
-- **PlatformLive doesn't exist yet** (Phase 4 of the roadmap in `ARCHITECTURE.md` §5). Until
-  it lands, the apps are fully offline by design and `AppServices` mocks (`Mocks.swift`) *are*
-  the shipping product — do not add Firebase/RevenueCat imports anywhere else.
+- **The apps still ship on mocks.** `PlatformLive` exists and is tested, but nothing injects it
+  (see above), so `AppServices`'s `Mocks.swift` *is* the shipping product and the apps are fully
+  offline by design. Keep any new platform integration inside `PlatformLive`.
 - **`FlyGACAApp.swift` (`apple/Apps/Shared/`) is the one app shell for every target.**
   Never fork it per app; per-app differences are xcconfig values (`FG_MODULE_ID`, bundle id,
   display name) injected via `Info.plist`, not code.
@@ -286,9 +326,10 @@ These are one-time human/console setup, not something to script from first princ
   build/CI/troubleshooting reference (incl. "Adding a New iOS App") — but its Phase Roadmap
   numbers phases differently from `ARCHITECTURE.md` §5: its "Phase 4 ✅" is the signing/TestFlight
   slice, **not** PlatformLive.
-- **Tests span 4 targets / 10 files** — `CoreModelsTests`, `StudyEnginesTests` (Leitner,
-  Readiness, Sampler, Session, Streak), `ContentKitTests`, `PersistenceKitTests` — not just
-  the SRS parity vectors.
+- **Tests span 5 targets / 11 files** — `CoreModelsTests` (ModuleManifest, QuizDecode),
+  `StudyEnginesTests` (Leitner, Readiness, Sampler, Session, Streak), `ContentKitTests`
+  (ContentLoader, ContentRefresher), `PersistenceKitTests` (StudyStore) and `PlatformLiveTests`
+  — not just the SRS parity vectors.
 - **License:** MIT, © BDA Company International, operating as Fly GACA.
 - Per-app bundle ids follow `com.flygaca.<lowercase module>`; module ids (`FG_MODULE_ID`,
   e.g. `elp`, `aip`) are the pack ids from the monorepo's
