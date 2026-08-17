@@ -44,20 +44,23 @@ as you click) · **🔵 DECIDE** at the portal.
 All under **Certificates, Identifiers & Profiles**.
 
 **1.1 App Group** — Identifiers → App Groups → register:
-`group.com.FlyGACA` (this is why wildcard App IDs are impossible — wildcards can't
+`group.com.FlyGACA` ✅ (this is why wildcard App IDs are impossible — wildcards can't
 carry the App Groups capability).
 
-> [!IMPORTANT]
-> **Verify this one against the portal before signing.** This line previously read
-> `group.com.flygaca.study` with a ✅, i.e. it claimed a group by *that* name was already
-> registered — but the shipping code asks for `group.com.FlyGACA` in all three places that
-> decide it (`apple/Apps/Shared/App.entitlements`, `App-Shared.xcconfig`'s `FG_APP_GROUP`, and
-> `PersistenceKit/Persistence.swift`'s `appGroupID`). Every doc has been aligned to the code,
-> because the code is what ships. If the portal really holds `group.com.flygaca.study`, then a
-> profile generated from it will not grant what the app requests and the signed build fails —
-> App Groups cannot be renamed, so register `group.com.FlyGACA` and reassign it on both App IDs.
-> Nothing has shipped to TestFlight yet, so there is no on-device data to migrate; this is a
-> portal-only fix. The ✅ was dropped from this line until someone confirms it in the portal.
+> **Resolved — 2026-08-16, confirmed by CI, no portal visit needed.** This line spent a while
+> flagged as unverified: it once read `group.com.flygaca.study` with a ✅, while the shipping code
+> asks for `group.com.FlyGACA` in all three places that decide it
+> (`apple/Apps/Shared/App.entitlements`, `App-Shared.xcconfig`'s `FG_APP_GROUP`, and
+> `PersistenceKit/Persistence.swift`'s `appGroupID`). The docs were aligned to the code; the open
+> question was what the portal actually held, since App Groups can't be renamed and a mismatched
+> profile fails the signed build.
+>
+> **The portal holds `group.com.FlyGACA`.** Workflow run
+> [#69](https://github.com/ay2m/FlyGACA-ios/actions/runs/31916879238) (2026-08-16, commit
+> `1fd37be`) signed, exported and uploaded both `elpt` and `aip` to TestFlight — every step
+> green. `xcodebuild` validates a target's entitlements against its provisioning profile at both
+> archive-signing and `-exportArchive`, so an unregistered or mis-named group could not have
+> produced an `.ipa`, let alone one Apple accepted. The ✅ is restored.
 
 **1.2 App IDs** — three explicit App IDs, each with **both** capabilities:
 
@@ -101,6 +104,12 @@ layout; **don't hand-enter it now**. Record creation needs only:
 > below are the actual App Store Connect values read off the records. PPL's SKU came out as
 > the bare `ppl` (not the `flygaca-ppl-ios` first recommended); the ELPT/AIP SKU + Apple ID
 > rows stay 🟡 until their App Information screens are read off the portal.
+
+> [!IMPORTANT]
+> **The 🔵 Price row and the 🟡 Age rating row are now blocking, not cosmetic.** Builds reached
+> TestFlight on 2026-08-16 (§5) but testers could not install them. An app record with no price
+> point, no availability territories, or no completed age-rating questionnaire is a prime
+> suspect for that failure — see **§5.1** before assuming the build is at fault.
 
 | Field | PPL | ELPT | AIP |
 | --- | --- | --- | --- |
@@ -191,6 +200,15 @@ with `base64 -w0 <file>` on Linux, `base64 -i <file>` on macOS):
 
 ## 5. First run + verification
 
+> **Status — 2026-08-16: this section is done.** Run
+> [#69](https://github.com/ay2m/FlyGACA-ios/actions/runs/31916879238) (push to `main`, commit
+> `1fd37be`) took both apps all the way to TestFlight: `TestFlight (elpt)` and `TestFlight (aip)`
+> each imported the signing assets, built signed, exported the `.ipa` and uploaded it via
+> `altool` — all green. Apple accepted and processed both, and **1.0.0 (69)** now appears in
+> TestFlight for *Saudi ELPT Prep* and *Saudi AIP Study*. Two consequences: §1.1's App Group
+> question is settled (see the note there), and any doc still saying "nothing has shipped to
+> TestFlight yet" is stale.
+
 - Push to `main` (or run the iOS workflow via **workflow_dispatch**). `check-signing` now
   outputs `enabled=true`, and `ios-testflight` signs and uploads **ppl · elpt · aip** (the
   matrix is explicit — Wave 2 is not in it yet).
@@ -201,6 +219,41 @@ with `base64 -w0 <file>` on Linux, `base64 -i <file>` on macOS):
   cert/keychain (`set-key-partition-list`), profile–certificate mismatch, altool error 1091
   (icon alpha channel), duplicate build number, and *"No suitable application records
   found"* (a §2 record is missing).
+
+### 5.1 A build uploads fine but testers can't install it
+
+Symptom, seen on both apps on 2026-08-17 with build 1.0.0 (69): TestFlight lists the app under
+**Currently Testing** with a working **Install** button and a healthy day counter, but tapping
+Install returns
+
+> Could not install *&lt;app&gt;*. The requested app is not available or doesn't exist.
+
+**This is never a build problem.** TestFlight renders the row from App Store Connect but hands
+the actual install to the App Store daemon; the message is that *lookup* failing. A green
+`ios-testflight` job plus a visible row with a running expiry clock already proves the binary
+was signed, accepted and processed. Don't re-upload, don't bump the build number, and don't
+touch the entitlements — check the account and the app record instead, cheapest first:
+
+1. **Apple Account mismatch on the device.** TestFlight installs use the account in
+   Settings → *your name* → **Media & Purchases**, which is frequently *not* the one signed
+   into TestFlight. If they differ you get exactly this error. Make both the account that was
+   invited as a tester, force-quit TestFlight, retry.
+2. **Pricing and Availability never set.** §2's Price row is still 🔵 for every app, and no
+   availability territories are recorded anywhere in these repos. A record with no price point
+   and no territories can fail the install lookup. Set the SAR 79 price point and the
+   availability territories — at minimum Saudi Arabia, plus whatever storefront each tester's
+   Apple Account is registered to. **A tester whose account storefront is outside the app's
+   territories hits this same error**, so the two halves have to agree.
+3. **Rest of App Information incomplete.** §2's Age rating and Category rows are still 🟡 —
+   nothing confirms the questionnaire was ever completed. Finish it (4+, all-"None").
+4. **Tester state.** Internal testers must still hold an App Store Connect role and have
+   accepted the invite for *that* app; external testing additionally needs the build assigned
+   to the group and Beta App Review passed.
+5. **Last resort.** Sign out of TestFlight completely, restart the device, sign back in. Also
+   rule out Screen Time → Content & Privacy Restrictions blocking installs.
+
+Both apps failing at once points away from anything per-app — it's account-level (1) or the
+shared gap in §2's record setup (2/3).
 
 ## 6. Appendix — Firebase console half (not needed for the offline v1)
 

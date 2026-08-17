@@ -145,20 +145,20 @@ User state lives in SwiftData, in a shared App Group (shared by every app in the
 so streaks/SRS carry across apps). `StudyStore` (a `@ModelActor`) is the single write path;
 SwiftData model objects never escape the actor (they aren't `Sendable`).
 
-> ⚠️ **App Group id — docs now match the code; the Apple portal still needs checking.** The id is
-> **`group.com.FlyGACA`**, and all three places that decide it agree:
-> `apple/Apps/Shared/App.entitlements`, `App-Shared.xcconfig`'s `FG_APP_GROUP`, and
-> `PersistenceKit/Persistence.swift`'s `appGroupID`. Eight docs used to say
+> ✅ **App Group id — settled, code and portal agree.** The id is **`group.com.FlyGACA`**, and all
+> three places that decide it agree: `apple/Apps/Shared/App.entitlements`, `App-Shared.xcconfig`'s
+> `FG_APP_GROUP`, and `PersistenceKit/Persistence.swift`'s `appGroupID`. Eight docs used to say
 > `group.com.flygaca.study` instead (this file, `CAUSE.md`, `THE-BOOK-OF-FLY-GACA.md`,
 > `apple/README.md`, `apple/ARCHITECTURE.md`, and three runbooks) — all corrected to the code's
 > value, since the code is what ships and no code change was made.
 >
-> **What is still open is external:** `docs/PORTAL-RUNSHEET-wave1.md` previously recorded
-> `group.com.flygaca.study` as already registered in the Apple Developer portal. If that is true,
-> a profile built from it won't grant what the app requests and the signed build fails — App
-> Groups can't be renamed, so `group.com.FlyGACA` must be registered and reassigned on both App
-> IDs. Nothing has reached TestFlight, so there is no on-device data to migrate: it is a
-> portal-only fix. Don't "resolve" this by editing the entitlements back.
+> **The external half is now confirmed too.** It was open for a while — if the portal really held
+> `group.com.flygaca.study`, a profile built from it wouldn't grant what the app requests and the
+> signed build would fail (App Groups can't be renamed). Workflow run #69 (2026-08-16) signed,
+> exported and uploaded both apps to TestFlight with every step green, and `xcodebuild` validates
+> entitlements against the profile at both archive-signing and `-exportArchive` — so the portal
+> demonstrably holds `group.com.FlyGACA`. Don't "resolve" anything here by editing the
+> entitlements back. Details: `docs/PORTAL-RUNSHEET-wave1.md` §1.1.
 
 ## Content: committed snapshots, generated in the monorepo
 

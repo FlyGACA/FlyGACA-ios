@@ -62,12 +62,16 @@ account is needed locally.
   on every App ID and regenerating profiles.
 - The App Group id is **`group.com.FlyGACA`**, and the three deciding places
   agree: `App.entitlements`, `App-Shared.xcconfig`'s `FG_APP_GROUP`, and
-  `PersistenceKit/Persistence.swift`. **The open item is external**: the Apple
-  Developer portal may still have `group.com.flygaca.study` registered, in which
-  case a profile built from it won't grant what the app requests and the signed
-  build fails. App Groups cannot be renamed. Nothing has reached TestFlight, so
-  there is no on-device data to migrate — it is a portal-only fix. **Never
-  "resolve" this by editing the entitlements back.**
+  `PersistenceKit/Persistence.swift`. The portal agrees too — this was an open
+  item until run #69 (2026-08-16) signed and uploaded both apps to TestFlight,
+  which it could not have done with a mismatched group. **Never "resolve" a
+  signing problem by editing the entitlements back.**
+- **A build that uploads but won't install is not a build problem.** "The
+  requested app is not available or doesn't exist" in TestFlight is the App
+  Store lookup failing, not the binary: check the device's Media & Purchases
+  account, then Pricing and Availability + age rating on the app record. Full
+  checklist in `docs/PORTAL-RUNSHEET-wave1.md` §5.1. Don't re-upload or bump the
+  build number to chase it.
 - `GoogleService-Info.plist` files are gitignored but **not secret** — they ship
   inside the binary; access is enforced by Firestore rules + App Check. They are
   `optional: true` in `project.yml` so generation and unsigned builds work
