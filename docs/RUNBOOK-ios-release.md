@@ -163,3 +163,7 @@ one says X, the truth in this repo is Y — fix in place as you touch them:
   rejections).
 - **"No suitable application records found" on upload** — the paid App Store Connect record for
   that bundle id doesn't exist yet (checklist §B).
+- **Build reaches TestFlight but testers can't install it** ("The requested app is not available
+  or doesn't exist") — an App Store Connect / Apple-account problem, never a build problem. Don't
+  re-upload or bump the build number; work
+  [`PORTAL-RUNSHEET-wave1.md`](./PORTAL-RUNSHEET-wave1.md) §5.1 instead.

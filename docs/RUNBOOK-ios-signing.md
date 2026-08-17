@@ -122,6 +122,12 @@ per-app in App Store Connect.
   (`fail-fast: false`); the next real push gets a fresh number.
 - **"No suitable application records found"** — the app record doesn't exist in App
   Store Connect yet (Step 2.1).
+- **"The requested app is not available or doesn't exist" when a tester taps Install** —
+  nothing to do with signing: the upload already succeeded and Apple processed the build
+  (that's why the row and its expiry clock are there). TestFlight is handing the install
+  to the App Store daemon and that lookup is failing. Check the device's
+  Media & Purchases account first, then Pricing and Availability + age rating on the app
+  record. Full checklist: [`PORTAL-RUNSHEET-wave1.md`](./PORTAL-RUNSHEET-wave1.md) §5.1.
 - **"future Xcode project file format" errors** — XcodeGen emits the Xcode 16
   project format, so iOS jobs must run on an image whose default Xcode is 16+
   (currently `macos-15`). If a job needs a specific Xcode version, set
