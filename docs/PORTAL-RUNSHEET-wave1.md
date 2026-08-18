@@ -157,14 +157,14 @@ sync — **not** the stale `13/1/2` figures in older notes):
 | ELPT | This app prepares candidates for the Saudi Aviation English Language Proficiency Test (SAELPT) — 4 question banks, 151 cited practice questions. |
 | AIP | This app covers the Saudi AIP (GEN/ENR sections) and airspace — 3 question banks, 113 cited practice questions. |
 
-## 4. ASC API key + the ten GitHub secrets
+## 4. ASC API key + the nine GitHub secrets
 
 **4.1 API key** — Users & Access → Integrations → App Store Connect API → **Team Keys** →
 Generate. Role: **App Manager**. Record the **Key ID** and the **Issuer ID** (UUID), and
 download `AuthKey_<KEYID>.p8` — Apple allows that download **once**.
 
-**4.2 One-shot helper** (from this repo; needs `gh auth status` to pass; sets all ten
-secrets on `ay2m/FlyGACA`):
+**4.2 One-shot helper** (from this repo; needs `gh auth status` to pass; sets all nine
+secrets):
 
 ```bash
 export APPLE_TEAM_ID=XXXXXXXXXX APP_STORE_CONNECT_API_KEY_ID=XXXXXXXXXX \
@@ -172,14 +172,17 @@ export APPLE_TEAM_ID=XXXXXXXXXX APP_STORE_CONNECT_API_KEY_ID=XXXXXXXXXX \
        P12_PASSWORD='your-p12-password'
 bash scripts/native/set-signing-secrets.sh \
   Distribution.p12 \
-  FlyGACA_PPL_AppStore.mobileprovision \
   FlyGACA_ELPT_AppStore.mobileprovision \
   FlyGACA_AIP_AppStore.mobileprovision \
   AuthKey_XXXXXXXXXX.p8
 ```
 
-File order is fixed (p12 · ppl · elpt · aip · p8). `KEYCHAIN_PASSWORD` defaults to a
-random string; `REPO` defaults to `ay2m/FlyGACA`. Your 10-char **Team ID** is on the
+**Exactly four files, in this order: p12 · elpt · aip · p8.** The script hard-checks the
+count and aborts on anything else — the PPL profile is *not* an argument, since that module
+is paused and `ios-testflight`'s matrix is `elpt · aip`. `KEYCHAIN_PASSWORD` defaults to a
+random string. `REPO` defaults to whatever this checkout's `origin` remote points at
+(`ay2m/FlyGACA-ios`), so the secrets land on the repo whose workflow consumes them; override
+with `REPO=owner/name` only if you mean a different one. Your 10-char **Team ID** is on the
 portal's Membership page.
 
 **4.3 Manual fallback** — repo → Settings → Secrets and variables → Actions (base64 files
@@ -190,7 +193,7 @@ with `base64 -w0 <file>` on Linux, `base64 -i <file>` on macOS):
 | `BUILD_CERTIFICATE_BASE64` | base64 of `Distribution.p12` |
 | `P12_PASSWORD` | the 1.3 export password |
 | `KEYCHAIN_PASSWORD` | any random string (temp CI keychain) |
-| `PROVISIONING_PROFILE_PPL_BASE64` | base64 of `FlyGACA_PPL_AppStore.mobileprovision` |
+| ⏸ `PROVISIONING_PROFILE_PPL_BASE64` | base64 of `FlyGACA_PPL_AppStore.mobileprovision` — **paused module, not one of the nine.** `ios.yml` never reads it; the secret that already exists is orphaned (see the banner). Only needed if PPL is restored |
 | `PROVISIONING_PROFILE_ELPT_BASE64` | base64 of `FlyGACA_ELPT_AppStore.mobileprovision` |
 | `PROVISIONING_PROFILE_AIP_BASE64` | base64 of `FlyGACA_AIP_AppStore.mobileprovision` |
 | `APP_STORE_CONNECT_API_KEY_ID` | the 4.1 Key ID |
@@ -210,8 +213,9 @@ with `base64 -w0 <file>` on Linux, `base64 -i <file>` on macOS):
 > TestFlight yet" is stale.
 
 - Push to `main` (or run the iOS workflow via **workflow_dispatch**). `check-signing` now
-  outputs `enabled=true`, and `ios-testflight` signs and uploads **ppl · elpt · aip** (the
-  matrix is explicit — Wave 2 is not in it yet).
+  outputs `enabled=true`, and `ios-testflight` signs and uploads **elpt · aip** (the matrix in
+  `.github/workflows/ios.yml` is explicit, not derived from the app list — PPL was removed with
+  its module in 2026-08, and Wave 2 is not in it yet).
 - Apple processing is ~5–15 min per build; builds then appear under each app's
   **TestFlight** tab in App Store Connect. The build number is the GitHub run number —
   shared across the trio, unique per app record, which is all Apple requires.

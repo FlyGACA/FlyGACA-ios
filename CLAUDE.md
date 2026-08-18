@@ -288,8 +288,9 @@ These are one-time human/console setup, not something to script from first princ
   `com.flygaca.elpt/.aip`; manual signing (no Xcode-managed signing in CI) because the
   App Group entitlement rules out wildcard provisioning profiles. Nine named GitHub secrets;
   `scripts/native/set-signing-secrets.sh` uploads them from local files via `gh secret set`
-  (defaults to `REPO=ay2m/FlyGACA` — note this repo's actual remote is
-  `FlyGACA/FlyGACA-ios`, so pass `REPO=` explicitly). Provisioning profile names are
+  (it takes **exactly four** files — p12 · elpt · aip · p8 — and derives the target repo from
+  this checkout's `origin` remote, i.e. `ay2m/FlyGACA-ios`; it used to hardcode a different
+  default, so pass `REPO=` only when you deliberately mean another repo). Provisioning profile names are
   load-bearing (`FlyGACA <APP> AppStore` — passed as `PROVISIONING_PROFILE_SPECIFIER`). Note
   `apple/Apps/Shared/App.entitlements` **no longer declares Sign in with Apple** (removed
   2026-08) — the shipping apps are paid-up-front and fully offline, so signing needs only the

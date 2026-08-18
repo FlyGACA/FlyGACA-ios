@@ -33,7 +33,7 @@ no CLI can create Apple certs/profiles/app records for you.
   key with **App Manager** role. Note the **Key ID** + **Issuer ID**; download the `.p8` (**once
   only**).
 
-## C. Create the GitHub secrets (on `ay2m/FlyGACA`)
+## C. Create the GitHub secrets (on this repo — the one whose `ios.yml` consumes them)
 
 Two ways — a helper script, or by hand.
 

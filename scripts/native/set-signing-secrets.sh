@@ -19,9 +19,25 @@ set -euo pipefail
 #       FlyGACA_AIP_AppStore.mobileprovision \
 #       AuthKey_XXXXXXXXXX.p8
 #
-# Target repo defaults to ay2m/FlyGACA (where the iOS workflow lives); override with REPO=owner/name.
+# Target repo defaults to THIS checkout's `origin` remote — the repo whose
+# ios-testflight job consumes these secrets. Derived rather than hardcoded so a
+# rename or a fork can't silently push a distribution certificate and an App
+# Store Connect key to the wrong repository. Override with REPO=owner/name.
 
-REPO="${REPO:-ay2m/FlyGACA}"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+
+repo_from_origin() {
+  local url
+  url="$(git -C "$REPO_ROOT" remote get-url origin 2>/dev/null)" || return 1
+  url="${url%.git}"
+  case "$url" in
+    *github.com[:/]*) printf '%s\n' "${url##*github.com[:/]}" ;;
+    *) return 1 ;;
+  esac
+}
+
+REPO="${REPO:-$(repo_from_origin || echo 'ay2m/FlyGACA-ios')}"
 
 RED='\033[0;31m'; GREEN='\033[0;32m'; BLUE='\033[0;34m'; NC='\033[0m'
 info() { echo -e "${BLUE}ℹ${NC} $1"; }
