@@ -42,12 +42,19 @@ there).
   no Apple user identifier was ever issued under it. What remains is the **portal work itself**
   when sign-in ships: enable the capability on both App IDs, group AIP under ELPT, regenerate the
   profiles.
-- **[platform] Create the signing secrets and the store records.** Work through
-  `docs/RUNBOOK-ios-signing-CHECKLIST.md`: App Group + two App IDs + a distribution cert + two
-  App Store profiles (named `FlyGACA <APP> AppStore` — the names are load-bearing), two
-  paid-up-front App Store Connect records, the App Store Connect API key, then the nine GitHub
-  secrets (`scripts/native/set-signing-secrets.sh`). That flips `check-signing` to
-  `enabled=true`, and the `ios-testflight` job starts uploading elpt · aip on pushes to `main`.
+- ~~**[platform] Create the signing secrets and the store records.**~~ **Done 2026-08-16.**
+  Run [#69](https://github.com/ay2m/FlyGACA-ios/actions/runs/31916879238) signed, exported and
+  uploaded both apps — so the App Group, both App IDs, the distribution cert, both
+  `FlyGACA <APP> AppStore` profiles, the App Store Connect API key and the nine GitHub secrets
+  all exist and work end to end. `1.0.0 (69)` is in TestFlight for ELPT and AIP.
+- **[platform] Finish the App Store Connect records so testers can install.** Builds reach
+  TestFlight but installs fail with *"The requested app is not available or doesn't exist"* —
+  an App Store lookup failure, not a build problem. Outstanding on the records themselves:
+  **Pricing and Availability** (no price point and no territories are set — `SAR 79` per app per
+  `apple/ARCHITECTURE.md` §4) and the **age-rating questionnaire** (4+, all-"None"). Triage
+  order, including the tester-account check that comes first, is
+  [`docs/PORTAL-RUNSHEET-wave1.md`](./docs/PORTAL-RUNSHEET-wave1.md) §5.1. Portal-only work —
+  nothing in this repo changes.
 - ~~**[product] Close the content skew.**~~ **Done 2026-08-05**: a reviewed `sync-content.sh`
   run brought ELPT to 4 banks and AIP to 3, and refreshed the grown question sets (validated:
   bankIds ⇔ banks, exam config unchanged). Store listings and bundles agree
