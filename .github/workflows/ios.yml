@@ -21,6 +21,11 @@ concurrency:
   group: ios-${{ github.ref }}
   cancel-in-progress: true
 
+# Least-privilege floor. Every job below declares its own `permissions:`, which
+# overrides this; the empty default only ensures a future job added without one
+# cannot silently inherit a write-enabled GITHUB_TOKEN.
+permissions: {}
+
 jobs:
   swift-test:
     name: Swift Package Tests
@@ -29,7 +34,7 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
       - name: Run Swift tests
         run: cd apple/FlyGACAKit && swift test
@@ -41,7 +46,7 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
       - name: Install XcodeGen
         run: brew install xcodegen
@@ -87,7 +92,7 @@ jobs:
         app: [elpt, aip]
       fail-fast: true
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
       - name: Install XcodeGen
         run: brew install xcodegen
@@ -100,7 +105,7 @@ jobs:
 
       - name: Upload build artifacts
         if: always()
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: ios-build-${{ matrix.app }}-debug
           path: apple/.build/Build/Products/
@@ -120,7 +125,7 @@ jobs:
         app: [elpt, aip]
       fail-fast: false
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
       - name: Install XcodeGen
         run: brew install xcodegen
@@ -135,7 +140,7 @@ jobs:
 
       - name: Upload Release artifacts
         if: always()
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: ios-build-${{ matrix.app }}-release-${{ github.sha }}
           path: |
@@ -146,7 +151,7 @@ jobs:
 
       - name: Upload dSYM symbols
         if: always()
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: ios-dsyms-${{ matrix.app }}-${{ github.sha }}
           path: apple/.build/dSYMs/
@@ -173,7 +178,7 @@ jobs:
           - app: aip
             scheme: AIP
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
       # App Store Connect rejects uploads built with SDKs older than iOS 26
       # ("SDK version issue", 409). macos-15's default Xcode is 16.4, but the
@@ -245,7 +250,7 @@ jobs:
 
       - name: Upload signed .ipa
         if: always()
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: ios-ipa-${{ matrix.app }}-${{ github.sha }}
           path: apple/.build/export/${{ matrix.scheme }}/*.ipa
@@ -254,7 +259,7 @@ jobs:
 
       - name: Upload dSYM symbols (signed build)
         if: always()
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: ios-dsyms-signed-${{ matrix.app }}-${{ github.sha }}
           path: apple/.build/dSYMs/
