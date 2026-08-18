@@ -55,6 +55,16 @@ set, `docs/CORPUS-SIGNING.md` (the Ed25519 signing procedure for the remote quiz
 index). These originated as copies of the monorepo's versions, but after the `apple/` mirror's
 retirement (2026-08) they are the real source, edited here.
 
+`.claude/agents/` defines three subagents scoped to this repo — **swift-kit** (anything inside
+`apple/FlyGACAKit`), **parity-guard** (the cross-platform study semantics below) and
+**ios-release** (builds, signing, TestFlight, CI, screenshots); `agents/README.md` says when each
+is the right one.
+
+One caveat on cross-repo links: the monorepo lost its `docs/` tree in 2026-08, so pointers from
+here into `FlyGACA-app/docs/…` (e.g. `APPS-FAMILY-ROADMAP.md`, referenced from `ROADMAP.md`) no
+longer resolve. Content generation itself is unaffected — `scripts/build-ios-content.mjs`,
+`gen-app-icons.mjs`, `public/data/` and `src/lib/prepCatalog.ts` are all still there.
+
 ## Architecture (see `apple/ARCHITECTURE.md` for full detail)
 
 **Stack:** Swift 5.9+ tools (the xcconfig's `SWIFT_VERSION = 5.0` is the *language mode*, not the
@@ -126,20 +136,20 @@ User state lives in SwiftData, in a shared App Group (shared by every app in the
 so streaks/SRS carry across apps). `StudyStore` (a `@ModelActor`) is the single write path;
 SwiftData model objects never escape the actor (they aren't `Sendable`).
 
-> ⚠️ **App Group id — docs now match the code; the Apple portal still needs checking.** The id is
-> **`group.com.FlyGACA`**, and all three places that decide it agree:
-> `apple/Apps/Shared/App.entitlements`, `App-Shared.xcconfig`'s `FG_APP_GROUP`, and
-> `PersistenceKit/Persistence.swift`'s `appGroupID`. Eight docs used to say
+> ✅ **App Group id — settled, code and portal agree.** The id is **`group.com.FlyGACA`**, and all
+> three places that decide it agree: `apple/Apps/Shared/App.entitlements`, `App-Shared.xcconfig`'s
+> `FG_APP_GROUP`, and `PersistenceKit/Persistence.swift`'s `appGroupID`. Eight docs used to say
 > `group.com.flygaca.study` instead (this file, `CAUSE.md`, `THE-BOOK-OF-FLY-GACA.md`,
 > `apple/README.md`, `apple/ARCHITECTURE.md`, and three runbooks) — all corrected to the code's
 > value, since the code is what ships and no code change was made.
 >
-> **What is still open is external:** `docs/PORTAL-RUNSHEET-wave1.md` previously recorded
-> `group.com.flygaca.study` as already registered in the Apple Developer portal. If that is true,
-> a profile built from it won't grant what the app requests and the signed build fails — App
-> Groups can't be renamed, so `group.com.FlyGACA` must be registered and reassigned on both App
-> IDs. Nothing has reached TestFlight, so there is no on-device data to migrate: it is a
-> portal-only fix. Don't "resolve" this by editing the entitlements back.
+> **The external half is now confirmed too.** It was open for a while — if the portal really held
+> `group.com.flygaca.study`, a profile built from it wouldn't grant what the app requests and the
+> signed build would fail (App Groups can't be renamed). Workflow run #69 (2026-08-16) signed,
+> exported and uploaded both apps to TestFlight with every step green, and `xcodebuild` validates
+> entitlements against the profile at both archive-signing and `-exportArchive` — so the portal
+> demonstrably holds `group.com.FlyGACA`. Don't "resolve" anything here by editing the
+> entitlements back. Details: `docs/PORTAL-RUNSHEET-wave1.md` §1.1.
 
 ## Content: committed snapshots, generated in the monorepo
 
@@ -245,6 +255,9 @@ repo has no bundler; no `npm ci` — thin `package.json`, zero deps). Triggers a
 nothing. A `concurrency` group (`ios-<ref>`, `cancel-in-progress`) supersedes an in-flight run
 on the same ref. All jobs use `actions/checkout@v7` and `actions/upload-artifact@v7`, and run
 on `macos-15` unless noted:
+nothing. Both event triggers carry `paths-ignore: ['**.md', 'docs/**']`, so a docs-only PR runs
+**no jobs at all** and shows zero checks; that's the configuration working, not a stuck queue.
+Jobs, all on `macos-15` unless noted:
 
 - **swift-test** — `cd apple/FlyGACAKit && swift test` (all 5 test targets, incl.
   `PlatformLiveTests`). Gates everything else.
@@ -326,6 +339,9 @@ These are one-time human/console setup, not something to script from first princ
   `PlatformLiveFactory` calls through `FeatureUI`, and do not add SDK imports outside
   `PlatformLive`. Note `ARCHITECTURE.md` §5 still describes PlatformLive as unbuilt Phase-4
   work; the code is ahead of that doc.
+- **The apps still ship on mocks.** `PlatformLive` exists and is tested, but nothing injects it
+  (see above), so `AppServices`'s `Mocks.swift` *is* the shipping product and the apps are fully
+  offline by design. Keep any new platform integration inside `PlatformLive`.
 - **`FlyGACAApp.swift` (`apple/Apps/Shared/`) is the one app shell for every target.**
   Never fork it per app; per-app differences are xcconfig values (`FG_MODULE_ID`, bundle id,
   display name) injected via `Info.plist`, not code.
@@ -348,6 +364,8 @@ These are one-time human/console setup, not something to script from first princ
   `StudyEnginesTests` (Leitner, Readiness, Sampler, Session, Streak), `ContentKitTests`
   (ContentLoader, ContentRefresher), `PersistenceKitTests` (StudyStore) and
   `PlatformLiveTests` — not just the SRS parity vectors.
+  (ContentLoader, ContentRefresher), `PersistenceKitTests` (StudyStore) and `PlatformLiveTests`
+  — not just the SRS parity vectors.
 - **License:** MIT, © BDA Company International, operating as Fly GACA.
 - Per-app bundle ids follow `com.flygaca.<lowercase module>`; module ids (`FG_MODULE_ID`,
   e.g. `elp`, `aip`) are the pack ids from the monorepo's
